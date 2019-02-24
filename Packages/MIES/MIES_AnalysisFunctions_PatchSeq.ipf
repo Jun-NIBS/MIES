@@ -985,8 +985,9 @@ End
 ///                                  combining the rheobase DAScale value from the previous run and
 ///                                  the DAScales values. Valid strings are "+" (addition) and "*" (multiplication).
 ///                                  Ignored for #PSQ_DS_SUB.
+/// - ShowPlot (Variable):           [Optional, defaults to true] Show the resistance plot in #PSQ_SUB mode.
 Function/S PSQ_DAScale_GetParams()
-	return "DAScales:wave,OperationMode:string,SamplingMultiplier:variable,[OffsetOperator:string]"
+	return "DAScales:wave,OperationMode:string,SamplingMultiplier:variable,[ShowPlot:variable],[OffsetOperator:string]"
 End
 
 /// @brief Patch Seq Analysis function to find a suitable DAScale
@@ -1074,7 +1075,7 @@ Function PSQ_DAScale(panelTitle, s)
 
 	variable val, totalOnsetDelay, DAScale
 	variable i, fifoInStimsetPoint, fifoInStimsetTime
-	variable index, ret
+	variable index, ret, showPlot
 	variable sweepPassed, setPassed, numSweepsPass, length, minLength
 	variable sweepsInSet, passesInSet, acquiredSweepsInSet, numBaselineChunks, multiplier
 	string msg, stimset, key, opMode, offsetOp
@@ -1211,6 +1212,8 @@ Function PSQ_DAScale(panelTitle, s)
 				endif
 			else
 				// sweep passed
+				showPlot = AFH_GetAnalysisParamNumerical("ShowPlot", s.params, defValue = 1)
+
 				if(!cmpstr(opMode, PSQ_DS_SUB))
 					WAVE/Z sweep = GetSweepWave(panelTitle, s.sweepNo)
 					ASSERT(WaveExists(sweep), "Expected a sweep for evaluation")
@@ -1224,7 +1227,9 @@ Function PSQ_DAScale(panelTitle, s)
 					ED_AddEntryToLabnotebook(panelTitle, "Delta I", deltaI, unit = "I")
 					ED_AddEntryToLabnotebook(panelTitle, "Delta V", deltaV, unit = "V")
 
-					PlotResistanceGraph(panelTitle)
+					if(showPlot)
+						PlotResistanceGraph(panelTitle)
+					endif
 				endif
 
 				if(passesInSet >= numSweepsPass)
