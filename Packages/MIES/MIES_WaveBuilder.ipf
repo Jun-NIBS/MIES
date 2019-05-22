@@ -1495,6 +1495,23 @@ Function WB_GetWaveNoteEntryAsNumber(stimset, entryType, [key, sweep, epoch])
 	return str2num(str)
 End
 
+Function/WAVE WB_GetPulsesFromPTSweepEpoch(stimset, sweep, epoch, pulseToPulseLength)
+	WAVE stimset
+	variable sweep, epoch
+	variable &pulseToPulseLength
+
+	string startTimesList
+
+	pulseToPulseLength = WB_GetWaveNoteEntryAsNumber(stimset, EPOCH_ENTRY, sweep = sweep, epoch = epoch, key = PULSE_TO_PULSE_LENGTH_KEY)
+	ASSERT(IsFinite(pulseToPulseLength), "Non-finite " + PULSE_TO_PULSE_LENGTH_KEY)
+
+	startTimesList = WB_GetWaveNoteEntry(stimset, EPOCH_ENTRY, sweep = sweep, epoch = epoch, key = PULSE_START_TIMES_KEY)
+	WAVE/Z/D startTimes = ListToNumericWave(startTimesList, ",")
+	ASSERT(WaveExists(startTimes) && DimSize(startTimes, ROWS) > 0, "Found no starting times")
+
+	return startTimes
+End
+
 /// @brief Extract a list of [begin, end] ranges in `stimset build ms` denoting
 ///        all pulses from all pulse train epochs in that sweep of the stimset
 Function/WAVE WB_GetPulsesFromPulseTrains(stimset, sweep, pulseToPulseLength)
@@ -1527,12 +1544,7 @@ Function/WAVE WB_GetPulsesFromPulseTrains(stimset, sweep, pulseToPulseLength)
 			continue
 		endif
 
-		pulseToPulseLength = WB_GetWaveNoteEntryAsNumber(stimset, EPOCH_ENTRY, sweep = sweep, epoch = i, key = PULSE_TO_PULSE_LENGTH_KEY)
-		ASSERT(IsFinite(pulseToPulseLength), "Non-finite " + PULSE_TO_PULSE_LENGTH_KEY)
-
-		startTimesList = WB_GetWaveNoteEntry(stimset, EPOCH_ENTRY, sweep = sweep, epoch = i, key = PULSE_START_TIMES_KEY)
-		WAVE/Z/D startTimes = ListToNumericWave(startTimesList, ",")
-		ASSERT(WaveExists(startTimes) && DimSize(startTimes, ROWS) > 0, "Found no starting times")
+		WAVE startTimes = WB_GetPulsesFromPTSweepEpoch(stimset, sweep, i, pulseToPulseLength)
 
 		FindValue/FNAN startTimes
 		ASSERT(V_Value == -1, "Unexpected NaN found in starting times")
