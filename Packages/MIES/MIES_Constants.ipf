@@ -1132,3 +1132,9 @@ Constant GUI_SETTING_OSCI_SCALE_AUTO      = 0
 Constant GUI_SETTING_OSCI_SCALE_FIXED     = 1
 Constant GUI_SETTING_OSCI_SCALE_INTERVAL  = 2
 /// @}
+
+/// @name Epoch key constants
+/// @anchor EpochKeys
+/// @{
+StrConstant EPOCH_OODDAQ_REGION_KEY = "oodDAQRegion"
+/// @}
