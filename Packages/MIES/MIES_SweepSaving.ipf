@@ -49,8 +49,6 @@ Function SWS_SaveAndScaleITCData(panelTitle, [forcedStop])
 		NWB_AppendSweep(panelTitle, dataWave, configWave, sweepNo)
 	endif
 
-	AM_analysisMasterPostSweep(panelTitle, sweepNo)
-
 	if(!forcedStop)
 		AFM_CallAnalysisFunctions(panelTitle, POST_SWEEP_EVENT)
 		AFM_CallAnalysisFunctions(panelTitle, POST_SET_EVENT)
