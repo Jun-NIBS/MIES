@@ -5428,3 +5428,11 @@ Function StopAsyncIfDone()
 
 	ASYNC_Stop(timeout=10)
 End
+
+/// @brief Starts with a new experiment.
+///
+/// You have to manually save before, see SaveExperimentWrapper()
+Function NewExperiment()
+
+	Execute/P/Q "NEWEXPERIMENT "
+End

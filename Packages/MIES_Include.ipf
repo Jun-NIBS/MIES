@@ -86,7 +86,6 @@
 #include "MIES_SweepSaving"
 #include "MIES_ThreadedFIFOHandling"
 #include "MIES_ThreadsafeUtilities"
-#include "MIES_TangoInteract"
 #include "MIES_TestPulse"
 #include "MIES_TestPulse_Single"
 #include "MIES_TestPulse_Multi"
