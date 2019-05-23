@@ -79,7 +79,6 @@ mkdir -p "$xops"
 if [ "$installHWXOPs" = "1" ]
 then
   cp -r  "$folder"/XOPs-IP7-64bit/*  "$xops"
-  cp -r  "$folder"/XOP-tango-IP7-64bit/*  "$xops"
   # the NIDAQ XOP is not in the release package so we need to cheat a bit
   if [ "$installNIDAQmxXOP" = "1" ]
   then

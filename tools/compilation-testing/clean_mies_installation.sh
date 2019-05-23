@@ -54,7 +54,6 @@ mkdir -p "$xops"
 if [ "$installHWXOPs" = "1" ]
 then
   cp -r  "$top_level"/XOPs-IP7-64bit/*  "$xops"
-  cp -r  "$top_level"/XOP-tango-IP7-64bit/* "$xops"
   if [ "$installNIDAQmxXOP" = "0" ]
   then
     rm -f  "$xops"/NIDAQmx64.*
