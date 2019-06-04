@@ -168,6 +168,7 @@ static Function NWB_GetFileForExport(nwbVersion, [overrideFilePath, createdNewNW
 		IPNWB#CreateCommonGroups(fileID, toplevelInfo=ti)
 
 		NWB_AddGeneratorString(fileID, nwbVersion)
+		NWB_AddSpecifications(fileID, nwbVersion)
 
 		sessionStartTimeReadBack = NWB_ReadSessionStartTime(fileID)
 
@@ -214,6 +215,17 @@ static Function NWB_AddGeneratorString(fileID, nwbVersion)
 		IPNWB#H5_WriteTextDataset(fileID, "/general/source_script", wvText=props)
 		IPNWB#H5_WriteTextAttribute(fileID, "file_name", "/general/source_script", str="https://github.com/AllenInstitute/MIES")
 	endif
+End
+
+static Function NWB_AddSpecifications(fileID, nwbVersion)
+	variable fileID, nwbVersion
+
+	IPNWB#EnsureValidNWBVersion(nwbVersion)
+	if(nwbVersion == 1)
+		return NaN
+	endif
+
+	IPNWB#WriteSpecifications(fileID)
 End
 
 static Function NWB_ReadSessionStartTime(fileID)
