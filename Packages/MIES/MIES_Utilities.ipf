@@ -2815,6 +2815,9 @@ Function QuerySetIgorOption(name, [globalSymbol])
 	return result
 End
 
+/// @todo write unit tests for TZ
+/// @todo copy over to IPNWB
+///
 /// @brief Parse a ISO8601 timestamp, e.g. created by GetISO8601TimeStamp(), and returns the number
 /// of seconds, including fractional parts, since Igor Pro epoch (1/1/1904) in UTC time zone
 ///
@@ -2826,11 +2829,11 @@ End
 Function ParseISO8601TimeStamp(timestamp)
 	string timestamp
 
-	string year, month, day, hour, minute, second, regexp, fracSeconds
+	string year, month, day, hour, minute, second, regexp, fracSeconds, tzOffsetHour, tzOffsetMinute
 	variable secondsSinceEpoch
 
-	regexp = "^([[:digit:]]+)-([[:digit:]]+)-([[:digit:]]+)[T ]{1}([[:digit:]]+):([[:digit:]]+):([[:digit:]]+)([.,][[:digit:]]+)?Z?$"
-	SplitString/E=regexp timestamp, year, month, day, hour, minute, second, fracSeconds
+	regexp = "^([[:digit:]]+)-([[:digit:]]+)-([[:digit:]]+)[T ]{1}([[:digit:]]+):([[:digit:]]+):([[:digit:]]+)([.,][[:digit:]]+)?(?:Z|\+([[:digit:]]+):([[:digit:]]+))?$"
+	SplitString/E=regexp timestamp, year, month, day, hour, minute, second, fracSeconds, tzOffsetHour , tzOffsetMinute
 
 	if(V_flag < 6)
 		return NaN
@@ -2838,7 +2841,13 @@ Function ParseISO8601TimeStamp(timestamp)
 
 	secondsSinceEpoch  = date2secs(str2num(year), str2num(month), str2num(day))          // date
 	secondsSinceEpoch += 60 * 60* str2num(hour) + 60 * str2num(minute) + str2num(second) // time
-	// timetstamp is in UTC so we don't need to add/subtract anything
+
+	if(!IsEmpty(tzOffsetHour))
+		secondsSinceEpoch += Date2Secs(-1,-1,-1) - str2num(tzOffsetHour) * 3600
+		if(!IsEmpty(tzOffsetMinute))
+			secondsSinceEpoch -= str2num(tzOffsetMinute) * 60
+		endif
+	endif
 
 	if(!IsEmpty(fracSeconds))
 		secondsSinceEpoch += str2num(ReplaceString(",", fracSeconds, "."))

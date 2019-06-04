@@ -213,9 +213,11 @@ End
 
 /// @brief function for saving data space in the nwb format, to be invoked from the WSE
 /// @param nwbFileLocation	complete file path for nwb save file
+/// @param nwbVersion       version of NWB format (1 or 2)
 /// @param cmdID			[optional, defaults to blank] if called from WSE, this will be present.
-Function TI_saveNWBFile(nwbFileLocation, [cmdID])
+Function TI_saveNWBFile(nwbFileLocation, nwbVersion, [cmdID])
 	string nwbFileLocation
+	variable nwbVersion
 	string cmdID
 	
 	string changeFilePath
@@ -223,9 +225,9 @@ Function TI_saveNWBFile(nwbFileLocation, [cmdID])
 	
 	changeFilePath = nwbFileLocation
 	
-	print "Saving experiment data in NWB format to ", changeFilePath
+	printf "Saving experiment data in NWBv%d format to %s\r", nwbVersion, changeFilePath
 
-	NWB_ExportAllData(overrideFilePath=changeFilePath)
+	NWB_ExportAllData(nwbVersion, overrideFilePath=changeFilePath)
 	CloseNWBFile()
 
 	// determine if the cmdID was provided

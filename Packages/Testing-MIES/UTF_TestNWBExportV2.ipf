@@ -1,9 +1,9 @@
 ﻿#pragma TextEncoding = "UTF-8"
 #pragma rtGlobals=3 // Use modern global access method and strict wave access.
 #pragma rtFunctionErrors=1
-#pragma ModuleName=TestNWBExportV1
+#pragma ModuleName=TestNWBExportV2
 
-static Constant NWB_VERSION = 1
+static Constant NWB_VERSION = 2
 
  // This file does not hold test suites
 static Function NoTestSuite()
@@ -140,22 +140,12 @@ static Function TestTimeSeriesProperties(groupID, channel)
 	string channel
 
 	variable numEntries, i, value, channelGroupID
-	string missing_fields_ref, missing_fields
 
 	channelGroupID = IPNWB#H5_OpenGroup(groupID, channel)
 
 	// TimeSeries properties
 	STRUCT IPNWB#TimeSeriesProperties tsp
 	IPNWB#ReadTimeSeriesProperties(groupID, channel, tsp, NWB_VERSION)
-
-	if(strlen(tsp.missing_fields) == 0)
-		missing_fields = "PLACEHOLDER;"
-	else
-		missing_fields = tsp.missing_fields
-	endif
-
-	missing_fields_ref = IPNWB#ReadTextAttributeAsList(groupID, channel, "missing_fields")
-	CHECK_EQUAL_STR(missing_fields, missing_fields_ref)
 
 	numEntries = DimSize(tsp.names, ROWS)
 	for(i = 0; i < numEntries; i += 1)
@@ -214,11 +204,7 @@ static Function/S GetChannelNameFromChannelType(groupID, device, channel, sweep,
 		case ITC_XOP_CHANNEL_TYPE_TTL:
 			channelName  = "TTL"
 			WAVE loadedFromNWB = IPNWB#LoadStimulus(groupID, channel)
-			channelName += "_" + num2str(params.channelNumber)
-
-			if(IsFinite(params.ttlBit))
-				channelName += "_" + num2str(log(params.ttlBit)/log(2))
-			endif
+			channelName += "_" + num2str(params.channelNumber) + "_" + num2str(log(params.ttlBit)/log(2))
 
 			CHECK_EQUAL_VAR(str2num(params.channelSuffix), params.ttlBit)
 			break
@@ -250,62 +236,37 @@ static Function/WAVE LoadTimeSeries(groupID, channel, channelType)
 	endswitch
 End
 
-/// @brief Test NWBv1 specific source attribute (dropped since NWBv2)
-static Function TestSourceAttribute(groupID, device, channel, sweep, pxpSweepsDFR)
-	variable groupID, sweep
-	string device, channel
-	DFREF pxpSweepsDFR
-
-	string deviceFromSource, channelName
-
-	WAVE numericalValues = GetLBNumericalValues(device)
-
-	STRUCT IPNWB#ReadChannelParams params
-	IPNWB#InitReadChannelParams(params)
-	IPNWB#AnalyseChannelName(channel, params)
-	IPNWB#LoadSourceAttribute(groupID, channel, params)
-
-	deviceFromSource = params.device
-	CHECK_EQUAL_STR(deviceFromSource, device)
-	CHECK_EQUAL_VAR(params.sweep, sweep)
-
-	channelName = GetChannelNameFromChannelType(groupID, device, channel, sweep, params)
-
-	// check that we stored it under the correct name
-	WAVE/Z/SDFR=pxpSweepsDFR pxpWave = $channelName
-	WAVE loadedFromNWB = LoadTimeSeries(groupID, channel, params.channelType)
-	CHECK_EQUAL_WAVES(pxpWave, loadedFromNWB)
-
-	// groupIndex is written by IPNWB#AnalyseChannelName
-	CHECK(params.groupIndex >= 0)
-End
-
 static Function TestTimeSeries(fileID, device, groupID, channel, sweep, pxpSweepsDFR)
 	variable fileID, groupID, sweep
 	string channel, device
 	DFREF pxpSweepsDFR
 
 	variable channelGroupID, num_samples, starting_time, session_start_time, actual, scale, scale_ref
-	variable clampMode, gain, gain_ref, resolution, conversion
-	string stimulus, stimulus_expected, neurodata_type_ref, neurodata_type, channelName
-	string electrode_name, electrode_name_ref, key, unit_ref, unit, base_unit_ref, TTLStimsets
+	variable clampMode, gain, gain_ref, resolution, conversion, headstage
+	string stimulus, stimulus_expected, channelName, str, path
+	string electrode_name, electrode_name_ref, key, unit_ref, unit, base_unit_ref
 
 	STRUCT IPNWB#ReadChannelParams params
 	IPNWB#InitReadChannelParams(params)
 	IPNWB#AnalyseChannelName(channel, params)
-	IPNWB#LoadSourceAttribute(groupID, channel, params)
-
-	channelName = GetChannelNameFromChannelType(groupID, device, channel, sweep, params)
 
 	channelGroupID = IPNWB#H5_OpenGroup(groupID, channel)
 
+	// @TODO FIXME HACKY
+	string headstageDesc = IPNWB#ReadTextDataSetAsString(channelGroupID, "electrode/description")
+	if(!cmpstr(headstageDesc, "PLACEHOLDER"))
+		headstage = NaN
+	else
+		headstage = str2num(RemovePrefix(headstageDesc, startStr="Headstage "))
+		CHECK(headstage >= 0 && headstage < NUM_HEADSTAGES)
+	endif
+
+	params.electrodeNumber = headstage
+
+	channelName = GetChannelNameFromChannelType(groupID, device, channel, sweep, params)
+
 	WAVE numericalValues = GetLBNumericalValues(device)
 	WAVE/T textualValues = GetLBTextualValues(device)
-
-	// num_samples
-	num_samples = IPNWB#ReadDataSetAsNumber(channelGroupID, "num_samples")
-	WAVE loadedFromNWB = LoadTimeSeries(groupID, channel, params.channelType)
-	CHECK_EQUAL_VAR(num_samples, DimSize(loadedFromNWB, ROWS))
 
 	// starting_time
 	starting_time = IPNWB#ReadDataSetAsNumber(channelGroupID, "starting_time")
@@ -314,19 +275,13 @@ static Function TestTimeSeries(fileID, device, groupID, channel, sweep, pxpSweep
 	CHECK_EQUAL_VAR(session_start_time + starting_time, actual)
 
 	// stimulus_description
-	stimulus = IPNWB#ReadTextDataSetAsString(channelGroupID, "stimulus_description")
+	stimulus = IPNWB#ReadTextAttributeAsString(channelGroupID, ".", "stimulus_description")
 	if(params.channelType == ITC_XOP_CHANNEL_TYPE_DAC)
 		stimulus_expected = "PLACEHOLDER"
 	elseif(params.channelType == ITC_XOP_CHANNEL_TYPE_ADC && IsNaN(params.electrodeNumber)) // unassoc AD
 		stimulus_expected = "PLACEHOLDER"
 	elseif(params.channelType == ITC_XOP_CHANNEL_TYPE_TTL)
-		TTLStimsets = GetTTLStimSets(numericalValues, textualValues, sweep, params.channelNumber)
-
-		if(IsNaN(params.ttlBit))
-			stimulus_expected = StringFromList(params.channelNumber, TTLStimsets)
-		else
-			stimulus_expected = StringFromList(log(params.ttlBit)/log(2), TTLStimsets)
-		endif
+		stimulus_expected = "PLACEHOLDER"
 	else
 		WAVE/Z/T wvText = GetLastSetting(textualValues, sweep, "Stim Wave Name", DATA_ACQUISITION_MODE)
 		CHECK_WAVE(wvText, TEXT_WAVE)
@@ -334,53 +289,60 @@ static Function TestTimeSeries(fileID, device, groupID, channel, sweep, pxpSweep
 	endif
 	CHECK_EQUAL_STR(stimulus, stimulus_expected)
 
+	/// @todo NEEDS HDF5 XOP support for reading link targets
+	/// fixme
+
 	// electrode_name, only present for associated channels
 	if(IsFinite(params.electrodeNumber))
-		electrode_name = IPNWB#ReadTextDataSetAsString(channelGroupID, "electrode_name")
+
+		if(params.channelType == ITC_XOP_CHANNEL_TYPE_ADC)
+			path = "/acquisition/" + channel + "/electrode"
+		elseif(params.channelType == ITC_XOP_CHANNEL_TYPE_DAC)
+			path = "/stimulus/presentation/" + channel + "/electrode"
+		endif
+
+		HDF5Dump/Q/P=home/L=path "HardwareTests.nwb"
+		SplitString/E="LINKTARGET[[:space:]]\"(.*)\"" S_HDF5Dump, str
+		electrode_name = RemovePrefix(str, startStr = "/general/intracellular_ephys/")
 		electrode_name_ref = "electrode_" + num2str(params.electrodeNumber)
 		CHECK_EQUAL_STR(electrode_name, electrode_name_ref)
 	endif
 
-	// ancestry
+	// neurodata_type
 	WAVE/Z wv = GetLastSetting(numericalValues, sweep, "Clamp Mode", DATA_ACQUISITION_MODE)
 	CHECK_WAVE(wv, NUMERIC_WAVE)
 
 	clampMode = IsFinite(params.electrodeNumber) ? wv[params.electrodeNumber] : NaN
 
-	WAVE/T ancestry = IPNWB#ReadTextAttribute(groupID, channel, "ancestry")
+	WAVE/T neurodata_type = IPNWB#ReadTextAttribute(groupID, channel, "neurodata_type")
 
 	switch(clampMode)
 		case V_CLAMP_MODE:
 			if(params.channelType == ITC_XOP_CHANNEL_TYPE_ADC)
-				CHECK_EQUAL_TEXTWAVES(ancestry, {"TimeSeries", "PatchClampSeries", "VoltageClampSeries"})
+				CHECK_EQUAL_TEXTWAVES(neurodata_type, {"VoltageClampSeries"})
 			elseif(params.channelType == ITC_XOP_CHANNEL_TYPE_DAC)
-				CHECK_EQUAL_TEXTWAVES(ancestry, {"TimeSeries", "PatchClampSeries", "VoltageClampStimulusSeries"})
+				CHECK_EQUAL_TEXTWAVES(neurodata_type, {"VoltageClampStimulusSeries"})
 			else
 				FAIL()
 			endif
 			break
 		case  I_CLAMP_MODE:
 			if(params.channelType == ITC_XOP_CHANNEL_TYPE_ADC)
-				CHECK_EQUAL_TEXTWAVES(ancestry, {"TimeSeries", "PatchClampSeries", "CurrentClampSeries"})
+				CHECK_EQUAL_TEXTWAVES(neurodata_type, {"CurrentClampSeries"})
 			elseif(params.channelType == ITC_XOP_CHANNEL_TYPE_DAC)
-				CHECK_EQUAL_TEXTWAVES(ancestry, {"TimeSeries", "PatchClampSeries", "CurrentClampStimulusSeries"})
+				CHECK_EQUAL_TEXTWAVES(neurodata_type, {"CurrentClampStimulusSeries"})
 			else
 				FAIL()
 			endif
 			break
 		default:
 			if(IsNaN(clampMode))
-				CHECK_EQUAL_TEXTWAVES(ancestry, {"TimeSeries"})
+				CHECK_EQUAL_TEXTWAVES(neurodata_type, {"TimeSeries"})
 			else
 				ASSERT(0, "unknown clamp mode")
 			endif
 			break
 	endswitch
-
-	// neurodata_type
-	neurodata_type = IPNWB#ReadTextAttributeAsString(groupID, channel, "neurodata_type")
-	neurodata_type_ref = "TimeSeries"
-	CHECK_EQUAL_STR(neurodata_type, neurodata_type_ref)
 
 	// gain
 	if(IsFinite(params.electrodeNumber))
@@ -523,8 +485,8 @@ static Function TestListOfGroups(groupList, wv)
 	CHECK_EQUAL_STR(groupList, list)
 End
 
-Function TestNwbExportV1()
-	string discLocation, device, acquisition
+Function TestNwbExportV2()
+	string discLocation, device
 	string channel
 	variable fileID, numEntries, i, sweep, numGroups, j, groupID
 
@@ -587,9 +549,6 @@ Function TestNwbExportV1()
 			channel = StringFromList(j, acquisitions[i])
 			groupID = IPNWB#OpenAcquisition(fileID, NWB_VERSION)
 
-			// test all of ReadChannelParams aka source
-			TestSourceAttribute(groupID, device, channel, sweep, pxpSweepsDFR)
-
 			// TimeSeries properties
 			TestTimeSeriesProperties(groupID, channel)
 
@@ -601,9 +560,6 @@ Function TestNwbExportV1()
 		for(j = 0; j < numGroups; j += 1)
 			channel = StringFromList(j, stimuluses[i])
 			groupID = IPNWB#OpenStimulus(fileID)
-
-			// test all of ReadChannelParams aka source
-			TestSourceAttribute(groupID, device, channel, sweep, pxpSweepsDFR)
 
 			// TimeSeries properties
 			TestTimeSeriesProperties(groupID, channel)
