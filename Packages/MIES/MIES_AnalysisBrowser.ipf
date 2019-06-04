@@ -607,6 +607,8 @@ static Function AB_LoadSweepsFromNWB(discLocation, dataFolder, device)
 End
 
 /// @brief Store channelList in storage wave according to index in sweeps wave
+///
+/// @todo use sweep table to fill storage and sweeps wave
 static Function AB_StoreChannelsBySweep(groupID, nwbVersion, channelList, sweeps, storage)
 	variable groupID, nwbVersion
 	string channelList
@@ -626,6 +628,7 @@ static Function AB_StoreChannelsBySweep(groupID, nwbVersion, channelList, sweeps
 		channelString = StringFromList(i, channelList)
 		sweepNo = IPNWB#LoadSweepNumber(groupID, channelString, nwbVersion)
 		FindValue/I=(sweepNo)/S=0 sweeps
+		ASSERT(isFinite(sweepNo), "Invalid Sweep Number Associated in " + channelString)
 		if(V_Value == -1)
 			numSweeps += 1
 			EnsureLargeEnoughWave(sweeps, minimumSize = numSweeps, dimension = ROWS, initialValue = -1)
