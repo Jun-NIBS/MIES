@@ -299,20 +299,11 @@ static Function TestTimeSeries(fileID, device, groupID, channel, sweep, pxpSweep
 	endif
 	CHECK_EQUAL_STR(stimulus, stimulus_expected)
 
-	/// @todo NEEDS HDF5 XOP support for reading link targets
 	// electrode_name, only present for associated channels
 	if(IsFinite(params.electrodeNumber))
-
-		if(params.channelType == ITC_XOP_CHANNEL_TYPE_ADC)
-			path = "/acquisition/" + channel + "/electrode"
-		elseif(params.channelType == ITC_XOP_CHANNEL_TYPE_DAC)
-			path = "/stimulus/presentation/" + channel + "/electrode"
-		endif
-
-		HDF5Dump/Q/P=home/L=path "HardwareTests.nwb"
-		SplitString/E="LINKTARGET[[:space:]]\"(.*)\"" S_HDF5Dump, str
-		electrode_name = RemovePrefix(str, startStr = "/general/intracellular_ephys/")
-		electrode_name_ref = "electrode_" + num2str(params.electrodeNumber)
+		PathInfo home
+		electrode_name = IPNWB#ReadElectrodeName(S_path + "HardwareTests.nwb", channel, NWB_VERSION)
+		electrode_name_ref = num2str(params.electrodeNumber)
 		CHECK_EQUAL_STR(electrode_name, electrode_name_ref)
 	endif
 
