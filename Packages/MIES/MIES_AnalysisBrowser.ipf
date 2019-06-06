@@ -1600,9 +1600,8 @@ static Function AB_LoadSweepFromNWB(discLocation, sweepDFR, device, sweep)
 	return 0
 End
 
-/// @todo nwbVersion
-static Function AB_LoadSweepFromNWBgeneric(h5_groupID, version, channelList, sweepDFR, configSweep)
-	variable h5_groupID, version
+static Function AB_LoadSweepFromNWBgeneric(h5_groupID, nwbVersion, channelList, sweepDFR, configSweep)
+	variable h5_groupID, nwbVersion
 	string channelList
 	DFREF sweepDFR
 	Wave/I configSweep
@@ -1627,7 +1626,7 @@ static Function AB_LoadSweepFromNWBgeneric(h5_groupID, version, channelList, swe
 				break
 			case ITC_XOP_CHANNEL_TYPE_ADC:
 				channelName = "AD"
-				wave loaded = IPNWB#LoadTimeseries(h5_groupID, channel, version)
+				wave loaded = IPNWB#LoadTimeseries(h5_groupID, channel, nwbVersion)
 				channelName += "_" + num2str(p.channelNumber)
 				fakeConfigWave = 1
 				break
