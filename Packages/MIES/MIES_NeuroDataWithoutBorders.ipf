@@ -233,7 +233,7 @@ static Function NWB_ReadSessionStartTime(fileID)
 
 	string str = IPNWB#ReadTextDataSetAsString(fileID, "/session_start_time")
 
-	ASSERT(cmpstr(str, "PLACEHOLDER"), "Could not read session_start_time back from the NWB file")
+	ASSERT(cmpstr(str, IPNWB_PLACEHOLDER), "Could not read session_start_time back from the NWB file")
 
 	return ParseISO8601TimeStamp(str)
 End
@@ -918,15 +918,11 @@ static Function NWB_AppendSweepLowLevel(locationID, nwbVersion, panelTitle, ITCD
 		params.electrodeName   = ""
 		params.channelType     = ITCChanConfigWave[i][0]
 		params.channelNumber   = ITCChanConfigWave[i][1]
-		params.stimSet         = ""
+		params.stimSet         = IPNWB_PLACEHOLDER
 
 		switch(params.channelType)
 			case ITC_XOP_CHANNEL_TYPE_ADC:
-				if(nwbVersion == 1)
-					path = "/acquisition/timeseries"
-				elseif(nwbVersion == 2)
-					path = "/acquisition"
-				endif
+				path = IPNWB#GetNWBgroupPatchClampSeries(nwbVersion)
 				break
 			case ITC_XOP_CHANNEL_TYPE_DAC:
 				path = "/stimulus/presentation"

@@ -204,7 +204,11 @@ static Function/S GetChannelNameFromChannelType(groupID, device, channel, sweep,
 		case ITC_XOP_CHANNEL_TYPE_TTL:
 			channelName  = "TTL"
 			WAVE loadedFromNWB = IPNWB#LoadStimulus(groupID, channel)
-			channelName += "_" + num2str(params.channelNumber) + "_" + num2str(log(params.ttlBit)/log(2))
+			channelName += "_" + num2str(params.channelNumber)
+
+			if(IsFinite(params.ttlBit))
+				channelName += "_" + num2str(log(params.ttlBit)/log(2))
+			endif
 
 			CHECK_EQUAL_VAR(str2num(params.channelSuffix), params.ttlBit)
 			break
@@ -244,7 +248,7 @@ static Function TestTimeSeries(fileID, device, groupID, channel, sweep, pxpSweep
 	variable channelGroupID, num_samples, starting_time, session_start_time, actual, scale, scale_ref
 	variable clampMode, gain, gain_ref, resolution, conversion, headstage
 	string stimulus, stimulus_expected, channelName, str, path
-	string electrode_name, electrode_name_ref, key, unit_ref, unit, base_unit_ref
+	string electrode_name, electrode_name_ref, key, unit_ref, unit, base_unit_ref, TTLStimsets
 
 	STRUCT IPNWB#ReadChannelParams params
 	IPNWB#InitReadChannelParams(params)
@@ -276,12 +280,18 @@ static Function TestTimeSeries(fileID, device, groupID, channel, sweep, pxpSweep
 
 	// stimulus_description
 	stimulus = IPNWB#ReadTextAttributeAsString(channelGroupID, ".", "stimulus_description")
-	if(params.channelType == ITC_XOP_CHANNEL_TYPE_DAC)
+	if(params.channelType == ITC_XOP_CHANNEL_TYPE_DAC && IsNaN(params.electrodeNumber))
 		stimulus_expected = "PLACEHOLDER"
 	elseif(params.channelType == ITC_XOP_CHANNEL_TYPE_ADC && IsNaN(params.electrodeNumber)) // unassoc AD
 		stimulus_expected = "PLACEHOLDER"
 	elseif(params.channelType == ITC_XOP_CHANNEL_TYPE_TTL)
-		stimulus_expected = "PLACEHOLDER"
+		TTLStimsets = GetTTLStimSets(numericalValues, textualValues, sweep, params.channelNumber)
+
+		if(IsNaN(params.ttlBit))
+			stimulus_expected = StringFromList(params.channelNumber, TTLStimsets)
+		else
+			stimulus_expected = StringFromList(log(params.ttlBit)/log(2), TTLStimsets)
+		endif
 	else
 		WAVE/Z/T wvText = GetLastSetting(textualValues, sweep, "Stim Wave Name", DATA_ACQUISITION_MODE)
 		CHECK_WAVE(wvText, TEXT_WAVE)
@@ -290,8 +300,6 @@ static Function TestTimeSeries(fileID, device, groupID, channel, sweep, pxpSweep
 	CHECK_EQUAL_STR(stimulus, stimulus_expected)
 
 	/// @todo NEEDS HDF5 XOP support for reading link targets
-	/// fixme
-
 	// electrode_name, only present for associated channels
 	if(IsFinite(params.electrodeNumber))
 
