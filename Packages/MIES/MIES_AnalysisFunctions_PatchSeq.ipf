@@ -856,7 +856,7 @@ static Function/WAVE PSQ_SearchForSpikes(panelTitle, type, sweepWave, headstage,
 
 		if(numberOfSpikesReq == 1)
 			// search the spike from the rising edge till the end of the wave
-			FindLevel/Q/R=(first, last) singleAD, level
+			FindLevel/Q/R=(first, last)/B=3 singleAD, level
 			spikeDetection[headstage] = !V_flag
 
 			if(!ParamIsDefault(spikePositions))
@@ -870,7 +870,7 @@ static Function/WAVE PSQ_SearchForSpikes(panelTitle, type, sweepWave, headstage,
 			endif
 		elseif(numberOfSpikesReq > 1)
 			Make/D/FREE/N=0 crossings
-			FindLevels/Q/R=(first, last)/N=(numberOfSpikesReq)/DEST=crossings/EDGE=1 singleAD, level
+			FindLevels/Q/R=(first, last)/N=(numberOfSpikesReq)/DEST=crossings/EDGE=1/B=3 singleAD, level
 			spikeDetection[headstage] = !V_flag
 
 			if(!ParamIsDefault(spikePositions))
