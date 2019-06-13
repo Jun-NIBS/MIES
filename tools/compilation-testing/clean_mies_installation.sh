@@ -42,26 +42,32 @@ esac
 rm -rf "$IGOR_USER_FILES"
 
 user_proc="$IGOR_USER_FILES/User Procedures"
-xops="$IGOR_USER_FILES/Igor Extensions (64-bit)"
+xops64="$IGOR_USER_FILES/Igor Extensions (64-bit)"
+xops32="$IGOR_USER_FILES/Igor Extensions"
 
 mkdir -p "$user_proc"
 
 rm -rf "$top_level"/Packages/doc/html
 cp -r  "$top_level"/Packages/*  "$user_proc"
 
-mkdir -p "$xops"
+mkdir -p "$xops32" "$xops64"
 
 if [ "$installHWXOPs" = "1" ]
 then
-  cp -r  "$top_level"/XOPs-IP7-64bit/*  "$xops"
-  cp -r  "$top_level"/XOP-tango-IP7-64bit/* "$xops"
+  cp -r  "$top_level"/XOPs-IP7/*  "$xops32"
+  cp -r  "$top_level"/XOPs-IP7-64bit/*  "$xops64"
+
+  cp -r  "$top_level"/XOP-tango/* "$xops32"
+  cp -r  "$top_level"/XOP-tango-IP7-64bit/* "$xops64"
   if [ "$installNIDAQmxXOP" = "0" ]
   then
     rm -f  "$xops"/NIDAQmx64.*
   fi
 else
-  cp -r  "$top_level"/XOPs-IP7-64bit/HDF5*  "$xops"
-  cp -r  "$top_level"/XOPs-IP7-64bit/MIESUtils*  "$xops"
+  cp -r  "$top_level"/XOPs-IP7/HDF5*  "$xops32"
+  cp -r  "$top_level"/XOPs-IP7-64bit/HDF5*  "$xops64"
+  cp -r  "$top_level"/XOPs-IP7/MIESUtils*  "$xops32"
+  cp -r  "$top_level"/XOPs-IP7-64bit/MIESUtils*  "$xops64"
 fi
 
 echo "Release: FAKE MIES VERSION" > "$IGOR_USER_FILES"/version.txt
