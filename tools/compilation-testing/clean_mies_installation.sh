@@ -28,48 +28,48 @@ then
   exit 1
 fi
 
-case $MSYSTEM in
-  MINGW*)
-      IGOR_USER_FILES="$USERPROFILE/Documents/WaveMetrics/Igor Pro 7 User Files"
-      installNIDAQmxXOP=1
-      ;;
-    *)
-      IGOR_USER_FILES="$HOME/WaveMetrics/Igor Pro 7 User Files"
-      installNIDAQmxXOP=0
-      ;;
-esac
+versions="7 8"
 
-rm -rf "$IGOR_USER_FILES"
+for i in $versions
+do
+  case $MSYSTEM in
+    MINGW*)
+        IGOR_USER_FILES="$USERPROFILE/Documents/WaveMetrics/Igor Pro ${i} User Files"
+        ;;
+      *)
+        IGOR_USER_FILES="$HOME/WaveMetrics/Igor Pro ${i} User Files"
+        ;;
+  esac
 
-user_proc="$IGOR_USER_FILES/User Procedures"
-xops64="$IGOR_USER_FILES/Igor Extensions (64-bit)"
-xops32="$IGOR_USER_FILES/Igor Extensions"
+  rm -rf "$IGOR_USER_FILES"
 
-mkdir -p "$user_proc"
+  user_proc="$IGOR_USER_FILES/User Procedures"
+  xops64="$IGOR_USER_FILES/Igor Extensions (64-bit)"
+  xops32="$IGOR_USER_FILES/Igor Extensions"
 
-rm -rf "$top_level"/Packages/doc/html
-cp -r  "$top_level"/Packages/*  "$user_proc"
+  mkdir -p "$user_proc"
 
-mkdir -p "$xops32" "$xops64"
+  rm -rf "$top_level"/Packages/doc/html
+  cp -r  "$top_level"/Packages/*  "$user_proc"
 
-if [ "$installHWXOPs" = "1" ]
-then
-  cp -r  "$top_level"/XOPs-IP7/*  "$xops32"
-  cp -r  "$top_level"/XOPs-IP7-64bit/*  "$xops64"
+  mkdir -p "$xops32" "$xops64"
 
-  cp -r  "$top_level"/XOP-tango/* "$xops32"
-  cp -r  "$top_level"/XOP-tango-IP7-64bit/* "$xops64"
-  if [ "$installNIDAQmxXOP" = "0" ]
+  if [ "$installHWXOPs" = "1" ]
   then
-    rm -f  "$xops"/NIDAQmx64.*
-  fi
-else
-  cp -r  "$top_level"/XOPs-IP7/HDF5*  "$xops32"
-  cp -r  "$top_level"/XOPs-IP7-64bit/HDF5*  "$xops64"
-  cp -r  "$top_level"/XOPs-IP7/MIESUtils*  "$xops32"
-  cp -r  "$top_level"/XOPs-IP7-64bit/MIESUtils*  "$xops64"
-fi
+    cp -r  "$top_level"/XOPs-IP${i}/*  "$xops32"
+    cp -r  "$top_level"/XOPs-IP${i}-64bit/*  "$xops64"
 
-echo "Release: FAKE MIES VERSION" > "$IGOR_USER_FILES"/version.txt
+    cp -r  "$top_level"/XOP-tango/* "$xops32"
+    # no specific tango XOP version for IP8
+    cp -r  "$top_level"/XOP-tango-IP7-64bit/* "$xops64"
+  else
+    cp -r  "$top_level"/XOPs-IP${i}/HDF5*  "$xops32"
+    cp -r  "$top_level"/XOPs-IP${i}-64bit/HDF5*  "$xops64"
+    cp -r  "$top_level"/XOPs-IP${i}/MIESUtils*  "$xops32"
+    cp -r  "$top_level"/XOPs-IP${i}-64bit/MIESUtils*  "$xops64"
+  fi
+
+  echo "Release: FAKE MIES VERSION" > "$IGOR_USER_FILES"/version.txt
+done
 
 exit 0
