@@ -1178,9 +1178,12 @@ static Function DC_PlaceDataInHardwareDataWave(panelTitle, numActiveChannels, da
 		DC_DocumentChannelProperty(panelTitle, PULSE_TO_PULSE_LENGTH_KEY, headstageDAC[i], DAC[i], var=pulseToPulseLength)
 
 		WAVE/T epochWave = GetEpochsWave(panelTitle)
-		Duplicate/FREE/RMD=[][][DAC[i]] epochWave, epochChannel
+		Duplicate/FREE/T/RMD=[][][DAC[i]] epochWave, epochChannel
 		Redimension/N=(-1, -1, 0) epochChannel
-		DC_DocumentChannelProperty(panelTitle, EPOCHS_ENTRY_KEY, headstageDAC[i], DAC[i], str=SortList(TextWaveToList(epochChannel, ":", colSep = ",", stopOnEmpty = 1), ":"))
+		Make/FREE/D/N=(DimSize(epochChannel, ROWS)) keys
+		keys[] = str2num(epochChannel[p][%StartTime])
+		SortColumns keyWaves={ keys }, sortWaves={ epochChannel }
+		DC_DocumentChannelProperty(panelTitle, EPOCHS_ENTRY_KEY, headstageDAC[i], DAC[i], str=TextWaveToList(epochChannel, ":", colSep = ",", stopOnEmpty = 1))
 	endfor
 
 	DC_DocumentChannelProperty(panelTitle, "Sampling interval multiplier", INDEP_HEADSTAGE, NaN, var=str2num(DAG_GetTextualValue(panelTitle, "Popup_Settings_SampIntMult")))
