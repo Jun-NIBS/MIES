@@ -1180,9 +1180,6 @@ static Function DC_PlaceDataInHardwareDataWave(panelTitle, numActiveChannels, da
 		WAVE/T epochWave = GetEpochsWave(panelTitle)
 		Duplicate/FREE/T/RMD=[][][DAC[i]] epochWave, epochChannel
 		Redimension/N=(-1, -1, 0) epochChannel
-		Make/FREE/D/N=(DimSize(epochChannel, ROWS)) keys
-		keys[] = str2num(epochChannel[p][%StartTime])
-		SortColumns keyWaves={ keys }, sortWaves={ epochChannel }
 		DC_DocumentChannelProperty(panelTitle, EPOCHS_ENTRY_KEY, headstageDAC[i], DAC[i], str=TextWaveToList(epochChannel, ":", colSep = ",", stopOnEmpty = 1))
 	endfor
 
@@ -2071,7 +2068,7 @@ static Function DC_AddEpoch(panelTitle, channel, epBegin, epEnd, epName)
 	string epName
 
 	WAVE/T epochWave = GetEpochsWave(panelTitle)
-	variable i, numEpochs
+	variable i, j, numEpochs, pos
 	string entry
 
 	ASSERT(!isNull(epName), "Epoch name is null")
@@ -2091,9 +2088,29 @@ static Function DC_AddEpoch(panelTitle, channel, epBegin, epEnd, epName)
 	endfor
 #endif
 
-	EnsureLargeEnoughWave(epochWave, minimumSize = i, dimension = ROWS)
+	EnsureLargeEnoughWave(epochWave, minimumSize = i + 1, dimension = ROWS)
 
-	epochWave[i][%StartTime][channel] = num2str(epBegin / 1E6)
-	epochWave[i][%EndTime][channel] = num2str(epEnd / 1E6)
-	epochWave[i][%Name][channel] = epName
+	epBegin /= 1E6
+	epEnd /= 1E6
+	if(!i)
+		pos = 0
+	elseif(str2num(epochWave[0][%StartTime][channel]) > epBegin)
+		pos = 0
+	else
+		Make/FREE/D/N=(i) starts
+		starts[] = str2num(epochWave[p][0][channel])
+		FindValue/V=(epBegin) starts
+		if(V_value != -1)
+			pos = V_value
+		else
+			FindLevel/Q/P/EDGE=1 starts, epBegin
+			pos = V_flag ? i : ceil(V_levelX)
+		endif
+	endif
+	for(j = i; j > pos; j -= 1)
+		epochWave[j][][channel] = epochWave[j - 1][q][channel]
+	endfor
+	epochWave[pos][%StartTime][channel] = num2str(epBegin)
+	epochWave[pos][%EndTime][channel] = num2str(epEnd)
+	epochWave[pos][%Name][channel] = epName
 End
