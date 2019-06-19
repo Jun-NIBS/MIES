@@ -1,0 +1,6 @@
+.. _File MIES_ExperimentConfig.ipf:
+
+File MIES_ExperimentConfig.ipf
+==============================
+
+.. doxygenfile:: MIES_ExperimentConfig.ipf

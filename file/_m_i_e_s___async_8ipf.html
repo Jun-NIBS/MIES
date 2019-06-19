@@ -1,0 +1,673 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>File MIES_Async.ipf &#8212; MIES Igor (master) latest-52-g2ffc1636 documentation</title>
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" />
+    
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    
+    <script type="text/javascript" src="../_static/sidebar.js"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="File MIES_AsynchronousData.ipf" href="_m_i_e_s___asynchronous_data_8ipf.html" />
+    <link rel="prev" title="File MIES_ArtefactRemoval.ipf" href="_m_i_e_s___artefact_removal_8ipf.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="_m_i_e_s___asynchronous_data_8ipf.html" title="File MIES_AsynchronousData.ipf"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="_m_i_e_s___artefact_removal_8ipf.html" title="File MIES_ArtefactRemoval.ipf"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">MIES Igor (master) latest-52-g2ffc1636 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../filelist.html" accesskey="U">File list</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="file-mies-async-ipf">
+<span id="id1"></span><h1>File MIES_Async.ipf<a class="headerlink" href="#file-mies-async-ipf" title="Permalink to this headline">¶</a></h1>
+<p><strong>ASYNC</strong> This file holds the asynchronous execution framework </p>
+<p><p>See <a class="reference internal" href="../asyncframework.html#async-framework-doc"><span class="std std-ref">Async Framework</span></a> for the full documentation.</p>
+ </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Variable names for free data folder structure</p>
+<dl class="member">
+<dt id="_CPPv323ASYNC_THREAD_MARKER_STR">
+<span id="_CPPv223ASYNC_THREAD_MARKER_STR"></span><span id="ASYNC_THREAD_MARKER_STR__stringC"></span><span class="target" id="_m_i_e_s___async_8ipf_1afcab96212c9166d93ecd160f61da6b21"></span><em class="property">const</em> string <code class="descname">ASYNC_THREAD_MARKER_STR</code> = &quot;threadDFMarker&quot;<a class="headerlink" href="#_CPPv323ASYNC_THREAD_MARKER_STR" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv320ASYNC_WORKERFUNC_STR">
+<span id="_CPPv220ASYNC_WORKERFUNC_STR"></span><span id="ASYNC_WORKERFUNC_STR__stringC"></span><span class="target" id="_m_i_e_s___async_8ipf_1a0e3776cf27e827fd212301374701f740"></span><em class="property">const</em> string <code class="descname">ASYNC_WORKERFUNC_STR</code> = &quot;WorkerFunc&quot;<a class="headerlink" href="#_CPPv320ASYNC_WORKERFUNC_STR" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv321ASYNC_READOUTFUNC_STR">
+<span id="_CPPv221ASYNC_READOUTFUNC_STR"></span><span id="ASYNC_READOUTFUNC_STR__stringC"></span><span class="target" id="_m_i_e_s___async_8ipf_1a2f5ea56ed50965735a9e52a0332e13d8"></span><em class="property">const</em> string <code class="descname">ASYNC_READOUTFUNC_STR</code> = &quot;ReadOutFunc&quot;<a class="headerlink" href="#_CPPv321ASYNC_READOUTFUNC_STR" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv320ASYNC_WORKLOADID_STR">
+<span id="_CPPv220ASYNC_WORKLOADID_STR"></span><span id="ASYNC_WORKLOADID_STR__stringC"></span><span class="target" id="_m_i_e_s___async_8ipf_1a15ec9c68d8999a74ab6a5765504aeabd"></span><em class="property">const</em> string <code class="descname">ASYNC_WORKLOADID_STR</code> = &quot;workloadID&quot;<a class="headerlink" href="#_CPPv320ASYNC_WORKLOADID_STR" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv320ASYNC_PARAMCOUNT_STR">
+<span id="_CPPv220ASYNC_PARAMCOUNT_STR"></span><span id="ASYNC_PARAMCOUNT_STR__stringC"></span><span class="target" id="_m_i_e_s___async_8ipf_1a729c58570487126c118f6726a45820d5"></span><em class="property">const</em> string <code class="descname">ASYNC_PARAMCOUNT_STR</code> = &quot;paramCount&quot;<a class="headerlink" href="#_CPPv320ASYNC_PARAMCOUNT_STR" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv317ASYNC_INORDER_STR">
+<span id="_CPPv217ASYNC_INORDER_STR"></span><span id="ASYNC_INORDER_STR__stringC"></span><span class="target" id="_m_i_e_s___async_8ipf_1a932f9c16859c39e37dbafd34881c41a2"></span><em class="property">const</em> string <code class="descname">ASYNC_INORDER_STR</code> = &quot;inOrder&quot;<a class="headerlink" href="#_CPPv317ASYNC_INORDER_STR" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv317ASYNC_ORDERID_STR">
+<span id="_CPPv217ASYNC_ORDERID_STR"></span><span id="ASYNC_ORDERID_STR__stringC"></span><span class="target" id="_m_i_e_s___async_8ipf_1a55d51e7bc7970bc81194c922eb23c805"></span><em class="property">const</em> string <code class="descname">ASYNC_ORDERID_STR</code> = &quot;orderID&quot;<a class="headerlink" href="#_CPPv317ASYNC_ORDERID_STR" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv319ASYNC_ABORTFLAG_STR">
+<span id="_CPPv219ASYNC_ABORTFLAG_STR"></span><span id="ASYNC_ABORTFLAG_STR__stringC"></span><span class="target" id="_m_i_e_s___async_8ipf_1adab2aaf9982a7f8c5e80f1f588384dfd"></span><em class="property">const</em> string <code class="descname">ASYNC_ABORTFLAG_STR</code> = &quot;abortFlag&quot;<a class="headerlink" href="#_CPPv319ASYNC_ABORTFLAG_STR" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv315ASYNC_ERROR_STR">
+<span id="_CPPv215ASYNC_ERROR_STR"></span><span id="ASYNC_ERROR_STR__stringC"></span><span class="target" id="_m_i_e_s___async_8ipf_1a04a2750bce7b40db213af975f1e5b751"></span><em class="property">const</em> string <code class="descname">ASYNC_ERROR_STR</code> = &quot;err&quot;<a class="headerlink" href="#_CPPv315ASYNC_ERROR_STR" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv318ASYNC_ERRORMSG_STR">
+<span id="_CPPv218ASYNC_ERRORMSG_STR"></span><span id="ASYNC_ERRORMSG_STR__stringC"></span><span class="target" id="_m_i_e_s___async_8ipf_1ac06563d4c3616d8c1ec4bed54f49936f"></span><em class="property">const</em> string <code class="descname">ASYNC_ERRORMSG_STR</code> = &quot;errmsg&quot;<a class="headerlink" href="#_CPPv318ASYNC_ERRORMSG_STR" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Functions</p>
+<dl class="function">
+<dt id="_CPPv311ASYNC_Start8variable8variable">
+<span id="_CPPv211ASYNC_Start8variable8variable"></span><span id="ASYNC_Start__variable.variable"></span><span class="target" id="_m_i_e_s___async_8ipf_1ae60635a9ab349dc16e89ed2f114416e0"></span>variable <code class="descname">ASYNC_Start</code><span class="sig-paren">(</span>variable <em>numThreads</em>, variable <em>disableTask</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv311ASYNC_Start8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Starts the Async Framework with numThreads parallel threads. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>1 if ASYNC framework was started, 0 if ASYNC framework was already running, in this case the number of threads is not changed </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">numThreads</span></code>: number of threads to setup for processing data, must be &gt;= 1 and &lt;= ASYNC_MAX_THREADS</li>
+<li><code class="docutils literal notranslate"><span class="pre">disableTask</span></code>: [optional, default = 0] when set to 1 the background task processing readouts is not started</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv312ASYNC_Worker5dfref">
+<span id="_CPPv212ASYNC_Worker5dfref"></span><span id="ASYNC_Worker__dfref"></span><span class="target" id="_m_i_e_s___async_8ipf_1af100f0dde2a75d7bcd629a543475eaa1"></span><a class="reference internal" href="#_CPPv312ASYNC_Worker5dfref" title="ASYNC_Worker::dfr">dfr</a> <code class="descname">ASYNC_Worker</code><span class="sig-paren">(</span>dfref <em>dfr</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv312ASYNC_Worker5dfref" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Prototype function for an async worker function. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>data folder reference to output data folder </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">dfr</span></code>: reference to thread data folder</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv313ASYNC_ReadOut5dfref8variable6string">
+<span id="_CPPv213ASYNC_ReadOut5dfref8variable6string"></span><span id="ASYNC_ReadOut__dfref.variable.string"></span><span class="target" id="_m_i_e_s___async_8ipf_1a98d941082effa86dccdc44a5a4d33227"></span>variable <code class="descname">ASYNC_ReadOut</code><span class="sig-paren">(</span>dfref <em>dfr</em>, variable <em>err</em>, string <em>errmsg</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv313ASYNC_ReadOut5dfref8variable6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Prototype function for an async readout function. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">dfr</span></code>: reference to returned data folder from thread </li>
+<li><code class="docutils literal notranslate"><span class="pre">err</span></code>: error code, only set in the error case </li>
+<li><code class="docutils literal notranslate"><span class="pre">errmsg</span></code>: error message, only set in the error case </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv312ASYNC_Threadv">
+<span id="_CPPv212ASYNC_Threadv"></span><span id="ASYNC_Thread"></span><span class="target" id="_m_i_e_s___async_8ipf_1a310585f49183eaae2a26ede5acdbd214"></span><em class="property">static</em> variable <code class="descname">ASYNC_Thread</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv312ASYNC_Threadv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>thread function that receives data folders from the thread input queue and calls the setup custom worker function. With :cpp:func:<code class="docutils literal notranslate"><span class="pre">ASYNC_Start</span></code> numThreads :cpp:func:<code class="docutils literal notranslate"><span class="pre">ASYNC_Thread</span></code> functions will be started in their own thread. Each will run until the framework is stopped. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv319ASYNC_ThreadReadOutv">
+<span id="_CPPv219ASYNC_ThreadReadOutv"></span><span id="ASYNC_ThreadReadOut"></span><span class="target" id="_m_i_e_s___async_8ipf_1ab01ac3210d8b52b2f1bffbe8015ded95"></span>variable <code class="descname">ASYNC_ThreadReadOut</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv319ASYNC_ThreadReadOutv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Receives data from finished workloads. Calls the user defined readout function. For in order readouts this function buffers pending result data folders until they can be processed in order. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv323ASYNC_BackgroundReadOutP18WMBackgroundStruct">
+<span id="_CPPv223ASYNC_BackgroundReadOutP18WMBackgroundStruct"></span><span id="ASYNC_BackgroundReadOut__WMBackgroundStructP"></span><span class="target" id="_m_i_e_s___async_8ipf_1a63e3e87cf2883d1f43e8afcac9dad682"></span>variable <code class="descname">ASYNC_BackgroundReadOut</code><span class="sig-paren">(</span>WMBackgroundStruct *<em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv323ASYNC_BackgroundReadOutP18WMBackgroundStruct" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Background function that reads data folders from the thread output queue and calls the setup custom readout function The function takes care to buffer results if they should be processed in order. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">s</span></code>: default structure for Igor background tasks </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv314ASYNC_AddParam5dfref4wave8variable6string8variable">
+<span id="_CPPv214ASYNC_AddParam5dfref4wave8variable6string8variable"></span><span id="ASYNC_AddParam__dfref.wave.variable.string.variable"></span><span class="target" id="_m_i_e_s___async_8ipf_1af6e2dc4aa0230463985ed6e4e8d9d019"></span>variable <code class="descname">ASYNC_AddParam</code><span class="sig-paren">(</span>dfref <em>dfr</em>, wave <em>w</em> = defaultValue, variable <em>var</em> = defaultValue, string <em>str</em> = defaultValue, variable <em>move</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv314ASYNC_AddParam5dfref4wave8variable6string8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Adds one parameter to a data folder for a threaded worker execution. </p>
+<p>The parameters are globals in the threads data folder and named param0, param1, param2… in order of adding them. Only one parameter can be added per call. move is only allowed in combination with a wave.</p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">dfr</span></code>: data folder reference to thread df, prepared by calling ASYNC_PrepareDF </li>
+<li><code class="docutils literal notranslate"><span class="pre">w</span></code>: [optional, default = null] wave reference of wave to be added as parameter </li>
+<li><code class="docutils literal notranslate"><span class="pre">var</span></code>: [optional, default = 0] variable to be added as parameter </li>
+<li><code class="docutils literal notranslate"><span class="pre">str</span></code>: [optional, default = 0] string to be added as parameter </li>
+<li><code class="docutils literal notranslate"><span class="pre">move</span></code>: [optional, default = 0] if a wave was given as parameter and move is not zero then the wave is moved to the threads data folder </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv310ASYNC_Stop8variable8variable">
+<span id="_CPPv210ASYNC_Stop8variable8variable"></span><span id="ASYNC_Stop__variable.variable"></span><span class="target" id="_m_i_e_s___async_8ipf_1ac952f31d6a066caa560f361bdd21cd26"></span>variable <code class="descname">ASYNC_Stop</code><span class="sig-paren">(</span>variable <em>timeout</em> = defaultValue, variable <em>fromAssert</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv310ASYNC_Stop8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Stops the Async Framework. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>2 if ASYNC framework was not running, 1 if a timeout was encountered, 0 otherwise </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">timeout</span></code>: [optional, default = Inf] time in s to wait for running threads, the function waits for pending threads and pending readouts within this time. After a timeout happened the readout processing is stopped and threads are stopped. Any pending data is lost. If the threads have to be stopped forcefully, an assertion is raised. Using a finite timeout is strongly recommended.</li>
+<li><code class="docutils literal notranslate"><span class="pre">fromAssert</span></code>: [optional, default = 0] specified when called as cleanup function from ASSERT Suppresses further assertions such that all required cleanup routines such as ThreadGroupRelease are executed.</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv315ASYNC_PrepareDF6string6string8variable">
+<span id="_CPPv215ASYNC_PrepareDF6string6string8variable"></span><span id="ASYNC_PrepareDF__string.string.variable"></span><span class="target" id="_m_i_e_s___async_8ipf_1a5ee7558ec23022ea557b2126a7037c1f"></span>dfr <code class="descname">ASYNC_PrepareDF</code><span class="sig-paren">(</span>string <em>WorkerFunc</em>, string <em>ReadOutFunc</em>, variable <em>inOrder</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv315ASYNC_PrepareDF6string6string8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Prepares a thread data folder for use with the AsyncFramework This function should be called first when setting up a worker with parameters. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>data folder for thread, where parameters can be put to with :cpp:func:<code class="docutils literal notranslate"><span class="pre">ASYNC_AddParam</span></code> </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">WorkerFunc</span></code>: string naming a threadsafe worker function in the form of the ASYNC_Worker template</li>
+<li><code class="docutils literal notranslate"><span class="pre">ReadOutFunc</span></code>: string naming a readout function in the form of the ASYNC_ReadOut template</li>
+<li><code class="docutils literal notranslate"><span class="pre">inOrder</span></code>: [optional, default = 1] flag that allows to disable in order readout of results</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv313ASYNC_Execute5dfref">
+<span id="_CPPv213ASYNC_Execute5dfref"></span><span id="ASYNC_Execute__dfref"></span><span class="target" id="_m_i_e_s___async_8ipf_1aad3777dd6bb37e4a242b4d53bf1f722a"></span>variable <code class="descname">ASYNC_Execute</code><span class="sig-paren">(</span>dfref <em>dfr</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv313ASYNC_Execute5dfref" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Puts a prepared thread data folder to parallel execution in another thread. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">dfr</span></code>: data folder that is setup for thread and is to be deployed </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv311ASYNC_putDF5dfref8variable">
+<span id="_CPPv211ASYNC_putDF5dfref8variable"></span><span id="ASYNC_putDF__dfref.variable"></span><span class="target" id="_m_i_e_s___async_8ipf_1af1f5b5cc9377687694c99f872c253122"></span><em class="property">static</em> variable <code class="descname">ASYNC_putDF</code><span class="sig-paren">(</span>dfref <em>dfr</em>, variable <em>tgID</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv311ASYNC_putDF5dfref8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Puts a data folder to/from a threadgroup. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv38IsFinite8variable">
+<span id="_CPPv28IsFinite8variable"></span><span id="IsFinite__variable"></span><span class="target" id="_m_i_e_s___async_8ipf_1a6f6b264152ed553065244c6adee09418"></span><em class="property">static</em> variable <code class="descname">IsFinite</code><span class="sig-paren">(</span>variable <em>var</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv38IsFinite8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns 1 if var is a finite/normal number, 0 otherwise. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv37IsEmptyP6string">
+<span id="_CPPv27IsEmptyP6string"></span><span id="IsEmpty__stringP"></span><span class="target" id="_m_i_e_s___async_8ipf_1a04f2fce56cb96b91a5df24ed3dc14277"></span><em class="property">static</em> variable <code class="descname">IsEmpty</code><span class="sig-paren">(</span>string *<em>str</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv37IsEmptyP6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns one if str is empty or null, zero otherwise. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">str</span></code>: must not be a SVAR </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv35IsNaN8variable">
+<span id="_CPPv25IsNaN8variable"></span><span id="IsNaN__variable"></span><span class="target" id="_m_i_e_s___async_8ipf_1afba0636f9a8c888217a5caa26997cf53"></span><em class="property">static</em> variable <code class="descname">IsNaN</code><span class="sig-paren">(</span>variable <em>var</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv35IsNaN8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns 1 if var is a NaN, 0 otherwise. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv319DataFolderExistsDFR5dfref">
+<span id="_CPPv219DataFolderExistsDFR5dfref"></span><span id="DataFolderExistsDFR__dfref"></span><span class="target" id="_m_i_e_s___async_8ipf_1a59c41313844087509e0cc5ef79b2b519"></span><em class="property">static</em> variable <code class="descname">DataFolderExistsDFR</code><span class="sig-paren">(</span>dfref <em>dfr</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv319DataFolderExistsDFR5dfref" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Checks if the datafolder referenced by dfr exists. </p>
+<p>Unlike DataFolderExists() a dfref pointing to an empty (“”) dataFolder is considered non-existing here. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>one if dfr is valid and references an existing or free datafolder, zero otherwise Taken from <a class="reference external" href="http://www.igorexchange.com/node/2055">http://www.igorexchange.com/node/2055</a> </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv313GetStackTrace6string">
+<span id="_CPPv213GetStackTrace6string"></span><span id="GetStackTrace__string"></span><span class="target" id="_m_i_e_s___async_8ipf_1a781cdd2ba4e2c36a410d14332d257c79"></span><em class="property">static</em> string <code class="descname">GetStackTrace</code><span class="sig-paren">(</span>string <em>prefix</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv313GetStackTrace6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return a nicely formatted multiline stacktrace. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv36ASSERT8variable6string">
+<span id="_CPPv26ASSERT8variable6string"></span><span id="ASSERT__variable.string"></span><span class="target" id="_m_i_e_s___async_8ipf_1aa0371857aa0aaeef8ea67c2950293c49"></span><em class="property">static</em> variable <code class="descname">ASSERT</code><span class="sig-paren">(</span>variable <em>var</em>, string <em>errorMsg</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv36ASSERT8variable6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Low overhead function to check assertions. </p>
+<p><p>Example usage: </p>
+<div class="highlight-igorpro notranslate"><div class="highlight"><pre><span></span><span class="nc">ControlInfo</span>/W = $panelTitle popup_MoreSettings_DeviceType
+ASSERT(V_flag &gt; 0, <span class="s">&quot;Non-existing control or window&quot;</span>)
+<span class="k">do</span> something with S_value
+</pre></div>
+</div>
+ <dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">var</span></code>: if zero an error message is printed into the history and procedure execution is aborted, nothing is done otherwise. If the debugger is enabled, it also steps into it. </li>
+<li><code class="docutils literal notranslate"><span class="pre">errorMsg</span></code>: error message to output in failure case</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv39ASSERT_TS8variable6string">
+<span id="_CPPv29ASSERT_TS8variable6string"></span><span id="ASSERT_TS__variable.string"></span><span class="target" id="_m_i_e_s___async_8ipf_1ac9613ef0ca17669e69d6e17267f652b9"></span><em class="property">static</em> variable <code class="descname">ASSERT_TS</code><span class="sig-paren">(</span>variable <em>var</em>, string <em>errorMsg</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv39ASSERT_TS8variable6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Low overhead function to check assertions (threadsafe variant) </p>
+<p><p>Example usage: </p>
+<div class="highlight-igorpro notranslate"><div class="highlight"><pre><span></span>ASSERT(DataFolderExistsDFR(dfr), <span class="s">&quot;MyFunc: dfr does not exist&quot;</span>)
+<span class="k">do</span> something with dfr
+</pre></div>
+</div>
+<dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">var</span></code>: if zero an error message is printed into the history and procedure execution is aborted, nothing is done otherwise. </li>
+<li><code class="docutils literal notranslate"><span class="pre">errorMsg</span></code>: error message to output in failure case</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p>Unlike <a class="reference internal" href="#_m_i_e_s___async_8ipf_1aa0371857aa0aaeef8ea67c2950293c49"><span class="std std-ref">ASSERT()</span></a> this function does not print a stacktrace or jumps into the debugger. The reasons are Igor Pro limitations. Therefore it is advised to prefix <code class="docutils literal notranslate"><span class="pre">errorMsg</span></code> with the current function name. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv320UniqueDataFolderName5dfref6string">
+<span id="_CPPv220UniqueDataFolderName5dfref6string"></span><span id="UniqueDataFolderName__dfref.string"></span><span class="target" id="_m_i_e_s___async_8ipf_1aabba6c7d9fdfdc3ae6db8407a4080a8b"></span><em class="property">static</em> string <code class="descname">UniqueDataFolderName</code><span class="sig-paren">(</span>dfref <em>dfr</em>, string <em>baseName</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv320UniqueDataFolderName5dfref6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return a unique data folder name which does not exist in dfr. </p>
+<p>If you want to have the datafolder created for you and don’t need a threadsafe function, use <a class="reference internal" href="_m_i_e_s___utilities_8ipf.html#_m_i_e_s___utilities_8ipf_1ac904e1ade29026628e466fe998fb4358"><span class="std std-ref">UniqueDataFolder()</span></a> instead.</p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">dfr</span></code>: datafolder to search </li>
+<li><code class="docutils literal notranslate"><span class="pre">baseName</span></code>: first part of the datafolder, must be a <em>valid</em> Igor Pro object name</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv317FuncRefIsAssigned6string">
+<span id="_CPPv217FuncRefIsAssigned6string"></span><span id="FuncRefIsAssigned__string"></span><span class="target" id="_m_i_e_s___async_8ipf_1a6d7c46d547f1fa225fd5dfb6ba20593f"></span><em class="property">static</em> variable <code class="descname">FuncRefIsAssigned</code><span class="sig-paren">(</span>string <em>funcInfo</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv317FuncRefIsAssigned6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Check wether the function reference points to the prototype function or to an assigned function. </p>
+<p>Due to Igor Pro limitations you need to pass the function info from <code class="docutils literal notranslate"><span class="pre">FuncRefInfo</span></code> and not the function reference itself.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>1 if pointing to prototype function, 0 otherwise </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv315GetNVARAsString5dfref6string8variable">
+<span id="_CPPv215GetNVARAsString5dfref6string8variable"></span><span id="GetNVARAsString__dfref.string.variable"></span><span class="target" id="_m_i_e_s___async_8ipf_1a89a56af7f4690d830d6f33c1493f1feb"></span><em class="property">static</em> string <code class="descname">GetNVARAsString</code><span class="sig-paren">(</span>dfref <em>dfr</em>, string <em>globalVarName</em>, variable <em>initialValue</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv315GetNVARAsString5dfref6string8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns the full path to a global variable. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">dfr</span></code>: location of the global variable, must exist </li>
+<li><code class="docutils literal notranslate"><span class="pre">globalVarName</span></code>: name of the global variable </li>
+<li><code class="docutils literal notranslate"><span class="pre">initialValue</span></code>: initial value of the variable. Will only be used if it is created. 0 by default. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv315GetSVARAsString5dfref6string6string">
+<span id="_CPPv215GetSVARAsString5dfref6string6string"></span><span id="GetSVARAsString__dfref.string.string"></span><span class="target" id="_m_i_e_s___async_8ipf_1adda663266b20accc016fcca9afdb3a76"></span><em class="property">static</em> string <code class="descname">GetSVARAsString</code><span class="sig-paren">(</span>dfref <em>dfr</em>, string <em>globalStrName</em>, string <em>initialValue</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv315GetSVARAsString5dfref6string6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns the full path to a global string. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">dfr</span></code>: location of the global string, must exist </li>
+<li><code class="docutils literal notranslate"><span class="pre">globalStrName</span></code>: name of the global string </li>
+<li><code class="docutils literal notranslate"><span class="pre">initialValue</span></code>: initial value of the string. Will only be used if it is created. null by default. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv322createDFWithAllParents6string">
+<span id="_CPPv222createDFWithAllParents6string"></span><span id="createDFWithAllParents__string"></span><span class="target" id="_m_i_e_s___async_8ipf_1a7196a86f089d70f74787f09c5c6358ad"></span><em class="property">static</em> dfr <code class="descname">createDFWithAllParents</code><span class="sig-paren">(</span>string <em>dataFolder</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv322createDFWithAllParents6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Create a datafolder and all its parents,. </p>
+<p>Includes fast handling of the common case that the datafolder exists. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>reference to the datafolder </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv315GetAsyncHomeStrv">
+<span id="_CPPv215GetAsyncHomeStrv"></span><span id="GetAsyncHomeStr"></span><span class="target" id="_m_i_e_s___async_8ipf_1a12bcfeb05e62155b97ada7ac1b791a6c"></span><em class="property">static</em> string <code class="descname">GetAsyncHomeStr</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv315GetAsyncHomeStrv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns string path to async framework home data folder. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv314GetAsyncHomeDFv">
+<span id="_CPPv214GetAsyncHomeDFv"></span><span id="GetAsyncHomeDF"></span><span class="target" id="_m_i_e_s___async_8ipf_1a04d4e1cf72bd29c25487ea1c34e8b3bf"></span><em class="property">static</em> dfr <code class="descname">GetAsyncHomeDF</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv314GetAsyncHomeDFv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns reference to async framework home data folder. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv310isThreadDF5dfref">
+<span id="_CPPv210isThreadDF5dfref"></span><span id="isThreadDF__dfref"></span><span class="target" id="_m_i_e_s___async_8ipf_1abc0fd23cd04bc821be55dbbf6d8a5444"></span><em class="property">static</em> variable <code class="descname">isThreadDF</code><span class="sig-paren">(</span>dfref <em>dfr</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv310isThreadDF5dfref" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>test if data folder is marked for thread usage </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv316GetThreadGroupIDv">
+<span id="_CPPv216GetThreadGroupIDv"></span><span id="GetThreadGroupID"></span><span class="target" id="_m_i_e_s___async_8ipf_1a7b1f8863176787f7a8199e2fe43ae313"></span><em class="property">static</em> string <code class="descname">GetThreadGroupID</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv316GetThreadGroupIDv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns string path to the thread group id. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv313GetNumThreadsv">
+<span id="_CPPv213GetNumThreadsv"></span><span id="GetNumThreads"></span><span class="target" id="_m_i_e_s___async_8ipf_1a62abc33be193877664b8abc1f4b7c89e"></span><em class="property">static</em> string <code class="descname">GetNumThreads</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv313GetNumThreadsv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns string path to the number of threads. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv320GetTaskDisableStatusv">
+<span id="_CPPv220GetTaskDisableStatusv"></span><span id="GetTaskDisableStatus"></span><span class="target" id="_m_i_e_s___async_8ipf_1a3360b24788c4f6d40dc59666c45d7194"></span><em class="property">static</em> string <code class="descname">GetTaskDisableStatus</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv320GetTaskDisableStatusv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns string path to flag if background task was disabled. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv317GetReadOutCounterv">
+<span id="_CPPv217GetReadOutCounterv"></span><span id="GetReadOutCounter"></span><span class="target" id="_m_i_e_s___async_8ipf_1a311c3246986cb6beef5fb6c98af716ff"></span><em class="property">static</em> string <code class="descname">GetReadOutCounter</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv317GetReadOutCounterv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns string path to thread DF marker. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv318GetWorkerIDCounter5dfref">
+<span id="_CPPv218GetWorkerIDCounter5dfref"></span><span id="GetWorkerIDCounter__dfref"></span><span class="target" id="_m_i_e_s___async_8ipf_1aa639219edab8fbab21e0e27af0ee729b"></span><em class="property">static</em> wave <code class="descname">GetWorkerIDCounter</code><span class="sig-paren">(</span>dfref <em>dfr</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv318GetWorkerIDCounter5dfref" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns workerIDCounter wave reference 1d wave with exactly one element of type UINT64 It counts the jobs executed and is unique per job. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv314GetDFREFbuffer5dfref">
+<span id="_CPPv214GetDFREFbuffer5dfref"></span><span id="GetDFREFbuffer__dfref"></span><span class="target" id="_m_i_e_s___async_8ipf_1aaac024a5ed4722f9cc78b9c09b0cf0bb"></span><em class="property">static</em> wave <code class="descname">GetDFREFbuffer</code><span class="sig-paren">(</span>dfref <em>dfr</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv314GetDFREFbuffer5dfref" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return wave reference to wave with data folder reference buffer for delayed readouts 1d wave for data folder references, starts with size 0 when jobs should be read out in order, the waiting data folders are buffered in this wave e.g. if the next read out would be job 2, but a data folder from job 3 is returned the data folder is buffered until the one from job 2 appears from the output queue. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv313GetWorkloadID5dfref">
+<span id="_CPPv213GetWorkloadID5dfref"></span><span id="GetWorkloadID__dfref"></span><span class="target" id="_m_i_e_s___async_8ipf_1a622da7648f30f8f8ac4edfc1493f16a5"></span><em class="property">static</em> wave <code class="descname">GetWorkloadID</code><span class="sig-paren">(</span>dfref <em>dfr</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv313GetWorkloadID5dfref" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns workloadID wave reference 1d wave that stored the id strings for job types that are executed in order the id strings are a combination of the worker and readout function name The size of this wave is increased in ASYNC_Execute for each new job type that should be executed in order. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv316GetWorkloadOrder5dfref">
+<span id="_CPPv216GetWorkloadOrder5dfref"></span><span id="GetWorkloadOrder__dfref"></span><span class="target" id="_m_i_e_s___async_8ipf_1abcfae495ffa7c2663e4c66959c110089"></span><em class="property">static</em> wave <code class="descname">GetWorkloadOrder</code><span class="sig-paren">(</span>dfref <em>dfr</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv316GetWorkloadOrder5dfref" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns workloadOrder wave reference 2d wave, row counts job types column 0 stores the orderID which is unique and increased by 1 per in order executed job of a job type column 1 stores the order counter for readout per in order read out job per job type both counters are used to track the order of jobs, as orderID is set when executing a job it is running in advance of orderGlobal for a job type. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv320ASYNC_IsASYNCRunningv">
+<span id="_CPPv220ASYNC_IsASYNCRunningv"></span><span id="ASYNC_IsASYNCRunning"></span><span class="target" id="_m_i_e_s___async_8ipf_1a6aa559d1bd54409db4a16c037f9a1cb0"></span><em class="property">static</em> variable <code class="descname">ASYNC_IsASYNCRunning</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv320ASYNC_IsASYNCRunningv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>returns 1 if ASYNC framework is running, 0 otherwise </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Variables</p>
+<dl class="member">
+<dt id="_CPPv316ASYNC_BACKGROUND">
+<span id="_CPPv216ASYNC_BACKGROUND"></span><span id="ASYNC_BACKGROUND__stringC"></span><span class="target" id="_m_i_e_s___async_8ipf_1a076566adbe17f2337117674ee2e2e72b"></span><em class="property">const</em> string <code class="descname">ASYNC_BACKGROUND</code> = &quot;AsyncFramework&quot;<a class="headerlink" href="#_CPPv316ASYNC_BACKGROUND" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv331MAX_OBJECT_NAME_LENGTH_IN_BYTES">
+<span id="_CPPv231MAX_OBJECT_NAME_LENGTH_IN_BYTES"></span><span id="MAX_OBJECT_NAME_LENGTH_IN_BYTES__variableC"></span><span class="target" id="_m_i_e_s___async_8ipf_1a76ebb73d6d14f8e1810877a0f4253834"></span><em class="property">const</em> variable <code class="descname">MAX_OBJECT_NAME_LENGTH_IN_BYTES</code> = 31<a class="headerlink" href="#_CPPv331MAX_OBJECT_NAME_LENGTH_IN_BYTES" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv319ASYNC_THREAD_MARKER">
+<span id="_CPPv219ASYNC_THREAD_MARKER"></span><span id="ASYNC_THREAD_MARKER__variableC"></span><span class="target" id="_m_i_e_s___async_8ipf_1a3e03142662b0c54b9934d62a23956e90"></span><em class="property">const</em> variable <code class="descname">ASYNC_THREAD_MARKER</code> = 299792458<a class="headerlink" href="#_CPPv319ASYNC_THREAD_MARKER" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv317ASYNC_MAX_THREADS">
+<span id="_CPPv217ASYNC_MAX_THREADS"></span><span id="ASYNC_MAX_THREADS__variableC"></span><span class="target" id="_m_i_e_s___async_8ipf_1aefc21ff8d5d6da7c86faf4fc0fc53be4"></span><em class="property">const</em> variable <code class="descname">ASYNC_MAX_THREADS</code> = 64<a class="headerlink" href="#_CPPv317ASYNC_MAX_THREADS" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table of Contents</a></h3>
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../developers.html">Developer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manualinstallation.html">Manual installation instructions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reportingbugs.html">Bug reporting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../releasenotes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grouplist.html">Group list</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../filelist.html">File list</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="_compilation_tester_8ipf.html">File CompilationTester.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_compilation_tester_utils_8ipf.html">File CompilationTesterUtils.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___constants_8ipf.html">File IPNWB_Constants.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___debugging_8ipf.html">File IPNWB_Debugging.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___h_d_f5_helpers_8ipf.html">File IPNWB_HDF5Helpers.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___include_8ipf.html">File IPNWB_Include.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___reader_8ipf.html">File IPNWB_Reader.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___structures_8ipf.html">File IPNWB_Structures.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___utils_8ipf.html">File IPNWB_Utils.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___writer_8ipf.html">File IPNWB_Writer.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___amplifier_interaction_8ipf.html">File MIES_AmplifierInteraction.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_browser_8ipf.html">File MIES_AnalysisBrowser.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_browser___lab_notebook_t_p_storage_browser_8ipf.html">File MIES_AnalysisBrowser_LabNotebookTPStorageBrowser.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_browser___sweep_browser_8ipf.html">File MIES_AnalysisBrowser_SweepBrowser.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_browser___sweep_browser___export_8ipf.html">File MIES_AnalysisBrowser_SweepBrowser_Export.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_function_helpers_8ipf.html">File MIES_AnalysisFunctionHelpers.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_function_management_8ipf.html">File MIES_AnalysisFunctionManagement.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_function_prototypes_8ipf.html">File MIES_AnalysisFunctionPrototypes.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_functions_8ipf.html">File MIES_AnalysisFunctions.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_functions___dashboard_8ipf.html">File MIES_AnalysisFunctions_Dashboard.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_functions___multi_patch_seq_8ipf.html">File MIES_AnalysisFunctions_MultiPatchSeq.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_functions___patch_seq_8ipf.html">File MIES_AnalysisFunctions_PatchSeq.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_master_8ipf.html">File MIES_AnalysisMaster.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___artefact_removal_8ipf.html">File MIES_ArtefactRemoval.ipf</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">File MIES_Async.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___asynchronous_data_8ipf.html">File MIES_AsynchronousData.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___background_watchdog_8ipf.html">File MIES_BackgroundWatchdog.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___blowout_8ipf.html">File MIES_Blowout.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___browser_settings_panel_8ipf.html">File MIES_BrowserSettingsPanel.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___cache_8ipf.html">File MIES_Cache.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___check_installation_8ipf.html">File MIES_CheckInstallation.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___constants_8ipf.html">File MIES_Constants.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___d_a_c-_hardware_8ipf.html">File MIES_DAC-Hardware.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___d_a_ephys_8ipf.html">File MIES_DAEphys.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___d_a_ephys___gui_state_8ipf.html">File MIES_DAEphys_GuiState.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___d_a_ephys___macro_8ipf.html">File MIES_DAEphys_Macro.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___data_acquisition_8ipf.html">File MIES_DataAcquisition.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___data_acquisition___multi_8ipf.html">File MIES_DataAcquisition_Multi.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___data_acquisition___single_8ipf.html">File MIES_DataAcquisition_Single.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___data_browser_8ipf.html">File MIES_DataBrowser.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___data_configurator_i_t_c_8ipf.html">File MIES_DataConfiguratorITC.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___debug_panel_8ipf.html">File MIES_DebugPanel.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___debugging_8ipf.html">File MIES_Debugging.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___downsample_8ipf.html">File MIES_Downsample.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___enhanced_w_m_routines_8ipf.html">File MIES_EnhancedWMRoutines.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___event_detection_code_8ipf.html">File MIES_EventDetectionCode.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___experiment_config_8ipf.html">File MIES_ExperimentConfig.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___experiment_documentation_8ipf.html">File MIES_ExperimentDocumentation.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___foreign_function_interface_8ipf.html">File MIES_ForeignFunctionInterface.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___global_string_and_variable_access_8ipf.html">File MIES_GlobalStringAndVariableAccess.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___gui_utilities_8ipf.html">File MIES_GuiUtilities.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___h_d_f5_ops_8ipf.html">File MIES_HDF5Ops.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___igor_hooks_8ipf.html">File MIES_IgorHooks.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___include_8ipf.html">File MIES_Include.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___indexing_8ipf.html">File MIES_Indexing.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___menu_8ipf.html">File MIES_Menu.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___mies_utilities_8ipf.html">File MIES_MiesUtilities.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___neuro_data_without_borders_8ipf.html">File MIES_NeuroDataWithoutBorders.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___optimzed_overlap_distributed_acquisition_8ipf.html">File MIES_OptimzedOverlapDistributedAcquisition.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___oscilloscope_8ipf.html">File MIES_Oscilloscope.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___overlay_sweeps_8ipf.html">File MIES_OverlaySweeps.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___pressure_control_8ipf.html">File MIES_PressureControl.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___programmatic_g_u_i_control_8ipf.html">File MIES_ProgrammaticGUIControl.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___pulse_averaging_8ipf.html">File MIES_PulseAveraging.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___repeated_acquisition_8ipf.html">File MIES_RepeatedAcquisition.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___sampling_interval_8ipf.html">File MIES_SamplingInterval.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___structures_8ipf.html">File MIES_Structures.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___sweep_saving_8ipf.html">File MIES_SweepSaving.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___tango_interact_8ipf.html">File MIES_TangoInteract.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___test_pulse_8ipf.html">File MIES_TestPulse.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___test_pulse___multi_8ipf.html">File MIES_TestPulse_Multi.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___test_pulse___single_8ipf.html">File MIES_TestPulse_Single.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___threaded_f_i_f_o_handling_8ipf.html">File MIES_ThreadedFIFOHandling.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___threadsafe_utilities_8ipf.html">File MIES_ThreadsafeUtilities.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___utilities_8ipf.html">File MIES_Utilities.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___wave_builder_8ipf.html">File MIES_WaveBuilder.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___wave_builder_panel_8ipf.html">File MIES_WaveBuilderPanel.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___wave_data_folder_getters_8ipf.html">File MIES_WaveDataFolderGetters.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_zero_m_q___interop_8ipf.html">File ZeroMQ_Interop.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interface_8h.html">File interface.h</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../structlist.html">Struct list</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../namespacelist.html">Namespace list</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CalculateTPLikePropsFromSweep.html">CalculateTPLikePropsFromSweep Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IPNWB.html">Igor Pro module for reading and writing NeurodataWithoutBorder files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TPAnalysis_algorithm.html">Testpulse Analysis Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../asyncframework.html">Async Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ZeroMQ-XOP-Readme.html">ZeroMQ XOP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../labnotebook-docs.html">Labnotebook documentation for developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mies-concepts.html">Important MIES concepts for developers</a></li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="_m_i_e_s___artefact_removal_8ipf.html"
+                        title="previous chapter">File MIES_ArtefactRemoval.ipf</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="_m_i_e_s___asynchronous_data_8ipf.html"
+                        title="next chapter">File MIES_AsynchronousData.ipf</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/file/_m_i_e_s___async_8ipf.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="_m_i_e_s___asynchronous_data_8ipf.html" title="File MIES_AsynchronousData.ipf"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="_m_i_e_s___artefact_removal_8ipf.html" title="File MIES_ArtefactRemoval.ipf"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">MIES Igor (master) latest-52-g2ffc1636 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../filelist.html" >File list</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright .
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.3.
+    </div>
+  </body>
+</html>

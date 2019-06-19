@@ -1,0 +1,212 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Table of Contents &#8212; MIES Igor (master) latest-52-g2ffc1636 documentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" />
+    
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+    <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    
+    <script type="text/javascript" src="_static/sidebar.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Developer" href="developers.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="developers.html" title="Developer"
+             accesskey="N">next</a> |</li>
+        <li class="nav-item nav-item-0"><a href="#">MIES Igor (master) latest-52-g2ffc1636 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="table-of-contents">
+<h1>Table of Contents<a class="headerlink" href="#table-of-contents" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="developers.html">Developer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manualinstallation.html">Manual installation instructions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reportingbugs.html">Bug reporting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="releasenotes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="grouplist.html">Group list</a></li>
+<li class="toctree-l1"><a class="reference internal" href="filelist.html">File list</a></li>
+<li class="toctree-l1"><a class="reference internal" href="structlist.html">Struct list</a></li>
+<li class="toctree-l1"><a class="reference internal" href="namespacelist.html">Namespace list</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CalculateTPLikePropsFromSweep.html">CalculateTPLikePropsFromSweep Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="IPNWB.html">Igor Pro module for reading and writing NeurodataWithoutBorder files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TPAnalysis_algorithm.html">Testpulse Analysis Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="asyncframework.html">Async Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ZeroMQ-XOP-Readme.html">ZeroMQ XOP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="labnotebook-docs.html">Labnotebook documentation for developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mies-concepts.html">Important MIES concepts for developers</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<p>MIES is sweep based data acquisition code written in Igor Pro from
+WaveMetrics.</p>
+<p>Presently, MIES is composed of 3 primary GUIs: The Wavebuilder,
+DA_Ephys, and DataBrowser. The Wavebuilder is used to generate stimulus
+sets. The DA_Ephys GUI is used to operate HEKA/Instrutech digital to
+analog converters (DAC). The DA_Ephys panel uses the stimulus sets
+generated by the Wavebuilder to control the output of the DAC. The
+DataBrowser is used to browse data acquired, or that will be acquired,
+using the DA_Ephys panel.</p>
+<p>The Wavebuilder is used to create stimulus sets. A stimulus set is a
+series of related sweeps. A sweep is composed of up to 99 epochs. Each
+epoch can contain one of seven different waveforms or a custom waveform.
+A custom waveform can be a sweep from a different stimulus set, or a
+waveform generated by the user using alternate tools. The main
+limitation of the Wavebuilder is that each epoch must have the same
+number of sweeps/steps.</p>
+<p>The DA_Ephys allows the user to determine on which digital to analog
+(DA) channel to output a stimulus set. The DA_Epys panels has
+additional features that make it amenable to performing
+electrophysiology experiments. These features are organized around the
+concept of a <em>headstage</em>. In hardware, a headstage contains the first
+amplification stage of amplifiers used in electrophysiology recordings.
+MIES’s software representation of the headstage is the association of
+the amplifier used to obtain the recording, and the channels on DAC used
+send and receive signals from the amplifier. MIES also associates other
+hardware with the headstage. These (will) include the amplifier
+controls, micromanipulators (used to position the recording electrode on
+the neuron), and analog pressure regulators (used to automate pressure
+control of the recording pipette).</p>
+<p>The MIES DataBrowser (will) allow the user to look forward and back in
+time, that is, it allows the user to view the sweeps MIES will output,
+as well as the sweeps MIES did output, and their response.</p>
+<p>MIES is designed to be scalable: MIES can control up to 10 (only 4 have
+been tested) HEKA/Instrutech DACs independently or
+synchronously(ITC1600).</p>
+<p>MIES has two primary modes: The Test Pulse (TP) and Data Acquisition.</p>
+<div class="figure align-center" id="id1">
+<img alt="_images/acquisition-repeated-indexing-explained.svg" src="_images/acquisition-repeated-indexing-explained.svg" /><p class="caption"><span class="caption-text">Data acquisition modes</span></p>
+</div>
+<div class="figure align-center" id="id2">
+<img alt="_images/normal-delays.svg" src="_images/normal-delays.svg" /><p class="caption"><span class="caption-text">Normal delays</span></p>
+</div>
+<div class="figure align-center" id="id3">
+<img alt="_images/ddaq-delay.svg" src="_images/ddaq-delay.svg" /><p class="caption"><span class="caption-text">Ddaq delay</span></p>
+</div>
+<div class="figure align-center" id="id4">
+<img alt="_images/oodDAQ-delays.svg" src="_images/oodDAQ-delays.svg" /><p class="caption"><span class="caption-text">oodDAQ delays</span></p>
+</div>
+<div class="figure align-center" id="id5">
+<img alt="_images/testPulse-visualization.svg" src="_images/testPulse-visualization.svg" /><p class="caption"><span class="caption-text">Testpulse visualization</span></p>
+</div>
+<div class="section" id="indexing-definition">
+<h2>Indexing definition<a class="headerlink" href="#indexing-definition" title="Permalink to this headline">¶</a></h2>
+<p>In MIES we have different modes in which a given stimset or multiple stimsets
+can be repeated.  The following is a human readable, and authorative
+description, how these modes work.</p>
+<p>Indexing is a mode which allows to acquire a range of stimsets across mutiple
+channels and channel types (DA and TTL).</p>
+<p>As these stimsets can have a different number of sweeps the natural question
+arises when to switch to the next stimset. Locked indexing switches stimsets
+when the stimset with the most sweeps (currently acquiring, not globally) on
+all active channels is finished. Unlocked indexing switches stimset on each
+channel independently. In both modes the currently active stimset is repeated
+in one channel if there is some space left.</p>
+<p>With repetitions larger than 1 the difference is even more pronounced as locked
+indexing first repeats and then indexes and unlocked indexing indexes and then
+repeats.</p>
+<p>Inner-Set randomization is currently broken with indexing.
+Set randomization with indexing is not implemented.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="#">Table of Contents</a></h3>
+  <ul>
+<li class="toctree-l1"><a class="reference internal" href="developers.html">Developer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manualinstallation.html">Manual installation instructions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reportingbugs.html">Bug reporting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="releasenotes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="grouplist.html">Group list</a></li>
+<li class="toctree-l1"><a class="reference internal" href="filelist.html">File list</a></li>
+<li class="toctree-l1"><a class="reference internal" href="structlist.html">Struct list</a></li>
+<li class="toctree-l1"><a class="reference internal" href="namespacelist.html">Namespace list</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CalculateTPLikePropsFromSweep.html">CalculateTPLikePropsFromSweep Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="IPNWB.html">Igor Pro module for reading and writing NeurodataWithoutBorder files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TPAnalysis_algorithm.html">Testpulse Analysis Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="asyncframework.html">Async Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ZeroMQ-XOP-Readme.html">ZeroMQ XOP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="labnotebook-docs.html">Labnotebook documentation for developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mies-concepts.html">Important MIES concepts for developers</a></li>
+</ul>
+
+  <h4>Next topic</h4>
+  <p class="topless"><a href="developers.html"
+                        title="next chapter">Developer</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/index.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="developers.html" title="Developer"
+             >next</a> |</li>
+        <li class="nav-item nav-item-0"><a href="#">MIES Igor (master) latest-52-g2ffc1636 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright .
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.3.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,357 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>File MIES_ExperimentConfig.ipf &#8212; MIES Igor (master) latest-52-g2ffc1636 documentation</title>
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" />
+    
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    
+    <script type="text/javascript" src="../_static/sidebar.js"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="File MIES_ExperimentDocumentation.ipf" href="_m_i_e_s___experiment_documentation_8ipf.html" />
+    <link rel="prev" title="File MIES_EventDetectionCode.ipf" href="_m_i_e_s___event_detection_code_8ipf.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="_m_i_e_s___experiment_documentation_8ipf.html" title="File MIES_ExperimentDocumentation.ipf"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="_m_i_e_s___event_detection_code_8ipf.html" title="File MIES_EventDetectionCode.ipf"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">MIES Igor (master) latest-52-g2ffc1636 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../filelist.html" accesskey="U">File list</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="file-mies-experimentconfig-ipf">
+<span id="id1"></span><h1>File MIES_ExperimentConfig.ipf<a class="headerlink" href="#file-mies-experimentconfig-ipf" title="Permalink to this headline">¶</a></h1>
+<p><strong>ExpConfig</strong> Import user settings to configure paramters for Ephys experiments </p>
+<p>These include:<ul class="simple">
+<li>Amplifier settings</li>
+<li>Pressure regulator settings</li>
+<li>Interactions with MCCs</li>
+<li>DAEphys panel settings </li>
+</ul>
+</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Functions</p>
+<dl class="function">
+<dt id="_CPPv323ExpConfig_ConfigureMIES8variable">
+<span id="_CPPv223ExpConfig_ConfigureMIES8variable"></span><span id="ExpConfig_ConfigureMIES__variable"></span><span class="target" id="_m_i_e_s___experiment_config_8ipf_1a2b56cefda93b6d0babecb9f857e7e3d5"></span>variable <code class="descname">ExpConfig_ConfigureMIES</code><span class="sig-paren">(</span>variable <em>middleOfExperiment</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv323ExpConfig_ConfigureMIES8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Configure MIES for experiments. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">middleOfExperiment</span></code>: [optional, defaults to false] Allows MIES config in the middle of experiment. Instead of setting MCC parameters they are pulled from actively recording MCCs to configure MIES] </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv320ExpConfig_Amplifiers6string4wave8variable">
+<span id="_CPPv220ExpConfig_Amplifiers6string4wave8variable"></span><span id="ExpConfig_Amplifiers__string.wave.variable"></span><span class="target" id="_m_i_e_s___experiment_config_8ipf_1a7cf28ddd8284011232a18396339ba2f9"></span><em class="property">static</em> variable <code class="descname">ExpConfig_Amplifiers</code><span class="sig-paren">(</span>string <em>panelTitle</em>, wave <em>UserSettings</em>, variable <em>midExp</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv320ExpConfig_Amplifiers6string4wave8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Open and configure amplifiers for Multi-Patch experiments. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">panelTitle</span></code>: Name of ITC device panel </li>
+<li><code class="docutils literal notranslate"><span class="pre">UserSettings</span></code>: User settings wave from configuration Notebook </li>
+<li><code class="docutils literal notranslate"><span class="pre">midExp</span></code>: Configure in middle of experiment, default = 0 </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv318ExpConfig_Pressure6string4wave">
+<span id="_CPPv218ExpConfig_Pressure6string4wave"></span><span id="ExpConfig_Pressure__string.wave"></span><span class="target" id="_m_i_e_s___experiment_config_8ipf_1a472e9e05fe5b996fa4cfc6bfc63b7b4d"></span><em class="property">static</em> variable <code class="descname">ExpConfig_Pressure</code><span class="sig-paren">(</span>string <em>panelTitle</em>, wave <em>UserSettings</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv318ExpConfig_Pressure6string4wave" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Configure pressure devices for experiments. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">panelTitle</span></code>: Name of ITC device panel </li>
+<li><code class="docutils literal notranslate"><span class="pre">UserSettings</span></code>: User settings wave from configuration Notebook </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv319ExpConfig_AsyncTemp6string4wave">
+<span id="_CPPv219ExpConfig_AsyncTemp6string4wave"></span><span id="ExpConfig_AsyncTemp__string.wave"></span><span class="target" id="_m_i_e_s___experiment_config_8ipf_1a7fd9409d845c317ea7b84ae929ffdead"></span><em class="property">static</em> variable <code class="descname">ExpConfig_AsyncTemp</code><span class="sig-paren">(</span>string <em>panelTitle</em>, wave <em>UserSettings</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv319ExpConfig_AsyncTemp6string4wave" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Monitor set and bath temperature during experiments. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">panelTitle</span></code>: Name of ITC device panel </li>
+<li><code class="docutils literal notranslate"><span class="pre">UserSettings</span></code>: User settings wave from configuration Notebook </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv325ExpConfig_DAEphysSettings6string4wave">
+<span id="_CPPv225ExpConfig_DAEphysSettings6string4wave"></span><span id="ExpConfig_DAEphysSettings__string.wave"></span><span class="target" id="_m_i_e_s___experiment_config_8ipf_1a1365ffca7391ecaa306ac3418397248c"></span><em class="property">static</em> variable <code class="descname">ExpConfig_DAEphysSettings</code><span class="sig-paren">(</span>string <em>panelTitle</em>, wave <em>UserSettings</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv325ExpConfig_DAEphysSettings6string4wave" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set user defined experimental parameters. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">panelTitle</span></code>: Name of ITC device panel </li>
+<li><code class="docutils literal notranslate"><span class="pre">UserSettings</span></code>: User settings wave from configuration Notebook </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv324ExpConfig_MCC_InitParams6string8variable">
+<span id="_CPPv224ExpConfig_MCC_InitParams6string8variable"></span><span id="ExpConfig_MCC_InitParams__string.variable"></span><span class="target" id="_m_i_e_s___experiment_config_8ipf_1aba0ccea2f5c8f4c6ef319beaaafada37"></span><em class="property">static</em> variable <code class="descname">ExpConfig_MCC_InitParams</code><span class="sig-paren">(</span>string <em>panelTitle</em>, variable <em>headStage</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv324ExpConfig_MCC_InitParams6string8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv320ExpConfig_MCC_MidExp6string8variable4wave">
+<span id="_CPPv220ExpConfig_MCC_MidExp6string8variable4wave"></span><span id="ExpConfig_MCC_MidExp__string.variable.wave"></span><span class="target" id="_m_i_e_s___experiment_config_8ipf_1ae43401ce9cec025e4ae897eb8d4c3773"></span>variable <code class="descname">ExpConfig_MCC_MidExp</code><span class="sig-paren">(</span>string <em>panelTitle</em>, variable <em>headStage</em>, wave <em>UserSettings</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv320ExpConfig_MCC_MidExp6string8variable4wave" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv326ExpConfig_Position_MCC_Win6string6string6string">
+<span id="_CPPv226ExpConfig_Position_MCC_Win6string6string6string"></span><span id="ExpConfig_Position_MCC_Win__string.string.string"></span><span class="target" id="_m_i_e_s___experiment_config_8ipf_1ac57289abaf3bcf7e696a5c43c6f23511"></span>variable <code class="descname">ExpConfig_Position_MCC_Win</code><span class="sig-paren">(</span>string <em>serialNum</em>, string <em>winTitle</em>, string <em>winPosition</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv326ExpConfig_Position_MCC_Win6string6string6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Position MCC windows to upper right monitor using nircmd.exe. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">serialNum</span></code>: Serial number of MCC </li>
+<li><code class="docutils literal notranslate"><span class="pre">winTitle</span></code>: Name of MCC window </li>
+<li><code class="docutils literal notranslate"><span class="pre">winPosition</span></code>: One of 4 monitors to position MCCs in </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv320ExpConfig_ClampModes6string4wave8variable">
+<span id="_CPPv220ExpConfig_ClampModes6string4wave8variable"></span><span id="ExpConfig_ClampModes__string.wave.variable"></span><span class="target" id="_m_i_e_s___experiment_config_8ipf_1aa15467cf39a37f07321a0d4efc7110fd"></span><em class="property">static</em> variable <code class="descname">ExpConfig_ClampModes</code><span class="sig-paren">(</span>string <em>panelTitle</em>, wave <em>UserSettings</em>, variable <em>midExp</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv320ExpConfig_ClampModes6string4wave8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set intial values for headstage clamp modes. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">panelTitle</span></code>: Name of ITC device panel </li>
+<li><code class="docutils literal notranslate"><span class="pre">UserSettings</span></code>: User settings wave from configuration Notebook </li>
+<li><code class="docutils literal notranslate"><span class="pre">midExp</span></code>: Configure in middle of experiment, default = 0 </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv323ExpConfig_FindAmpInList8variable8variable">
+<span id="_CPPv223ExpConfig_FindAmpInList8variable8variable"></span><span id="ExpConfig_FindAmpInList__variable.variable"></span><span class="target" id="_m_i_e_s___experiment_config_8ipf_1a3f52b125dba75cffb7c3a79534647ef2"></span><em class="property">static</em> variable <code class="descname">ExpConfig_FindAmpInList</code><span class="sig-paren">(</span>variable <em>ampSerialRef</em>, variable <em>ampChannelIDRef</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv323ExpConfig_FindAmpInList8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Find the list index of a connected amplifier serial number. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">ampSerialRef</span></code>: Amplifier Serial Number to search for </li>
+<li><code class="docutils literal notranslate"><span class="pre">ampChannelIDRef</span></code>: Headstage reference number </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table of Contents</a></h3>
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../developers.html">Developer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manualinstallation.html">Manual installation instructions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reportingbugs.html">Bug reporting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../releasenotes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grouplist.html">Group list</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../filelist.html">File list</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="_compilation_tester_8ipf.html">File CompilationTester.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_compilation_tester_utils_8ipf.html">File CompilationTesterUtils.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___constants_8ipf.html">File IPNWB_Constants.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___debugging_8ipf.html">File IPNWB_Debugging.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___h_d_f5_helpers_8ipf.html">File IPNWB_HDF5Helpers.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___include_8ipf.html">File IPNWB_Include.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___reader_8ipf.html">File IPNWB_Reader.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___structures_8ipf.html">File IPNWB_Structures.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___utils_8ipf.html">File IPNWB_Utils.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___writer_8ipf.html">File IPNWB_Writer.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___amplifier_interaction_8ipf.html">File MIES_AmplifierInteraction.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_browser_8ipf.html">File MIES_AnalysisBrowser.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_browser___lab_notebook_t_p_storage_browser_8ipf.html">File MIES_AnalysisBrowser_LabNotebookTPStorageBrowser.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_browser___sweep_browser_8ipf.html">File MIES_AnalysisBrowser_SweepBrowser.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_browser___sweep_browser___export_8ipf.html">File MIES_AnalysisBrowser_SweepBrowser_Export.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_function_helpers_8ipf.html">File MIES_AnalysisFunctionHelpers.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_function_management_8ipf.html">File MIES_AnalysisFunctionManagement.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_function_prototypes_8ipf.html">File MIES_AnalysisFunctionPrototypes.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_functions_8ipf.html">File MIES_AnalysisFunctions.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_functions___dashboard_8ipf.html">File MIES_AnalysisFunctions_Dashboard.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_functions___multi_patch_seq_8ipf.html">File MIES_AnalysisFunctions_MultiPatchSeq.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_functions___patch_seq_8ipf.html">File MIES_AnalysisFunctions_PatchSeq.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_master_8ipf.html">File MIES_AnalysisMaster.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___artefact_removal_8ipf.html">File MIES_ArtefactRemoval.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___async_8ipf.html">File MIES_Async.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___asynchronous_data_8ipf.html">File MIES_AsynchronousData.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___background_watchdog_8ipf.html">File MIES_BackgroundWatchdog.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___blowout_8ipf.html">File MIES_Blowout.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___browser_settings_panel_8ipf.html">File MIES_BrowserSettingsPanel.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___cache_8ipf.html">File MIES_Cache.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___check_installation_8ipf.html">File MIES_CheckInstallation.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___constants_8ipf.html">File MIES_Constants.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___d_a_c-_hardware_8ipf.html">File MIES_DAC-Hardware.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___d_a_ephys_8ipf.html">File MIES_DAEphys.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___d_a_ephys___gui_state_8ipf.html">File MIES_DAEphys_GuiState.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___d_a_ephys___macro_8ipf.html">File MIES_DAEphys_Macro.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___data_acquisition_8ipf.html">File MIES_DataAcquisition.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___data_acquisition___multi_8ipf.html">File MIES_DataAcquisition_Multi.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___data_acquisition___single_8ipf.html">File MIES_DataAcquisition_Single.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___data_browser_8ipf.html">File MIES_DataBrowser.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___data_configurator_i_t_c_8ipf.html">File MIES_DataConfiguratorITC.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___debug_panel_8ipf.html">File MIES_DebugPanel.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___debugging_8ipf.html">File MIES_Debugging.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___downsample_8ipf.html">File MIES_Downsample.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___enhanced_w_m_routines_8ipf.html">File MIES_EnhancedWMRoutines.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___event_detection_code_8ipf.html">File MIES_EventDetectionCode.ipf</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">File MIES_ExperimentConfig.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___experiment_documentation_8ipf.html">File MIES_ExperimentDocumentation.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___foreign_function_interface_8ipf.html">File MIES_ForeignFunctionInterface.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___global_string_and_variable_access_8ipf.html">File MIES_GlobalStringAndVariableAccess.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___gui_utilities_8ipf.html">File MIES_GuiUtilities.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___h_d_f5_ops_8ipf.html">File MIES_HDF5Ops.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___igor_hooks_8ipf.html">File MIES_IgorHooks.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___include_8ipf.html">File MIES_Include.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___indexing_8ipf.html">File MIES_Indexing.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___menu_8ipf.html">File MIES_Menu.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___mies_utilities_8ipf.html">File MIES_MiesUtilities.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___neuro_data_without_borders_8ipf.html">File MIES_NeuroDataWithoutBorders.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___optimzed_overlap_distributed_acquisition_8ipf.html">File MIES_OptimzedOverlapDistributedAcquisition.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___oscilloscope_8ipf.html">File MIES_Oscilloscope.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___overlay_sweeps_8ipf.html">File MIES_OverlaySweeps.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___pressure_control_8ipf.html">File MIES_PressureControl.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___programmatic_g_u_i_control_8ipf.html">File MIES_ProgrammaticGUIControl.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___pulse_averaging_8ipf.html">File MIES_PulseAveraging.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___repeated_acquisition_8ipf.html">File MIES_RepeatedAcquisition.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___sampling_interval_8ipf.html">File MIES_SamplingInterval.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___structures_8ipf.html">File MIES_Structures.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___sweep_saving_8ipf.html">File MIES_SweepSaving.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___tango_interact_8ipf.html">File MIES_TangoInteract.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___test_pulse_8ipf.html">File MIES_TestPulse.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___test_pulse___multi_8ipf.html">File MIES_TestPulse_Multi.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___test_pulse___single_8ipf.html">File MIES_TestPulse_Single.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___threaded_f_i_f_o_handling_8ipf.html">File MIES_ThreadedFIFOHandling.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___threadsafe_utilities_8ipf.html">File MIES_ThreadsafeUtilities.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___utilities_8ipf.html">File MIES_Utilities.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___wave_builder_8ipf.html">File MIES_WaveBuilder.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___wave_builder_panel_8ipf.html">File MIES_WaveBuilderPanel.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___wave_data_folder_getters_8ipf.html">File MIES_WaveDataFolderGetters.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_zero_m_q___interop_8ipf.html">File ZeroMQ_Interop.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interface_8h.html">File interface.h</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../structlist.html">Struct list</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../namespacelist.html">Namespace list</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CalculateTPLikePropsFromSweep.html">CalculateTPLikePropsFromSweep Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IPNWB.html">Igor Pro module for reading and writing NeurodataWithoutBorder files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TPAnalysis_algorithm.html">Testpulse Analysis Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../asyncframework.html">Async Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ZeroMQ-XOP-Readme.html">ZeroMQ XOP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../labnotebook-docs.html">Labnotebook documentation for developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mies-concepts.html">Important MIES concepts for developers</a></li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="_m_i_e_s___event_detection_code_8ipf.html"
+                        title="previous chapter">File MIES_EventDetectionCode.ipf</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="_m_i_e_s___experiment_documentation_8ipf.html"
+                        title="next chapter">File MIES_ExperimentDocumentation.ipf</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/file/_m_i_e_s___experiment_config_8ipf.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="_m_i_e_s___experiment_documentation_8ipf.html" title="File MIES_ExperimentDocumentation.ipf"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="_m_i_e_s___event_detection_code_8ipf.html" title="File MIES_EventDetectionCode.ipf"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">MIES Igor (master) latest-52-g2ffc1636 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../filelist.html" >File list</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright .
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.3.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,675 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>File MIES_AnalysisFunctions_MultiPatchSeq.ipf &#8212; MIES Igor (master) latest-52-g2ffc1636 documentation</title>
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" />
+    
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    
+    <script type="text/javascript" src="../_static/sidebar.js"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="File MIES_AnalysisFunctions_PatchSeq.ipf" href="_m_i_e_s___analysis_functions___patch_seq_8ipf.html" />
+    <link rel="prev" title="File MIES_AnalysisFunctions_Dashboard.ipf" href="_m_i_e_s___analysis_functions___dashboard_8ipf.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="_m_i_e_s___analysis_functions___patch_seq_8ipf.html" title="File MIES_AnalysisFunctions_PatchSeq.ipf"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="_m_i_e_s___analysis_functions___dashboard_8ipf.html" title="File MIES_AnalysisFunctions_Dashboard.ipf"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">MIES Igor (master) latest-52-g2ffc1636 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../filelist.html" accesskey="U">File list</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="file-mies-analysisfunctions-multipatchseq-ipf">
+<span id="id1"></span><h1>File MIES_AnalysisFunctions_MultiPatchSeq.ipf<a class="headerlink" href="#file-mies-analysisfunctions-multipatchseq-ipf" title="Permalink to this headline">¶</a></h1>
+<p><strong>MSQ</strong> Analysis functions for multi patch sequence </p>
+<p>The Multi Patch Seq analysis functions store various results in the labnotebook.</p>
+<p>For orientation the following table shows their relation. All labnotebook keys can and should be created via <a class="reference internal" href="#_m_i_e_s___analysis_functions___multi_patch_seq_8ipf_1ae2dc8d191f31ca6ba36290399a7af58d"><span class="std std-ref">MSQ_CreateLBNKey()</span></a>.</p>
+<p><table border="1" class="docutils">
+<colgroup>
+<col width="19%" />
+<col width="40%" />
+<col width="12%" />
+<col width="15%" />
+<col width="15%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Naming constant</th>
+<th class="head">Description</th>
+<th class="head">Analysis function</th>
+<th class="head">Per Chunk?</th>
+<th class="head">Headstage dependent?</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>MSQ_FMT_LBN_SPIKE_DETECT</td>
+<td>The required number of spikes were detected on the sweep</td>
+<td>FRE</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr class="row-odd"><td>MSQ_FMT_LBN_STEPSIZE</td>
+<td>Current DAScale step size</td>
+<td>FRE</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr class="row-even"><td>MSQ_FMT_LBN_FINAL_SCALE</td>
+<td>Final DAScale of the given headstage, only set on success</td>
+<td>FRE</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr class="row-odd"><td>MSQ_FMT_LBN_HEADSTAGE_PASS</td>
+<td>Pass/fail state of the headstage</td>
+<td>FRE, DS</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr class="row-even"><td>MSQ_FMT_LBN_SWEEP_PASS</td>
+<td>Pass/fail state of the complete sweep</td>
+<td>FRE, DS</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr class="row-odd"><td>MSQ_FMT_LBN_SET_PASS</td>
+<td>Pass/fail state of the complete set</td>
+<td>FRE, DS</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr class="row-even"><td>MSQ_FMT_LBN_ACTIVE_HS</td>
+<td>Active headstages in pre DAQ event</td>
+<td>FRE, DS</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr class="row-odd"><td>MSQ_FMT_LBN_DASCALE_EXC</td>
+<td>Allowed DAScale exceeded given limit</td>
+<td>FRE</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr class="row-even"><td>MSQ_FMT_LBN_PULSE_DUR</td>
+<td>Square pulse duration in ms</td>
+<td>FRE</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+</p>
+<p>Query the standard STIMSET_SCALE_FACTOR_KEY entry from labnotebook for getting the DAScale. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Functions</p>
+<dl class="function">
+<dt id="_CPPv316MSQ_CreateLBNKey8variable6string8variable8variable">
+<span id="_CPPv216MSQ_CreateLBNKey8variable6string8variable8variable"></span><span id="MSQ_CreateLBNKey__variable.string.variable.variable"></span><span class="target" id="_m_i_e_s___analysis_functions___multi_patch_seq_8ipf_1ae2dc8d191f31ca6ba36290399a7af58d"></span>string <code class="descname">MSQ_CreateLBNKey</code><span class="sig-paren">(</span>variable <em>type</em>, string <em>formatString</em>, variable <em>chunk</em> = defaultValue, variable <em>query</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv316MSQ_CreateLBNKey8variable6string8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return labnotebook keys for patch seq analysis functions. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">type</span></code>: One of MultiPatchSeqAnalysisFunctionTypes </li>
+<li><code class="docutils literal notranslate"><span class="pre">formatString</span></code>: One of MultiPatchSeqLabnotebookFormatStrings </li>
+<li><code class="docutils literal notranslate"><span class="pre">chunk</span></code>: [optional] Some format strings expect a chunk number </li>
+<li><code class="docutils literal notranslate"><span class="pre">query</span></code>: [optional, defaults to false] If the key is to be used for setting or querying the labnotebook </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv327MSQ_GetPulseSettingsForType8variableP17MSQ_PulseSettings">
+<span id="_CPPv227MSQ_GetPulseSettingsForType8variableP17MSQ_PulseSettings"></span><span id="MSQ_GetPulseSettingsForType__variable.MSQ_PulseSettingsP"></span><span class="target" id="_m_i_e_s___analysis_functions___multi_patch_seq_8ipf_1a71d22390b623123666e23a4f94e24dfe"></span><em class="property">static</em> variable <code class="descname">MSQ_GetPulseSettingsForType</code><span class="sig-paren">(</span>variable <em>type</em>, <a class="reference internal" href="#_CPPv317MSQ_PulseSettings" title="MSQ_PulseSettings">MSQ_PulseSettings</a> *<em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv327MSQ_GetPulseSettingsForType8variableP17MSQ_PulseSettings" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Fills <code class="docutils literal notranslate"><span class="pre">s</span></code> according to the analysis function type. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv321MSQ_GetPulseDurations6string8variable8variable8variable8variable8variable8variable">
+<span id="_CPPv221MSQ_GetPulseDurations6string8variable8variable8variable8variable8variable8variable"></span><span id="MSQ_GetPulseDurations__string.variable.variable.variable.variable.variable.variable"></span><span class="target" id="_m_i_e_s___analysis_functions___multi_patch_seq_8ipf_1a50d8dd0467ceca2232ffdaae5ff296eb"></span><em class="property">static</em> wave <code class="descname">MSQ_GetPulseDurations</code><span class="sig-paren">(</span>string <em>panelTitle</em>, variable <em>type</em>, variable <em>sweepNo</em>, variable <em>totalOnsetDelay</em>, variable <em>headstage</em>, variable <em>useSCI</em> = defaultValue, variable <em>forceRecalculation</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv321MSQ_GetPulseDurations6string8variable8variable8variable8variable8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return the pulse durations from the labnotebook or calculate them before if required. For convenience unused headstages will have 0 instead of NaN in the returned wave. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv326MSQ_DeterminePulseDuration6string8variable8variable">
+<span id="_CPPv226MSQ_DeterminePulseDuration6string8variable8variable"></span><span id="MSQ_DeterminePulseDuration__string.variable.variable"></span><span class="target" id="_m_i_e_s___analysis_functions___multi_patch_seq_8ipf_1a65e4ba6d67e42bb7a4e8bb1586c9841a"></span><em class="property">static</em> wave <code class="descname">MSQ_DeterminePulseDuration</code><span class="sig-paren">(</span>string <em>panelTitle</em>, variable <em>sweepNo</em>, variable <em>totalOnsetDelay</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv326MSQ_DeterminePulseDuration6string8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Determine the pulse duration on each headstage. </p>
+<p>Returns the labnotebook wave as well. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv330MSQ_EvaluateBaselineProperties6string8variable8variable8variable8variable8variable">
+<span id="_CPPv230MSQ_EvaluateBaselineProperties6string8variable8variable8variable8variable8variable"></span><span id="MSQ_EvaluateBaselineProperties__string.variable.variable.variable.variable.variable"></span><span class="target" id="_m_i_e_s___analysis_functions___multi_patch_seq_8ipf_1aca19c4f11a20f573f40f9aad769fa760"></span><em class="property">static</em> variable <code class="descname">MSQ_EvaluateBaselineProperties</code><span class="sig-paren">(</span>string <em>panelTitle</em>, variable <em>type</em>, variable <em>sweepNo</em>, variable <em>chunk</em>, variable <em>fifoInStimsetTime</em>, variable <em>totalOnsetDelay</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv330MSQ_EvaluateBaselineProperties6string8variable8variable8variable8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Evaluate one chunk of the baseline. </p>
+<p>chunk == 0: Pre pulse baseline chunk &gt;= 1: Post pulse baseline chunk &gt;= 1: Post pulse baseline</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>pre pulse baseline: 0 if the chunk passes, one of the possible AnalysisFuncReturnTypesConstants values otherwise post pulse baseline: 0 if the chunk passes, NaN if it does not pass </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv316MSQ_CalculateAvg4wave8variable8variable8variable">
+<span id="_CPPv216MSQ_CalculateAvg4wave8variable8variable8variable"></span><span id="MSQ_CalculateAvg__wave.variable.variable.variable"></span><span class="target" id="_m_i_e_s___analysis_functions___multi_patch_seq_8ipf_1a2ceb4982221b3f8f08d7a5aba84cb39e"></span><em class="property">static</em> variable <code class="descname">MSQ_CalculateAvg</code><span class="sig-paren">(</span>wave <em>wv</em>, variable <em>column</em>, variable <em>startTime</em>, variable <em>rangeTime</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv316MSQ_CalculateAvg4wave8variable8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv316MSQ_CalculateRMS4wave8variable8variable8variable">
+<span id="_CPPv216MSQ_CalculateRMS4wave8variable8variable8variable"></span><span id="MSQ_CalculateRMS__wave.variable.variable.variable"></span><span class="target" id="_m_i_e_s___analysis_functions___multi_patch_seq_8ipf_1a0621e43dc79d40e6d9f837ddf7226d9e"></span><em class="property">static</em> variable <code class="descname">MSQ_CalculateRMS</code><span class="sig-paren">(</span>wave <em>wv</em>, variable <em>column</em>, variable <em>startTime</em>, variable <em>rangeTime</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv316MSQ_CalculateRMS4wave8variable8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv326MSQ_NumAcquiredSweepsInSet6string8variable8variable">
+<span id="_CPPv226MSQ_NumAcquiredSweepsInSet6string8variable8variable"></span><span id="MSQ_NumAcquiredSweepsInSet__string.variable.variable"></span><span class="target" id="_m_i_e_s___analysis_functions___multi_patch_seq_8ipf_1a4d2af80b5581e930250a12d80375848e"></span><em class="property">static</em> variable <code class="descname">MSQ_NumAcquiredSweepsInSet</code><span class="sig-paren">(</span>string <em>panelTitle</em>, variable <em>sweepNo</em>, variable <em>headstage</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv326MSQ_NumAcquiredSweepsInSet6string8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return the number of already acquired sweeps from the given repeated acquisition cycle. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv318MSQ_NumPassesInSet4wave8variable8variable8variable">
+<span id="_CPPv218MSQ_NumPassesInSet4wave8variable8variable8variable"></span><span id="MSQ_NumPassesInSet__wave.variable.variable.variable"></span><span class="target" id="_m_i_e_s___analysis_functions___multi_patch_seq_8ipf_1adc2045a49e967759834f919eec3ad0d4"></span>variable <code class="descname">MSQ_NumPassesInSet</code><span class="sig-paren">(</span>wave <em>numericalValues</em>, variable <em>type</em>, variable <em>sweepNo</em>, variable <em>headstage</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv318MSQ_NumPassesInSet4wave8variable8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return the number of passed sweeps in all sweeps from the given repeated acquisition cycle. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv322MSQ_GetDAStimsetLength6string8variable">
+<span id="_CPPv222MSQ_GetDAStimsetLength6string8variable"></span><span id="MSQ_GetDAStimsetLength__string.variable"></span><span class="target" id="_m_i_e_s___analysis_functions___multi_patch_seq_8ipf_1adf57829052e5b5a4f803d2a093f7f365"></span><em class="property">static</em> variable <code class="descname">MSQ_GetDAStimsetLength</code><span class="sig-paren">(</span>string <em>panelTitle</em>, variable <em>headstage</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv322MSQ_GetDAStimsetLength6string8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return the DA stimset length in ms of the given headstage. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>stimset length or -1 on error </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv325MSQ_CreateOverrideResults6string8variable8variable">
+<span id="_CPPv225MSQ_CreateOverrideResults6string8variable8variable"></span><span id="MSQ_CreateOverrideResults__string.variable.variable"></span><span class="target" id="_m_i_e_s___analysis_functions___multi_patch_seq_8ipf_1a4cb9d763c0c168a0034948587faaf73c"></span>wave <code class="descname">MSQ_CreateOverrideResults</code><span class="sig-paren">(</span>string <em>panelTitle</em>, variable <em>headstage</em>, variable <em>type</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv325MSQ_CreateOverrideResults6string8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>MSQ_PSQ_CreateOverrideResults(“ITC18USB_DEV_0”, 0, $type) where type is one of:</p>
+<p><a class="reference internal" href="_m_i_e_s___constants_8ipf.html#_m_i_e_s___constants_8ipf_1a33bedb3f70f3d47b1a10838cec403750"><span class="std std-ref">MSQ_FAST_RHEO_EST</span></a></p>
+<p>Rows:<ul class="simple">
+<li>x position in ms where the spike is in each sweep/step For convenience the values <code class="docutils literal notranslate"><span class="pre">0</span></code> always means no spike and <code class="docutils literal notranslate"><span class="pre">1</span></code> spike detected (at the appropriate position).</li>
+</ul>
+</p>
+<p>Cols:<ul class="simple">
+<li>IC headstages </li>
+</ul>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv319MSQ_SearchForSpikes6string8variable4wave8variable8variable8variable8variable4wave">
+<span id="_CPPv219MSQ_SearchForSpikes6string8variable4wave8variable8variable8variable8variable4wave"></span><span id="MSQ_SearchForSpikes__string.variable.wave.variable.variable.variable.variable.wave"></span><span class="target" id="_m_i_e_s___analysis_functions___multi_patch_seq_8ipf_1a5aa03a4380f8aacde138c392ded5a047"></span><em class="property">static</em> wave <code class="descname">MSQ_SearchForSpikes</code><span class="sig-paren">(</span>string <em>panelTitle</em>, variable <em>type</em>, wave <em>sweepWave</em>, variable <em>headstage</em>, variable <em>totalOnsetDelay</em>, variable <em>numberOfSpikes</em> = <a class="reference internal" href="#_CPPv319MSQ_SearchForSpikes6string8variable4wave8variable8variable8variable8variable4wave" title="MSQ_SearchForSpikes::defaultValue">defaultValue</a>, variable <em>defaultValue</em> = <a class="reference internal" href="#_CPPv319MSQ_SearchForSpikes6string8variable4wave8variable8variable8variable8variable4wave" title="MSQ_SearchForSpikes::defaultValue">defaultValue</a>, wave <em>spikePositions</em> = <a class="reference internal" href="#_CPPv319MSQ_SearchForSpikes6string8variable4wave8variable8variable8variable8variable4wave" title="MSQ_SearchForSpikes::defaultValue">defaultValue</a><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv319MSQ_SearchForSpikes6string8variable4wave8variable8variable8variable8variable4wave" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Search the AD channel of the given headstage for spikes from the pulse onset until the end of the sweep. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>labnotebook value wave suitable for <a class="reference internal" href="_m_i_e_s___experiment_documentation_8ipf.html#_m_i_e_s___experiment_documentation_8ipf_1a4cc5bb43e64f8583b0539bc257f53dfa"><span class="std std-ref">ED_AddEntryToLabnotebook()</span></a> </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">panelTitle</span></code>: device </li>
+<li><code class="docutils literal notranslate"><span class="pre">type</span></code>: One of PatchSeqAnalysisFunctionTypes </li>
+<li><code class="docutils literal notranslate"><span class="pre">sweepWave</span></code>: sweep wave with acquired data </li>
+<li><code class="docutils literal notranslate"><span class="pre">headstage</span></code>: headstage in the range [0, NUM_HEADSTAGES[ </li>
+<li><code class="docutils literal notranslate"><span class="pre">totalOnsetDelay</span></code>: total delay in ms until the stimset data starts </li>
+<li><code class="docutils literal notranslate"><span class="pre">numberOfSpikes</span></code>: [optional, defaults to one] number of spikes to look for </li>
+<li><code class="docutils literal notranslate"><span class="pre">spikePositions</span></code>: [optional] returns the position of the first <code class="docutils literal notranslate"><span class="pre">numberOfSpikes</span></code> found on success in ms </li>
+<li><code class="docutils literal notranslate"><span class="pre">defaultValue</span></code>: [optiona, defaults to <code class="docutils literal notranslate"><span class="pre">NaN</span></code>] the value of the other headstages in the returned wave</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv322MSQ_TestOverrideActivev">
+<span id="_CPPv222MSQ_TestOverrideActivev"></span><span id="MSQ_TestOverrideActive"></span><span class="target" id="_m_i_e_s___analysis_functions___multi_patch_seq_8ipf_1ab130bd9eb789268925b638e62dd0aea1"></span><em class="property">static</em> variable <code class="descname">MSQ_TestOverrideActive</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv322MSQ_TestOverrideActivev" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return if the analysis function results are overriden for testing purposes. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv323MSQ_GetActiveHeadstages6string8variable">
+<span id="_CPPv223MSQ_GetActiveHeadstages6string8variable"></span><span id="MSQ_GetActiveHeadstages__string.variable"></span><span class="target" id="_m_i_e_s___analysis_functions___multi_patch_seq_8ipf_1ac92607281195a428ba37f42ddbd086fe"></span><em class="property">static</em> wave <code class="descname">MSQ_GetActiveHeadstages</code><span class="sig-paren">(</span>string <em>panelTitle</em>, variable <em>clampMode</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv323MSQ_GetActiveHeadstages6string8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return a wave with <code class="docutils literal notranslate"><span class="pre">NUM_HEADSTAGES</span></code> rows with <code class="docutils literal notranslate"><span class="pre">1</span></code> where the given headstages is active and in the given clamp mode. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv327MSQ_GetLBNEntryForHSSCIBool4wave8variable8variable6string8variable">
+<span id="_CPPv227MSQ_GetLBNEntryForHSSCIBool4wave8variable8variable6string8variable"></span><span id="MSQ_GetLBNEntryForHSSCIBool__wave.variable.variable.string.variable"></span><span class="target" id="_m_i_e_s___analysis_functions___multi_patch_seq_8ipf_1aefc8fe3a8deb731576c4ce87824021a3"></span><em class="property">static</em> variable <code class="descname">MSQ_GetLBNEntryForHSSCIBool</code><span class="sig-paren">(</span>wave <em>numericalValues</em>, variable <em>sweepNo</em>, variable <em>type</em>, string <em>str</em>, variable <em>headstage</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv327MSQ_GetLBNEntryForHSSCIBool4wave8variable8variable6string8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return true if one of the entries is true for the given headstage. False otherwise. Searches in the complete SCI and assumes that the entries are either 0/1/NaN. </p>
+<p></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv330MSQ_GetLBNEntryForHeadstageSCI4wave8variable8variable6string8variable">
+<span id="_CPPv230MSQ_GetLBNEntryForHeadstageSCI4wave8variable8variable6string8variable"></span><span id="MSQ_GetLBNEntryForHeadstageSCI__wave.variable.variable.string.variable"></span><span class="target" id="_m_i_e_s___analysis_functions___multi_patch_seq_8ipf_1ad301b893cd611f61e8534935bf8c5b57"></span><em class="property">static</em> variable <code class="descname">MSQ_GetLBNEntryForHeadstageSCI</code><span class="sig-paren">(</span>wave <em>numericalValues</em>, variable <em>sweepNo</em>, variable <em>type</em>, string <em>str</em>, variable <em>headstage</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv330MSQ_GetLBNEntryForHeadstageSCI4wave8variable8variable6string8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return the last entry for a given headstage from the full SCI. </p>
+<p>This differs from GetLastSettingSCI as specifically the setting for the passed headstage must be valid.</p>
+<p></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv325MSQ_FastRheoEst_GetParamsv">
+<span id="_CPPv225MSQ_FastRheoEst_GetParamsv"></span><span id="MSQ_FastRheoEst_GetParams"></span><span class="target" id="_m_i_e_s___analysis_functions___multi_patch_seq_8ipf_1a96cafd56bc1efdb1d71313ac2f1511c2"></span>string <code class="descname">MSQ_FastRheoEst_GetParams</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv325MSQ_FastRheoEst_GetParamsv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return a list of required parameters for <a class="reference internal" href="#_m_i_e_s___analysis_functions___multi_patch_seq_8ipf_1a4f2035b5746ea3c3d57c1e21fca1286d"><span class="std std-ref">MSQ_FastRheoEst()</span></a> </p>
+<p><table border="1" class="docutils">
+<colgroup>
+<col width="26%" />
+<col width="9%" />
+<col width="65%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>SamplingMultiplier</td>
+<td>variable</td>
+<td>Sampling multiplier, use 1 for no multiplier</td>
+</tr>
+<tr class="row-odd"><td>MaximumDAScale</td>
+<td>variable</td>
+<td>Maximum allowed DAScale, set to NaN to turn the check off [pA]</td>
+</tr>
+<tr class="row-even"><td>PostDAQDAScaleForFailedHS</td>
+<td>variable</td>
+<td>Failed headstages will be set to this DAScale value [pA]
+in the post set event</td>
+</tr>
+<tr class="row-odd"><td>PostDAQDAScale</td>
+<td>variable</td>
+<td>If true the found DAScale value will be set at the end of the set</td>
+</tr>
+<tr class="row-even"><td>PostDAQDAScaleFactor</td>
+<td>variable</td>
+<td>Scaling factor for setting the DAScale of passed headstages
+at the end of the set</td>
+</tr>
+<tr class="row-odd"><td>PostDAQDAScaleMinOffset</td>
+<td>variable</td>
+<td>Mininum absolute offset value applied to the found DAScale [pA]</td>
+</tr>
+</tbody>
+</table>
+ </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv315MSQ_FastRheoEst6stringP19AnalysisFunction_V3">
+<span id="_CPPv215MSQ_FastRheoEst6stringP19AnalysisFunction_V3"></span><span id="MSQ_FastRheoEst__string.AnalysisFunction_V3P"></span><span class="target" id="_m_i_e_s___analysis_functions___multi_patch_seq_8ipf_1a4f2035b5746ea3c3d57c1e21fca1286d"></span>variable <code class="descname">MSQ_FastRheoEst</code><span class="sig-paren">(</span>string <em>panelTitle</em>, <a class="reference internal" href="_m_i_e_s___structures_8ipf.html#_CPPv319AnalysisFunction_V3" title="AnalysisFunction_V3">AnalysisFunction_V3</a> *<em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv315MSQ_FastRheoEst6stringP19AnalysisFunction_V3" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Analysis function to find the smallest DAScale where the cell spikes. </p>
+<p>Prerequisites:<ul class="simple">
+<li>Assumes that the stimset has a square pulse</li>
+</ul>
+</p>
+<p>Testing: For testing the spike detection logic, the results can be defined in the wave root:overrideResults. <p>Decision logic flowchart:</p>
+<dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><a class="reference internal" href="#_m_i_e_s___analysis_functions___multi_patch_seq_8ipf_1a4cb9d763c0c168a0034948587faaf73c"><span class="std std-ref">MSQ_CreateOverrideResults()</span></a></dd>
+</dl>
+</p>
+<p><a class=""
+               data-lightbox="group-23d1f685-835c-4ddd-9e3b-c6f8d4b1db32"
+               href="../_images/multi-patch-seq-fast-rheo-estimate.dot1.svg"
+               title=""
+               data-title=""
+               ><img src="../_images/multi-patch-seq-fast-rheo-estimate.dot1.svg"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></p>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>///
+/// Sketch of a stimset with pre pulse baseline (-), square pulse (*), and post pulse baseline (-).
+///
+///    *******
+///    |     |
+///    |     |
+///    |     |
+///    |     |
+///    |     |
+///    |     |
+///    |     |
+///    |     |
+///    |     |
+///    |     |
+///    |     |
+///    |     |
+/// ---|     |--------------------------------------------
+///
+///
+</pre></div>
+</div>
+ </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv325MSQ_MapFunctionToConstant6string">
+<span id="_CPPv225MSQ_MapFunctionToConstant6string"></span><span id="MSQ_MapFunctionToConstant__string"></span><span class="target" id="_m_i_e_s___analysis_functions___multi_patch_seq_8ipf_1a9e5a7e3dae98f1a80d89500d930a47e1"></span>variable <code class="descname">MSQ_MapFunctionToConstant</code><span class="sig-paren">(</span>string <em>anaFunc</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv325MSQ_MapFunctionToConstant6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Map from analysis function name to numeric constant. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>One of MultiPatchSeqAnalysisFunctionTypes </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv323MSQ_DS_GetDAScaleOffset6string8variable">
+<span id="_CPPv223MSQ_DS_GetDAScaleOffset6string8variable"></span><span id="MSQ_DS_GetDAScaleOffset__string.variable"></span><span class="target" id="_m_i_e_s___analysis_functions___multi_patch_seq_8ipf_1a55fc4c94675e67ecdac5711e3ac8f65c"></span><em class="property">static</em> wave <code class="descname">MSQ_DS_GetDAScaleOffset</code><span class="sig-paren">(</span>string <em>panelTitle</em>, variable <em>headstage</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv323MSQ_DS_GetDAScaleOffset6string8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return the DAScale offset [pA] for MSQ_DaScale() </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>wave with <a class="reference internal" href="_m_i_e_s___constants_8ipf.html#_m_i_e_s___constants_8ipf_1add28ec4f3ea78679b75f57726d047adf"><span class="std std-ref">LABNOTEBOOK_LAYER_COUNT</span></a> entries, each holding the final DA Scale entry from the previous fast rheo estimate run. </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv329MSQ_GetLastPassingLongRHSweep6string8variable">
+<span id="_CPPv229MSQ_GetLastPassingLongRHSweep6string8variable"></span><span id="MSQ_GetLastPassingLongRHSweep__string.variable"></span><span class="target" id="_m_i_e_s___analysis_functions___multi_patch_seq_8ipf_1a1ba464e33933894dc612953154ec579d"></span><em class="property">static</em> variable <code class="descname">MSQ_GetLastPassingLongRHSweep</code><span class="sig-paren">(</span>string <em>panelTitle</em>, variable <em>headstage</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv329MSQ_GetLastPassingLongRHSweep6string8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return a sweep number of an existing sweep matching the following conditions. </p>
+<p><ul class="simple">
+<li>Acquired with Rheobase analysis function</li>
+<li>Sweep set was passing</li>
+<li>Pulse duration was longer than 500ms</li>
+</ul>
+</p>
+<p>And as usual we want the <em>last</em> matching sweep.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>existing sweep number or -1 in case no such sweep could be found </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv321MSQ_DAScale_GetParamsv">
+<span id="_CPPv221MSQ_DAScale_GetParamsv"></span><span id="MSQ_DAScale_GetParams"></span><span class="target" id="_m_i_e_s___analysis_functions___multi_patch_seq_8ipf_1a7e715249e608c975acba9a23df065604"></span>string <code class="descname">MSQ_DAScale_GetParams</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv321MSQ_DAScale_GetParamsv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Require parameters from stimset. </p>
+<p><ul class="simple">
+<li>DAScales (Numeric wave): DA Scale Factors in pA </li>
+</ul>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv311MSQ_DAScale6stringP19AnalysisFunction_V3">
+<span id="_CPPv211MSQ_DAScale6stringP19AnalysisFunction_V3"></span><span id="MSQ_DAScale__string.AnalysisFunction_V3P"></span><span class="target" id="_m_i_e_s___analysis_functions___multi_patch_seq_8ipf_1a3310716919f02f90a0fcc1d03e9f34b9"></span>variable <code class="descname">MSQ_DAScale</code><span class="sig-paren">(</span>string <em>panelTitle</em>, <a class="reference internal" href="_m_i_e_s___structures_8ipf.html#_CPPv319AnalysisFunction_V3" title="AnalysisFunction_V3">AnalysisFunction_V3</a> *<em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv311MSQ_DAScale6stringP19AnalysisFunction_V3" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Analysis function to apply a list of DAScale values to a range of sweeps. </p>
+<p>Decision logic flowchart:</p>
+<p><a class=""
+               data-lightbox="group-38f129ec-46a8-4827-a27b-c2522400800c"
+               href="../_images/multi-patch-seq-dascale.dot1.svg"
+               title=""
+               data-title=""
+               ><img src="../_images/multi-patch-seq-dascale.dot1.svg"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a> </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv317MSQ_ForceSetEvent6string8variable">
+<span id="_CPPv217MSQ_ForceSetEvent6string8variable"></span><span id="MSQ_ForceSetEvent__string.variable"></span><span class="target" id="_m_i_e_s___analysis_functions___multi_patch_seq_8ipf_1aec66ff12cba542c3ec4fe39bae3c47e0"></span><em class="property">static</em> variable <code class="descname">MSQ_ForceSetEvent</code><span class="sig-paren">(</span>string <em>panelTitle</em>, variable <em>headstage</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv317MSQ_ForceSetEvent6string8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Manually force the pre/post set events. </p>
+<p>Required to do before skipping sweeps. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Variables</p>
+<dl class="member">
+<dt id="_CPPv316MSQ_BL_PRE_PULSE">
+<span id="_CPPv216MSQ_BL_PRE_PULSE"></span><span id="MSQ_BL_PRE_PULSE__variableC"></span><span class="target" id="_m_i_e_s___analysis_functions___multi_patch_seq_8ipf_1a957e1983fe6bec9207b5d33174aa2b26"></span><em class="property">const</em> variable <code class="descname">MSQ_BL_PRE_PULSE</code> = 0x0<a class="headerlink" href="#_CPPv316MSQ_BL_PRE_PULSE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv317MSQ_BL_POST_PULSE">
+<span id="_CPPv217MSQ_BL_POST_PULSE"></span><span id="MSQ_BL_POST_PULSE__variableC"></span><span class="target" id="_m_i_e_s___analysis_functions___multi_patch_seq_8ipf_1a0cbbee4d0a7f87900bc3270ab2463983"></span><em class="property">const</em> variable <code class="descname">MSQ_BL_POST_PULSE</code> = 0x1<a class="headerlink" href="#_CPPv317MSQ_BL_POST_PULSE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv318MSQ_RMS_SHORT_TEST">
+<span id="_CPPv218MSQ_RMS_SHORT_TEST"></span><span id="MSQ_RMS_SHORT_TEST__variableC"></span><span class="target" id="_m_i_e_s___analysis_functions___multi_patch_seq_8ipf_1abfe5dd63c3b4b3f8c82d7dba4a8ac17a"></span><em class="property">const</em> variable <code class="descname">MSQ_RMS_SHORT_TEST</code> = 0x0<a class="headerlink" href="#_CPPv318MSQ_RMS_SHORT_TEST" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv317MSQ_RMS_LONG_TEST">
+<span id="_CPPv217MSQ_RMS_LONG_TEST"></span><span id="MSQ_RMS_LONG_TEST__variableC"></span><span class="target" id="_m_i_e_s___analysis_functions___multi_patch_seq_8ipf_1a0e5162111fc690e6921d6416c931eb90"></span><em class="property">const</em> variable <code class="descname">MSQ_RMS_LONG_TEST</code> = 0x1<a class="headerlink" href="#_CPPv317MSQ_RMS_LONG_TEST" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv316MSQ_TARGETV_TEST">
+<span id="_CPPv216MSQ_TARGETV_TEST"></span><span id="MSQ_TARGETV_TEST__variableC"></span><span class="target" id="_m_i_e_s___analysis_functions___multi_patch_seq_8ipf_1a64cb3f70115e74b9b2a625ee3a4e8009"></span><em class="property">const</em> variable <code class="descname">MSQ_TARGETV_TEST</code> = 0x2<a class="headerlink" href="#_CPPv316MSQ_TARGETV_TEST" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv318MSQ_FRE_LBN_PREFIX">
+<span id="_CPPv218MSQ_FRE_LBN_PREFIX"></span><span id="MSQ_FRE_LBN_PREFIX__stringC"></span><span class="target" id="_m_i_e_s___analysis_functions___multi_patch_seq_8ipf_1aff7777dd8b7f1372ad24d2c41693b478"></span><em class="property">const</em> string <code class="descname">MSQ_FRE_LBN_PREFIX</code> = &quot;F Rheo E&quot;<a class="headerlink" href="#_CPPv318MSQ_FRE_LBN_PREFIX" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv317MSQ_DS_LBN_PREFIX">
+<span id="_CPPv217MSQ_DS_LBN_PREFIX"></span><span id="MSQ_DS_LBN_PREFIX__stringC"></span><span class="target" id="_m_i_e_s___analysis_functions___multi_patch_seq_8ipf_1a55113f806f90d76048e2f4b896c8266a"></span><em class="property">const</em> string <code class="descname">MSQ_DS_LBN_PREFIX</code> = &quot;Da Scale&quot;<a class="headerlink" href="#_CPPv317MSQ_DS_LBN_PREFIX" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="class">
+<dt id="_CPPv317MSQ_PulseSettings">
+<span id="_CPPv217MSQ_PulseSettings"></span><span id="MSQ_PulseSettings"></span><span class="target" id="struct_m_s_q___pulse_settings"></span><em class="property">struct </em><code class="descname">MSQ_PulseSettings</code><a class="headerlink" href="#_CPPv317MSQ_PulseSettings" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Settings structure filled by <a class="reference internal" href="#_m_i_e_s___analysis_functions___multi_patch_seq_8ipf_1a71d22390b623123666e23a4f94e24dfe"><span class="std std-ref">MSQ_GetPulseSettingsForType()</span></a> </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="member">
+<dt id="_CPPv3N17MSQ_PulseSettings19prePulseChunkLengthE">
+<span id="_CPPv2N17MSQ_PulseSettings19prePulseChunkLengthE"></span><span id="MSQ_PulseSettings::prePulseChunkLength__variable"></span><span class="target" id="struct_m_s_q___pulse_settings_1a3dc046eb58e4a165e5353894d2bbc23f"></span>variable <code class="descname">prePulseChunkLength</code><a class="headerlink" href="#_CPPv3N17MSQ_PulseSettings19prePulseChunkLengthE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N17MSQ_PulseSettings13pulseDurationE">
+<span id="_CPPv2N17MSQ_PulseSettings13pulseDurationE"></span><span id="MSQ_PulseSettings::pulseDuration__variable"></span><span class="target" id="struct_m_s_q___pulse_settings_1a52b0f0bcef6482eeb6f2c041b8574263"></span>variable <code class="descname">pulseDuration</code><a class="headerlink" href="#_CPPv3N17MSQ_PulseSettings13pulseDurationE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N17MSQ_PulseSettings20postPulseChunkLengthE">
+<span id="_CPPv2N17MSQ_PulseSettings20postPulseChunkLengthE"></span><span id="MSQ_PulseSettings::postPulseChunkLength__variable"></span><span class="target" id="struct_m_s_q___pulse_settings_1aef7d378c16d6e8ff32c571708f84b285"></span>variable <code class="descname">postPulseChunkLength</code><a class="headerlink" href="#_CPPv3N17MSQ_PulseSettings20postPulseChunkLengthE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table of Contents</a></h3>
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../developers.html">Developer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manualinstallation.html">Manual installation instructions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reportingbugs.html">Bug reporting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../releasenotes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grouplist.html">Group list</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../filelist.html">File list</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="_compilation_tester_8ipf.html">File CompilationTester.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_compilation_tester_utils_8ipf.html">File CompilationTesterUtils.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___constants_8ipf.html">File IPNWB_Constants.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___debugging_8ipf.html">File IPNWB_Debugging.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___h_d_f5_helpers_8ipf.html">File IPNWB_HDF5Helpers.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___include_8ipf.html">File IPNWB_Include.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___reader_8ipf.html">File IPNWB_Reader.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___structures_8ipf.html">File IPNWB_Structures.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___utils_8ipf.html">File IPNWB_Utils.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___writer_8ipf.html">File IPNWB_Writer.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___amplifier_interaction_8ipf.html">File MIES_AmplifierInteraction.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_browser_8ipf.html">File MIES_AnalysisBrowser.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_browser___lab_notebook_t_p_storage_browser_8ipf.html">File MIES_AnalysisBrowser_LabNotebookTPStorageBrowser.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_browser___sweep_browser_8ipf.html">File MIES_AnalysisBrowser_SweepBrowser.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_browser___sweep_browser___export_8ipf.html">File MIES_AnalysisBrowser_SweepBrowser_Export.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_function_helpers_8ipf.html">File MIES_AnalysisFunctionHelpers.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_function_management_8ipf.html">File MIES_AnalysisFunctionManagement.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_function_prototypes_8ipf.html">File MIES_AnalysisFunctionPrototypes.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_functions_8ipf.html">File MIES_AnalysisFunctions.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_functions___dashboard_8ipf.html">File MIES_AnalysisFunctions_Dashboard.ipf</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">File MIES_AnalysisFunctions_MultiPatchSeq.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_functions___patch_seq_8ipf.html">File MIES_AnalysisFunctions_PatchSeq.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_master_8ipf.html">File MIES_AnalysisMaster.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___artefact_removal_8ipf.html">File MIES_ArtefactRemoval.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___async_8ipf.html">File MIES_Async.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___asynchronous_data_8ipf.html">File MIES_AsynchronousData.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___background_watchdog_8ipf.html">File MIES_BackgroundWatchdog.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___blowout_8ipf.html">File MIES_Blowout.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___browser_settings_panel_8ipf.html">File MIES_BrowserSettingsPanel.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___cache_8ipf.html">File MIES_Cache.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___check_installation_8ipf.html">File MIES_CheckInstallation.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___constants_8ipf.html">File MIES_Constants.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___d_a_c-_hardware_8ipf.html">File MIES_DAC-Hardware.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___d_a_ephys_8ipf.html">File MIES_DAEphys.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___d_a_ephys___gui_state_8ipf.html">File MIES_DAEphys_GuiState.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___d_a_ephys___macro_8ipf.html">File MIES_DAEphys_Macro.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___data_acquisition_8ipf.html">File MIES_DataAcquisition.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___data_acquisition___multi_8ipf.html">File MIES_DataAcquisition_Multi.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___data_acquisition___single_8ipf.html">File MIES_DataAcquisition_Single.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___data_browser_8ipf.html">File MIES_DataBrowser.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___data_configurator_i_t_c_8ipf.html">File MIES_DataConfiguratorITC.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___debug_panel_8ipf.html">File MIES_DebugPanel.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___debugging_8ipf.html">File MIES_Debugging.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___downsample_8ipf.html">File MIES_Downsample.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___enhanced_w_m_routines_8ipf.html">File MIES_EnhancedWMRoutines.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___event_detection_code_8ipf.html">File MIES_EventDetectionCode.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___experiment_config_8ipf.html">File MIES_ExperimentConfig.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___experiment_documentation_8ipf.html">File MIES_ExperimentDocumentation.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___foreign_function_interface_8ipf.html">File MIES_ForeignFunctionInterface.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___global_string_and_variable_access_8ipf.html">File MIES_GlobalStringAndVariableAccess.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___gui_utilities_8ipf.html">File MIES_GuiUtilities.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___h_d_f5_ops_8ipf.html">File MIES_HDF5Ops.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___igor_hooks_8ipf.html">File MIES_IgorHooks.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___include_8ipf.html">File MIES_Include.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___indexing_8ipf.html">File MIES_Indexing.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___menu_8ipf.html">File MIES_Menu.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___mies_utilities_8ipf.html">File MIES_MiesUtilities.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___neuro_data_without_borders_8ipf.html">File MIES_NeuroDataWithoutBorders.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___optimzed_overlap_distributed_acquisition_8ipf.html">File MIES_OptimzedOverlapDistributedAcquisition.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___oscilloscope_8ipf.html">File MIES_Oscilloscope.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___overlay_sweeps_8ipf.html">File MIES_OverlaySweeps.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___pressure_control_8ipf.html">File MIES_PressureControl.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___programmatic_g_u_i_control_8ipf.html">File MIES_ProgrammaticGUIControl.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___pulse_averaging_8ipf.html">File MIES_PulseAveraging.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___repeated_acquisition_8ipf.html">File MIES_RepeatedAcquisition.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___sampling_interval_8ipf.html">File MIES_SamplingInterval.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___structures_8ipf.html">File MIES_Structures.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___sweep_saving_8ipf.html">File MIES_SweepSaving.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___tango_interact_8ipf.html">File MIES_TangoInteract.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___test_pulse_8ipf.html">File MIES_TestPulse.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___test_pulse___multi_8ipf.html">File MIES_TestPulse_Multi.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___test_pulse___single_8ipf.html">File MIES_TestPulse_Single.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___threaded_f_i_f_o_handling_8ipf.html">File MIES_ThreadedFIFOHandling.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___threadsafe_utilities_8ipf.html">File MIES_ThreadsafeUtilities.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___utilities_8ipf.html">File MIES_Utilities.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___wave_builder_8ipf.html">File MIES_WaveBuilder.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___wave_builder_panel_8ipf.html">File MIES_WaveBuilderPanel.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___wave_data_folder_getters_8ipf.html">File MIES_WaveDataFolderGetters.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_zero_m_q___interop_8ipf.html">File ZeroMQ_Interop.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interface_8h.html">File interface.h</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../structlist.html">Struct list</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../namespacelist.html">Namespace list</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CalculateTPLikePropsFromSweep.html">CalculateTPLikePropsFromSweep Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IPNWB.html">Igor Pro module for reading and writing NeurodataWithoutBorder files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TPAnalysis_algorithm.html">Testpulse Analysis Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../asyncframework.html">Async Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ZeroMQ-XOP-Readme.html">ZeroMQ XOP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../labnotebook-docs.html">Labnotebook documentation for developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mies-concepts.html">Important MIES concepts for developers</a></li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="_m_i_e_s___analysis_functions___dashboard_8ipf.html"
+                        title="previous chapter">File MIES_AnalysisFunctions_Dashboard.ipf</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="_m_i_e_s___analysis_functions___patch_seq_8ipf.html"
+                        title="next chapter">File MIES_AnalysisFunctions_PatchSeq.ipf</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/file/_m_i_e_s___analysis_functions___multi_patch_seq_8ipf.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="_m_i_e_s___analysis_functions___patch_seq_8ipf.html" title="File MIES_AnalysisFunctions_PatchSeq.ipf"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="_m_i_e_s___analysis_functions___dashboard_8ipf.html" title="File MIES_AnalysisFunctions_Dashboard.ipf"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">MIES Igor (master) latest-52-g2ffc1636 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../filelist.html" >File list</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright .
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.3.
+    </div>
+  </body>
+</html>

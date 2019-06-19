@@ -1,0 +1,654 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>File MIES_TangoInteract.ipf &#8212; MIES Igor (master) latest-52-g2ffc1636 documentation</title>
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" />
+    
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    
+    <script type="text/javascript" src="../_static/sidebar.js"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="File MIES_TestPulse.ipf" href="_m_i_e_s___test_pulse_8ipf.html" />
+    <link rel="prev" title="File MIES_SweepSaving.ipf" href="_m_i_e_s___sweep_saving_8ipf.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="_m_i_e_s___test_pulse_8ipf.html" title="File MIES_TestPulse.ipf"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="_m_i_e_s___sweep_saving_8ipf.html" title="File MIES_SweepSaving.ipf"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">MIES Igor (master) latest-52-g2ffc1636 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../filelist.html" accesskey="U">File list</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="file-mies-tangointeract-ipf">
+<span id="id1"></span><h1>File MIES_TangoInteract.ipf<a class="headerlink" href="#file-mies-tangointeract-ipf" title="Permalink to this headline">¶</a></h1>
+<p><strong>TI</strong> Interface to the <a class="reference external" href="http://www.tango-controls.org/">tango</a> layer </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Functions</p>
+<dl class="function">
+<dt id="_CPPv320TI_TangoCommandInput6string">
+<span id="_CPPv220TI_TangoCommandInput6string"></span><span id="TI_TangoCommandInput__string"></span><span class="target" id="_m_i_e_s___tango_interact_8ipf_1a9874078200b04a01b78fc4dc06267beb"></span>variable <code class="descname">TI_TangoCommandInput</code><span class="sig-paren">(</span>string <em>cmdString</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv320TI_TangoCommandInput6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>function for recieving the command strings from the WSE </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">cmdString</span></code>: format is “cmd_id:&lt;id&gt;|&lt;cmd_string&gt;” </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv314TI_OpenDAPanel8variable6string">
+<span id="_CPPv214TI_OpenDAPanel8variable6string"></span><span id="TI_OpenDAPanel__variable.string"></span><span class="target" id="_m_i_e_s___tango_interact_8ipf_1a2070a9042256a5374f365dfdf822180f"></span>variable <code class="descname">TI_OpenDAPanel</code><span class="sig-paren">(</span>variable <em>placeHolder</em>, string <em>cmdID</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv314TI_OpenDAPanel8variable6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>function for opening da_ephys panel remotely from the WSE </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">placeHolder</span></code>:  a dummy variable needed for making this command work with the TangoCommandInput call from the WSE </li>
+<li><code class="docutils literal notranslate"><span class="pre">cmdID</span></code>: optional parameter…if being called from WSE, this will be present. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv321TI_selectDeviceNumber8variable6string">
+<span id="_CPPv221TI_selectDeviceNumber8variable6string"></span><span id="TI_selectDeviceNumber__variable.string"></span><span class="target" id="_m_i_e_s___tango_interact_8ipf_1a11071a05a5373f1e0079446c7f4563f5"></span>variable <code class="descname">TI_selectDeviceNumber</code><span class="sig-paren">(</span>variable <em>devNumber</em>, string <em>cmdID</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv321TI_selectDeviceNumber8variable6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>function for selecting the device number from the WSE </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">devNumber</span></code>:  device number, set from the WSE </li>
+<li><code class="docutils literal notranslate"><span class="pre">cmdID</span></code>: optional parameter…if being called from WSE, this will be present. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv318TI_selectITCDevice8variable6string">
+<span id="_CPPv218TI_selectITCDevice8variable6string"></span><span id="TI_selectITCDevice__variable.string"></span><span class="target" id="_m_i_e_s___tango_interact_8ipf_1a6aad593fada0218ce29649d640567b63"></span>variable <code class="descname">TI_selectITCDevice</code><span class="sig-paren">(</span>variable <em>placeHolder</em>, string <em>cmdID</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv318TI_selectITCDevice8variable6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>function for selecting the ITC18USB device </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">placeHolder</span></code>:  a dummy variable needed for making this command work with the TangoCommandInput call from the WSE </li>
+<li><code class="docutils literal notranslate"><span class="pre">cmdID</span></code>: optional parameter…if being called from WSE, this will be present. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv316TI_lockITCDevice8variable6string">
+<span id="_CPPv216TI_lockITCDevice8variable6string"></span><span id="TI_lockITCDevice__variable.string"></span><span class="target" id="_m_i_e_s___tango_interact_8ipf_1a5734efa920f3bd7f96f7a8b10f09e46e"></span>variable <code class="descname">TI_lockITCDevice</code><span class="sig-paren">(</span>variable <em>placeHolder</em>, string <em>cmdID</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv316TI_lockITCDevice8variable6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>function for locking the device selection </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">placeHolder</span></code>:  a dummy variable needed for making this command work with the TangoCommandInput call from the WSE </li>
+<li><code class="docutils literal notranslate"><span class="pre">cmdID</span></code>: optional parameter…if being called from WSE, this will be present. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv312TI_queryAmps8variable6string">
+<span id="_CPPv212TI_queryAmps8variable6string"></span><span id="TI_queryAmps__variable.string"></span><span class="target" id="_m_i_e_s___tango_interact_8ipf_1a6eba07e77e20c9612174bec3d267e68b"></span>variable <code class="descname">TI_queryAmps</code><span class="sig-paren">(</span>variable <em>placeHolder</em>, string <em>cmdID</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv312TI_queryAmps8variable6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>function for querying the connected amps </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">placeHolder</span></code>:  a dummy variable needed for making this command work with the TangoCommandInput call from the WSE </li>
+<li><code class="docutils literal notranslate"><span class="pre">cmdID</span></code>: optional parameter…if being called from WSE, this will be present. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv313TI_loadConfig8variable6string">
+<span id="_CPPv213TI_loadConfig8variable6string"></span><span id="TI_loadConfig__variable.string"></span><span class="target" id="_m_i_e_s___tango_interact_8ipf_1a0bde3b2e7ae2877e4d3b63c636421b98"></span>variable <code class="descname">TI_loadConfig</code><span class="sig-paren">(</span>variable <em>placeHolder</em>, string <em>cmdID</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv313TI_loadConfig8variable6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>function for loading UserConfig.txt </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">placeHolder</span></code>:  a dummy variable needed for making this command work with the TangoCommandInput call from the WSE </li>
+<li><code class="docutils literal notranslate"><span class="pre">cmdID</span></code>: optional parameter…if being called from WSE, this will be present. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv319TI_selectAmpChannel8variable6string">
+<span id="_CPPv219TI_selectAmpChannel8variable6string"></span><span id="TI_selectAmpChannel__variable.string"></span><span class="target" id="_m_i_e_s___tango_interact_8ipf_1a9b6ac14f577ce7c1e0010027928e669c"></span>variable <code class="descname">TI_selectAmpChannel</code><span class="sig-paren">(</span>variable <em>ampChannel</em>, string <em>cmdID</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv319TI_selectAmpChannel8variable6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>function for querying the connected amps </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">ampChannel</span></code>:  amplifier channel to be connected by the WSE </li>
+<li><code class="docutils literal notranslate"><span class="pre">cmdID</span></code>: optional parameter…if being called from WSE, this will be present. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv315TI_autoFillAmps8variable6string">
+<span id="_CPPv215TI_autoFillAmps8variable6string"></span><span id="TI_autoFillAmps__variable.string"></span><span class="target" id="_m_i_e_s___tango_interact_8ipf_1a1797b74999932df27da8f41271baad0c"></span>variable <code class="descname">TI_autoFillAmps</code><span class="sig-paren">(</span>variable <em>headstage</em>, string <em>cmdID</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv315TI_autoFillAmps8variable6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>function for hitting the autofill button </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">headstage</span></code>:  headstage to be used in pipeline experiments and set via the WSE </li>
+<li><code class="docutils literal notranslate"><span class="pre">cmdID</span></code>: optional parameter…if being called from WSE, this will be present. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv318TI_selectHeadStage8variable6string">
+<span id="_CPPv218TI_selectHeadStage8variable6string"></span><span id="TI_selectHeadStage__variable.string"></span><span class="target" id="_m_i_e_s___tango_interact_8ipf_1a1835e6b3a43d60fdc8ed48de5ce8d342"></span>variable <code class="descname">TI_selectHeadStage</code><span class="sig-paren">(</span>variable <em>headstage</em>, string <em>cmdID</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv318TI_selectHeadStage8variable6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>function for selecting the headstage </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">headstage</span></code>:  headstage to be used in pipeline experiments and selected via the WSE </li>
+<li><code class="docutils literal notranslate"><span class="pre">cmdID</span></code>: [optional, defaults to blank] if function is called from WSE, this will be present. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv314TI_saveNWBFile6string6string">
+<span id="_CPPv214TI_saveNWBFile6string6string"></span><span id="TI_saveNWBFile__string.string"></span><span class="target" id="_m_i_e_s___tango_interact_8ipf_1a3329efc8b63735cf93e79b0b7f496d12"></span>variable <code class="descname">TI_saveNWBFile</code><span class="sig-paren">(</span>string <em>nwbFileLocation</em>, string <em>cmdID</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv314TI_saveNWBFile6string6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>function for saving data space in the nwb format, to be invoked from the WSE </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">nwbFileLocation</span></code>: complete file path for nwb save file </li>
+<li><code class="docutils literal notranslate"><span class="pre">cmdID</span></code>: [optional, defaults to blank] if called from WSE, this will be present. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv324TI_returnNWBFileLocation6string">
+<span id="_CPPv224TI_returnNWBFileLocation6string"></span><span id="TI_returnNWBFileLocation__string"></span><span class="target" id="_m_i_e_s___tango_interact_8ipf_1a732c0a3a7cce46077555dc3d2e3c5da8"></span>variable <code class="descname">TI_returnNWBFileLocation</code><span class="sig-paren">(</span>string <em>cmdID</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv324TI_returnNWBFileLocation6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return the string containing the location of the saved NWB formatted data file. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">cmdID</span></code>: optional parameter…if being called from WSE, this will be present. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv312TI_TangoSave6string6string">
+<span id="_CPPv212TI_TangoSave6string6string"></span><span id="TI_TangoSave__string.string"></span><span class="target" id="_m_i_e_s___tango_interact_8ipf_1a5b1af20505e62992e6a26ab9faa280e6"></span>variable <code class="descname">TI_TangoSave</code><span class="sig-paren">(</span>string <em>saveFileName</em>, string <em>cmdID</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv312TI_TangoSave6string6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Save Mies Experiment as a packed experiment. This saves the entire Tango data space. Will be supplimented in the future with a second function that will save the Sweep Data only. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">saveFileName</span></code>: file name for the saved packed experiment </li>
+<li><code class="docutils literal notranslate"><span class="pre">cmdID</span></code>: optional parameter…if being called from WSE, this will be present. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv323TI_ConfigureMCCforIVSCC8variable6string">
+<span id="_CPPv223TI_ConfigureMCCforIVSCC8variable6string"></span><span id="TI_ConfigureMCCforIVSCC__variable.string"></span><span class="target" id="_m_i_e_s___tango_interact_8ipf_1a7e0f8b0bc42a7579748ceaa478e39e37"></span>variable <code class="descname">TI_ConfigureMCCforIVSCC</code><span class="sig-paren">(</span>variable <em>headstage</em>, string <em>cmdID</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv323TI_ConfigureMCCforIVSCC8variable6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>load initial settings into the MCC for use with the pipeline rigs </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">headstage</span></code>: headstage to be configured </li>
+<li><code class="docutils literal notranslate"><span class="pre">cmdID</span></code>: optional parameter…if being called from WSE, this will be present. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv321TI_runBaselineCheckQC8variable6string">
+<span id="_CPPv221TI_runBaselineCheckQC8variable6string"></span><span id="TI_runBaselineCheckQC__variable.string"></span><span class="target" id="_m_i_e_s___tango_interact_8ipf_1a627c0601e15d5352970d0f83a8145155"></span>variable <code class="descname">TI_runBaselineCheckQC</code><span class="sig-paren">(</span>variable <em>headstage</em>, string <em>cmdID</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv321TI_runBaselineCheckQC8variable6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>run the baseline QC check from the WSE. This will zero the amp using the pipette offset function call, and look at the baselineSSAvg, already calculated during the TestPulse. </p>
+<p>The EXTPINBATH wave will also be run as a way of making sure the baseline is recorded into the data set for post-experiment analysis </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv329TI_StartBckgrdBaselineQCCheckv">
+<span id="_CPPv229TI_StartBckgrdBaselineQCCheckv"></span><span id="TI_StartBckgrdBaselineQCCheck"></span><span class="target" id="_m_i_e_s___tango_interact_8ipf_1a54904349bcd21d569c97b92a074d3360"></span>variable <code class="descname">TI_StartBckgrdBaselineQCCheck</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv329TI_StartBckgrdBaselineQCCheckv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Run the Baseline QC check in the background. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv324TI_finishBaselineQCCheckP18WMBackgroundStruct">
+<span id="_CPPv224TI_finishBaselineQCCheckP18WMBackgroundStruct"></span><span id="TI_finishBaselineQCCheck__WMBackgroundStructP"></span><span class="target" id="group___background_functions_1gafd21788c8f37e8f31de2b305b1bd9042"></span>variable <code class="descname">TI_finishBaselineQCCheck</code><span class="sig-paren">(</span>WMBackgroundStruct *<em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv324TI_finishBaselineQCCheckP18WMBackgroundStruct" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Complete the Baseline QC check in the background. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv322TI_runElectrodeDriftQC8variable8variable6string">
+<span id="_CPPv222TI_runElectrodeDriftQC8variable8variable6string"></span><span id="TI_runElectrodeDriftQC__variable.variable.string"></span><span class="target" id="_m_i_e_s___tango_interact_8ipf_1aa172f260133847dbc7b99d4d34b2768b"></span>variable <code class="descname">TI_runElectrodeDriftQC</code><span class="sig-paren">(</span>variable <em>headstage</em>, variable <em>expTime</em>, string <em>cmdID</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv322TI_runElectrodeDriftQC8variable8variable6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Run the Electrode Drift QC check. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">headstage</span></code>: device </li>
+<li><code class="docutils literal notranslate"><span class="pre">expTime</span></code>: in minutes, from the WSE, from the start of the experiment </li>
+<li><code class="docutils literal notranslate"><span class="pre">cmdID</span></code>: optional parameter…if being called from WSE, this will be present. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv323TI_runInitAccessResisQC8variable6string">
+<span id="_CPPv223TI_runInitAccessResisQC8variable6string"></span><span id="TI_runInitAccessResisQC__variable.string"></span><span class="target" id="_m_i_e_s___tango_interact_8ipf_1a7f95308bee8d9ae970e35db3501fd2c6"></span>variable <code class="descname">TI_runInitAccessResisQC</code><span class="sig-paren">(</span>variable <em>headstage</em>, string <em>cmdID</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv323TI_runInitAccessResisQC8variable6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>run the initial access resistance check from the WSE. This will check must be &lt; 20MOhm or 15% of the R input. The EXTPBREAKN wave will also be run as a way of making sure the reading is recorded into the data set for post-experiment analysis </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv331TI_StartBckgrdInitAccessQCCheckv">
+<span id="_CPPv231TI_StartBckgrdInitAccessQCCheckv"></span><span id="TI_StartBckgrdInitAccessQCCheck"></span><span class="target" id="_m_i_e_s___tango_interact_8ipf_1a059050ea03ce3a53e4318c2127ae0811"></span>variable <code class="descname">TI_StartBckgrdInitAccessQCCheck</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv331TI_StartBckgrdInitAccessQCCheckv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Complete the Init Resistance QC check in the background. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv326TI_finishInitAccessQCCheckP18WMBackgroundStruct">
+<span id="_CPPv226TI_finishInitAccessQCCheckP18WMBackgroundStruct"></span><span id="TI_finishInitAccessQCCheck__WMBackgroundStructP"></span><span class="target" id="group___background_functions_1ga038f42ee4cb249f9fa32f33fbf1b8714"></span>variable <code class="descname">TI_finishInitAccessQCCheck</code><span class="sig-paren">(</span>WMBackgroundStruct *<em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv326TI_finishInitAccessQCCheckP18WMBackgroundStruct" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Complete the Baseline QC check in the background. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv317TI_runCoreStimSet8variable6string6string">
+<span id="_CPPv217TI_runCoreStimSet8variable6string6string"></span><span id="TI_runCoreStimSet__variable.string.string"></span><span class="target" id="_m_i_e_s___tango_interact_8ipf_1a253ff4069d75de43b8142e72788937b7"></span>variable <code class="descname">TI_runCoreStimSet</code><span class="sig-paren">(</span>variable <em>headstage</em>, string <em>stimName</em>, string <em>cmdID</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv317TI_runCoreStimSet8variable6string6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>run the Core StimSet Waves from the WSE, as part of the PatchSeq experiment. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">headstage</span></code>: headstage to be used </li>
+<li><code class="docutils literal notranslate"><span class="pre">stimName</span></code>: coreSetWave to be run </li>
+<li><code class="docutils literal notranslate"><span class="pre">cmdID</span></code>: optional parameter…if being called from WSE, this will be present. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv328TI_StartBckgrdRunCoreStimSetv">
+<span id="_CPPv228TI_StartBckgrdRunCoreStimSetv"></span><span id="TI_StartBckgrdRunCoreStimSet"></span><span class="target" id="_m_i_e_s___tango_interact_8ipf_1a33bcbc46c73b411b278b9b2692e3505c"></span>variable <code class="descname">TI_StartBckgrdRunCoreStimSet</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv328TI_StartBckgrdRunCoreStimSetv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Complete the RunCoreStimSet in the background. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv323TI_finishRunCoreStimSetP18WMBackgroundStruct">
+<span id="_CPPv223TI_finishRunCoreStimSetP18WMBackgroundStruct"></span><span id="TI_finishRunCoreStimSet__WMBackgroundStructP"></span><span class="target" id="group___background_functions_1ga2e014f3ce74367b2c63049458fc198b1"></span>variable <code class="descname">TI_finishRunCoreStimSet</code><span class="sig-paren">(</span>WMBackgroundStruct *<em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv323TI_finishRunCoreStimSetP18WMBackgroundStruct" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>finish the RunCoreStimSet in the background </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv318TI_runAdaptiveStim6string8variable8variable8variable8variable6string">
+<span id="_CPPv218TI_runAdaptiveStim6string8variable8variable8variable8variable6string"></span><span id="TI_runAdaptiveStim__string.variable.variable.variable.variable.string"></span><span class="target" id="_m_i_e_s___tango_interact_8ipf_1a227fce28adff1c93647dd056da6ede67"></span>string <code class="descname">TI_runAdaptiveStim</code><span class="sig-paren">(</span>string <em>stimWaveName</em>, variable <em>initScaleFactor</em>, variable <em>scaleFactor</em>, variable <em>threshold</em>, variable <em>headstage</em>, string <em>cmdID</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv318TI_runAdaptiveStim6string8variable8variable8variable8variable6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>routine to be called from the WSE to use a one step scale adjustment to find the scale factor that causes and AP firing </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">stimWaveName</span></code>: stimWaveName to be used </li>
+<li><code class="docutils literal notranslate"><span class="pre">initScaleFactor</span></code>: initial scale factor to start with </li>
+<li><code class="docutils literal notranslate"><span class="pre">scaleFactor</span></code>: scale factor adjustment value </li>
+<li><code class="docutils literal notranslate"><span class="pre">threshold</span></code>: threshold value to indicate AP firing </li>
+<li><code class="docutils literal notranslate"><span class="pre">headstage</span></code>: headstage to be used </li>
+<li><code class="docutils literal notranslate"><span class="pre">cmdID</span></code>: optional parameter…if being called from WSE, this will be present. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv318TI_runGigOhmSealQC8variable6string">
+<span id="_CPPv218TI_runGigOhmSealQC8variable6string"></span><span id="TI_runGigOhmSealQC__variable.string"></span><span class="target" id="_m_i_e_s___tango_interact_8ipf_1a53e6342cc4ade415a14672f8d0ab7780"></span>variable <code class="descname">TI_runGigOhmSealQC</code><span class="sig-paren">(</span>variable <em>headstage</em>, string <em>cmdID</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv318TI_runGigOhmSealQC8variable6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>run the GigOhm seal QC check from the WSE. This will make sure the Steady State resistance must be &gt; 1.0 GOhm . The EXTPCIIATT wave will also be run as a way of making sure the baseline is recorded into the data set for post-experiment analysis </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv331TI_StartBckgrdGigOhmSealQCCheckv">
+<span id="_CPPv231TI_StartBckgrdGigOhmSealQCCheckv"></span><span id="TI_StartBckgrdGigOhmSealQCCheck"></span><span class="target" id="_m_i_e_s___tango_interact_8ipf_1ad7910a387b3b622cab0a738a1f0f325c"></span>variable <code class="descname">TI_StartBckgrdGigOhmSealQCCheck</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv331TI_StartBckgrdGigOhmSealQCCheckv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Complete the Gig Ohm Seal QC check in the background. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv326TI_finishGigOhmSealQCCheckP18WMBackgroundStruct">
+<span id="_CPPv226TI_finishGigOhmSealQCCheckP18WMBackgroundStruct"></span><span id="TI_finishGigOhmSealQCCheck__WMBackgroundStructP"></span><span class="target" id="group___background_functions_1ga23061950df39d93398c5221432b863d5"></span>variable <code class="descname">TI_finishGigOhmSealQCCheck</code><span class="sig-paren">(</span>WMBackgroundStruct *<em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv326TI_finishGigOhmSealQCCheckP18WMBackgroundStruct" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>finish the Gig Ohm Seal QC in the background </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv324TI_runBracketingFunction6string8variable8variable8variable8variable6string">
+<span id="_CPPv224TI_runBracketingFunction6string8variable8variable8variable8variable6string"></span><span id="TI_runBracketingFunction__string.variable.variable.variable.variable.string"></span><span class="target" id="_m_i_e_s___tango_interact_8ipf_1ac7626666a8021f876643c9442ed85961"></span>string <code class="descname">TI_runBracketingFunction</code><span class="sig-paren">(</span>string <em>stimWaveName</em>, variable <em>coarseScaleFactor</em>, variable <em>fineScaleFactor</em>, variable <em>threshold</em>, variable <em>headstage</em>, string <em>cmdID</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv324TI_runBracketingFunction6string8variable8variable8variable8variable6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>routine to be called from the WSE to run a 2 step bracketing algorithm to find the scale factor that causes the AP to fire </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">stimWaveName</span></code>: stimWaveName to be used </li>
+<li><code class="docutils literal notranslate"><span class="pre">coarseScaleFactor</span></code>: coarse scale adjustment factor </li>
+<li><code class="docutils literal notranslate"><span class="pre">fineScaleFactor</span></code>: fine scale adjustment factor </li>
+<li><code class="docutils literal notranslate"><span class="pre">threshold</span></code>: threshold for AP firing </li>
+<li><code class="docutils literal notranslate"><span class="pre">headstage</span></code>: headstage to use </li>
+<li><code class="docutils literal notranslate"><span class="pre">cmdID</span></code>: optional parameter…if being called from WSE, this will be present. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv314TI_runStimWave6string8variable8variable6string">
+<span id="_CPPv214TI_runStimWave6string8variable8variable6string"></span><span id="TI_runStimWave__string.variable.variable.string"></span><span class="target" id="_m_i_e_s___tango_interact_8ipf_1a2afd5e72d6c2cecb5f9446864ed7bd4c"></span>variable <code class="descname">TI_runStimWave</code><span class="sig-paren">(</span>string <em>stimWaveName</em>, variable <em>scaleFactor</em>, variable <em>headstage</em>, string <em>cmdID</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv314TI_runStimWave6string8variable8variable6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>routine to be called from the WSE to run a designated stim wave </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">stimWaveName</span></code>: stimWaveName to be used </li>
+<li><code class="docutils literal notranslate"><span class="pre">scaleFactor</span></code>: scale factor to run the stim wave at </li>
+<li><code class="docutils literal notranslate"><span class="pre">headstage</span></code>: headstage to use </li>
+<li><code class="docutils literal notranslate"><span class="pre">cmdID</span></code>: optional parameter…if being called from WSE, this will be present. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv314TI_runAPResult8variable6string">
+<span id="_CPPv214TI_runAPResult8variable6string"></span><span id="TI_runAPResult__variable.string"></span><span class="target" id="_m_i_e_s___tango_interact_8ipf_1aa0ff8e6029c9808a1f15dadf503648d1"></span>string <code class="descname">TI_runAPResult</code><span class="sig-paren">(</span>variable <em>headstage</em>, string <em>cmdID</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv314TI_runAPResult8variable6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>routine to be called from the WSE to see if the Action Potential has fired </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">headstage</span></code>: indicate which headstage to look for the AP </li>
+<li><code class="docutils literal notranslate"><span class="pre">cmdID</span></code>: optional parameter…if being called from WSE, this will be present. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv315TI_runTestPulse8variable6string">
+<span id="_CPPv215TI_runTestPulse8variable6string"></span><span id="TI_runTestPulse__variable.string"></span><span class="target" id="_m_i_e_s___tango_interact_8ipf_1aaaa4f3040e32b238426c4efd69898b8f"></span>variable <code class="descname">TI_runTestPulse</code><span class="sig-paren">(</span>variable <em>tpCmd</em>, string <em>cmdID</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv315TI_runTestPulse8variable6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>routine to be called from the WSE to start and stop the test pulse </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">tpCmd</span></code>: 1 to turn on Test Pulse, 0 to turn off Test Pulse </li>
+<li><code class="docutils literal notranslate"><span class="pre">cmdID</span></code>: optional parameter…if being called from WSE, this will be present. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv315TI_runStopStart6string">
+<span id="_CPPv215TI_runStopStart6string"></span><span id="TI_runStopStart__string"></span><span class="target" id="_m_i_e_s___tango_interact_8ipf_1afb7884acfae6b18cdf546172d0d8b801"></span>variable <code class="descname">TI_runStopStart</code><span class="sig-paren">(</span>string <em>cmdID</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv315TI_runStopStart6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Routine to test starting and stopping acquisition by remotely hitting the start/stop button on the DA_Ephys panel. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">cmdID</span></code>: optional parameter…if being called from WSE, this will be present. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv311TI_WriteAck6string8variable">
+<span id="_CPPv211TI_WriteAck6string8variable"></span><span id="TI_WriteAck__string.variable"></span><span class="target" id="_m_i_e_s___tango_interact_8ipf_1a81c177ea2f35fec6910e74bdfb615664"></span>variable <code class="descname">TI_WriteAck</code><span class="sig-paren">(</span>string <em>cmdID</em>, variable <em>returnValue</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv311TI_WriteAck6string8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Write the acknowledgement string back to the WSE. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">cmdID</span></code>: cmdID number to be sent back to WSE </li>
+<li><code class="docutils literal notranslate"><span class="pre">returnValue</span></code>: returnValue number to be sent back to the WSE…0 means acknowledged, -1 means failure </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv321TI_WriteAsyncResponse6string6string">
+<span id="_CPPv221TI_WriteAsyncResponse6string6string"></span><span id="TI_WriteAsyncResponse__string.string"></span><span class="target" id="_m_i_e_s___tango_interact_8ipf_1a8ead2837b9049759e54cd8b026bdd00c"></span>variable <code class="descname">TI_WriteAsyncResponse</code><span class="sig-paren">(</span>string <em>cmdID</em>, string <em>returnString</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv321TI_WriteAsyncResponse6string6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Write async responses back to the WSE. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">cmdID</span></code>: saved cmdID identifier number to be returned to the WSE </li>
+<li><code class="docutils literal notranslate"><span class="pre">returnString</span></code>: string containing all return values to be sent back to the WSE </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table of Contents</a></h3>
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../developers.html">Developer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manualinstallation.html">Manual installation instructions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reportingbugs.html">Bug reporting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../releasenotes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grouplist.html">Group list</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../filelist.html">File list</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="_compilation_tester_8ipf.html">File CompilationTester.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_compilation_tester_utils_8ipf.html">File CompilationTesterUtils.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___constants_8ipf.html">File IPNWB_Constants.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___debugging_8ipf.html">File IPNWB_Debugging.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___h_d_f5_helpers_8ipf.html">File IPNWB_HDF5Helpers.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___include_8ipf.html">File IPNWB_Include.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___reader_8ipf.html">File IPNWB_Reader.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___structures_8ipf.html">File IPNWB_Structures.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___utils_8ipf.html">File IPNWB_Utils.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___writer_8ipf.html">File IPNWB_Writer.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___amplifier_interaction_8ipf.html">File MIES_AmplifierInteraction.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_browser_8ipf.html">File MIES_AnalysisBrowser.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_browser___lab_notebook_t_p_storage_browser_8ipf.html">File MIES_AnalysisBrowser_LabNotebookTPStorageBrowser.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_browser___sweep_browser_8ipf.html">File MIES_AnalysisBrowser_SweepBrowser.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_browser___sweep_browser___export_8ipf.html">File MIES_AnalysisBrowser_SweepBrowser_Export.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_function_helpers_8ipf.html">File MIES_AnalysisFunctionHelpers.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_function_management_8ipf.html">File MIES_AnalysisFunctionManagement.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_function_prototypes_8ipf.html">File MIES_AnalysisFunctionPrototypes.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_functions_8ipf.html">File MIES_AnalysisFunctions.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_functions___dashboard_8ipf.html">File MIES_AnalysisFunctions_Dashboard.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_functions___multi_patch_seq_8ipf.html">File MIES_AnalysisFunctions_MultiPatchSeq.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_functions___patch_seq_8ipf.html">File MIES_AnalysisFunctions_PatchSeq.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_master_8ipf.html">File MIES_AnalysisMaster.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___artefact_removal_8ipf.html">File MIES_ArtefactRemoval.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___async_8ipf.html">File MIES_Async.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___asynchronous_data_8ipf.html">File MIES_AsynchronousData.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___background_watchdog_8ipf.html">File MIES_BackgroundWatchdog.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___blowout_8ipf.html">File MIES_Blowout.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___browser_settings_panel_8ipf.html">File MIES_BrowserSettingsPanel.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___cache_8ipf.html">File MIES_Cache.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___check_installation_8ipf.html">File MIES_CheckInstallation.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___constants_8ipf.html">File MIES_Constants.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___d_a_c-_hardware_8ipf.html">File MIES_DAC-Hardware.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___d_a_ephys_8ipf.html">File MIES_DAEphys.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___d_a_ephys___gui_state_8ipf.html">File MIES_DAEphys_GuiState.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___d_a_ephys___macro_8ipf.html">File MIES_DAEphys_Macro.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___data_acquisition_8ipf.html">File MIES_DataAcquisition.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___data_acquisition___multi_8ipf.html">File MIES_DataAcquisition_Multi.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___data_acquisition___single_8ipf.html">File MIES_DataAcquisition_Single.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___data_browser_8ipf.html">File MIES_DataBrowser.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___data_configurator_i_t_c_8ipf.html">File MIES_DataConfiguratorITC.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___debug_panel_8ipf.html">File MIES_DebugPanel.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___debugging_8ipf.html">File MIES_Debugging.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___downsample_8ipf.html">File MIES_Downsample.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___enhanced_w_m_routines_8ipf.html">File MIES_EnhancedWMRoutines.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___event_detection_code_8ipf.html">File MIES_EventDetectionCode.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___experiment_config_8ipf.html">File MIES_ExperimentConfig.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___experiment_documentation_8ipf.html">File MIES_ExperimentDocumentation.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___foreign_function_interface_8ipf.html">File MIES_ForeignFunctionInterface.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___global_string_and_variable_access_8ipf.html">File MIES_GlobalStringAndVariableAccess.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___gui_utilities_8ipf.html">File MIES_GuiUtilities.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___h_d_f5_ops_8ipf.html">File MIES_HDF5Ops.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___igor_hooks_8ipf.html">File MIES_IgorHooks.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___include_8ipf.html">File MIES_Include.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___indexing_8ipf.html">File MIES_Indexing.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___menu_8ipf.html">File MIES_Menu.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___mies_utilities_8ipf.html">File MIES_MiesUtilities.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___neuro_data_without_borders_8ipf.html">File MIES_NeuroDataWithoutBorders.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___optimzed_overlap_distributed_acquisition_8ipf.html">File MIES_OptimzedOverlapDistributedAcquisition.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___oscilloscope_8ipf.html">File MIES_Oscilloscope.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___overlay_sweeps_8ipf.html">File MIES_OverlaySweeps.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___pressure_control_8ipf.html">File MIES_PressureControl.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___programmatic_g_u_i_control_8ipf.html">File MIES_ProgrammaticGUIControl.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___pulse_averaging_8ipf.html">File MIES_PulseAveraging.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___repeated_acquisition_8ipf.html">File MIES_RepeatedAcquisition.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___sampling_interval_8ipf.html">File MIES_SamplingInterval.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___structures_8ipf.html">File MIES_Structures.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___sweep_saving_8ipf.html">File MIES_SweepSaving.ipf</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">File MIES_TangoInteract.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___test_pulse_8ipf.html">File MIES_TestPulse.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___test_pulse___multi_8ipf.html">File MIES_TestPulse_Multi.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___test_pulse___single_8ipf.html">File MIES_TestPulse_Single.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___threaded_f_i_f_o_handling_8ipf.html">File MIES_ThreadedFIFOHandling.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___threadsafe_utilities_8ipf.html">File MIES_ThreadsafeUtilities.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___utilities_8ipf.html">File MIES_Utilities.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___wave_builder_8ipf.html">File MIES_WaveBuilder.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___wave_builder_panel_8ipf.html">File MIES_WaveBuilderPanel.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___wave_data_folder_getters_8ipf.html">File MIES_WaveDataFolderGetters.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_zero_m_q___interop_8ipf.html">File ZeroMQ_Interop.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interface_8h.html">File interface.h</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../structlist.html">Struct list</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../namespacelist.html">Namespace list</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CalculateTPLikePropsFromSweep.html">CalculateTPLikePropsFromSweep Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IPNWB.html">Igor Pro module for reading and writing NeurodataWithoutBorder files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TPAnalysis_algorithm.html">Testpulse Analysis Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../asyncframework.html">Async Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ZeroMQ-XOP-Readme.html">ZeroMQ XOP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../labnotebook-docs.html">Labnotebook documentation for developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mies-concepts.html">Important MIES concepts for developers</a></li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="_m_i_e_s___sweep_saving_8ipf.html"
+                        title="previous chapter">File MIES_SweepSaving.ipf</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="_m_i_e_s___test_pulse_8ipf.html"
+                        title="next chapter">File MIES_TestPulse.ipf</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/file/_m_i_e_s___tango_interact_8ipf.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="_m_i_e_s___test_pulse_8ipf.html" title="File MIES_TestPulse.ipf"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="_m_i_e_s___sweep_saving_8ipf.html" title="File MIES_SweepSaving.ipf"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">MIES Igor (master) latest-52-g2ffc1636 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../filelist.html" >File list</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright .
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.3.
+    </div>
+  </body>
+</html>

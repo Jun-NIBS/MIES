@@ -1,0 +1,596 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>File MIES_GlobalStringAndVariableAccess.ipf &#8212; MIES Igor (master) latest-52-g2ffc1636 documentation</title>
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" />
+    
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    
+    <script type="text/javascript" src="../_static/sidebar.js"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="File MIES_GuiUtilities.ipf" href="_m_i_e_s___gui_utilities_8ipf.html" />
+    <link rel="prev" title="File MIES_ForeignFunctionInterface.ipf" href="_m_i_e_s___foreign_function_interface_8ipf.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="_m_i_e_s___gui_utilities_8ipf.html" title="File MIES_GuiUtilities.ipf"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="_m_i_e_s___foreign_function_interface_8ipf.html" title="File MIES_ForeignFunctionInterface.ipf"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">MIES Igor (master) latest-52-g2ffc1636 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../filelist.html" accesskey="U">File list</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="file-mies-globalstringandvariableaccess-ipf">
+<span id="id1"></span><h1>File MIES_GlobalStringAndVariableAccess.ipf<a class="headerlink" href="#file-mies-globalstringandvariableaccess-ipf" title="Permalink to this headline">¶</a></h1>
+<p>Helper functions for accessing global variables and strings. </p>
+<p>The functions GetNVARAsString and GetSVARAsString are static as they should not be used directly.</p>
+<p>Instead if you have a global variable named <code class="docutils literal notranslate"><span class="pre">iceCreamCounter</span></code> in <code class="docutils literal notranslate"><span class="pre">root:myfood</span></code> you would write in this file here a function like <div class="highlight-igorpro notranslate"><div class="highlight"><pre><span></span><span class="kr">Function</span>/S GetIceCreamCounterAsVariable()
+    <span class="k">return</span> GetNVARAsString(createDFWithAllParents(<span class="s">&quot;root:myfood&quot;</span>), <span class="s">&quot;iceCreamCounter&quot;</span>)
+<span class="kr">End</span>
+</pre></div>
+</div>
+ and then use it in your code as <div class="highlight-igorpro notranslate"><div class="highlight"><pre><span></span><span class="kr">Function</span> doStuff()
+    <span class="kt">NVAR</span> iceCreamCounter = $GetIceCreamCounterAsVariable()
+
+    iceCreamCounter += 1
+<span class="kr">End</span>
+</pre></div>
+</div>
+ </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Functions</p>
+<dl class="function">
+<dt id="_CPPv315GetNVARAsString5dfref6string8variable">
+<span id="_CPPv215GetNVARAsString5dfref6string8variable"></span><span id="GetNVARAsString__dfref.string.variable"></span><span class="target" id="_m_i_e_s___global_string_and_variable_access_8ipf_1a89a56af7f4690d830d6f33c1493f1feb"></span><em class="property">static</em> string <code class="descname">GetNVARAsString</code><span class="sig-paren">(</span>dfref <em>dfr</em>, string <em>globalVarName</em>, variable <em>initialValue</em> = defaultValue<span class="sig-paren">)</span><br /></dt>
+<dd><p>Returns the full path to a global variable. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">dfr</span></code>: location of the global variable, must exist </li>
+<li><code class="docutils literal notranslate"><span class="pre">globalVarName</span></code>: name of the global variable </li>
+<li><code class="docutils literal notranslate"><span class="pre">initialValue</span></code>: initial value of the variable. Will only be used if it is created. 0 by default. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv315GetSVARAsString5dfref6string6string">
+<span id="_CPPv215GetSVARAsString5dfref6string6string"></span><span id="GetSVARAsString__dfref.string.string"></span><span class="target" id="_m_i_e_s___global_string_and_variable_access_8ipf_1adda663266b20accc016fcca9afdb3a76"></span><em class="property">static</em> string <code class="descname">GetSVARAsString</code><span class="sig-paren">(</span>dfref <em>dfr</em>, string <em>globalStrName</em>, string <em>initialValue</em> = defaultValue<span class="sig-paren">)</span><br /></dt>
+<dd><p>Returns the full path to a global string. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">dfr</span></code>: location of the global string, must exist </li>
+<li><code class="docutils literal notranslate"><span class="pre">globalStrName</span></code>: name of the global string </li>
+<li><code class="docutils literal notranslate"><span class="pre">initialValue</span></code>: initial value of the string. Will only be used if it is created. null by default. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv314GetMiesVersionv">
+<span id="_CPPv214GetMiesVersionv"></span><span id="GetMiesVersion"></span><span class="target" id="_m_i_e_s___global_string_and_variable_access_8ipf_1afab118667f7010c16d1f4e2cd7e524bd"></span>string <code class="descname">GetMiesVersion</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv314GetMiesVersionv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns the full path to the mies-igor version string. Creating it when necessary. </p>
+<p>Never ever write this string! </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv317CreateMiesVersionv">
+<span id="_CPPv217CreateMiesVersionv"></span><span id="CreateMiesVersion"></span><span class="target" id="_m_i_e_s___global_string_and_variable_access_8ipf_1ad20ee66572263eaeb65b8fbc41acf81e"></span>string <code class="descname">CreateMiesVersion</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv317CreateMiesVersionv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return the version string for the mies-igor project. </p>
+<p>The mies version looks like</p>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>/// Release_1.4_20170929-16-g497e7aa8
+/// Date and time of last commit: 2018-05-08T14:42:50+02:00
+/// Submodule status:
+/// 160000 6c47163858d99986b27c70f6226e8fca894ed5f7 0   Packages/IPNWB
+/// 160000 ed7e824a6e065e383ae31bb304383e13d7c7ccb5 0   Packages/ITCXOP2
+/// 160000 2bd259940cb332339ed3c82b74632f06c9b68a15 0   Packages/ZeroMQ
+/// 160000 657e9e8abdc92aa299301796d710a0a717da4ef8 0   Packages/unit-testing
+///
+</pre></div>
+</div>
+ <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>or #UNKNOWN_MIES_VERSION on error
+
+@returns the mies version
+</pre></div>
+</div>
+ </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv317GetDataAcqRunMode6string">
+<span id="_CPPv217GetDataAcqRunMode6string"></span><span id="GetDataAcqRunMode__string"></span><span class="target" id="_m_i_e_s___global_string_and_variable_access_8ipf_1a8bd6590d2bef0d6a003b54edc5276faf"></span>string <code class="descname">GetDataAcqRunMode</code><span class="sig-paren">(</span>string <em>panelTitle</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv317GetDataAcqRunMode6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns the absolute path to the variable <code class="docutils literal notranslate"><span class="pre">runMode</span></code> </p>
+<p>The variable holds one of DAQRunModes. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv315GetFollowerList6string">
+<span id="_CPPv215GetFollowerList6string"></span><span id="GetFollowerList__string"></span><span class="target" id="_m_i_e_s___global_string_and_variable_access_8ipf_1a3757e1cc55dc87c63381fe8c346a789a"></span>string <code class="descname">GetFollowerList</code><span class="sig-paren">(</span>string <em>leadPanel</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv315GetFollowerList6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return the list of follower devices of a lead device. </p>
+<p><dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><a class="reference internal" href="_m_i_e_s___mies_utilities_8ipf.html#_m_i_e_s___mies_utilities_8ipf_1a3b56f08e77f705c2baba7ebd3a9a83c2"><span class="std std-ref">GetListofLeaderAndPossFollower()</span></a> </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv320GetITCDeviceIDGlobal6string">
+<span id="_CPPv220GetITCDeviceIDGlobal6string"></span><span id="GetITCDeviceIDGlobal__string"></span><span class="target" id="_m_i_e_s___global_string_and_variable_access_8ipf_1a09ab46a85dd5eff72fcf4e94bfc6d251"></span>string <code class="descname">GetITCDeviceIDGlobal</code><span class="sig-paren">(</span>string <em>panelTitle</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv320GetITCDeviceIDGlobal6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns the absolute path to the ITC device ID. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv321GetTPBufferSizeGlobal6string">
+<span id="_CPPv221GetTPBufferSizeGlobal6string"></span><span id="GetTPBufferSizeGlobal__string"></span><span class="target" id="_m_i_e_s___global_string_and_variable_access_8ipf_1ad1cbaff8569aac5a8b7d1c3d99d59a39"></span>string <code class="descname">GetTPBufferSizeGlobal</code><span class="sig-paren">(</span>string <em>panelTitle</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv321GetTPBufferSizeGlobal6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns the absolute path to the testpulse averaging buffer size. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv38GetCount6string">
+<span id="_CPPv28GetCount6string"></span><span id="GetCount__string"></span><span class="target" id="_m_i_e_s___global_string_and_variable_access_8ipf_1a15faf870968350af6d9037395667379f"></span>string <code class="descname">GetCount</code><span class="sig-paren">(</span>string <em>panelTitle</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv38GetCount6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns the absolute path to the global variable <code class="docutils literal notranslate"><span class="pre">count</span></code> storing the number of data acquisition cycles performed. </p>
+<p>Count equals zero on the first sweep. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv320GetTestpulseDuration6string">
+<span id="_CPPv220GetTestpulseDuration6string"></span><span id="GetTestpulseDuration__string"></span><span class="target" id="_m_i_e_s___global_string_and_variable_access_8ipf_1a41e39caddced0f9ea62fce1371dd2117"></span>string <code class="descname">GetTestpulseDuration</code><span class="sig-paren">(</span>string <em>panelTitle</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv320GetTestpulseDuration6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return the absolute path to the testpulse duration variable. </p>
+<p>The duration is for a single pulse only without baseline.</p>
+<p>The duration is <em>not</em> in units of time but in number of points for the real (compared to <a class="reference internal" href="_m_i_e_s___constants_8ipf.html#_m_i_e_s___constants_8ipf_1a3a37842f2edf77137526a00dc3d5835e"><span class="std std-ref">HARDWARE_ITC_MIN_SAMPINT</span></a>/<a class="reference internal" href="_m_i_e_s___constants_8ipf.html#_m_i_e_s___constants_8ipf_1acf522bbdbbe03d86076c363109c261a6"><span class="std std-ref">HARDWARE_NI_DAC_MIN_SAMPINT</span></a>) sampling interval </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv328GetTestpulseBaselineFraction6string">
+<span id="_CPPv228GetTestpulseBaselineFraction6string"></span><span id="GetTestpulseBaselineFraction__string"></span><span class="target" id="_m_i_e_s___global_string_and_variable_access_8ipf_1af7f15de35701b822c3545dec8e310aaa"></span>string <code class="descname">GetTestpulseBaselineFraction</code><span class="sig-paren">(</span>string <em>panelTitle</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv328GetTestpulseBaselineFraction6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return the absolute path to the testpulse baseline fraction variable. </p>
+<p>The returned value is the fraction which the baseline occupies relative to the total testpulse length, before and after the pulse itself. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv323GetDevicePanelTitleListv">
+<span id="_CPPv223GetDevicePanelTitleListv"></span><span id="GetDevicePanelTitleList"></span><span class="target" id="_m_i_e_s___global_string_and_variable_access_8ipf_1ab5588716cc00752fe34ed2776b09cca3"></span>string <code class="descname">GetDevicePanelTitleList</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv323GetDevicePanelTitleListv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns the list of locked device panels. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv314GetUserComment6string">
+<span id="_CPPv214GetUserComment6string"></span><span id="GetUserComment__string"></span><span class="target" id="_m_i_e_s___global_string_and_variable_access_8ipf_1aa343a317a353bb4000677b07225ac3c5"></span>string <code class="descname">GetUserComment</code><span class="sig-paren">(</span>string <em>panelTitle</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv314GetUserComment6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return the absolute path to the user comment string. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv322GetStopCollectionPoint6string">
+<span id="_CPPv222GetStopCollectionPoint6string"></span><span id="GetStopCollectionPoint__string"></span><span class="target" id="_m_i_e_s___global_string_and_variable_access_8ipf_1a9f2988cac24a2550ec3c6e487dc859bd"></span>string <code class="descname">GetStopCollectionPoint</code><span class="sig-paren">(</span>string <em>panelTitle</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv322GetStopCollectionPoint6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return the stop collection point as calculated by <a class="reference internal" href="_m_i_e_s___data_configurator_i_t_c_8ipf.html#_m_i_e_s___data_configurator_i_t_c_8ipf_1ae3b1373aa27b09504fd9c490d8526c3b"><span class="std std-ref">DC_GetStopCollectionPoint()</span></a> </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv321GetADChannelToMonitor6string">
+<span id="_CPPv221GetADChannelToMonitor6string"></span><span id="GetADChannelToMonitor__string"></span><span class="target" id="_m_i_e_s___global_string_and_variable_access_8ipf_1acd6061b324f34430d5905ad46e51d017"></span>string <code class="descname">GetADChannelToMonitor</code><span class="sig-paren">(</span>string <em>panelTitle</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv321GetADChannelToMonitor6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return the ADC to monitor. </p>
+<p>This is the first actice AD channel in ITCDataWave and ITCChanConfigWave. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv319GetPanelTitleGlobalv">
+<span id="_CPPv219GetPanelTitleGlobalv"></span><span id="GetPanelTitleGlobal"></span><span class="target" id="_m_i_e_s___global_string_and_variable_access_8ipf_1a13d7f23aa1b45a1c578b066d93f1edb0"></span>string <code class="descname">GetPanelTitleGlobal</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv319GetPanelTitleGlobalv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return global panelTitle for background tasks. </p>
+<p></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv317GetActiveSetCount6string">
+<span id="_CPPv217GetActiveSetCount6string"></span><span id="GetActiveSetCount__string"></span><span class="target" id="_m_i_e_s___global_string_and_variable_access_8ipf_1a4746ebf7778a95390ba081a4b212dc42"></span>string <code class="descname">GetActiveSetCount</code><span class="sig-paren">(</span>string <em>panelTitle</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv317GetActiveSetCount6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return the active set count. </p>
+<p>Active set count keeps track of how many steps of the largest currently selected set on all active channels still have to be done. Not counting the currently acquiring sweep. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv318GetInteractiveModev">
+<span id="_CPPv218GetInteractiveModev"></span><span id="GetInteractiveMode"></span><span class="target" id="_m_i_e_s___global_string_and_variable_access_8ipf_1a1dfa0b59fdb91a14432358efe1e17baf"></span>string <code class="descname">GetInteractiveMode</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv318GetInteractiveModev" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return the interactive mode. </p>
+<p>By default MIES operates in interactive mode (1). The user can change that to non-interactive mode where all dialog/popups etc. are avoided and replaced with sensible defaults. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv319GetTestpulseRunMode6string">
+<span id="_CPPv219GetTestpulseRunMode6string"></span><span id="GetTestpulseRunMode__string"></span><span class="target" id="_m_i_e_s___global_string_and_variable_access_8ipf_1aedbee6a1f7ad3e7826429408b1da3cf7"></span>string <code class="descname">GetTestpulseRunMode</code><span class="sig-paren">(</span>string <em>panelTitle</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv319GetTestpulseRunMode6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns the absolute path to the testpulse running modes, holds one of TestPulseRunModes. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv315GetNIDeviceListv">
+<span id="_CPPv215GetNIDeviceListv"></span><span id="GetNIDeviceList"></span><span class="target" id="_m_i_e_s___global_string_and_variable_access_8ipf_1ab16b2a84848f3df29af5b9db1b5071d1"></span>string <code class="descname">GetNIDeviceList</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv315GetNIDeviceListv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns NI device list. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv327GetLastAcqHookCallTimeStamp6string">
+<span id="_CPPv227GetLastAcqHookCallTimeStamp6string"></span><span id="GetLastAcqHookCallTimeStamp__string"></span><span class="target" id="_m_i_e_s___global_string_and_variable_access_8ipf_1aa4a1d553930d3a30e1eb5505921af79f"></span>string <code class="descname">GetLastAcqHookCallTimeStamp</code><span class="sig-paren">(</span>string <em>panelTitle</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv327GetLastAcqHookCallTimeStamp6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns the last time stamp HW_NI_RepeatAcqHook was called. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv314GetFIFOFileRef6string">
+<span id="_CPPv214GetFIFOFileRef6string"></span><span id="GetFIFOFileRef__string"></span><span class="target" id="_m_i_e_s___global_string_and_variable_access_8ipf_1adbcd6db7ce3580702de9ef78d7bedc35"></span>string <code class="descname">GetFIFOFileRef</code><span class="sig-paren">(</span>string <em>panelTitle</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv314GetFIFOFileRef6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns FIFO file reference. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv321GetNITestPulseCounter6string">
+<span id="_CPPv221GetNITestPulseCounter6string"></span><span id="GetNITestPulseCounter__string"></span><span class="target" id="_m_i_e_s___global_string_and_variable_access_8ipf_1acdbeaf79a11b45cccb339990e862a761"></span>string <code class="descname">GetNITestPulseCounter</code><span class="sig-paren">(</span>string <em>panelTitle</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv321GetNITestPulseCounter6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns TestPulse Counter for Background Task. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv318GetTPPulseDuration6string">
+<span id="_CPPv218GetTPPulseDuration6string"></span><span id="GetTPPulseDuration__string"></span><span class="target" id="_m_i_e_s___global_string_and_variable_access_8ipf_1ae6717913dc032fb713ac2243cc5caebe"></span>string <code class="descname">GetTPPulseDuration</code><span class="sig-paren">(</span>string <em>panelTitle</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv318GetTPPulseDuration6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns TestPulse pulseDuration in ms. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv316GetTPAmplitudeVC6string">
+<span id="_CPPv216GetTPAmplitudeVC6string"></span><span id="GetTPAmplitudeVC__string"></span><span class="target" id="_m_i_e_s___global_string_and_variable_access_8ipf_1a84dd67009e6ce359ee7cab6334631958"></span>string <code class="descname">GetTPAmplitudeVC</code><span class="sig-paren">(</span>string <em>panelTitle</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv316GetTPAmplitudeVC6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns TestPulse amplitude in voltage clamp mode in mV. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv316GetTPAmplitudeIC6string">
+<span id="_CPPv216GetTPAmplitudeIC6string"></span><span id="GetTPAmplitudeIC__string"></span><span class="target" id="_m_i_e_s___global_string_and_variable_access_8ipf_1a59e49a48522baf364c1ee5c10254c997"></span>string <code class="descname">GetTPAmplitudeIC</code><span class="sig-paren">(</span>string <em>panelTitle</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv316GetTPAmplitudeIC6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns TestPulse amplitude in current clamp mode in pA. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv313GetNI_AISetup6string">
+<span id="_CPPv213GetNI_AISetup6string"></span><span id="GetNI_AISetup__string"></span><span class="target" id="_m_i_e_s___global_string_and_variable_access_8ipf_1ab72644f563c632f7b23f00712969b652"></span>string <code class="descname">GetNI_AISetup</code><span class="sig-paren">(</span>string <em>panelTitle</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv313GetNI_AISetup6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns the current NI setup string for analog in through DAQmx_Scan. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv315GetNI_ADCTaskID6string">
+<span id="_CPPv215GetNI_ADCTaskID6string"></span><span id="GetNI_ADCTaskID__string"></span><span class="target" id="_m_i_e_s___global_string_and_variable_access_8ipf_1a00f39da18297b9570e8f889f5d97e6fe"></span>string <code class="descname">GetNI_ADCTaskID</code><span class="sig-paren">(</span>string <em>panelTitle</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv315GetNI_ADCTaskID6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns the ADC task ID set after DAQmx_Scan in HW_NI_StartAcq. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv315GetNI_DACTaskID6string">
+<span id="_CPPv215GetNI_DACTaskID6string"></span><span id="GetNI_DACTaskID__string"></span><span class="target" id="_m_i_e_s___global_string_and_variable_access_8ipf_1a1d6ebbe870664c74d2a17669779f0196"></span>string <code class="descname">GetNI_DACTaskID</code><span class="sig-paren">(</span>string <em>panelTitle</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv315GetNI_DACTaskID6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns the DAC task ID set after DAQmx_WaveFormGen in HW_NI_PrepareAcq. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv315GetNI_TTLTaskID6string">
+<span id="_CPPv215GetNI_TTLTaskID6string"></span><span id="GetNI_TTLTaskID__string"></span><span class="target" id="_m_i_e_s___global_string_and_variable_access_8ipf_1ac89cc06a493788c1427a46d50b21bcf9"></span>string <code class="descname">GetNI_TTLTaskID</code><span class="sig-paren">(</span>string <em>panelTitle</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv315GetNI_TTLTaskID6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns the TTL task ID set by DAQmx_DIO_Config in HW_NI_PrepareAcq. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv319GetSessionStartTimev">
+<span id="_CPPv219GetSessionStartTimev"></span><span id="GetSessionStartTime"></span><span class="target" id="_m_i_e_s___global_string_and_variable_access_8ipf_1a8e90d941a596041dcda1b1ff37256c5c"></span>string <code class="descname">GetSessionStartTime</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv319GetSessionStartTimev" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return the experiment session start time in NWB-speech. </p>
+<p>This is the time when the last device was locked. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv318GetNWBFileIDExportv">
+<span id="_CPPv218GetNWBFileIDExportv"></span><span id="GetNWBFileIDExport"></span><span class="target" id="_m_i_e_s___global_string_and_variable_access_8ipf_1ad16e4b6a70159e4fcd6590023c358faf"></span>string <code class="descname">GetNWBFileIDExport</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv318GetNWBFileIDExportv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return the HDF5 file identifier for the NWB export. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv320GetNWBFilePathExportv">
+<span id="_CPPv220GetNWBFilePathExportv"></span><span id="GetNWBFilePathExport"></span><span class="target" id="_m_i_e_s___global_string_and_variable_access_8ipf_1a1c7707d59a5652bd1c19362c904c51ae"></span>string <code class="descname">GetNWBFilePathExport</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv320GetNWBFilePathExportv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return the absolute path to the file for NWB export. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv314GetNWBThreadIDv">
+<span id="_CPPv214GetNWBThreadIDv"></span><span id="GetNWBThreadID"></span><span class="target" id="_m_i_e_s___global_string_and_variable_access_8ipf_1ab1a73beba12abd71323ddf675b7287af"></span>string <code class="descname">GetNWBThreadID</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv314GetNWBThreadIDv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return the thread group id of the NWB writer. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv327GetSessionStartTimeReadBackv">
+<span id="_CPPv227GetSessionStartTimeReadBackv"></span><span id="GetSessionStartTimeReadBack"></span><span class="target" id="_m_i_e_s___global_string_and_variable_access_8ipf_1a1c6a6b8df5388b983374b8bc7542f7a1"></span>string <code class="descname">GetSessionStartTimeReadBack</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv327GetSessionStartTimeReadBackv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return the experiment session start time in NWB-speech as read back from the NWB file. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv320GetThreadGroupIDFIFO6string">
+<span id="_CPPv220GetThreadGroupIDFIFO6string"></span><span id="GetThreadGroupIDFIFO__string"></span><span class="target" id="_m_i_e_s___global_string_and_variable_access_8ipf_1aad92852c6d7929538d41e5866a847393"></span>string <code class="descname">GetThreadGroupIDFIFO</code><span class="sig-paren">(</span>string <em>panelTitle</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv320GetThreadGroupIDFIFO6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return the thread group ID for the FIFO monitor/resetting daemon. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv318GetTemporaryStringv">
+<span id="_CPPv218GetTemporaryStringv"></span><span id="GetTemporaryString"></span><span class="target" id="_m_i_e_s___global_string_and_variable_access_8ipf_1aaa97b3849ccf0eb5e0235501370800bb"></span>string <code class="descname">GetTemporaryString</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv318GetTemporaryStringv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return the absolute path to the temporary global string. </p>
+<p>Callers should always assume that this string contains garbage. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv310GetRNGSeed6string">
+<span id="_CPPv210GetRNGSeed6string"></span><span id="GetRNGSeed__string"></span><span class="target" id="_m_i_e_s___global_string_and_variable_access_8ipf_1a0b96f966c9d573e27614f0a0ebf5918c"></span>string <code class="descname">GetRNGSeed</code><span class="sig-paren">(</span>string <em>panelTitle</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv310GetRNGSeed6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return the absolute path to the RNG seed value. </p>
+<p>This seed value can be used for deriving device dependent random numbers.</p>
+<p>Typical sequence:</p>
+<p><div class="highlight-igorpro notranslate"><div class="highlight"><pre><span></span><span class="kt">NVAR</span> rngSeed = $GetRNGSeed(device)
+<span class="nc">SetRandomSeed</span>/BETR=1 rngSeed
+rngSeed += 1
+<span class="kt">variable</span> val = GetReproducibleRandonNumber()
+</pre></div>
+</div>
+ </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv329GetRepeatedAcquisitionCycleID6string">
+<span id="_CPPv229GetRepeatedAcquisitionCycleID6string"></span><span id="GetRepeatedAcquisitionCycleID__string"></span><span class="target" id="_m_i_e_s___global_string_and_variable_access_8ipf_1a8bb329b8d52c90beef390c8b247cc0ba"></span>string <code class="descname">GetRepeatedAcquisitionCycleID</code><span class="sig-paren">(</span>string <em>panelTitle</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv329GetRepeatedAcquisitionCycleID6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return the absolute path to the repeated acquisition cycle ID. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv322GetRepurposedSweepTime6string">
+<span id="_CPPv222GetRepurposedSweepTime6string"></span><span id="GetRepurposedSweepTime__string"></span><span class="target" id="_m_i_e_s___global_string_and_variable_access_8ipf_1af39b50d0943e1730496d8dc9245068b3"></span>string <code class="descname">GetRepurposedSweepTime</code><span class="sig-paren">(</span>string <em>panelTitle</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv322GetRepurposedSweepTime6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return the absolute path to the repurposed sweep time global variable. </p>
+<p>Units are seconds. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv330GetRepeatedAcquisitionFuncListv">
+<span id="_CPPv230GetRepeatedAcquisitionFuncListv"></span><span id="GetRepeatedAcquisitionFuncList"></span><span class="target" id="_m_i_e_s___global_string_and_variable_access_8ipf_1a5fb485e045a498749fc3c1c9f1c211e9"></span>string <code class="descname">GetRepeatedAcquisitionFuncList</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv330GetRepeatedAcquisitionFuncListv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return the list of functions to be executed after ITI in repeated acquisition. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv327GetRepeatedAcquisitionStartv">
+<span id="_CPPv227GetRepeatedAcquisitionStartv"></span><span id="GetRepeatedAcquisitionStart"></span><span class="target" id="_m_i_e_s___global_string_and_variable_access_8ipf_1a3b58ecc1fbaf6cb120d054deb321e5ec"></span>string <code class="descname">GetRepeatedAcquisitionStart</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv327GetRepeatedAcquisitionStartv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return the start time, in ticks, of the ITI cycle. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv330GetRepeatedAcquisitionDurationv">
+<span id="_CPPv230GetRepeatedAcquisitionDurationv"></span><span id="GetRepeatedAcquisitionDuration"></span><span class="target" id="_m_i_e_s___global_string_and_variable_access_8ipf_1aecec717a144ac72f66762779a3d93315"></span>string <code class="descname">GetRepeatedAcquisitionDuration</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv330GetRepeatedAcquisitionDurationv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return the duration, in ticks, of the ITI cycle. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv315GetFifoPosition6string">
+<span id="_CPPv215GetFifoPosition6string"></span><span id="GetFifoPosition__string"></span><span class="target" id="_m_i_e_s___global_string_and_variable_access_8ipf_1ab70c8b1899b93de6ec56c6e7c998f316"></span>string <code class="descname">GetFifoPosition</code><span class="sig-paren">(</span>string <em>panelTitle</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv315GetFifoPosition6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return the current fifo position. Only valid if called during DAQ with DATA_ACQUISITION_MODE. This value is relative to first row of the rawDACWave, so an possible offset is already included in it. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv327GetAnalysisFuncErrorCounter6string">
+<span id="_CPPv227GetAnalysisFuncErrorCounter6string"></span><span id="GetAnalysisFuncErrorCounter__string"></span><span class="target" id="_m_i_e_s___global_string_and_variable_access_8ipf_1aaa56cc6d7cb43432589ccd94992428c8"></span>string <code class="descname">GetAnalysisFuncErrorCounter</code><span class="sig-paren">(</span>string <em>panelTitle</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv327GetAnalysisFuncErrorCounter6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return the error counter for the analysis function management. </p>
+<p>Mainly used during testing to ensure that no RTE was thrown. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv324GetMaxIntertrialInterval6string">
+<span id="_CPPv224GetMaxIntertrialInterval6string"></span><span id="GetMaxIntertrialInterval__string"></span><span class="target" id="_m_i_e_s___global_string_and_variable_access_8ipf_1a744d69ca004245108fe8d0ef5f5c61a0"></span>string <code class="descname">GetMaxIntertrialInterval</code><span class="sig-paren">(</span>string <em>panelTitle</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv324GetMaxIntertrialInterval6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return the maximum ITI of all active sets. </p>
+<p>Only meaningful after preparing DAQ in <a class="reference internal" href="_m_i_e_s___data_configurator_i_t_c_8ipf.html#_m_i_e_s___data_configurator_i_t_c_8ipf_1a399012e24779e077a3a9f92d8bbdc6bc"><span class="std std-ref">DC_ConfigureDataForITC()</span></a> </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv313GetPxPVersionv">
+<span id="_CPPv213GetPxPVersionv"></span><span id="GetPxPVersion"></span><span class="target" id="_m_i_e_s___global_string_and_variable_access_8ipf_1a80b492ffa4d8855cd95cba0aab5a3b0b"></span>string <code class="descname">GetPxPVersion</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv313GetPxPVersionv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return the version number of the Igor experiment. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv318GetPxPVersionForAB5dfref">
+<span id="_CPPv218GetPxPVersionForAB5dfref"></span><span id="GetPxPVersionForAB__dfref"></span><span class="target" id="_m_i_e_s___global_string_and_variable_access_8ipf_1a9d1b9f36e70528c2acf2d81aa53bda0a"></span>string <code class="descname">GetPxPVersionForAB</code><span class="sig-paren">(</span>dfref <em>dfr</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv318GetPxPVersionForAB5dfref" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return the version number of the Igor experiment loaded into the analysis browser. </p>
+<p><dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><a class="reference internal" href="_m_i_e_s___wave_data_folder_getters_8ipf.html#_m_i_e_s___wave_data_folder_getters_8ipf_1a491604853aff960a8e5230b5d34cc91d"><span class="std std-ref">GetAnalysisExpFolder()</span></a> </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">dfr</span></code>: experiment folder, </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table of Contents</a></h3>
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../developers.html">Developer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manualinstallation.html">Manual installation instructions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reportingbugs.html">Bug reporting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../releasenotes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grouplist.html">Group list</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../filelist.html">File list</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="_compilation_tester_8ipf.html">File CompilationTester.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_compilation_tester_utils_8ipf.html">File CompilationTesterUtils.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___constants_8ipf.html">File IPNWB_Constants.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___debugging_8ipf.html">File IPNWB_Debugging.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___h_d_f5_helpers_8ipf.html">File IPNWB_HDF5Helpers.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___include_8ipf.html">File IPNWB_Include.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___reader_8ipf.html">File IPNWB_Reader.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___structures_8ipf.html">File IPNWB_Structures.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___utils_8ipf.html">File IPNWB_Utils.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___writer_8ipf.html">File IPNWB_Writer.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___amplifier_interaction_8ipf.html">File MIES_AmplifierInteraction.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_browser_8ipf.html">File MIES_AnalysisBrowser.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_browser___lab_notebook_t_p_storage_browser_8ipf.html">File MIES_AnalysisBrowser_LabNotebookTPStorageBrowser.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_browser___sweep_browser_8ipf.html">File MIES_AnalysisBrowser_SweepBrowser.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_browser___sweep_browser___export_8ipf.html">File MIES_AnalysisBrowser_SweepBrowser_Export.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_function_helpers_8ipf.html">File MIES_AnalysisFunctionHelpers.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_function_management_8ipf.html">File MIES_AnalysisFunctionManagement.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_function_prototypes_8ipf.html">File MIES_AnalysisFunctionPrototypes.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_functions_8ipf.html">File MIES_AnalysisFunctions.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_functions___dashboard_8ipf.html">File MIES_AnalysisFunctions_Dashboard.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_functions___multi_patch_seq_8ipf.html">File MIES_AnalysisFunctions_MultiPatchSeq.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_functions___patch_seq_8ipf.html">File MIES_AnalysisFunctions_PatchSeq.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_master_8ipf.html">File MIES_AnalysisMaster.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___artefact_removal_8ipf.html">File MIES_ArtefactRemoval.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___async_8ipf.html">File MIES_Async.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___asynchronous_data_8ipf.html">File MIES_AsynchronousData.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___background_watchdog_8ipf.html">File MIES_BackgroundWatchdog.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___blowout_8ipf.html">File MIES_Blowout.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___browser_settings_panel_8ipf.html">File MIES_BrowserSettingsPanel.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___cache_8ipf.html">File MIES_Cache.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___check_installation_8ipf.html">File MIES_CheckInstallation.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___constants_8ipf.html">File MIES_Constants.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___d_a_c-_hardware_8ipf.html">File MIES_DAC-Hardware.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___d_a_ephys_8ipf.html">File MIES_DAEphys.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___d_a_ephys___gui_state_8ipf.html">File MIES_DAEphys_GuiState.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___d_a_ephys___macro_8ipf.html">File MIES_DAEphys_Macro.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___data_acquisition_8ipf.html">File MIES_DataAcquisition.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___data_acquisition___multi_8ipf.html">File MIES_DataAcquisition_Multi.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___data_acquisition___single_8ipf.html">File MIES_DataAcquisition_Single.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___data_browser_8ipf.html">File MIES_DataBrowser.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___data_configurator_i_t_c_8ipf.html">File MIES_DataConfiguratorITC.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___debug_panel_8ipf.html">File MIES_DebugPanel.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___debugging_8ipf.html">File MIES_Debugging.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___downsample_8ipf.html">File MIES_Downsample.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___enhanced_w_m_routines_8ipf.html">File MIES_EnhancedWMRoutines.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___event_detection_code_8ipf.html">File MIES_EventDetectionCode.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___experiment_config_8ipf.html">File MIES_ExperimentConfig.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___experiment_documentation_8ipf.html">File MIES_ExperimentDocumentation.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___foreign_function_interface_8ipf.html">File MIES_ForeignFunctionInterface.ipf</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">File MIES_GlobalStringAndVariableAccess.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___gui_utilities_8ipf.html">File MIES_GuiUtilities.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___h_d_f5_ops_8ipf.html">File MIES_HDF5Ops.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___igor_hooks_8ipf.html">File MIES_IgorHooks.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___include_8ipf.html">File MIES_Include.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___indexing_8ipf.html">File MIES_Indexing.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___menu_8ipf.html">File MIES_Menu.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___mies_utilities_8ipf.html">File MIES_MiesUtilities.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___neuro_data_without_borders_8ipf.html">File MIES_NeuroDataWithoutBorders.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___optimzed_overlap_distributed_acquisition_8ipf.html">File MIES_OptimzedOverlapDistributedAcquisition.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___oscilloscope_8ipf.html">File MIES_Oscilloscope.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___overlay_sweeps_8ipf.html">File MIES_OverlaySweeps.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___pressure_control_8ipf.html">File MIES_PressureControl.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___programmatic_g_u_i_control_8ipf.html">File MIES_ProgrammaticGUIControl.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___pulse_averaging_8ipf.html">File MIES_PulseAveraging.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___repeated_acquisition_8ipf.html">File MIES_RepeatedAcquisition.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___sampling_interval_8ipf.html">File MIES_SamplingInterval.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___structures_8ipf.html">File MIES_Structures.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___sweep_saving_8ipf.html">File MIES_SweepSaving.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___tango_interact_8ipf.html">File MIES_TangoInteract.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___test_pulse_8ipf.html">File MIES_TestPulse.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___test_pulse___multi_8ipf.html">File MIES_TestPulse_Multi.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___test_pulse___single_8ipf.html">File MIES_TestPulse_Single.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___threaded_f_i_f_o_handling_8ipf.html">File MIES_ThreadedFIFOHandling.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___threadsafe_utilities_8ipf.html">File MIES_ThreadsafeUtilities.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___utilities_8ipf.html">File MIES_Utilities.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___wave_builder_8ipf.html">File MIES_WaveBuilder.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___wave_builder_panel_8ipf.html">File MIES_WaveBuilderPanel.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___wave_data_folder_getters_8ipf.html">File MIES_WaveDataFolderGetters.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_zero_m_q___interop_8ipf.html">File ZeroMQ_Interop.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interface_8h.html">File interface.h</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../structlist.html">Struct list</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../namespacelist.html">Namespace list</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CalculateTPLikePropsFromSweep.html">CalculateTPLikePropsFromSweep Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IPNWB.html">Igor Pro module for reading and writing NeurodataWithoutBorder files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TPAnalysis_algorithm.html">Testpulse Analysis Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../asyncframework.html">Async Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ZeroMQ-XOP-Readme.html">ZeroMQ XOP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../labnotebook-docs.html">Labnotebook documentation for developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mies-concepts.html">Important MIES concepts for developers</a></li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="_m_i_e_s___foreign_function_interface_8ipf.html"
+                        title="previous chapter">File MIES_ForeignFunctionInterface.ipf</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="_m_i_e_s___gui_utilities_8ipf.html"
+                        title="next chapter">File MIES_GuiUtilities.ipf</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/file/_m_i_e_s___global_string_and_variable_access_8ipf.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="_m_i_e_s___gui_utilities_8ipf.html" title="File MIES_GuiUtilities.ipf"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="_m_i_e_s___foreign_function_interface_8ipf.html" title="File MIES_ForeignFunctionInterface.ipf"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">MIES Igor (master) latest-52-g2ffc1636 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../filelist.html" >File list</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright .
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.3.
+    </div>
+  </body>
+</html>

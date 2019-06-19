@@ -1,0 +1,1064 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>File MIES_DAC-Hardware.ipf &#8212; MIES Igor (master) latest-52-g2ffc1636 documentation</title>
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" />
+    
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    
+    <script type="text/javascript" src="../_static/sidebar.js"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="File MIES_DAEphys.ipf" href="_m_i_e_s___d_a_ephys_8ipf.html" />
+    <link rel="prev" title="File MIES_Constants.ipf" href="_m_i_e_s___constants_8ipf.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="_m_i_e_s___d_a_ephys_8ipf.html" title="File MIES_DAEphys.ipf"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="_m_i_e_s___constants_8ipf.html" title="File MIES_Constants.ipf"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">MIES Igor (master) latest-52-g2ffc1636 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../filelist.html" accesskey="U">File list</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="file-mies-dac-hardware-ipf">
+<span id="id1"></span><h1>File MIES_DAC-Hardware.ipf<a class="headerlink" href="#file-mies-dac-hardware-ipf" title="Permalink to this headline">¶</a></h1>
+<p><strong>HW</strong> Low level hardware configuration and querying functions </p>
+<p>Naming scheme of the functions is <code class="docutils literal notranslate"><span class="pre">HW_$TYPE_$Suffix</span></code> where <code class="docutils literal notranslate"><span class="pre">$TYPE</span></code> is one of <code class="docutils literal notranslate"><span class="pre">ITC</span></code> or <code class="docutils literal notranslate"><span class="pre">NI</span></code>. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Error codes for the ITC XOP2</p>
+<p></p>
+<dl class="member">
+<dt id="_CPPv38OLD_IGOR">
+<span id="_CPPv28OLD_IGOR"></span><span id="OLD_IGOR__variableC"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1a8f2b34b9e3efaadf3b2aea3798362c7e"></span><em class="property">const</em> variable <code class="descname">OLD_IGOR</code> = 10001<a class="headerlink" href="#_CPPv38OLD_IGOR" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv323UNHANDLED_CPP_EXCEPTION">
+<span id="_CPPv223UNHANDLED_CPP_EXCEPTION"></span><span id="UNHANDLED_CPP_EXCEPTION__variableC"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1adde6914eccd23429e842df8698106188"></span><em class="property">const</em> variable <code class="descname">UNHANDLED_CPP_EXCEPTION</code> = 10002<a class="headerlink" href="#_CPPv323UNHANDLED_CPP_EXCEPTION" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv327SLOT_LOCKED_TO_OTHER_THREAD">
+<span id="_CPPv227SLOT_LOCKED_TO_OTHER_THREAD"></span><span id="SLOT_LOCKED_TO_OTHER_THREAD__variableC"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1a4198cfa149a3db266931e36fada95fb7"></span><em class="property">const</em> variable <code class="descname">SLOT_LOCKED_TO_OTHER_THREAD</code> = 10003<a class="headerlink" href="#_CPPv327SLOT_LOCKED_TO_OTHER_THREAD" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv310SLOT_EMPTY">
+<span id="_CPPv210SLOT_EMPTY"></span><span id="SLOT_EMPTY__variableC"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1aa177a163e756a03d2a0838dd51bc7966"></span><em class="property">const</em> variable <code class="descname">SLOT_EMPTY</code> = 10004<a class="headerlink" href="#_CPPv310SLOT_EMPTY" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv323COULDNT_FIND_EMPTY_SLOT">
+<span id="_CPPv223COULDNT_FIND_EMPTY_SLOT"></span><span id="COULDNT_FIND_EMPTY_SLOT__variableC"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1a4156d87667a422329c09617588f75952"></span><em class="property">const</em> variable <code class="descname">COULDNT_FIND_EMPTY_SLOT</code> = 10005<a class="headerlink" href="#_CPPv323COULDNT_FIND_EMPTY_SLOT" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv313ITC_DLL_ERROR">
+<span id="_CPPv213ITC_DLL_ERROR"></span><span id="ITC_DLL_ERROR__variableC"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1aaabeac8ddc3b0f224d8a4e34f8940d67"></span><em class="property">const</em> variable <code class="descname">ITC_DLL_ERROR</code> = 10006<a class="headerlink" href="#_CPPv313ITC_DLL_ERROR" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv326INVALID_DEVICETYPE_NUMERIC">
+<span id="_CPPv226INVALID_DEVICETYPE_NUMERIC"></span><span id="INVALID_DEVICETYPE_NUMERIC__variableC"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1a4a51d1a5c2d41ecad4fe7a38ad360549"></span><em class="property">const</em> variable <code class="descname">INVALID_DEVICETYPE_NUMERIC</code> = 10007<a class="headerlink" href="#_CPPv326INVALID_DEVICETYPE_NUMERIC" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv325INVALID_DEVICETYPE_STRING">
+<span id="_CPPv225INVALID_DEVICETYPE_STRING"></span><span id="INVALID_DEVICETYPE_STRING__variableC"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1a1a608c850665eb0c5f79bd7db1764aef"></span><em class="property">const</em> variable <code class="descname">INVALID_DEVICETYPE_STRING</code> = 10008<a class="headerlink" href="#_CPPv325INVALID_DEVICETYPE_STRING" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv316DTN_DTS_DISAGREE">
+<span id="_CPPv216DTN_DTS_DISAGREE"></span><span id="DTN_DTS_DISAGREE__variableC"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1ad138773e84d1cb12215b365758bac9bd"></span><em class="property">const</em> variable <code class="descname">DTN_DTS_DISAGREE</code> = 10009<a class="headerlink" href="#_CPPv316DTN_DTS_DISAGREE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv327INVALID_CHANNELTYPE_NUMERIC">
+<span id="_CPPv227INVALID_CHANNELTYPE_NUMERIC"></span><span id="INVALID_CHANNELTYPE_NUMERIC__variableC"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1a5d4db24f4766a9afa62a58d86140c737"></span><em class="property">const</em> variable <code class="descname">INVALID_CHANNELTYPE_NUMERIC</code> = 10010<a class="headerlink" href="#_CPPv327INVALID_CHANNELTYPE_NUMERIC" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv326INVALID_CHANNELTYPE_STRING">
+<span id="_CPPv226INVALID_CHANNELTYPE_STRING"></span><span id="INVALID_CHANNELTYPE_STRING__variableC"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1a750313d62c6cfb48115b0998daf2a5c5"></span><em class="property">const</em> variable <code class="descname">INVALID_CHANNELTYPE_STRING</code> = 10011<a class="headerlink" href="#_CPPv326INVALID_CHANNELTYPE_STRING" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv316CHN_CHS_DISAGREE">
+<span id="_CPPv216CHN_CHS_DISAGREE"></span><span id="CHN_CHS_DISAGREE__variableC"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1a064a27c27ebb7e5d823b9c513221970a"></span><em class="property">const</em> variable <code class="descname">CHN_CHS_DISAGREE</code> = 10012<a class="headerlink" href="#_CPPv316CHN_CHS_DISAGREE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv323MUST_SPECIFY_CHN_OR_CHS">
+<span id="_CPPv223MUST_SPECIFY_CHN_OR_CHS"></span><span id="MUST_SPECIFY_CHN_OR_CHS__variableC"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1a9540ecd5a7b37978c77ffa9d94c847f5"></span><em class="property">const</em> variable <code class="descname">MUST_SPECIFY_CHN_OR_CHS</code> = 10013<a class="headerlink" href="#_CPPv323MUST_SPECIFY_CHN_OR_CHS" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv323ITCCONFIGCHANNEL2_BAD_S">
+<span id="_CPPv223ITCCONFIGCHANNEL2_BAD_S"></span><span id="ITCCONFIGCHANNEL2_BAD_S__variableC"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1a4b67621c6cb0d2a6917c16ac18c23121"></span><em class="property">const</em> variable <code class="descname">ITCCONFIGCHANNEL2_BAD_S</code> = 10014<a class="headerlink" href="#_CPPv323ITCCONFIGCHANNEL2_BAD_S" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv323ITCCONFIGCHANNEL2_BAD_M">
+<span id="_CPPv223ITCCONFIGCHANNEL2_BAD_M"></span><span id="ITCCONFIGCHANNEL2_BAD_M__variableC"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1aadbc9037bddfd158b76f1b7f5c369730"></span><em class="property">const</em> variable <code class="descname">ITCCONFIGCHANNEL2_BAD_M</code> = 10015<a class="headerlink" href="#_CPPv323ITCCONFIGCHANNEL2_BAD_M" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv323ITCCONFIGCHANNEL2_BAD_A">
+<span id="_CPPv223ITCCONFIGCHANNEL2_BAD_A"></span><span id="ITCCONFIGCHANNEL2_BAD_A__variableC"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1af64f9ef17449556ad5f88ab4b2d0d732"></span><em class="property">const</em> variable <code class="descname">ITCCONFIGCHANNEL2_BAD_A</code> = 10016<a class="headerlink" href="#_CPPv323ITCCONFIGCHANNEL2_BAD_A" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv323ITCCONFIGCHANNEL2_BAD_O">
+<span id="_CPPv223ITCCONFIGCHANNEL2_BAD_O"></span><span id="ITCCONFIGCHANNEL2_BAD_O__variableC"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1af3d282c44e7cc599e36e97bffb426c58"></span><em class="property">const</em> variable <code class="descname">ITCCONFIGCHANNEL2_BAD_O</code> = 10017<a class="headerlink" href="#_CPPv323ITCCONFIGCHANNEL2_BAD_O" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv323ITCCONFIGCHANNEL2_BAD_U">
+<span id="_CPPv223ITCCONFIGCHANNEL2_BAD_U"></span><span id="ITCCONFIGCHANNEL2_BAD_U__variableC"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1ad6f2901af3a5d986a01683bb6f4500dd"></span><em class="property">const</em> variable <code class="descname">ITCCONFIGCHANNEL2_BAD_U</code> = 10018<a class="headerlink" href="#_CPPv323ITCCONFIGCHANNEL2_BAD_U" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv313NEED_MIN_ROWS">
+<span id="_CPPv213NEED_MIN_ROWS"></span><span id="NEED_MIN_ROWS__variableC"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1ae9d65787a4bbe5070d5ca9222e155861"></span><em class="property">const</em> variable <code class="descname">NEED_MIN_ROWS</code> = 10019<a class="headerlink" href="#_CPPv313NEED_MIN_ROWS" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv327F_FLAG_REQ_ITC18_18USB_1600">
+<span id="_CPPv227F_FLAG_REQ_ITC18_18USB_1600"></span><span id="F_FLAG_REQ_ITC18_18USB_1600__variableC"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1a3e2761acc98d3bb6786d5ec4dff597eb"></span><em class="property">const</em> variable <code class="descname">F_FLAG_REQ_ITC18_18USB_1600</code> = 10020<a class="headerlink" href="#_CPPv327F_FLAG_REQ_ITC18_18USB_1600" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv323D_FLAG_REQUIRES_ITC1600">
+<span id="_CPPv223D_FLAG_REQUIRES_ITC1600"></span><span id="D_FLAG_REQUIRES_ITC1600__variableC"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1ab6453e5e9ef49b30a68baef9f4b94cc7"></span><em class="property">const</em> variable <code class="descname">D_FLAG_REQUIRES_ITC1600</code> = 10021<a class="headerlink" href="#_CPPv323D_FLAG_REQUIRES_ITC1600" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv323H_FLAG_REQUIRES_ITC1600">
+<span id="_CPPv223H_FLAG_REQUIRES_ITC1600"></span><span id="H_FLAG_REQUIRES_ITC1600__variableC"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1ab579b0e4aeb64f4fdff37379e47aa6ff"></span><em class="property">const</em> variable <code class="descname">H_FLAG_REQUIRES_ITC1600</code> = 10022<a class="headerlink" href="#_CPPv323H_FLAG_REQUIRES_ITC1600" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv323R_FLAG_REQUIRES_ITC1600">
+<span id="_CPPv223R_FLAG_REQUIRES_ITC1600"></span><span id="R_FLAG_REQUIRES_ITC1600__variableC"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1a4ae5e377374860c9aaf2ec9428739d4f"></span><em class="property">const</em> variable <code class="descname">R_FLAG_REQUIRES_ITC1600</code> = 10023<a class="headerlink" href="#_CPPv323R_FLAG_REQUIRES_ITC1600" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv324THREAD_DEVICE_ID_NOT_SET">
+<span id="_CPPv224THREAD_DEVICE_ID_NOT_SET"></span><span id="THREAD_DEVICE_ID_NOT_SET__variableC"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1af8ea6f36c201861e382132c6f786ffd7"></span><em class="property">const</em> variable <code class="descname">THREAD_DEVICE_ID_NOT_SET</code> = 10024<a class="headerlink" href="#_CPPv324THREAD_DEVICE_ID_NOT_SET" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Wrapper functions redirecting to the correct internal implementations depending on #HARDWARE_DAC_TYPES</p>
+<dl class="function">
+<dt id="_CPPv313HW_PrepareAcq8variable8variable10WaveOrNull24HW_WAVE_GETTER_PROTOTYPE10WaveOrNull24HW_WAVE_GETTER_PROTOTYPE8variable8variable">
+<span id="_CPPv213HW_PrepareAcq8variable8variable10WaveOrNull24HW_WAVE_GETTER_PROTOTYPE10WaveOrNull24HW_WAVE_GETTER_PROTOTYPE8variable8variable"></span><span id="HW_PrepareAcq__variable.variable.WaveOrNull.HW_WAVE_GETTER_PROTOTYPE.WaveOrNull.HW_WAVE_GETTER_PROTOTYPE.variable.variable"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1ae3aa7d8573ed9b8bf6683a26776b9179"></span>variable <code class="descname">HW_PrepareAcq</code><span class="sig-paren">(</span>variable <em>hardwareType</em>, variable <em>deviceID</em>, WaveOrNull <em>data</em> = defaultValue, <a class="reference internal" href="#_CPPv324HW_WAVE_GETTER_PROTOTYPE6string" title="HW_WAVE_GETTER_PROTOTYPE">HW_WAVE_GETTER_PROTOTYPE</a> <em>dataFunc</em> = defaultValue, WaveOrNull <em>config</em> = defaultValue, <a class="reference internal" href="#_CPPv324HW_WAVE_GETTER_PROTOTYPE6string" title="HW_WAVE_GETTER_PROTOTYPE">HW_WAVE_GETTER_PROTOTYPE</a> <em>configFunc</em> = defaultValue, variable <em>flags</em> = defaultValue, variable <em>offset</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv313HW_PrepareAcq8variable8variable10WaveOrNull24HW_WAVE_GETTER_PROTOTYPE10WaveOrNull24HW_WAVE_GETTER_PROTOTYPE8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Prepare for data acquisition. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hardwareType</span></code>: One of HardwareDACTypeConstants </li>
+<li><code class="docutils literal notranslate"><span class="pre">deviceID</span></code>: device identifier </li>
+<li><code class="docutils literal notranslate"><span class="pre">data</span></code>: hardware data wave </li>
+<li><code class="docutils literal notranslate"><span class="pre">dataFunc</span></code>: [optional, defaults to GetITCDataWave()] override wave getter for the ITC data wave </li>
+<li><code class="docutils literal notranslate"><span class="pre">config</span></code>: ITC config wave </li>
+<li><code class="docutils literal notranslate"><span class="pre">configFunc</span></code>: [optional, defaults to <a class="reference internal" href="_m_i_e_s___wave_data_folder_getters_8ipf.html#_m_i_e_s___wave_data_folder_getters_8ipf_1affd86c18d3d497d04f7a9d73906a9031"><span class="std std-ref">GetITCChanConfigWave()</span></a>] override wave getter for the ITC config wave </li>
+<li><code class="docutils literal notranslate"><span class="pre">flags</span></code>: [optional, default none] One or multiple flags from HardwareInteractionFlags </li>
+<li><code class="docutils literal notranslate"><span class="pre">offset</span></code>: [optional, defaults to zero] offset into the data wave in points </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv315HW_SelectDevice8variable8variable8variable">
+<span id="_CPPv215HW_SelectDevice8variable8variable8variable"></span><span id="HW_SelectDevice__variable.variable.variable"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1a107b09f2042a4c7d1f7774f1c711dca4"></span>variable <code class="descname">HW_SelectDevice</code><span class="sig-paren">(</span>variable <em>hardwareType</em>, variable <em>deviceID</em>, variable <em>flags</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv315HW_SelectDevice8variable8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Select a device. </p>
+<p>Only used in special cases for ITC hardware as all ITC operations use the <code class="docutils literal notranslate"><span class="pre">/DEV</span></code> flag nowadays.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>0 if sucessfull, 1 on error </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hardwareType</span></code>: One of HardwareDACTypeConstants </li>
+<li><code class="docutils literal notranslate"><span class="pre">deviceID</span></code>: identifier of the device </li>
+<li><code class="docutils literal notranslate"><span class="pre">flags</span></code>: [optional, default none] One or multiple flags from HardwareInteractionFlags</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv313HW_OpenDevice6stringP8variableP8variable">
+<span id="_CPPv213HW_OpenDevice6stringP8variableP8variable"></span><span id="HW_OpenDevice__string.variableP.variableP"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1a1dcfb6f02f2b0b066083b43f5b2837ab"></span>variable <code class="descname">HW_OpenDevice</code><span class="sig-paren">(</span>string <em>deviceToOpen</em>, variable *<em>hardwareType</em>, variable *<em>flags</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv313HW_OpenDevice6stringP8variableP8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Open a device. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>device identifier </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">deviceToOpen</span></code>: device </li>
+<li><code class="docutils literal notranslate"><span class="pre">hardwareType</span></code>: One of HardwareDACTypeConstants </li>
+<li><code class="docutils literal notranslate"><span class="pre">flags</span></code>: [optional, default none] One or multiple flags from HardwareInteractionFlags</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv314HW_CloseDevice8variable8variable8variable">
+<span id="_CPPv214HW_CloseDevice8variable8variable8variable"></span><span id="HW_CloseDevice__variable.variable.variable"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1a46dde4a8bb4e8fb340887045abfb6d4d"></span>variable <code class="descname">HW_CloseDevice</code><span class="sig-paren">(</span>variable <em>hardwareType</em>, variable <em>deviceID</em>, variable <em>flags</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv314HW_CloseDevice8variable8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Close a device. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hardwareType</span></code>: One of HardwareDACTypeConstants </li>
+<li><code class="docutils literal notranslate"><span class="pre">deviceID</span></code>: device identifier </li>
+<li><code class="docutils literal notranslate"><span class="pre">flags</span></code>: [optional, default none] One or multiple flags from HardwareInteractionFlags </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv311HW_WriteDAC8variable8variable8variable8variable8variable">
+<span id="_CPPv211HW_WriteDAC8variable8variable8variable8variable8variable"></span><span id="HW_WriteDAC__variable.variable.variable.variable.variable"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1a9f0de5928da96d9f20fd87a2c02e7b13"></span>variable <code class="descname">HW_WriteDAC</code><span class="sig-paren">(</span>variable <em>hardwareType</em>, variable <em>deviceID</em>, variable <em>channel</em>, variable <em>value</em>, variable <em>flags</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv311HW_WriteDAC8variable8variable8variable8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Write a value to a DA/AO channel. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hardwareType</span></code>: One of HardwareDACTypeConstants </li>
+<li><code class="docutils literal notranslate"><span class="pre">deviceID</span></code>: device identifier </li>
+<li><code class="docutils literal notranslate"><span class="pre">channel</span></code>: channel number </li>
+<li><code class="docutils literal notranslate"><span class="pre">value</span></code>: value to write in volts </li>
+<li><code class="docutils literal notranslate"><span class="pre">flags</span></code>: [optional, default none] One or multiple flags from HardwareInteractionFlags </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv310HW_ReadADC8variable8variable8variable8variable">
+<span id="_CPPv210HW_ReadADC8variable8variable8variable8variable"></span><span id="HW_ReadADC__variable.variable.variable.variable"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1af4988bec1ac5a7f590dd3871ae11b1df"></span>variable <code class="descname">HW_ReadADC</code><span class="sig-paren">(</span>variable <em>hardwareType</em>, variable <em>deviceID</em>, variable <em>channel</em>, variable <em>flags</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv310HW_ReadADC8variable8variable8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Read a value from an AD/AI channel. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>value in volts </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hardwareType</span></code>: One of HardwareDACTypeConstants </li>
+<li><code class="docutils literal notranslate"><span class="pre">deviceID</span></code>: device identifier </li>
+<li><code class="docutils literal notranslate"><span class="pre">channel</span></code>: channel number </li>
+<li><code class="docutils literal notranslate"><span class="pre">flags</span></code>: [optional, default none] One or multiple flags from HardwareInteractionFlags</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv314HW_ReadDigital8variable8variable8variable8variable8variable">
+<span id="_CPPv214HW_ReadDigital8variable8variable8variable8variable8variable"></span><span id="HW_ReadDigital__variable.variable.variable.variable.variable"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1a8e3602ad8e2e7383379cbd95c6ba5aeb"></span>variable <code class="descname">HW_ReadDigital</code><span class="sig-paren">(</span>variable <em>hardwareType</em>, variable <em>deviceID</em>, variable <em>channel</em>, variable <em>line</em> = defaultValue, variable <em>flags</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv314HW_ReadDigital8variable8variable8variable8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Read from a digital channel. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>bitmask denoting the state of the channel/line </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hardwareType</span></code>: One of HardwareDACTypeConstants </li>
+<li><code class="docutils literal notranslate"><span class="pre">deviceID</span></code>: device identifier </li>
+<li><code class="docutils literal notranslate"><span class="pre">channel</span></code>: The hardware documentation terms this as port(NI). For the ITC we call that ttlBit. Takes care of special rack handling for the ITC 1600. Range depends on hardware and hardware type. </li>
+<li><code class="docutils literal notranslate"><span class="pre">line</span></code>: bit of TTL line, (only for hardware types which support single TTL writes/read) </li>
+<li><code class="docutils literal notranslate"><span class="pre">flags</span></code>: [optional, default none] One or multiple flags from HardwareInteractionFlags</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv315HW_WriteDigital8variable8variable8variable8variable8variable8variable">
+<span id="_CPPv215HW_WriteDigital8variable8variable8variable8variable8variable8variable"></span><span id="HW_WriteDigital__variable.variable.variable.variable.variable.variable"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1a1e53083a38c8736017d0ff92453f279c"></span>variable <code class="descname">HW_WriteDigital</code><span class="sig-paren">(</span>variable <em>hardwareType</em>, variable <em>deviceID</em>, variable <em>channel</em>, variable <em>value</em>, variable <em>line</em> = defaultValue, variable <em>flags</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv315HW_WriteDigital8variable8variable8variable8variable8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Write to a digital channel. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hardwareType</span></code>: One of HardwareDACTypeConstants </li>
+<li><code class="docutils literal notranslate"><span class="pre">deviceID</span></code>: device identifier </li>
+<li><code class="docutils literal notranslate"><span class="pre">channel</span></code>: The hardware documentation terms this as port(NI). For the ITC we call that ttlBit. Takes care of special rack handling for the ITC 1600. Range depends on hardware and hardware type. </li>
+<li><code class="docutils literal notranslate"><span class="pre">value</span></code>: bitmask to write </li>
+<li><code class="docutils literal notranslate"><span class="pre">line</span></code>: bit of TTL line, (only for hardware types which support single TTL writes/read) </li>
+<li><code class="docutils literal notranslate"><span class="pre">flags</span></code>: [optional, default none] One or multiple flags from HardwareInteractionFlags </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv315HW_EnableYoking8variable8variable8variable">
+<span id="_CPPv215HW_EnableYoking8variable8variable8variable"></span><span id="HW_EnableYoking__variable.variable.variable"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1a4efe2effe301d4e21500f2d87545f986"></span>variable <code class="descname">HW_EnableYoking</code><span class="sig-paren">(</span>variable <em>hardwareType</em>, variable <em>deviceID</em>, variable <em>flags</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv315HW_EnableYoking8variable8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Enable yoking. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hardwareType</span></code>: One of HardwareDACTypeConstants </li>
+<li><code class="docutils literal notranslate"><span class="pre">deviceID</span></code>: device identifier </li>
+<li><code class="docutils literal notranslate"><span class="pre">flags</span></code>: [optional, default none] One or multiple flags from HardwareInteractionFlags </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv316HW_DisableYoking8variable8variable8variable">
+<span id="_CPPv216HW_DisableYoking8variable8variable8variable"></span><span id="HW_DisableYoking__variable.variable.variable"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1a43b9f069d4362ebb35f4232ddbeffd35"></span>variable <code class="descname">HW_DisableYoking</code><span class="sig-paren">(</span>variable <em>hardwareType</em>, variable <em>deviceID</em>, variable <em>flags</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv316HW_DisableYoking8variable8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Enable yoking. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hardwareType</span></code>: One of HardwareDACTypeConstants </li>
+<li><code class="docutils literal notranslate"><span class="pre">deviceID</span></code>: device identifier </li>
+<li><code class="docutils literal notranslate"><span class="pre">flags</span></code>: [optional, default none] One or multiple flags from HardwareInteractionFlags </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv310HW_StopAcq8variable8variable8variable8variable8variable">
+<span id="_CPPv210HW_StopAcq8variable8variable8variable8variable8variable"></span><span id="HW_StopAcq__variable.variable.variable.variable.variable"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1ac067ffc7897b56e751b7dfabdef4da00"></span>variable <code class="descname">HW_StopAcq</code><span class="sig-paren">(</span>variable <em>hardwareType</em>, variable <em>deviceID</em>, variable <em>prepareForDAQ</em> = defaultValue, variable <em>zeroDAC</em> = defaultValue, variable <em>flags</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv310HW_StopAcq8variable8variable8variable8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Stop data acquisition. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hardwareType</span></code>: One of HardwareDACTypeConstants </li>
+<li><code class="docutils literal notranslate"><span class="pre">deviceID</span></code>: device identifier </li>
+<li><code class="docutils literal notranslate"><span class="pre">prepareForDAQ</span></code>: immediately prepare for the next data acquisition after stopping it </li>
+<li><code class="docutils literal notranslate"><span class="pre">zeroDAC</span></code>: set all used DA channels to zero </li>
+<li><code class="docutils literal notranslate"><span class="pre">flags</span></code>: [optional, default none] One or multiple flags from HardwareInteractionFlags </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv312HW_IsRunning8variable8variable8variable">
+<span id="_CPPv212HW_IsRunning8variable8variable8variable"></span><span id="HW_IsRunning__variable.variable.variable"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1aa84ff338c72c60b071848ba55245ad71"></span>variable <code class="descname">HW_IsRunning</code><span class="sig-paren">(</span>variable <em>hardwareType</em>, variable <em>deviceID</em>, variable <em>flags</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv312HW_IsRunning8variable8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Determine if data acquisition is currently active. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>one if running, zero otherwise </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hardwareType</span></code>: One of HardwareDACTypeConstants </li>
+<li><code class="docutils literal notranslate"><span class="pre">deviceID</span></code>: device identifier </li>
+<li><code class="docutils literal notranslate"><span class="pre">flags</span></code>: [optional, default none] One or multiple flags from HardwareInteractionFlags</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv316HW_GetDeviceInfo8variable8variable8variable">
+<span id="_CPPv216HW_GetDeviceInfo8variable8variable8variable"></span><span id="HW_GetDeviceInfo__variable.variable.variable"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1a8fba4ca37d9f5918a5d65a54e2dad314"></span>wave <code class="descname">HW_GetDeviceInfo</code><span class="sig-paren">(</span>variable <em>hardwareType</em>, variable <em>deviceID</em>, variable <em>flags</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv316HW_GetDeviceInfo8variable8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return hardware specific information from the device. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>free numeric/text wave with information and dimension labels </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hardwareType</span></code>: One of HardwareDACTypeConstants </li>
+<li><code class="docutils literal notranslate"><span class="pre">deviceID</span></code>: device identifier </li>
+<li><code class="docutils literal notranslate"><span class="pre">flags</span></code>: [optional, default none] One or multiple flags from HardwareInteractionFlags</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv311HW_StartAcq8variable8variable8variable8variable8variable">
+<span id="_CPPv211HW_StartAcq8variable8variable8variable8variable8variable"></span><span id="HW_StartAcq__variable.variable.variable.variable.variable"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1a38e2539fd613af6c1e8cebe3ced7fff8"></span>variable <code class="descname">HW_StartAcq</code><span class="sig-paren">(</span>variable <em>hardwareType</em>, variable <em>deviceID</em>, variable <em>triggerMode</em> = defaultValue, variable <em>flags</em> = defaultValue, variable <em>repeat</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv311HW_StartAcq8variable8variable8variable8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Start data acquisition. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hardwareType</span></code>: One of HardwareDACTypeConstants </li>
+<li><code class="docutils literal notranslate"><span class="pre">deviceID</span></code>: device identifier </li>
+<li><code class="docutils literal notranslate"><span class="pre">triggerMode</span></code>: [optional, defaults to <a class="reference internal" href="_m_i_e_s___constants_8ipf.html#_m_i_e_s___constants_8ipf_1a4ce2a221912778d0a4c92e02d3bbfe22"><span class="std std-ref">HARDWARE_DAC_DEFAULT_TRIGGER</span></a>] one of TriggerModeStartAcq </li>
+<li><code class="docutils literal notranslate"><span class="pre">flags</span></code>: [optional, default none] One or multiple flags from HardwareInteractionFlags </li>
+<li><code class="docutils literal notranslate"><span class="pre">repeat</span></code>: [optional, default 0] for NI devices, repeats the scan after it ends </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv314HW_ResetDevice8variable8variable8variable">
+<span id="_CPPv214HW_ResetDevice8variable8variable8variable"></span><span id="HW_ResetDevice__variable.variable.variable"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1adc042a5965af0f8100dc41648b5fd25b"></span>variable <code class="descname">HW_ResetDevice</code><span class="sig-paren">(</span>variable <em>hardwareType</em>, variable <em>deviceID</em>, variable <em>flags</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv314HW_ResetDevice8variable8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Reset the device. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hardwareType</span></code>: One of HardwareDACTypeConstants </li>
+<li><code class="docutils literal notranslate"><span class="pre">deviceID</span></code>: device identifier </li>
+<li><code class="docutils literal notranslate"><span class="pre">flags</span></code>: [optional, default none] One or multiple flags from HardwareInteractionFlags </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv318HW_AssertOnInvalid8variable8variable">
+<span id="_CPPv218HW_AssertOnInvalid8variable8variable"></span><span id="HW_AssertOnInvalid__variable.variable"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1aa4bd6f335ef53caed1a48f98acbb9113"></span>variable <code class="descname">HW_AssertOnInvalid</code><span class="sig-paren">(</span>variable <em>hardwareType</em>, variable <em>deviceID</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv318HW_AssertOnInvalid8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Assert on using an invalid value of <code class="docutils literal notranslate"><span class="pre">hardwareType</span></code> or <code class="docutils literal notranslate"><span class="pre">deviceID</span></code> </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hardwareType</span></code>: One of HardwareDACTypeConstants </li>
+<li><code class="docutils literal notranslate"><span class="pre">deviceID</span></code>: device identifier </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv322HW_IsValidHardwareType8variable">
+<span id="_CPPv222HW_IsValidHardwareType8variable"></span><span id="HW_IsValidHardwareType__variable"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1aa46cd36a3480f0b0491138c84ceca84b"></span><em class="property">static</em> variable <code class="descname">HW_IsValidHardwareType</code><span class="sig-paren">(</span>variable <em>hardwareType</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv322HW_IsValidHardwareType8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Check if the given hardware type is valid. </p>
+<p>Invalid here means that the value is out-of-range. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv318HW_IsValidDeviceID8variable">
+<span id="_CPPv218HW_IsValidDeviceID8variable"></span><span id="HW_IsValidDeviceID__variable"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1a7ab20a214ce13ba6f4b94732e2ed33a2"></span><em class="property">static</em> variable <code class="descname">HW_IsValidDeviceID</code><span class="sig-paren">(</span>variable <em>deviceID</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv318HW_IsValidDeviceID8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Check if the given device ID is valid. </p>
+<p>Invalid here means that the value is out-of-range. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv317HW_RegisterDevice6string8variable8variable6string">
+<span id="_CPPv217HW_RegisterDevice6string8variable8variable6string"></span><span id="HW_RegisterDevice__string.variable.variable.string"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1ab570a1d4b7fd6b49907d443ea7f839d2"></span>variable <code class="descname">HW_RegisterDevice</code><span class="sig-paren">(</span>string <em>mainDevice</em>, variable <em>hardwareType</em>, variable <em>deviceID</em>, string <em>pressureDevice</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv317HW_RegisterDevice6string8variable8variable6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Register an opened device in our device map. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">mainDevice</span></code>: Name of the DA_EPhys device </li>
+<li><code class="docutils literal notranslate"><span class="pre">hardwareType</span></code>: One of HardwareDACTypeConstants </li>
+<li><code class="docutils literal notranslate"><span class="pre">deviceID</span></code>: device identifier </li>
+<li><code class="docutils literal notranslate"><span class="pre">pressureDevice</span></code>: required for registering pressure control devices </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv319HW_DeRegisterDevice8variable8variable8variable">
+<span id="_CPPv219HW_DeRegisterDevice8variable8variable8variable"></span><span id="HW_DeRegisterDevice__variable.variable.variable"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1a1ba10291de1f0b18260604fd2ef49c5b"></span>variable <code class="descname">HW_DeRegisterDevice</code><span class="sig-paren">(</span>variable <em>hardwareType</em>, variable <em>deviceID</em>, variable <em>flags</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv319HW_DeRegisterDevice8variable8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Deregister an opened device in our device map. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hardwareType</span></code>: One of HardwareDACTypeConstants </li>
+<li><code class="docutils literal notranslate"><span class="pre">deviceID</span></code>: device identifier </li>
+<li><code class="docutils literal notranslate"><span class="pre">flags</span></code>: [optional, default none] One or multiple flags from HardwareInteractionFlags </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv320HW_GetMainDeviceName8variable8variable">
+<span id="_CPPv220HW_GetMainDeviceName8variable8variable"></span><span id="HW_GetMainDeviceName__variable.variable"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1ae9499e6c6982499702a2583d32a91cdf"></span>string <code class="descname">HW_GetMainDeviceName</code><span class="sig-paren">(</span>variable <em>hardwareType</em>, variable <em>deviceID</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv320HW_GetMainDeviceName8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return the name of the main device given the <code class="docutils literal notranslate"><span class="pre">deviceID</span></code> and the <code class="docutils literal notranslate"><span class="pre">hardwareType</span></code> </p>
+<p>Use this function if you want to derive a storage location from the device name.</p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">deviceID</span></code>: device identifier </li>
+<li><code class="docutils literal notranslate"><span class="pre">hardwareType</span></code>: One of HardwareDACTypeConstants </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv316HW_GetDeviceName8variable8variable">
+<span id="_CPPv216HW_GetDeviceName8variable8variable"></span><span id="HW_GetDeviceName__variable.variable"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1acd5b0ffedb14d28600ae0e8d34f0c31b"></span>string <code class="descname">HW_GetDeviceName</code><span class="sig-paren">(</span>variable <em>hardwareType</em>, variable <em>deviceID</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv316HW_GetDeviceName8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return the name of the device given the <code class="docutils literal notranslate"><span class="pre">deviceID</span></code> and the <code class="docutils literal notranslate"><span class="pre">hardwareType</span></code> </p>
+<p>Prefers the pressure device name if set.</p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">deviceID</span></code>: device identifier </li>
+<li><code class="docutils literal notranslate"><span class="pre">hardwareType</span></code>: One of HardwareDACTypeConstants </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">ITC</p>
+<dl class="function">
+<dt id="_CPPv324HW_ITC_ListOfOpenDevicesv">
+<span id="_CPPv224HW_ITC_ListOfOpenDevicesv"></span><span id="HW_ITC_ListOfOpenDevices"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1a5f0833d629bb67c5e8038af4e6d5acc6"></span>string <code class="descname">HW_ITC_ListOfOpenDevices</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv324HW_ITC_ListOfOpenDevicesv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv318HW_ITC_ListDevicesv">
+<span id="_CPPv218HW_ITC_ListDevicesv"></span><span id="HW_ITC_ListDevices"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1a90cb0e7893853d52693af92ce5ddb59f"></span>string <code class="descname">HW_ITC_ListDevices</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv318HW_ITC_ListDevicesv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv328HW_ITC_HandleReturnValues_TS8variable8variable8variable">
+<span id="_CPPv228HW_ITC_HandleReturnValues_TS8variable8variable8variable"></span><span id="HW_ITC_HandleReturnValues_TS__variable.variable.variable"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1a7a167dc12d5f4ef8bd62e7456e3a9d91"></span>variable <code class="descname">HW_ITC_HandleReturnValues_TS</code><span class="sig-paren">(</span>variable <em>flags</em>, variable <em>ITCError</em>, variable <em>ITCXOPError</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv328HW_ITC_HandleReturnValues_TS8variable8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv325HW_ITC_HandleReturnValues8variable8variable8variable">
+<span id="_CPPv225HW_ITC_HandleReturnValues8variable8variable8variable"></span><span id="HW_ITC_HandleReturnValues__variable.variable.variable"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1abe76c78f8e0d39b5a4d5c65e60c199de"></span>variable <code class="descname">HW_ITC_HandleReturnValues</code><span class="sig-paren">(</span>variable <em>flags</em>, variable <em>ITCError</em>, variable <em>ITCXOPError</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv325HW_ITC_HandleReturnValues8variable8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv325HW_ITC_GetXOPErrorMessage8variable">
+<span id="_CPPv225HW_ITC_GetXOPErrorMessage8variable"></span><span id="HW_ITC_GetXOPErrorMessage__variable"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1a327aa304bfa5edb8c8054223baa52b5f"></span><em class="property">static</em> string <code class="descname">HW_ITC_GetXOPErrorMessage</code><span class="sig-paren">(</span>variable <em>errCode</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv325HW_ITC_GetXOPErrorMessage8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv317HW_ITC_OpenDevice8variable8variable8variable">
+<span id="_CPPv217HW_ITC_OpenDevice8variable8variable8variable"></span><span id="HW_ITC_OpenDevice__variable.variable.variable"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1a660bc85381971540671df3425bd7e463"></span>variable <code class="descname">HW_ITC_OpenDevice</code><span class="sig-paren">(</span>variable <em>deviceType</em>, variable <em>deviceNumber</em>, variable <em>flags</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv317HW_ITC_OpenDevice8variable8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv322HW_ITC_CloseAllDevices8variable">
+<span id="_CPPv222HW_ITC_CloseAllDevices8variable"></span><span id="HW_ITC_CloseAllDevices__variable"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1a80c735a8f6348d0a3b8c0944b370ed6f"></span>variable <code class="descname">HW_ITC_CloseAllDevices</code><span class="sig-paren">(</span>variable <em>flags</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv322HW_ITC_CloseAllDevices8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv318HW_ITC_CloseDevice8variable8variable">
+<span id="_CPPv218HW_ITC_CloseDevice8variable8variable"></span><span id="HW_ITC_CloseDevice__variable.variable"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1a40239681799cb34d87fd3bad0466342f"></span>variable <code class="descname">HW_ITC_CloseDevice</code><span class="sig-paren">(</span>variable <em>deviceID</em>, variable <em>flags</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv318HW_ITC_CloseDevice8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv319HW_ITC_SelectDevice8variable8variable">
+<span id="_CPPv219HW_ITC_SelectDevice8variable8variable"></span><span id="HW_ITC_SelectDevice__variable.variable"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1a5af8d35011e60de9f551e6b1d0a61ca7"></span>variable <code class="descname">HW_ITC_SelectDevice</code><span class="sig-paren">(</span>variable <em>deviceID</em>, variable <em>flags</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv319HW_ITC_SelectDevice8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv320HW_ITC_GetDeviceInfo8variable8variable">
+<span id="_CPPv220HW_ITC_GetDeviceInfo8variable8variable"></span><span id="HW_ITC_GetDeviceInfo__variable.variable"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1a7d53787475967374110f0d8a371f2432"></span>wave <code class="descname">HW_ITC_GetDeviceInfo</code><span class="sig-paren">(</span>variable <em>deviceID</em>, variable <em>flags</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv320HW_ITC_GetDeviceInfo8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv319HW_ITC_EnableYoking8variable8variable">
+<span id="_CPPv219HW_ITC_EnableYoking8variable8variable"></span><span id="HW_ITC_EnableYoking__variable.variable"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1a70e2dda63d0a0a2a1145c09875dcb59d"></span>variable <code class="descname">HW_ITC_EnableYoking</code><span class="sig-paren">(</span>variable <em>deviceID</em>, variable <em>flags</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv319HW_ITC_EnableYoking8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv320HW_ITC_DisableYoking8variable8variable">
+<span id="_CPPv220HW_ITC_DisableYoking8variable8variable"></span><span id="HW_ITC_DisableYoking__variable.variable"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1abb1271e8fe6640b66dd70d25dd6c0f51"></span>variable <code class="descname">HW_ITC_DisableYoking</code><span class="sig-paren">(</span>variable <em>deviceID</em>, variable <em>flags</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv320HW_ITC_DisableYoking8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv317HW_ITC_StopAcq_TS8variable8variable8variable">
+<span id="_CPPv217HW_ITC_StopAcq_TS8variable8variable8variable"></span><span id="HW_ITC_StopAcq_TS__variable.variable.variable"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1a9b4db1effcc8242432e55c9c954740f9"></span>variable <code class="descname">HW_ITC_StopAcq_TS</code><span class="sig-paren">(</span>variable <em>deviceID</em>, variable <em>prepareForDAQ</em> = defaultValue, variable <em>flags</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv317HW_ITC_StopAcq_TS8variable8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv314HW_ITC_StopAcq8variable10WaveOrNull24HW_WAVE_GETTER_PROTOTYPE8variable8variable8variable">
+<span id="_CPPv214HW_ITC_StopAcq8variable10WaveOrNull24HW_WAVE_GETTER_PROTOTYPE8variable8variable8variable"></span><span id="HW_ITC_StopAcq__variable.WaveOrNull.HW_WAVE_GETTER_PROTOTYPE.variable.variable.variable"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1ae7aef382253bd1b55b29fd86d3091411"></span>variable <code class="descname">HW_ITC_StopAcq</code><span class="sig-paren">(</span>variable <em>deviceID</em>, WaveOrNull <em>config</em> = defaultValue, <a class="reference internal" href="#_CPPv324HW_WAVE_GETTER_PROTOTYPE6string" title="HW_WAVE_GETTER_PROTOTYPE">HW_WAVE_GETTER_PROTOTYPE</a> <em>configFunc</em> = defaultValue, variable <em>prepareForDAQ</em> = defaultValue, variable <em>zeroDAC</em> = defaultValue, variable <em>flags</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv314HW_ITC_StopAcq8variable10WaveOrNull24HW_WAVE_GETTER_PROTOTYPE8variable8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv323HW_ITC_GetCurrentDevice8variable">
+<span id="_CPPv223HW_ITC_GetCurrentDevice8variable"></span><span id="HW_ITC_GetCurrentDevice__variable"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1afee12bb9ec935b07e2987aa794f28b43"></span>variable <code class="descname">HW_ITC_GetCurrentDevice</code><span class="sig-paren">(</span>variable <em>flags</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv323HW_ITC_GetCurrentDevice8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv327HW_ITC_GetFifoPosFromConfig4wave">
+<span id="_CPPv227HW_ITC_GetFifoPosFromConfig4wave"></span><span id="HW_ITC_GetFifoPosFromConfig__wave"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1a03ac937d979b00fb2211d37bfbaa02bf"></span><em class="property">static</em> wave <code class="descname">HW_ITC_GetFifoPosFromConfig</code><span class="sig-paren">(</span>wave <em>config_t</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv327HW_ITC_GetFifoPosFromConfig4wave" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv319HW_ITC_ResetFifo_TS8variable4wave8variable">
+<span id="_CPPv219HW_ITC_ResetFifo_TS8variable4wave8variable"></span><span id="HW_ITC_ResetFifo_TS__variable.wave.variable"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1a2fc443b79510c24e9838a2f119e18b80"></span>variable <code class="descname">HW_ITC_ResetFifo_TS</code><span class="sig-paren">(</span>variable <em>deviceID</em>, wave <em>config</em>, variable <em>flags</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv319HW_ITC_ResetFifo_TS8variable4wave8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv316HW_ITC_ResetFifo8variable10WaveOrNull24HW_WAVE_GETTER_PROTOTYPE8variable">
+<span id="_CPPv216HW_ITC_ResetFifo8variable10WaveOrNull24HW_WAVE_GETTER_PROTOTYPE8variable"></span><span id="HW_ITC_ResetFifo__variable.WaveOrNull.HW_WAVE_GETTER_PROTOTYPE.variable"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1a3a1abd152f148ce4bbefe05139720c34"></span>variable <code class="descname">HW_ITC_ResetFifo</code><span class="sig-paren">(</span>variable <em>deviceID</em>, WaveOrNull <em>config</em> = defaultValue, <a class="reference internal" href="#_CPPv324HW_WAVE_GETTER_PROTOTYPE6string" title="HW_WAVE_GETTER_PROTOTYPE">HW_WAVE_GETTER_PROTOTYPE</a> <em>configFunc</em> = defaultValue, variable <em>flags</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv316HW_ITC_ResetFifo8variable10WaveOrNull24HW_WAVE_GETTER_PROTOTYPE8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv318HW_ITC_StartAcq_TS8variable8variable8variable">
+<span id="_CPPv218HW_ITC_StartAcq_TS8variable8variable8variable"></span><span id="HW_ITC_StartAcq_TS__variable.variable.variable"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1aac46ff3a1b94e12aedb8a9dbfa28b9e9"></span>variable <code class="descname">HW_ITC_StartAcq_TS</code><span class="sig-paren">(</span>variable <em>deviceID</em>, variable <em>triggerMode</em>, variable <em>flags</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv318HW_ITC_StartAcq_TS8variable8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv315HW_ITC_StartAcq8variable8variable8variable">
+<span id="_CPPv215HW_ITC_StartAcq8variable8variable8variable"></span><span id="HW_ITC_StartAcq__variable.variable.variable"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1ace4e65e505ad70e5ee99936ed2f2b6c9"></span>variable <code class="descname">HW_ITC_StartAcq</code><span class="sig-paren">(</span>variable <em>deviceID</em>, variable <em>triggerMode</em>, variable <em>flags</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv315HW_ITC_StartAcq8variable8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv316HW_ITC_IsRunning8variable8variable">
+<span id="_CPPv216HW_ITC_IsRunning8variable8variable"></span><span id="HW_ITC_IsRunning__variable.variable"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1a6de91aff7156808f9f4d6db950841021"></span>variable <code class="descname">HW_ITC_IsRunning</code><span class="sig-paren">(</span>variable <em>deviceID</em>, variable <em>flags</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv316HW_ITC_IsRunning8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv315HW_ITC_GetState8variable8variable">
+<span id="_CPPv215HW_ITC_GetState8variable8variable"></span><span id="HW_ITC_GetState__variable.variable"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1accb476f5e2c9d93c2e2a7d2d6dfb9364"></span>wave <code class="descname">HW_ITC_GetState</code><span class="sig-paren">(</span>variable <em>deviceID</em>, variable <em>flags</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv315HW_ITC_GetState8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv314HW_ITC_ReadADC8variable8variable8variable">
+<span id="_CPPv214HW_ITC_ReadADC8variable8variable8variable"></span><span id="HW_ITC_ReadADC__variable.variable.variable"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1a99ce54d64dfbf85b321e089480060752"></span>variable <code class="descname">HW_ITC_ReadADC</code><span class="sig-paren">(</span>variable <em>deviceID</em>, variable <em>channel</em>, variable <em>flags</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv314HW_ITC_ReadADC8variable8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv315HW_ITC_WriteDAC8variable8variable8variable8variable">
+<span id="_CPPv215HW_ITC_WriteDAC8variable8variable8variable8variable"></span><span id="HW_ITC_WriteDAC__variable.variable.variable.variable"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1acafb2f4e9ffc2a21bb1247f69ea154ad"></span>variable <code class="descname">HW_ITC_WriteDAC</code><span class="sig-paren">(</span>variable <em>deviceID</em>, variable <em>channel</em>, variable <em>value</em>, variable <em>flags</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv315HW_ITC_WriteDAC8variable8variable8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv318HW_ITC_ReadDigital8variable8variable8variable">
+<span id="_CPPv218HW_ITC_ReadDigital8variable8variable8variable"></span><span id="HW_ITC_ReadDigital__variable.variable.variable"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1a3a0785da95951e2f95ae9d76779ad926"></span>variable <code class="descname">HW_ITC_ReadDigital</code><span class="sig-paren">(</span>variable <em>deviceID</em>, variable <em>xopChannel</em>, variable <em>flags</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv318HW_ITC_ReadDigital8variable8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv319HW_ITC_WriteDigital8variable8variable8variable8variable">
+<span id="_CPPv219HW_ITC_WriteDigital8variable8variable8variable8variable"></span><span id="HW_ITC_WriteDigital__variable.variable.variable.variable"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1af1987f394af762fe294ddd14e7ed0414"></span>variable <code class="descname">HW_ITC_WriteDigital</code><span class="sig-paren">(</span>variable <em>deviceID</em>, variable <em>xopChannel</em>, variable <em>value</em>, variable <em>flags</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv319HW_ITC_WriteDigital8variable8variable8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv319HW_ITC_DebugMode_TS8variable8variable">
+<span id="_CPPv219HW_ITC_DebugMode_TS8variable8variable"></span><span id="HW_ITC_DebugMode_TS__variable.variable"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1ac4262877c3dba87d417acd1c1c588e9b"></span>variable <code class="descname">HW_ITC_DebugMode_TS</code><span class="sig-paren">(</span>variable <em>state</em>, variable <em>flags</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv319HW_ITC_DebugMode_TS8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv316HW_ITC_DebugMode8variable8variable">
+<span id="_CPPv216HW_ITC_DebugMode8variable8variable"></span><span id="HW_ITC_DebugMode__variable.variable"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1a366c31de0daccbb01fd5d85fde4a00f3"></span>variable <code class="descname">HW_ITC_DebugMode</code><span class="sig-paren">(</span>variable <em>state</em>, variable <em>flags</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv316HW_ITC_DebugMode8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv317HW_ITC_PrepareAcq8variable10WaveOrNull24HW_WAVE_GETTER_PROTOTYPE10WaveOrNull24HW_WAVE_GETTER_PROTOTYPE8variable8variable">
+<span id="_CPPv217HW_ITC_PrepareAcq8variable10WaveOrNull24HW_WAVE_GETTER_PROTOTYPE10WaveOrNull24HW_WAVE_GETTER_PROTOTYPE8variable8variable"></span><span id="HW_ITC_PrepareAcq__variable.WaveOrNull.HW_WAVE_GETTER_PROTOTYPE.WaveOrNull.HW_WAVE_GETTER_PROTOTYPE.variable.variable"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1a535601c298e68be3d91f6609d82de191"></span>variable <code class="descname">HW_ITC_PrepareAcq</code><span class="sig-paren">(</span>variable <em>deviceID</em>, WaveOrNull <em>data</em> = defaultValue, <a class="reference internal" href="#_CPPv324HW_WAVE_GETTER_PROTOTYPE6string" title="HW_WAVE_GETTER_PROTOTYPE">HW_WAVE_GETTER_PROTOTYPE</a> <em>dataFunc</em> = defaultValue, WaveOrNull <em>config</em> = defaultValue, <a class="reference internal" href="#_CPPv324HW_WAVE_GETTER_PROTOTYPE6string" title="HW_WAVE_GETTER_PROTOTYPE">HW_WAVE_GETTER_PROTOTYPE</a> <em>configFunc</em> = defaultValue, variable <em>flags</em> = defaultValue, variable <em>offset</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv317HW_ITC_PrepareAcq8variable10WaveOrNull24HW_WAVE_GETTER_PROTOTYPE10WaveOrNull24HW_WAVE_GETTER_PROTOTYPE8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv318HW_ITC_MoreData_TS8variable8variable8variable4waveP8variable8variable">
+<span id="_CPPv218HW_ITC_MoreData_TS8variable8variable8variable4waveP8variable8variable"></span><span id="HW_ITC_MoreData_TS__variable.variable.variable.wave.variableP.variable"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1a1484c63413fdae9aed6394a7fdf6e058"></span>variable <code class="descname">HW_ITC_MoreData_TS</code><span class="sig-paren">(</span>variable <em>deviceID</em>, variable <em>ADChannelToMonitor</em>, variable <em>stopCollectionPoint</em>, wave <em>config</em>, variable *<em>fifoPos</em> = defaultValue, variable <em>flags</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv318HW_ITC_MoreData_TS8variable8variable8variable4waveP8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv315HW_ITC_MoreData8variable8variable8variable10WaveOrNull24HW_WAVE_GETTER_PROTOTYPEP8variable8variable">
+<span id="_CPPv215HW_ITC_MoreData8variable8variable8variable10WaveOrNull24HW_WAVE_GETTER_PROTOTYPEP8variable8variable"></span><span id="HW_ITC_MoreData__variable.variable.variable.WaveOrNull.HW_WAVE_GETTER_PROTOTYPE.variableP.variable"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1a9bfdaafa444865d941a42acbf2b0e609"></span>variable <code class="descname">HW_ITC_MoreData</code><span class="sig-paren">(</span>variable <em>deviceID</em>, variable <em>ADChannelToMonitor</em> = defaultValue, variable <em>stopCollectionPoint</em> = defaultValue, WaveOrNull <em>config</em> = defaultValue, <a class="reference internal" href="#_CPPv324HW_WAVE_GETTER_PROTOTYPE6string" title="HW_WAVE_GETTER_PROTOTYPE">HW_WAVE_GETTER_PROTOTYPE</a> <em>configFunc</em> = defaultValue, variable *<em>fifoPos</em> = defaultValue, variable <em>flags</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv315HW_ITC_MoreData8variable8variable8variable10WaveOrNull24HW_WAVE_GETTER_PROTOTYPEP8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv316HW_ITC_GetZValue8variable">
+<span id="_CPPv216HW_ITC_GetZValue8variable"></span><span id="HW_ITC_GetZValue__variable"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1a6b8a9d450d4a108ae2eb443e068d25ea"></span><em class="property">static</em> variable <code class="descname">HW_ITC_GetZValue</code><span class="sig-paren">(</span>variable <em>flags</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv316HW_ITC_GetZValue8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Construct the /Z flag value for the ITC operations. </p>
+<p>Takes interactiveMode into account for automated testing. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv324HW_WAVE_GETTER_PROTOTYPE6string">
+<span id="_CPPv224HW_WAVE_GETTER_PROTOTYPE6string"></span><span id="HW_WAVE_GETTER_PROTOTYPE__string"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1a4ef153694e6402df68a770d4067e283d"></span>wave <code class="descname">HW_WAVE_GETTER_PROTOTYPE</code><span class="sig-paren">(</span>string <em>str</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv324HW_WAVE_GETTER_PROTOTYPE6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv327HW_ITC_TransposeAndToDouble4wave">
+<span id="_CPPv227HW_ITC_TransposeAndToDouble4wave"></span><span id="HW_ITC_TransposeAndToDouble__wave"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1a01f8e887e2adad74a1b42fa8640d8a5b"></span>wave <code class="descname">HW_ITC_TransposeAndToDouble</code><span class="sig-paren">(</span>wave <em>wv</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv327HW_ITC_TransposeAndToDouble4wave" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv324HW_ITC_TransposeAndToInt4wave">
+<span id="_CPPv224HW_ITC_TransposeAndToInt4wave"></span><span id="HW_ITC_TransposeAndToInt__wave"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1a2fbcba5277988c10e039097da5ef344e"></span>wave <code class="descname">HW_ITC_TransposeAndToInt</code><span class="sig-paren">(</span>wave <em>wv</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv324HW_ITC_TransposeAndToInt4wave" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Utility functions not interacting with hardware</p>
+<dl class="function">
+<dt id="_CPPv329HW_ITC_CalculateDevChannelOff6string">
+<span id="_CPPv229HW_ITC_CalculateDevChannelOff6string"></span><span id="HW_ITC_CalculateDevChannelOff__string"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1a0a67fffc5f2a34fb186bc88069b9c9e8"></span>variable <code class="descname">HW_ITC_CalculateDevChannelOff</code><span class="sig-paren">(</span>string <em>panelTitle</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv329HW_ITC_CalculateDevChannelOff6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns the device channel offset for the given device. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>16 for ITC1600 and 0 for all other types </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv319HW_ITC_GetRackRange8variableP8variableP8variable">
+<span id="_CPPv219HW_ITC_GetRackRange8variableP8variableP8variable"></span><span id="HW_ITC_GetRackRange__variable.variableP.variableP"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1a0ff9ab0318f135a01b0b0548f2a363d2"></span>variable <code class="descname">HW_ITC_GetRackRange</code><span class="sig-paren">(</span>variable <em>rack</em>, variable *<em>first</em>, variable *<em>last</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv319HW_ITC_GetRackRange8variableP8variableP8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return the <code class="docutils literal notranslate"><span class="pre">first</span></code> and <code class="docutils literal notranslate"><span class="pre">last</span></code> TTL bits/channels for the given <code class="docutils literal notranslate"><span class="pre">rack</span></code> </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv317HW_ITC_ClipTTLBit6string8variable">
+<span id="_CPPv217HW_ITC_ClipTTLBit6string8variable"></span><span id="HW_ITC_ClipTTLBit__string.variable"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1a7675f6aa31bbfd05ae92c21828c8900c"></span>variable <code class="descname">HW_ITC_ClipTTLBit</code><span class="sig-paren">(</span>string <em>panelTitle</em>, variable <em>ttlBit</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv317HW_ITC_ClipTTLBit6string8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Clip the ttlBit to adapt for differences in notation. </p>
+<p>The DA_Ephys panel e.g. labels the first ttlBit of <a class="reference internal" href="_m_i_e_s___constants_8ipf.html#_m_i_e_s___constants_8ipf_1a64a75a5a91414ed8639bcfabec16df96"><span class="std std-ref">RACK_ONE</span></a> as 4, but the ITC XOP treats that as 0. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv323HW_ITC_GetRackForTTLBit6string8variable">
+<span id="_CPPv223HW_ITC_GetRackForTTLBit6string8variable"></span><span id="HW_ITC_GetRackForTTLBit__string.variable"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1abdeac56e5dddb0721e6181d7227b2820"></span>variable <code class="descname">HW_ITC_GetRackForTTLBit</code><span class="sig-paren">(</span>string <em>panelTitle</em>, variable <em>ttlBit</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv323HW_ITC_GetRackForTTLBit6string8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return the rack number for the given ttlBit (the ttlBit is called <code class="docutils literal notranslate"><span class="pre">TTL</span> <span class="pre">channel</span></code> in the DA Ephys panel) </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv330HW_ITC_GetITCXOPChannelForRack6string8variable">
+<span id="_CPPv230HW_ITC_GetITCXOPChannelForRack6string8variable"></span><span id="HW_ITC_GetITCXOPChannelForRack__string.variable"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1a7311c7aa561dd6bae1ae8f578d10328d"></span>variable <code class="descname">HW_ITC_GetITCXOPChannelForRack</code><span class="sig-paren">(</span>string <em>panelTitle</em>, variable <em>rack</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv330HW_ITC_GetITCXOPChannelForRack6string8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return the ITC XOP channel for the given rack. </p>
+<p>Only the ITC1600 has two racks. The channel numbers differ for the different ITC device types. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">NI</p>
+<dl class="function">
+<dt id="_CPPv321HW_NI_AssertOnInvalid6string">
+<span id="_CPPv221HW_NI_AssertOnInvalid6string"></span><span id="HW_NI_AssertOnInvalid__string"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1a169c28d2e2368e74f375ad5db05e6421"></span>variable <code class="descname">HW_NI_AssertOnInvalid</code><span class="sig-paren">(</span>string <em>deviceName</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv321HW_NI_AssertOnInvalid6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Assert on using an invalid NI device name. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">deviceName</span></code>: NI device name </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv323HW_NI_IsValidDeviceName6string">
+<span id="_CPPv223HW_NI_IsValidDeviceName6string"></span><span id="HW_NI_IsValidDeviceName__string"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1af6ba578e9f2748b710dbf70e3c3e6d43"></span>variable <code class="descname">HW_NI_IsValidDeviceName</code><span class="sig-paren">(</span>string <em>deviceName</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv323HW_NI_IsValidDeviceName6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Check wether the given NI device name is valid. </p>
+<p>Currently a device name is valid if it is not empty. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv314HW_NI_StartAcq8variable8variable8variable8variable">
+<span id="_CPPv214HW_NI_StartAcq8variable8variable8variable8variable"></span><span id="HW_NI_StartAcq__variable.variable.variable.variable"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1a18adf025079d26b19b6f53986114346d"></span>variable <code class="descname">HW_NI_StartAcq</code><span class="sig-paren">(</span>variable <em>deviceID</em>, variable <em>triggerMode</em>, variable <em>flags</em> = defaultValue, variable <em>repeat</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv314HW_NI_StartAcq8variable8variable8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv316HW_NI_PrepareAcq8variable10WaveOrNull24HW_WAVE_GETTER_PROTOTYPE10WaveOrNull24HW_WAVE_GETTER_PROTOTYPE8variable8variable">
+<span id="_CPPv216HW_NI_PrepareAcq8variable10WaveOrNull24HW_WAVE_GETTER_PROTOTYPE10WaveOrNull24HW_WAVE_GETTER_PROTOTYPE8variable8variable"></span><span id="HW_NI_PrepareAcq__variable.WaveOrNull.HW_WAVE_GETTER_PROTOTYPE.WaveOrNull.HW_WAVE_GETTER_PROTOTYPE.variable.variable"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1a8b2ebf6549076e9785f2895fbc75d6fe"></span>variable <code class="descname">HW_NI_PrepareAcq</code><span class="sig-paren">(</span>variable <em>deviceID</em>, WaveOrNull <em>data</em> = defaultValue, <a class="reference internal" href="#_CPPv324HW_WAVE_GETTER_PROTOTYPE6string" title="HW_WAVE_GETTER_PROTOTYPE">HW_WAVE_GETTER_PROTOTYPE</a> <em>dataFunc</em> = defaultValue, WaveOrNull <em>config</em> = defaultValue, <a class="reference internal" href="#_CPPv324HW_WAVE_GETTER_PROTOTYPE6string" title="HW_WAVE_GETTER_PROTOTYPE">HW_WAVE_GETTER_PROTOTYPE</a> <em>configFunc</em> = defaultValue, variable <em>flags</em> = defaultValue, variable <em>offset</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv316HW_NI_PrepareAcq8variable10WaveOrNull24HW_WAVE_GETTER_PROTOTYPE10WaveOrNull24HW_WAVE_GETTER_PROTOTYPE8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv330HW_NI_GetPropertyListOfDevices8variable">
+<span id="_CPPv230HW_NI_GetPropertyListOfDevices8variable"></span><span id="HW_NI_GetPropertyListOfDevices__variable"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1aeb6550442771038c24131a460e064619"></span>string <code class="descname">HW_NI_GetPropertyListOfDevices</code><span class="sig-paren">(</span>variable <em>devNr</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv330HW_NI_GetPropertyListOfDevices8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv330HW_NI_PrintPropertiesOfDevicesv">
+<span id="_CPPv230HW_NI_PrintPropertiesOfDevicesv"></span><span id="HW_NI_PrintPropertiesOfDevices"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1af0deeb846922ca4d5a930f7a0c1c4291"></span>variable <code class="descname">HW_NI_PrintPropertiesOfDevices</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv330HW_NI_PrintPropertiesOfDevicesv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv317HW_NI_ReadDigital6string8variable8variable8variable">
+<span id="_CPPv217HW_NI_ReadDigital6string8variable8variable8variable"></span><span id="HW_NI_ReadDigital__string.variable.variable.variable"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1aeafa5f541248d894443a6e8ce265cb03"></span>variable <code class="descname">HW_NI_ReadDigital</code><span class="sig-paren">(</span>string <em>device</em>, variable <em>DIOPort</em> = defaultValue, variable <em>DIOLine</em> = defaultValue, variable <em>flags</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv317HW_NI_ReadDigital6string8variable8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv318HW_NI_WriteDigital6string8variable8variable8variable8variable">
+<span id="_CPPv218HW_NI_WriteDigital6string8variable8variable8variable8variable"></span><span id="HW_NI_WriteDigital__string.variable.variable.variable.variable"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1afde755107e7b5b164d4ec801a61956c9"></span>variable <code class="descname">HW_NI_WriteDigital</code><span class="sig-paren">(</span>string <em>device</em>, variable <em>value</em>, variable <em>DIOPort</em> = defaultValue, variable <em>DIOLine</em> = defaultValue, variable <em>flags</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv318HW_NI_WriteDigital6string8variable8variable8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv330HW_NI_WriteAnalogSingleAndSlow6string8variable8variable8variable">
+<span id="_CPPv230HW_NI_WriteAnalogSingleAndSlow6string8variable8variable8variable"></span><span id="HW_NI_WriteAnalogSingleAndSlow__string.variable.variable.variable"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1a907e5d640048c1d7da403a6bbc3ac9ed"></span>variable <code class="descname">HW_NI_WriteAnalogSingleAndSlow</code><span class="sig-paren">(</span>string <em>device</em>, variable <em>channel</em>, variable <em>value</em>, variable <em>flags</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv330HW_NI_WriteAnalogSingleAndSlow6string8variable8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv329HW_NI_ReadAnalogSingleAndSlow6string8variable8variable">
+<span id="_CPPv229HW_NI_ReadAnalogSingleAndSlow6string8variable8variable"></span><span id="HW_NI_ReadAnalogSingleAndSlow__string.variable.variable"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1aff63c3c26923f0947c93acbf1c07a411"></span>variable <code class="descname">HW_NI_ReadAnalogSingleAndSlow</code><span class="sig-paren">(</span>string <em>device</em>, variable <em>channel</em>, variable <em>flags</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv329HW_NI_ReadAnalogSingleAndSlow6string8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv317HW_NI_ListDevices8variable">
+<span id="_CPPv217HW_NI_ListDevices8variable"></span><span id="HW_NI_ListDevices__variable"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1a56d5a200e3df77510a9363fef590393c"></span>string <code class="descname">HW_NI_ListDevices</code><span class="sig-paren">(</span>variable <em>flags</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv317HW_NI_ListDevices8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv313HW_NI_StopAcq8variable8variable8variable">
+<span id="_CPPv213HW_NI_StopAcq8variable8variable8variable"></span><span id="HW_NI_StopAcq__variable.variable.variable"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1a08a48b068a2d4c406c131b6195f32c5c"></span>variable <code class="descname">HW_NI_StopAcq</code><span class="sig-paren">(</span>variable <em>deviceID</em>, variable <em>zeroDAC</em> = defaultValue, variable <em>flags</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv313HW_NI_StopAcq8variable8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv313HW_NI_StopDAC8variable8variable">
+<span id="_CPPv213HW_NI_StopDAC8variable8variable"></span><span id="HW_NI_StopDAC__variable.variable"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1ac6c1c06e4e2d29f55238eed7f7dbf341"></span>variable <code class="descname">HW_NI_StopDAC</code><span class="sig-paren">(</span>variable <em>deviceID</em>, variable <em>flags</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv313HW_NI_StopDAC8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv313HW_NI_StopADC8variable8variable">
+<span id="_CPPv213HW_NI_StopADC8variable8variable"></span><span id="HW_NI_StopADC__variable.variable"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1ad2e7dd1a31ad622335ff87f1e15e3140"></span>variable <code class="descname">HW_NI_StopADC</code><span class="sig-paren">(</span>variable <em>deviceID</em>, variable <em>flags</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv313HW_NI_StopADC8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv313HW_NI_StopTTL8variable8variable">
+<span id="_CPPv213HW_NI_StopTTL8variable8variable"></span><span id="HW_NI_StopTTL__variable.variable"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1afc3b68d3b4cce4f3c58ce50cb5a9b754"></span>variable <code class="descname">HW_NI_StopTTL</code><span class="sig-paren">(</span>variable <em>deviceID</em>, variable <em>flags</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv313HW_NI_StopTTL8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv313HW_NI_ZeroDAC8variable8variable">
+<span id="_CPPv213HW_NI_ZeroDAC8variable8variable"></span><span id="HW_NI_ZeroDAC__variable.variable"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1aa0fd5af9e4bf3e408bedc5b4225f3364"></span>variable <code class="descname">HW_NI_ZeroDAC</code><span class="sig-paren">(</span>variable <em>deviceID</em>, variable <em>flags</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv313HW_NI_ZeroDAC8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv317HW_NI_ResetDevice6string8variable">
+<span id="_CPPv217HW_NI_ResetDevice6string8variable"></span><span id="HW_NI_ResetDevice__string.variable"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1a00566a66cf2d9b67e563fd929bc17b9f"></span><em class="property">static</em> variable <code class="descname">HW_NI_ResetDevice</code><span class="sig-paren">(</span>string <em>device</em>, variable <em>flags</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv317HW_NI_ResetDevice6string8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv321HW_NI_CalibrateDevice6string8variable8variable">
+<span id="_CPPv221HW_NI_CalibrateDevice6string8variable8variable"></span><span id="HW_NI_CalibrateDevice__string.variable.variable"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1a89cca0415dcaeb21f3912461cab9632f"></span><em class="property">static</em> variable <code class="descname">HW_NI_CalibrateDevice</code><span class="sig-paren">(</span>string <em>device</em>, variable <em>force</em> = defaultValue, variable <em>flags</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv321HW_NI_CalibrateDevice6string8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv315HW_NI_IsRunning6string8variable">
+<span id="_CPPv215HW_NI_IsRunning6string8variable"></span><span id="HW_NI_IsRunning__string.variable"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1ab961552e523a3e922304855c98a2372c"></span>variable <code class="descname">HW_NI_IsRunning</code><span class="sig-paren">(</span>string <em>device</em>, variable <em>flags</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv315HW_NI_IsRunning6string8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv316HW_NI_OpenDevice6string8variable">
+<span id="_CPPv216HW_NI_OpenDevice6string8variable"></span><span id="HW_NI_OpenDevice__string.variable"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1ad36e3de18e7fd7fc0b2360fd45f4e803"></span>variable <code class="descname">HW_NI_OpenDevice</code><span class="sig-paren">(</span>string <em>device</em>, variable <em>flags</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv316HW_NI_OpenDevice6string8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv317HW_NI_CloseDevice8variable8variable">
+<span id="_CPPv217HW_NI_CloseDevice8variable8variable"></span><span id="HW_NI_CloseDevice__variable.variable"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1aab2362c28d9d729eb5d7836862b3a41f"></span>variable <code class="descname">HW_NI_CloseDevice</code><span class="sig-paren">(</span>variable <em>deviceID</em>, variable <em>flags</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv317HW_NI_CloseDevice8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv319HW_NI_GetDeviceInfo6string8variable">
+<span id="_CPPv219HW_NI_GetDeviceInfo6string8variable"></span><span id="HW_NI_GetDeviceInfo__string.variable"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1aa585c39a859d59bf3f3961ebe092e249"></span>wave <code class="descname">HW_NI_GetDeviceInfo</code><span class="sig-paren">(</span>string <em>device</em>, variable <em>flags</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv319HW_NI_GetDeviceInfo6string8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv318HW_NI_ResetTaskIDs6string">
+<span id="_CPPv218HW_NI_ResetTaskIDs6string"></span><span id="HW_NI_ResetTaskIDs__string"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1a9b7565daceca56b4eac6024c9bf49e36"></span>variable <code class="descname">HW_NI_ResetTaskIDs</code><span class="sig-paren">(</span>string <em>device</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv318HW_NI_ResetTaskIDs6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Variables</p>
+<dl class="member">
+<dt id="_CPPv320HW_ITC_RUNNING_STATE">
+<span id="_CPPv220HW_ITC_RUNNING_STATE"></span><span id="HW_ITC_RUNNING_STATE__variableC"></span><span class="target" id="_m_i_e_s___d_a_c-_hardware_8ipf_1aa066581b6a27ec2fcfbb2b641cf1e8da"></span><em class="property">const</em> variable <code class="descname">HW_ITC_RUNNING_STATE</code> = 0x10<a class="headerlink" href="#_CPPv320HW_ITC_RUNNING_STATE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table of Contents</a></h3>
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../developers.html">Developer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manualinstallation.html">Manual installation instructions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reportingbugs.html">Bug reporting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../releasenotes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grouplist.html">Group list</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../filelist.html">File list</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="_compilation_tester_8ipf.html">File CompilationTester.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_compilation_tester_utils_8ipf.html">File CompilationTesterUtils.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___constants_8ipf.html">File IPNWB_Constants.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___debugging_8ipf.html">File IPNWB_Debugging.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___h_d_f5_helpers_8ipf.html">File IPNWB_HDF5Helpers.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___include_8ipf.html">File IPNWB_Include.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___reader_8ipf.html">File IPNWB_Reader.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___structures_8ipf.html">File IPNWB_Structures.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___utils_8ipf.html">File IPNWB_Utils.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___writer_8ipf.html">File IPNWB_Writer.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___amplifier_interaction_8ipf.html">File MIES_AmplifierInteraction.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_browser_8ipf.html">File MIES_AnalysisBrowser.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_browser___lab_notebook_t_p_storage_browser_8ipf.html">File MIES_AnalysisBrowser_LabNotebookTPStorageBrowser.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_browser___sweep_browser_8ipf.html">File MIES_AnalysisBrowser_SweepBrowser.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_browser___sweep_browser___export_8ipf.html">File MIES_AnalysisBrowser_SweepBrowser_Export.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_function_helpers_8ipf.html">File MIES_AnalysisFunctionHelpers.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_function_management_8ipf.html">File MIES_AnalysisFunctionManagement.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_function_prototypes_8ipf.html">File MIES_AnalysisFunctionPrototypes.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_functions_8ipf.html">File MIES_AnalysisFunctions.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_functions___dashboard_8ipf.html">File MIES_AnalysisFunctions_Dashboard.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_functions___multi_patch_seq_8ipf.html">File MIES_AnalysisFunctions_MultiPatchSeq.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_functions___patch_seq_8ipf.html">File MIES_AnalysisFunctions_PatchSeq.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_master_8ipf.html">File MIES_AnalysisMaster.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___artefact_removal_8ipf.html">File MIES_ArtefactRemoval.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___async_8ipf.html">File MIES_Async.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___asynchronous_data_8ipf.html">File MIES_AsynchronousData.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___background_watchdog_8ipf.html">File MIES_BackgroundWatchdog.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___blowout_8ipf.html">File MIES_Blowout.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___browser_settings_panel_8ipf.html">File MIES_BrowserSettingsPanel.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___cache_8ipf.html">File MIES_Cache.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___check_installation_8ipf.html">File MIES_CheckInstallation.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___constants_8ipf.html">File MIES_Constants.ipf</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">File MIES_DAC-Hardware.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___d_a_ephys_8ipf.html">File MIES_DAEphys.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___d_a_ephys___gui_state_8ipf.html">File MIES_DAEphys_GuiState.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___d_a_ephys___macro_8ipf.html">File MIES_DAEphys_Macro.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___data_acquisition_8ipf.html">File MIES_DataAcquisition.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___data_acquisition___multi_8ipf.html">File MIES_DataAcquisition_Multi.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___data_acquisition___single_8ipf.html">File MIES_DataAcquisition_Single.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___data_browser_8ipf.html">File MIES_DataBrowser.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___data_configurator_i_t_c_8ipf.html">File MIES_DataConfiguratorITC.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___debug_panel_8ipf.html">File MIES_DebugPanel.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___debugging_8ipf.html">File MIES_Debugging.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___downsample_8ipf.html">File MIES_Downsample.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___enhanced_w_m_routines_8ipf.html">File MIES_EnhancedWMRoutines.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___event_detection_code_8ipf.html">File MIES_EventDetectionCode.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___experiment_config_8ipf.html">File MIES_ExperimentConfig.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___experiment_documentation_8ipf.html">File MIES_ExperimentDocumentation.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___foreign_function_interface_8ipf.html">File MIES_ForeignFunctionInterface.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___global_string_and_variable_access_8ipf.html">File MIES_GlobalStringAndVariableAccess.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___gui_utilities_8ipf.html">File MIES_GuiUtilities.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___h_d_f5_ops_8ipf.html">File MIES_HDF5Ops.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___igor_hooks_8ipf.html">File MIES_IgorHooks.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___include_8ipf.html">File MIES_Include.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___indexing_8ipf.html">File MIES_Indexing.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___menu_8ipf.html">File MIES_Menu.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___mies_utilities_8ipf.html">File MIES_MiesUtilities.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___neuro_data_without_borders_8ipf.html">File MIES_NeuroDataWithoutBorders.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___optimzed_overlap_distributed_acquisition_8ipf.html">File MIES_OptimzedOverlapDistributedAcquisition.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___oscilloscope_8ipf.html">File MIES_Oscilloscope.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___overlay_sweeps_8ipf.html">File MIES_OverlaySweeps.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___pressure_control_8ipf.html">File MIES_PressureControl.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___programmatic_g_u_i_control_8ipf.html">File MIES_ProgrammaticGUIControl.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___pulse_averaging_8ipf.html">File MIES_PulseAveraging.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___repeated_acquisition_8ipf.html">File MIES_RepeatedAcquisition.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___sampling_interval_8ipf.html">File MIES_SamplingInterval.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___structures_8ipf.html">File MIES_Structures.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___sweep_saving_8ipf.html">File MIES_SweepSaving.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___tango_interact_8ipf.html">File MIES_TangoInteract.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___test_pulse_8ipf.html">File MIES_TestPulse.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___test_pulse___multi_8ipf.html">File MIES_TestPulse_Multi.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___test_pulse___single_8ipf.html">File MIES_TestPulse_Single.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___threaded_f_i_f_o_handling_8ipf.html">File MIES_ThreadedFIFOHandling.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___threadsafe_utilities_8ipf.html">File MIES_ThreadsafeUtilities.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___utilities_8ipf.html">File MIES_Utilities.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___wave_builder_8ipf.html">File MIES_WaveBuilder.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___wave_builder_panel_8ipf.html">File MIES_WaveBuilderPanel.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___wave_data_folder_getters_8ipf.html">File MIES_WaveDataFolderGetters.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_zero_m_q___interop_8ipf.html">File ZeroMQ_Interop.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interface_8h.html">File interface.h</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../structlist.html">Struct list</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../namespacelist.html">Namespace list</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CalculateTPLikePropsFromSweep.html">CalculateTPLikePropsFromSweep Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IPNWB.html">Igor Pro module for reading and writing NeurodataWithoutBorder files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TPAnalysis_algorithm.html">Testpulse Analysis Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../asyncframework.html">Async Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ZeroMQ-XOP-Readme.html">ZeroMQ XOP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../labnotebook-docs.html">Labnotebook documentation for developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mies-concepts.html">Important MIES concepts for developers</a></li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="_m_i_e_s___constants_8ipf.html"
+                        title="previous chapter">File MIES_Constants.ipf</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="_m_i_e_s___d_a_ephys_8ipf.html"
+                        title="next chapter">File MIES_DAEphys.ipf</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/file/_m_i_e_s___d_a_c-_hardware_8ipf.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="_m_i_e_s___d_a_ephys_8ipf.html" title="File MIES_DAEphys.ipf"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="_m_i_e_s___constants_8ipf.html" title="File MIES_Constants.ipf"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">MIES Igor (master) latest-52-g2ffc1636 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../filelist.html" >File list</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright .
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.3.
+    </div>
+  </body>
+</html>

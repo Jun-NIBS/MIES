@@ -1,0 +1,6 @@
+.. _File MIES_DataConfiguratorITC.ipf:
+
+File MIES_DataConfiguratorITC.ipf
+=================================
+
+.. doxygenfile:: MIES_DataConfiguratorITC.ipf

@@ -1,0 +1,548 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>File IPNWB_Reader.ipf &#8212; MIES Igor (master) latest-52-g2ffc1636 documentation</title>
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" />
+    
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    
+    <script type="text/javascript" src="../_static/sidebar.js"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="File IPNWB_Structures.ipf" href="_i_p_n_w_b___structures_8ipf.html" />
+    <link rel="prev" title="File IPNWB_Include.ipf" href="_i_p_n_w_b___include_8ipf.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="_i_p_n_w_b___structures_8ipf.html" title="File IPNWB_Structures.ipf"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="_i_p_n_w_b___include_8ipf.html" title="File IPNWB_Include.ipf"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">MIES Igor (master) latest-52-g2ffc1636 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../filelist.html" accesskey="U">File list</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="file-ipnwb-reader-ipf">
+<span id="id1"></span><h1>File IPNWB_Reader.ipf<a class="headerlink" href="#file-ipnwb-reader-ipf" title="Permalink to this headline">¶</a></h1>
+<p>Generic functions related to import from the NeuroDataWithoutBorders format. </p>
+<dl class="type">
+<dt id="_CPPv35IPNWB">
+<span id="_CPPv25IPNWB"></span><span id="IPNWB"></span><span class="target" id="namespace_i_p_n_w_b"></span><em class="property">namespace </em><code class="descname">IPNWB</code><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Constants for FunctionInfo and WaveType</p>
+<p></p>
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Channel constants (inspired by the ITC XOP)</p>
+<p></p>
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Constants for the acquisition modes</p>
+<p></p>
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Constants for the compression modes</p>
+<p></p>
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Functions</p>
+<dl class="function">
+<dt id="_CPPv3N5IPNWB11ReadDevicesE8variable">
+<span id="_CPPv2N5IPNWB11ReadDevicesE8variable"></span><span id="IPNWB::ReadDevices__variable"></span><span class="target" id="namespace_i_p_n_w_b_1a00422791e93a32c38ff34373df4f633e"></span>string <code class="descname">ReadDevices</code><span class="sig-paren">(</span>variable <em>fileID</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5IPNWB11ReadDevicesE8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>List devices in given hdf5 file. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>comma separated list of devices </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">fileID</span></code>: identifier of open HDF5 file </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5IPNWB16ReadLabNoteBooksE8variable">
+<span id="_CPPv2N5IPNWB16ReadLabNoteBooksE8variable"></span><span id="IPNWB::ReadLabNoteBooks__variable"></span><span class="target" id="namespace_i_p_n_w_b_1a59dadb1ea236e8356a6b46db68388843"></span>string <code class="descname">ReadLabNoteBooks</code><span class="sig-paren">(</span>variable <em>fileID</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5IPNWB16ReadLabNoteBooksE8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>List groups inside /general/labnotebook. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>list with name of all groups inside /general/labnotebook/* </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">fileID</span></code>: identifier of open HDF5 file </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5IPNWB15ReadAcquisitionE8variable">
+<span id="_CPPv2N5IPNWB15ReadAcquisitionE8variable"></span><span id="IPNWB::ReadAcquisition__variable"></span><span class="target" id="namespace_i_p_n_w_b_1a711d93db9b2adf2b489b35bd35b546ce"></span>string <code class="descname">ReadAcquisition</code><span class="sig-paren">(</span>variable <em>fileID</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5IPNWB15ReadAcquisitionE8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>List all acquisition channels. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>comma separated list of channels </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">fileID</span></code>: identifier of open HDF5 file </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5IPNWB12ReadStimulusE8variable">
+<span id="_CPPv2N5IPNWB12ReadStimulusE8variable"></span><span id="IPNWB::ReadStimulus__variable"></span><span class="target" id="namespace_i_p_n_w_b_1a6728f07fe4d31789bea4f4badbb11abd"></span>string <code class="descname">ReadStimulus</code><span class="sig-paren">(</span>variable <em>fileID</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5IPNWB12ReadStimulusE8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>List all stimulus channels. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>comma separated list of channels </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">fileID</span></code>: identifier of open HDF5 file </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5IPNWB12ReadStimsetsE8variable">
+<span id="_CPPv2N5IPNWB12ReadStimsetsE8variable"></span><span id="IPNWB::ReadStimsets__variable"></span><span class="target" id="namespace_i_p_n_w_b_1af171e9af6483ba4a8fe0df0f58ad85a4"></span>string <code class="descname">ReadStimsets</code><span class="sig-paren">(</span>variable <em>fileID</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5IPNWB12ReadStimsetsE8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>List all stimsets. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>comma separated list of contents of the stimset group </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">fileID</span></code>: identifier of open HDF5 file </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5IPNWB14CheckIntegrityE8variable">
+<span id="_CPPv2N5IPNWB14CheckIntegrityE8variable"></span><span id="IPNWB::CheckIntegrity__variable"></span><span class="target" id="namespace_i_p_n_w_b_1a1a8d7c7e840810df3ca967ad31250346"></span>variable <code class="descname">CheckIntegrity</code><span class="sig-paren">(</span>variable <em>fileID</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5IPNWB14CheckIntegrityE8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Check if the file can be handled by the <a class="reference internal" href="../namespace/namespace_i_p_n_w_b.html#namespace_i_p_n_w_b"><span class="std std-ref">IPNWB</span></a> Read Procedures. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>True: All checks successful False: Error(s) occured. The result of the analysis is printed to history. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">fileID</span></code>: Open HDF5-File Identifier </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5IPNWB12CheckChannelE8variable6string">
+<span id="_CPPv2N5IPNWB12CheckChannelE8variable6string"></span><span id="IPNWB::CheckChannel__variable.string"></span><span class="target" id="namespace_i_p_n_w_b_1a20c83c4fb7147adbd42b6e74e9f74148"></span>variable <code class="descname">CheckChannel</code><span class="sig-paren">(</span>variable <em>groupID</em>, string <em>channel</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5IPNWB12CheckChannelE8variable6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Try loading a channel and perform some checks this can be used to verify the source data. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>True: All checks successful False: Error(s) occured. The result of the analysis is printed to history. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">groupID</span></code>: HDF5 group specified channel is a member of </li>
+<li><code class="docutils literal notranslate"><span class="pre">channel</span></code>: channel to load </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5IPNWB13CheckChannelsE8variable6string">
+<span id="_CPPv2N5IPNWB13CheckChannelsE8variable6string"></span><span id="IPNWB::CheckChannels__variable.string"></span><span class="target" id="namespace_i_p_n_w_b_1af565a4f40ef3d9fcb979909eb6e44602"></span>variable <code class="descname">CheckChannels</code><span class="sig-paren">(</span>variable <em>groupID</em>, string <em>channelList</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5IPNWB13CheckChannelsE8variable6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Check every channel from channelList inside a specified group. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>True: All checks successful False: Error(s) occured. The result of the analysis is printed to history. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">groupID</span></code>: HDF5 group containing the channels to check </li>
+<li><code class="docutils literal notranslate"><span class="pre">channelList</span></code>: List of all channels that have to be checked </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5IPNWB18AnalyseChannelNameE6stringP17ReadChannelParams">
+<span id="_CPPv2N5IPNWB18AnalyseChannelNameE6stringP17ReadChannelParams"></span><span id="IPNWB::AnalyseChannelName__string.ReadChannelParamsP"></span><span class="target" id="namespace_i_p_n_w_b_1ac30ee2b33b32d104f01e9a6e8dd2c3a5"></span>variable <code class="descname">AnalyseChannelName</code><span class="sig-paren">(</span>string <em>channel</em>, <a class="reference internal" href="_i_p_n_w_b___structures_8ipf.html#_CPPv3N5IPNWB17ReadChannelParamsE" title="IPNWB::ReadChannelParams">ReadChannelParams</a> *<em>p</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5IPNWB18AnalyseChannelNameE6stringP17ReadChannelParams" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Try to extract information from channel name string. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">channel</span></code>: Input channel name in form data_00000_TTL1_3 </li>
+<li><code class="docutils literal notranslate"><span class="pre">p</span></code>: <a class="reference internal" href="../struct/struct_i_p_n_w_b_1_1_read_channel_params.html#struct_i_p_n_w_b_1_1_read_channel_params"><span class="std std-ref">ReadChannelParams</span></a> structure to get filled </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5IPNWB19LoadSourceAttributeE8variable6stringP17ReadChannelParams">
+<span id="_CPPv2N5IPNWB19LoadSourceAttributeE8variable6stringP17ReadChannelParams"></span><span id="IPNWB::LoadSourceAttribute__variable.string.ReadChannelParamsP"></span><span class="target" id="namespace_i_p_n_w_b_1a49f196caa2abf87c66786f9000831441"></span>variable <code class="descname">LoadSourceAttribute</code><span class="sig-paren">(</span>variable <em>locationID</em>, string <em>channel</em>, <a class="reference internal" href="_i_p_n_w_b___structures_8ipf.html#_CPPv3N5IPNWB17ReadChannelParamsE" title="IPNWB::ReadChannelParams">ReadChannelParams</a> *<em>p</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5IPNWB19LoadSourceAttributeE8variable6stringP17ReadChannelParams" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Read parameters from source attribute. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">locationID</span></code>: HDF5 group specified channel is a member of </li>
+<li><code class="docutils literal notranslate"><span class="pre">channel</span></code>: channel to load </li>
+<li><code class="docutils literal notranslate"><span class="pre">p</span></code>: <a class="reference internal" href="../struct/struct_i_p_n_w_b_1_1_read_channel_params.html#struct_i_p_n_w_b_1_1_read_channel_params"><span class="std std-ref">ReadChannelParams</span></a> structure to get filled </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5IPNWB12LoadDataWaveE8variable6string6string">
+<span id="_CPPv2N5IPNWB12LoadDataWaveE8variable6string6string"></span><span id="IPNWB::LoadDataWave__variable.string.string"></span><span class="target" id="namespace_i_p_n_w_b_1a4a49919a2513ffcc9d9dc8b766935797"></span>wave <code class="descname">LoadDataWave</code><span class="sig-paren">(</span>variable <em>locationID</em>, string <em>channel</em>, string <em>path</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5IPNWB12LoadDataWaveE8variable6string6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Load data wave from specified path. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>reference to free wave containing loaded data </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">locationID</span></code>: id of an open hdf5 group containing channel id can also be of an open nwb file. In this case specify (optional) path. </li>
+<li><code class="docutils literal notranslate"><span class="pre">channel</span></code>: name of channel for which data attribute is loaded </li>
+<li><code class="docutils literal notranslate"><span class="pre">path</span></code>: use path to specify group inside hdf5 file where ./channel/data is located. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5IPNWB14LoadTimeseriesE8variable6string">
+<span id="_CPPv2N5IPNWB14LoadTimeseriesE8variable6string"></span><span id="IPNWB::LoadTimeseries__variable.string"></span><span class="target" id="namespace_i_p_n_w_b_1a64570e39adf8164ba0e1240de327b8cc"></span>wave <code class="descname">LoadTimeseries</code><span class="sig-paren">(</span>variable <em>locationID</em>, string <em>channel</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5IPNWB14LoadTimeseriesE8variable6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Load single channel data as a wave from /acquisition/timeseries. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>reference to wave containing loaded data </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">locationID</span></code>: id of an open hdf5 group or file </li>
+<li><code class="docutils literal notranslate"><span class="pre">channel</span></code>: name of channel for which data attribute is loaded </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5IPNWB12LoadStimulusE8variable6string">
+<span id="_CPPv2N5IPNWB12LoadStimulusE8variable6string"></span><span id="IPNWB::LoadStimulus__variable.string"></span><span class="target" id="namespace_i_p_n_w_b_1ad8e76c0eb486a3a7d599122ca6314428"></span>wave <code class="descname">LoadStimulus</code><span class="sig-paren">(</span>variable <em>locationID</em>, string <em>channel</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5IPNWB12LoadStimulusE8variable6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Load single channel data as a wave from /stimulus/presentation/. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>reference to wave containing loaded data </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">locationID</span></code>: id of an open hdf5 group or file </li>
+<li><code class="docutils literal notranslate"><span class="pre">channel</span></code>: name of channel for which data attribute is loaded </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5IPNWB15OpenAcquisitionE8variable">
+<span id="_CPPv2N5IPNWB15OpenAcquisitionE8variable"></span><span id="IPNWB::OpenAcquisition__variable"></span><span class="target" id="namespace_i_p_n_w_b_1a51573c4d1dd0af67ba9ab71cc0a6154a"></span>variable <code class="descname">OpenAcquisition</code><span class="sig-paren">(</span>variable <em>fileID</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5IPNWB15OpenAcquisitionE8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Open hdf5 group containing acquisition channels. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>id of hdf5 group </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">fileID</span></code>: id of an open hdf5 group or file</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5IPNWB12OpenStimulusE8variable">
+<span id="_CPPv2N5IPNWB12OpenStimulusE8variable"></span><span id="IPNWB::OpenStimulus__variable"></span><span class="target" id="namespace_i_p_n_w_b_1a1a16956716b2447c2ec6937bf9cf7a9e"></span>variable <code class="descname">OpenStimulus</code><span class="sig-paren">(</span>variable <em>fileID</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5IPNWB12OpenStimulusE8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Open hdf5 group containing stimulus channels. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>id of hdf5 group </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">fileID</span></code>: id of an open hdf5 group or file</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5IPNWB11OpenStimsetE8variable">
+<span id="_CPPv2N5IPNWB11OpenStimsetE8variable"></span><span id="IPNWB::OpenStimset__variable"></span><span class="target" id="namespace_i_p_n_w_b_1a0b2a8d71fd9e40ec64251c812a83a6fe"></span>variable <code class="descname">OpenStimset</code><span class="sig-paren">(</span>variable <em>fileID</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5IPNWB11OpenStimsetE8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Open hdf5 group containing stimsets. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>id of hdf5 group </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">fileID</span></code>: id of an open hdf5 group or file</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5IPNWB17StimsetPathExistsE8variable">
+<span id="_CPPv2N5IPNWB17StimsetPathExistsE8variable"></span><span id="IPNWB::StimsetPathExists__variable"></span><span class="target" id="namespace_i_p_n_w_b_1af4ca0cfb1f9eb3879c774c7ce03d58fb"></span>variable <code class="descname">StimsetPathExists</code><span class="sig-paren">(</span>variable <em>fileID</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5IPNWB17StimsetPathExistsE8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Check if the path to the stimsets exist in the NWB file. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5IPNWB16ReadTopLevelInfoE8variableP12ToplevelInfo">
+<span id="_CPPv2N5IPNWB16ReadTopLevelInfoE8variableP12ToplevelInfo"></span><span id="IPNWB::ReadTopLevelInfo__variable.ToplevelInfoP"></span><span class="target" id="namespace_i_p_n_w_b_1a37a76532b37d06cc415197683ac5972c"></span>variable <code class="descname">ReadTopLevelInfo</code><span class="sig-paren">(</span>variable <em>fileID</em>, <a class="reference internal" href="_i_p_n_w_b___structures_8ipf.html#_CPPv3N5IPNWB12ToplevelInfoE" title="IPNWB::ToplevelInfo">ToplevelInfo</a> *<em>toplevelInfo</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5IPNWB16ReadTopLevelInfoE8variableP12ToplevelInfo" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Read in all NWB datasets from the root group (‘/’) </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5IPNWB15ReadGeneralInfoE8variableP11GeneralInfo">
+<span id="_CPPv2N5IPNWB15ReadGeneralInfoE8variableP11GeneralInfo"></span><span id="IPNWB::ReadGeneralInfo__variable.GeneralInfoP"></span><span class="target" id="namespace_i_p_n_w_b_1a17ef95106b1c46cdccec54bd48781bdc"></span>variable <code class="descname">ReadGeneralInfo</code><span class="sig-paren">(</span>variable <em>fileID</em>, <a class="reference internal" href="_i_p_n_w_b___structures_8ipf.html#_CPPv3N5IPNWB11GeneralInfoE" title="IPNWB::GeneralInfo">GeneralInfo</a> *<em>generalinfo</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5IPNWB15ReadGeneralInfoE8variableP11GeneralInfo" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Read in all standard NWB datasets from the group ‘/general’. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5IPNWB15ReadSubjectInfoE8variableP11SubjectInfo">
+<span id="_CPPv2N5IPNWB15ReadSubjectInfoE8variableP11SubjectInfo"></span><span id="IPNWB::ReadSubjectInfo__variable.SubjectInfoP"></span><span class="target" id="namespace_i_p_n_w_b_1ad9b51ec2a273c04aeeb6c96cbb974bf4"></span>variable <code class="descname">ReadSubjectInfo</code><span class="sig-paren">(</span>variable <em>fileID</em>, <a class="reference internal" href="_i_p_n_w_b___structures_8ipf.html#_CPPv3N5IPNWB11SubjectInfoE" title="IPNWB::SubjectInfo">SubjectInfo</a> *<em>subjectInfo</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5IPNWB15ReadSubjectInfoE8variableP11SubjectInfo" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Read in all NWB datasets from the root group ‘/general/subject’. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5IPNWB24ReadTimeSeriesPropertiesE8variable6stringP20TimeSeriesProperties">
+<span id="_CPPv2N5IPNWB24ReadTimeSeriesPropertiesE8variable6stringP20TimeSeriesProperties"></span><span id="IPNWB::ReadTimeSeriesProperties__variable.string.TimeSeriesPropertiesP"></span><span class="target" id="namespace_i_p_n_w_b_1a2502232c3d8ea76fe9605b9a799efb2b"></span>variable <code class="descname">ReadTimeSeriesProperties</code><span class="sig-paren">(</span>variable <em>locationID</em>, string <em>channel</em>, <a class="reference internal" href="_i_p_n_w_b___structures_8ipf.html#_CPPv3N5IPNWB20TimeSeriesPropertiesE" title="IPNWB::TimeSeriesProperties">TimeSeriesProperties</a> *<em>tsp</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5IPNWB24ReadTimeSeriesPropertiesE8variable6stringP20TimeSeriesProperties" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Read the TimeSeries properties from the given group in locationID. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">locationID</span></code>: TimeSeries group ID </li>
+<li><code class="docutils literal notranslate"><span class="pre">channel</span></code>: TimeSeries group name </li>
+<li><code class="docutils literal notranslate"><span class="pre">tsp</span></code>: <a class="reference internal" href="../struct/struct_i_p_n_w_b_1_1_time_series_properties.html#struct_i_p_n_w_b_1_1_time_series_properties"><span class="std std-ref">TimeSeriesProperties</span></a> structure </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Variables</p>
+<dl class="member">
+<dt id="_CPPv3N5IPNWB13PATH_STIMSETSE">
+<span id="_CPPv2N5IPNWB13PATH_STIMSETSE"></span><span id="IPNWB::PATH_STIMSETS__stringC"></span><span class="target" id="namespace_i_p_n_w_b_1aedf7eacdcd2f2523a89b8ba5c5197798"></span><em class="property">const</em> string <code class="descname">PATH_STIMSETS</code> = &quot;/general/stimsets&quot;<a class="headerlink" href="#_CPPv3N5IPNWB13PATH_STIMSETSE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table of Contents</a></h3>
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../developers.html">Developer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manualinstallation.html">Manual installation instructions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reportingbugs.html">Bug reporting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../releasenotes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grouplist.html">Group list</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../filelist.html">File list</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="_compilation_tester_8ipf.html">File CompilationTester.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_compilation_tester_utils_8ipf.html">File CompilationTesterUtils.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___constants_8ipf.html">File IPNWB_Constants.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___debugging_8ipf.html">File IPNWB_Debugging.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___h_d_f5_helpers_8ipf.html">File IPNWB_HDF5Helpers.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___include_8ipf.html">File IPNWB_Include.ipf</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">File IPNWB_Reader.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___structures_8ipf.html">File IPNWB_Structures.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___utils_8ipf.html">File IPNWB_Utils.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___writer_8ipf.html">File IPNWB_Writer.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___amplifier_interaction_8ipf.html">File MIES_AmplifierInteraction.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_browser_8ipf.html">File MIES_AnalysisBrowser.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_browser___lab_notebook_t_p_storage_browser_8ipf.html">File MIES_AnalysisBrowser_LabNotebookTPStorageBrowser.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_browser___sweep_browser_8ipf.html">File MIES_AnalysisBrowser_SweepBrowser.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_browser___sweep_browser___export_8ipf.html">File MIES_AnalysisBrowser_SweepBrowser_Export.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_function_helpers_8ipf.html">File MIES_AnalysisFunctionHelpers.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_function_management_8ipf.html">File MIES_AnalysisFunctionManagement.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_function_prototypes_8ipf.html">File MIES_AnalysisFunctionPrototypes.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_functions_8ipf.html">File MIES_AnalysisFunctions.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_functions___dashboard_8ipf.html">File MIES_AnalysisFunctions_Dashboard.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_functions___multi_patch_seq_8ipf.html">File MIES_AnalysisFunctions_MultiPatchSeq.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_functions___patch_seq_8ipf.html">File MIES_AnalysisFunctions_PatchSeq.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_master_8ipf.html">File MIES_AnalysisMaster.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___artefact_removal_8ipf.html">File MIES_ArtefactRemoval.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___async_8ipf.html">File MIES_Async.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___asynchronous_data_8ipf.html">File MIES_AsynchronousData.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___background_watchdog_8ipf.html">File MIES_BackgroundWatchdog.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___blowout_8ipf.html">File MIES_Blowout.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___browser_settings_panel_8ipf.html">File MIES_BrowserSettingsPanel.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___cache_8ipf.html">File MIES_Cache.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___check_installation_8ipf.html">File MIES_CheckInstallation.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___constants_8ipf.html">File MIES_Constants.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___d_a_c-_hardware_8ipf.html">File MIES_DAC-Hardware.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___d_a_ephys_8ipf.html">File MIES_DAEphys.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___d_a_ephys___gui_state_8ipf.html">File MIES_DAEphys_GuiState.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___d_a_ephys___macro_8ipf.html">File MIES_DAEphys_Macro.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___data_acquisition_8ipf.html">File MIES_DataAcquisition.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___data_acquisition___multi_8ipf.html">File MIES_DataAcquisition_Multi.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___data_acquisition___single_8ipf.html">File MIES_DataAcquisition_Single.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___data_browser_8ipf.html">File MIES_DataBrowser.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___data_configurator_i_t_c_8ipf.html">File MIES_DataConfiguratorITC.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___debug_panel_8ipf.html">File MIES_DebugPanel.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___debugging_8ipf.html">File MIES_Debugging.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___downsample_8ipf.html">File MIES_Downsample.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___enhanced_w_m_routines_8ipf.html">File MIES_EnhancedWMRoutines.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___event_detection_code_8ipf.html">File MIES_EventDetectionCode.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___experiment_config_8ipf.html">File MIES_ExperimentConfig.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___experiment_documentation_8ipf.html">File MIES_ExperimentDocumentation.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___foreign_function_interface_8ipf.html">File MIES_ForeignFunctionInterface.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___global_string_and_variable_access_8ipf.html">File MIES_GlobalStringAndVariableAccess.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___gui_utilities_8ipf.html">File MIES_GuiUtilities.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___h_d_f5_ops_8ipf.html">File MIES_HDF5Ops.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___igor_hooks_8ipf.html">File MIES_IgorHooks.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___include_8ipf.html">File MIES_Include.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___indexing_8ipf.html">File MIES_Indexing.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___menu_8ipf.html">File MIES_Menu.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___mies_utilities_8ipf.html">File MIES_MiesUtilities.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___neuro_data_without_borders_8ipf.html">File MIES_NeuroDataWithoutBorders.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___optimzed_overlap_distributed_acquisition_8ipf.html">File MIES_OptimzedOverlapDistributedAcquisition.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___oscilloscope_8ipf.html">File MIES_Oscilloscope.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___overlay_sweeps_8ipf.html">File MIES_OverlaySweeps.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___pressure_control_8ipf.html">File MIES_PressureControl.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___programmatic_g_u_i_control_8ipf.html">File MIES_ProgrammaticGUIControl.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___pulse_averaging_8ipf.html">File MIES_PulseAveraging.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___repeated_acquisition_8ipf.html">File MIES_RepeatedAcquisition.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___sampling_interval_8ipf.html">File MIES_SamplingInterval.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___structures_8ipf.html">File MIES_Structures.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___sweep_saving_8ipf.html">File MIES_SweepSaving.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___tango_interact_8ipf.html">File MIES_TangoInteract.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___test_pulse_8ipf.html">File MIES_TestPulse.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___test_pulse___multi_8ipf.html">File MIES_TestPulse_Multi.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___test_pulse___single_8ipf.html">File MIES_TestPulse_Single.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___threaded_f_i_f_o_handling_8ipf.html">File MIES_ThreadedFIFOHandling.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___threadsafe_utilities_8ipf.html">File MIES_ThreadsafeUtilities.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___utilities_8ipf.html">File MIES_Utilities.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___wave_builder_8ipf.html">File MIES_WaveBuilder.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___wave_builder_panel_8ipf.html">File MIES_WaveBuilderPanel.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___wave_data_folder_getters_8ipf.html">File MIES_WaveDataFolderGetters.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_zero_m_q___interop_8ipf.html">File ZeroMQ_Interop.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interface_8h.html">File interface.h</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../structlist.html">Struct list</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../namespacelist.html">Namespace list</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CalculateTPLikePropsFromSweep.html">CalculateTPLikePropsFromSweep Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IPNWB.html">Igor Pro module for reading and writing NeurodataWithoutBorder files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TPAnalysis_algorithm.html">Testpulse Analysis Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../asyncframework.html">Async Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ZeroMQ-XOP-Readme.html">ZeroMQ XOP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../labnotebook-docs.html">Labnotebook documentation for developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mies-concepts.html">Important MIES concepts for developers</a></li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="_i_p_n_w_b___include_8ipf.html"
+                        title="previous chapter">File IPNWB_Include.ipf</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="_i_p_n_w_b___structures_8ipf.html"
+                        title="next chapter">File IPNWB_Structures.ipf</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/file/_i_p_n_w_b___reader_8ipf.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="_i_p_n_w_b___structures_8ipf.html" title="File IPNWB_Structures.ipf"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="_i_p_n_w_b___include_8ipf.html" title="File IPNWB_Include.ipf"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">MIES Igor (master) latest-52-g2ffc1636 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../filelist.html" >File list</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright .
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.3.
+    </div>
+  </body>
+</html>

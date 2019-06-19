@@ -1,0 +1,383 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>File MIES_AnalysisMaster.ipf &#8212; MIES Igor (master) latest-52-g2ffc1636 documentation</title>
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" />
+    
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    
+    <script type="text/javascript" src="../_static/sidebar.js"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="File MIES_ArtefactRemoval.ipf" href="_m_i_e_s___artefact_removal_8ipf.html" />
+    <link rel="prev" title="File MIES_AnalysisFunctions_PatchSeq.ipf" href="_m_i_e_s___analysis_functions___patch_seq_8ipf.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="_m_i_e_s___artefact_removal_8ipf.html" title="File MIES_ArtefactRemoval.ipf"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="_m_i_e_s___analysis_functions___patch_seq_8ipf.html" title="File MIES_AnalysisFunctions_PatchSeq.ipf"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">MIES Igor (master) latest-52-g2ffc1636 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../filelist.html" accesskey="U">File list</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="file-mies-analysismaster-ipf">
+<span id="id1"></span><h1>File MIES_AnalysisMaster.ipf<a class="headerlink" href="#file-mies-analysismaster-ipf" title="Permalink to this headline">¶</a></h1>
+<p><strong>AM</strong> Waveform analysis framework </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Functions</p>
+<dl class="function">
+<dt id="_CPPv326AM_analysisMasterPostSweep6string8variable">
+<span id="_CPPv226AM_analysisMasterPostSweep6string8variable"></span><span id="AM_analysisMasterPostSweep__string.variable"></span><span class="target" id="_m_i_e_s___analysis_master_8ipf_1a697cd31eafdae3cd8ea2eb686854f417"></span>variable <code class="descname">AM_analysisMasterPostSweep</code><span class="sig-paren">(</span>string <em>panelTitle</em>, variable <em>sweepNo</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv326AM_analysisMasterPostSweep6string8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Function used to create a framework for calling post-sweep analysis functions. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv325AM_analysisMasterMidSweep6string">
+<span id="_CPPv225AM_analysisMasterMidSweep6string"></span><span id="AM_analysisMasterMidSweep__string"></span><span class="target" id="_m_i_e_s___analysis_master_8ipf_1a09d598f92e777b50f4f623339625cad8"></span>variable <code class="descname">AM_analysisMasterMidSweep</code><span class="sig-paren">(</span>string <em>panelTitle</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv325AM_analysisMasterMidSweep6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>function for invoking analysis functions in midSweep </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv317protoAnalysisFunc6string8variable">
+<span id="_CPPv217protoAnalysisFunc6string8variable"></span><span id="protoAnalysisFunc__string.variable"></span><span class="target" id="_m_i_e_s___analysis_master_8ipf_1a729ea71794a707d2c712d925d8116450"></span>variable <code class="descname">protoAnalysisFunc</code><span class="sig-paren">(</span>string <em>a</em>, variable <em>b</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv317protoAnalysisFunc6string8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>prototype Analysis function </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv321AM_MSA_midSweepFindAP6string8variable">
+<span id="_CPPv221AM_MSA_midSweepFindAP6string8variable"></span><span id="AM_MSA_midSweepFindAP__string.variable"></span><span class="target" id="_m_i_e_s___analysis_master_8ipf_1ac593fbb134c6f6df3adf17cad539225b"></span>variable <code class="descname">AM_MSA_midSweepFindAP</code><span class="sig-paren">(</span>string <em>panelTitle</em>, variable <em>headStage</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv321AM_MSA_midSweepFindAP6string8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>function that will search for an action potential during an ongoing sweep and abort the sweep if the AP fires </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv319AM_PSA_sweepLevelQC6string8variable">
+<span id="_CPPv219AM_PSA_sweepLevelQC6string8variable"></span><span id="AM_PSA_sweepLevelQC__string.variable"></span><span class="target" id="_m_i_e_s___analysis_master_8ipf_1a603f755e92a38d0974755bcf9fa402dc"></span>variable <code class="descname">AM_PSA_sweepLevelQC</code><span class="sig-paren">(</span>string <em>panelTitle</em>, variable <em>headStage</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv319AM_PSA_sweepLevelQC6string8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>function to run QC functions after a sweep completes. Will check bridge balance, bias current injection, high frequency noise/patch instability RMS noise and voltage stability </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv326AM_PSA_electrodeBaselineQC6string8variable">
+<span id="_CPPv226AM_PSA_electrodeBaselineQC6string8variable"></span><span id="AM_PSA_electrodeBaselineQC__string.variable"></span><span class="target" id="_m_i_e_s___analysis_master_8ipf_1aa5bf54d482071f9d087babc26fb3e3f9"></span>variable <code class="descname">AM_PSA_electrodeBaselineQC</code><span class="sig-paren">(</span>string <em>panelTitle</em>, variable <em>headStage</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv326AM_PSA_electrodeBaselineQC6string8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>function will return a variable to indicate if the value at the start of the stimulus wave is more than 1mv different from the end of the stimulus wave, and then checks the average versus the elapsed time.. To be used during the electrode drift QC check </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv328AM_PSA_returnActionPotential6string8variable">
+<span id="_CPPv228AM_PSA_returnActionPotential6string8variable"></span><span id="AM_PSA_returnActionPotential__string.variable"></span><span class="target" id="_m_i_e_s___analysis_master_8ipf_1adef67a71ede4521392b6c53de6121ba1"></span>variable <code class="descname">AM_PSA_returnActionPotential</code><span class="sig-paren">(</span>string <em>panelTitle</em>, variable <em>headStage</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv328AM_PSA_returnActionPotential6string8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>function will return a variable to indicate if the most recent wave fired an action potential. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv324AM_PAA_adjustScaleFactor6string8variable">
+<span id="_CPPv224AM_PAA_adjustScaleFactor6string8variable"></span><span id="AM_PAA_adjustScaleFactor__string.variable"></span><span class="target" id="_m_i_e_s___analysis_master_8ipf_1a999e991a5b92988ee308c3b2cfbb66ce"></span>variable <code class="descname">AM_PAA_adjustScaleFactor</code><span class="sig-paren">(</span>string <em>panelTitle</em>, variable <em>headStage</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv324AM_PAA_adjustScaleFactor6string8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>function used to adjust the scale factor for adaptive stim cycling </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv325AM_PAA_bracketScaleFactor6string8variable">
+<span id="_CPPv225AM_PAA_bracketScaleFactor6string8variable"></span><span id="AM_PAA_bracketScaleFactor__string.variable"></span><span class="target" id="_m_i_e_s___analysis_master_8ipf_1a820164b31b08cd65c0cbcfac3d9bf42f"></span>variable <code class="descname">AM_PAA_bracketScaleFactor</code><span class="sig-paren">(</span>string <em>panelTitle</em>, variable <em>headStage</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv325AM_PAA_bracketScaleFactor6string8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>function used to adjust the scale factor for adaptive stim cycling  needs to be used with the returnActionPotential postSweep Analysis function </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv314analysisMasterv">
+<span id="_CPPv214analysisMasterv"></span><span id="analysisMaster"></span><span class="target" id="_m_i_e_s___analysis_master_8ipf_1a5bd395addc540b4289648c0407a99562"></span>void <code class="descname">analysisMaster</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv314analysisMasterv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv317configureAnalysis8variable6string">
+<span id="_CPPv217configureAnalysis8variable6string"></span><span id="configureAnalysis__variable.string"></span><span class="target" id="_m_i_e_s___analysis_master_8ipf_1a59d0bd6651ec5b56469510afa2d1e32a"></span>variable <code class="descname">configureAnalysis</code><span class="sig-paren">(</span>variable <em>headStageNumber</em>, string <em>itcPanel</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv317configureAnalysis8variable6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv317AM_configAnalysisP14WMButtonAction">
+<span id="_CPPv217AM_configAnalysisP14WMButtonAction"></span><span id="AM_configAnalysis__WMButtonActionP"></span><span class="target" id="_m_i_e_s___analysis_master_8ipf_1a877e6c1b59a71122831c4fc0d6473fe6"></span>variable <code class="descname">AM_configAnalysis</code><span class="sig-paren">(</span>WMButtonAction *<em>ba</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv317AM_configAnalysisP14WMButtonAction" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>procedure to pop up the window to configure the analysis stuff </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv319AM_LockedDeviceMenuP13WMPopupAction">
+<span id="_CPPv219AM_LockedDeviceMenuP13WMPopupAction"></span><span id="AM_LockedDeviceMenu__WMPopupActionP"></span><span class="target" id="_m_i_e_s___analysis_master_8ipf_1a29860d961d552fe8fd4ff02d85aeedb6"></span>variable <code class="descname">AM_LockedDeviceMenu</code><span class="sig-paren">(</span>WMPopupAction *<em>pa</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv319AM_LockedDeviceMenuP13WMPopupAction" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>procedure to handle the locked device and set the window title </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv322AM_HeadStagePSCheckBoxP16WMCheckboxAction">
+<span id="_CPPv222AM_HeadStagePSCheckBoxP16WMCheckboxAction"></span><span id="AM_HeadStagePSCheckBox__WMCheckboxActionP"></span><span class="target" id="_m_i_e_s___analysis_master_8ipf_1a14381d91e1025c6cb3407319b9d170c2"></span>variable <code class="descname">AM_HeadStagePSCheckBox</code><span class="sig-paren">(</span>WMCheckboxAction *<em>cba</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv322AM_HeadStagePSCheckBoxP16WMCheckboxAction" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>procedure to handle the check box for the headstage PS check box </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv320AM_PostSweepCheckBox6string8variable">
+<span id="_CPPv220AM_PostSweepCheckBox6string8variable"></span><span id="AM_PostSweepCheckBox__string.variable"></span><span class="target" id="_m_i_e_s___analysis_master_8ipf_1a074523f6f6cab44d971ba45cda5258a6"></span>variable <code class="descname">AM_PostSweepCheckBox</code><span class="sig-paren">(</span>string <em>ctrlName</em>, variable <em>checked</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv320AM_PostSweepCheckBox6string8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>procedure to to see if the post Sweep analysis stuff is turned on for a headstage </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv322AM_HeadStagePACheckBoxP16WMCheckboxAction">
+<span id="_CPPv222AM_HeadStagePACheckBoxP16WMCheckboxAction"></span><span id="AM_HeadStagePACheckBox__WMCheckboxActionP"></span><span class="target" id="_m_i_e_s___analysis_master_8ipf_1a9386503c9b3d61bd25dc4fb65f9c0bdb"></span>variable <code class="descname">AM_HeadStagePACheckBox</code><span class="sig-paren">(</span>WMCheckboxAction *<em>cba</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv322AM_HeadStagePACheckBoxP16WMCheckboxAction" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>function to handle the PA check box control </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv323AM_PostAnalysisCheckBoxP16WMCheckboxAction">
+<span id="_CPPv223AM_PostAnalysisCheckBoxP16WMCheckboxAction"></span><span id="AM_PostAnalysisCheckBox__WMCheckboxActionP"></span><span class="target" id="_m_i_e_s___analysis_master_8ipf_1a4bf7d5e54407159fff8dff881774b4d6"></span>variable <code class="descname">AM_PostAnalysisCheckBox</code><span class="sig-paren">(</span>WMCheckboxAction *<em>cba</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv323AM_PostAnalysisCheckBoxP16WMCheckboxAction" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>function to to see if the post analysis action stuff is turned on for a headstage </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv322AM_HeadStageMSCheckBoxP16WMCheckboxAction">
+<span id="_CPPv222AM_HeadStageMSCheckBoxP16WMCheckboxAction"></span><span id="AM_HeadStageMSCheckBox__WMCheckboxActionP"></span><span class="target" id="_m_i_e_s___analysis_master_8ipf_1af38b4c230f56db948626ccf71eb6a8ed"></span>variable <code class="descname">AM_HeadStageMSCheckBox</code><span class="sig-paren">(</span>WMCheckboxAction *<em>cba</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv322AM_HeadStageMSCheckBoxP16WMCheckboxAction" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>function to handle the midSweep Analysis check box control </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv327AM_midSweepAnalysisCheckBoxP16WMCheckboxAction">
+<span id="_CPPv227AM_midSweepAnalysisCheckBoxP16WMCheckboxAction"></span><span id="AM_midSweepAnalysisCheckBox__WMCheckboxActionP"></span><span class="target" id="_m_i_e_s___analysis_master_8ipf_1a834d95eb4982256daca2d0a1ce1c380f"></span>variable <code class="descname">AM_midSweepAnalysisCheckBox</code><span class="sig-paren">(</span>WMCheckboxAction *<em>cba</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv327AM_midSweepAnalysisCheckBoxP16WMCheckboxAction" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>function to to see if the midSweep analysis stuff is turned on for a headstage </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv316AM_PS_PopMenuChkP13WMPopupAction">
+<span id="_CPPv216AM_PS_PopMenuChkP13WMPopupAction"></span><span id="AM_PS_PopMenuChk__WMPopupActionP"></span><span class="target" id="_m_i_e_s___analysis_master_8ipf_1a42efda075a940d8b81027cc81ac4849d"></span>variable <code class="descname">AM_PS_PopMenuChk</code><span class="sig-paren">(</span>WMPopupAction *<em>pa</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv316AM_PS_PopMenuChkP13WMPopupAction" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>function for putting the name of the PostSweepAnalysis function into the analysisMaster wave </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv316AM_PA_PopMenuChkP13WMPopupAction">
+<span id="_CPPv216AM_PA_PopMenuChkP13WMPopupAction"></span><span id="AM_PA_PopMenuChk__WMPopupActionP"></span><span class="target" id="_m_i_e_s___analysis_master_8ipf_1a163a63a672ec53795e9aeabeb1fe555b"></span>variable <code class="descname">AM_PA_PopMenuChk</code><span class="sig-paren">(</span>WMPopupAction *<em>pa</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv316AM_PA_PopMenuChkP13WMPopupAction" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>function for putting the name of the PostAnalysisAction function into the analysisMaster wave </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv316AM_MS_PopMenuChkP13WMPopupAction">
+<span id="_CPPv216AM_MS_PopMenuChkP13WMPopupAction"></span><span id="AM_MS_PopMenuChk__WMPopupActionP"></span><span class="target" id="_m_i_e_s___analysis_master_8ipf_1a4990b08e3120a1f0033a989abc9e95bf"></span>variable <code class="descname">AM_MS_PopMenuChk</code><span class="sig-paren">(</span>WMPopupAction *<em>pa</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv316AM_MS_PopMenuChkP13WMPopupAction" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>function for putting the name of the PostAnalysisAction function into the analysisMaster wave </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv319AM_PS_sortFunctionsv">
+<span id="_CPPv219AM_PS_sortFunctionsv"></span><span id="AM_PS_sortFunctions"></span><span class="target" id="_m_i_e_s___analysis_master_8ipf_1a05c7673082de85cf728071f466833ab7"></span>string <code class="descname">AM_PS_sortFunctions</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv319AM_PS_sortFunctionsv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>function for making the list for PSA functions more readable… </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv319AM_PA_sortFunctionsv">
+<span id="_CPPv219AM_PA_sortFunctionsv"></span><span id="AM_PA_sortFunctions"></span><span class="target" id="_m_i_e_s___analysis_master_8ipf_1a11fd12e0a8a7fa0bb16aec49a411ddab"></span>string <code class="descname">AM_PA_sortFunctions</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv319AM_PA_sortFunctionsv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>function for making the list for PAA functions more readable… </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv319AM_MS_sortFunctionsv">
+<span id="_CPPv219AM_MS_sortFunctionsv"></span><span id="AM_MS_sortFunctions"></span><span class="target" id="_m_i_e_s___analysis_master_8ipf_1a5d158afcb472efce5d7b3da94a175fc7"></span>string <code class="descname">AM_MS_sortFunctions</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv319AM_MS_sortFunctionsv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>function for making the list for MSA functions more readable… </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv318AM_sortAMFunctions6string">
+<span id="_CPPv218AM_sortAMFunctions6string"></span><span id="AM_sortAMFunctions__string"></span><span class="target" id="_m_i_e_s___analysis_master_8ipf_1a633f7dfc73b1e5db90214243412b6088"></span><em class="property">static</em> string <code class="descname">AM_sortAMFunctions</code><span class="sig-paren">(</span>string <em>str</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv318AM_sortAMFunctions6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>function for sorting MS, PA and PS functions for populating pull down menus </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv326AM_writeAsyncResponseProto6string6string">
+<span id="_CPPv226AM_writeAsyncResponseProto6string6string"></span><span id="AM_writeAsyncResponseProto__string.string"></span><span class="target" id="_m_i_e_s___analysis_master_8ipf_1ada5e429e3fa93174877ba443f7599e5b"></span>variable <code class="descname">AM_writeAsyncResponseProto</code><span class="sig-paren">(</span>string <em>cmdID</em>, string <em>returnString</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv326AM_writeAsyncResponseProto6string6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv325writeAsyncResponseWrapper6string6string">
+<span id="_CPPv225writeAsyncResponseWrapper6string6string"></span><span id="writeAsyncResponseWrapper__string.string"></span><span class="target" id="_m_i_e_s___analysis_master_8ipf_1a4adbeaa48ca8338da1a41c0bc1bb343d"></span><em class="property">static</em> variable <code class="descname">writeAsyncResponseWrapper</code><span class="sig-paren">(</span>string <em>cmdID</em>, string <em>returnString</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv325writeAsyncResponseWrapper6string6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Wrapper for the optional tango related function <a class="reference internal" href="#_m_i_e_s___analysis_master_8ipf_1a4adbeaa48ca8338da1a41c0bc1bb343d"><span class="std std-ref">writeAsyncResponseWrapper</span></a> The approach here using a function reference and an interpreted string like <code class="docutils literal notranslate"><span class="pre">$&quot;&quot;</span></code> allows to convert the dependency on the function writeAsyncResponse from compile time to runtime. This function will call TI_writeAsyncResponse if it can be found, otherwise AM_writeAsyncResponseProto is called. </p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table of Contents</a></h3>
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../developers.html">Developer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manualinstallation.html">Manual installation instructions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reportingbugs.html">Bug reporting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../releasenotes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grouplist.html">Group list</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../filelist.html">File list</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="_compilation_tester_8ipf.html">File CompilationTester.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_compilation_tester_utils_8ipf.html">File CompilationTesterUtils.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___constants_8ipf.html">File IPNWB_Constants.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___debugging_8ipf.html">File IPNWB_Debugging.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___h_d_f5_helpers_8ipf.html">File IPNWB_HDF5Helpers.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___include_8ipf.html">File IPNWB_Include.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___reader_8ipf.html">File IPNWB_Reader.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___structures_8ipf.html">File IPNWB_Structures.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___utils_8ipf.html">File IPNWB_Utils.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___writer_8ipf.html">File IPNWB_Writer.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___amplifier_interaction_8ipf.html">File MIES_AmplifierInteraction.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_browser_8ipf.html">File MIES_AnalysisBrowser.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_browser___lab_notebook_t_p_storage_browser_8ipf.html">File MIES_AnalysisBrowser_LabNotebookTPStorageBrowser.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_browser___sweep_browser_8ipf.html">File MIES_AnalysisBrowser_SweepBrowser.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_browser___sweep_browser___export_8ipf.html">File MIES_AnalysisBrowser_SweepBrowser_Export.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_function_helpers_8ipf.html">File MIES_AnalysisFunctionHelpers.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_function_management_8ipf.html">File MIES_AnalysisFunctionManagement.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_function_prototypes_8ipf.html">File MIES_AnalysisFunctionPrototypes.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_functions_8ipf.html">File MIES_AnalysisFunctions.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_functions___dashboard_8ipf.html">File MIES_AnalysisFunctions_Dashboard.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_functions___multi_patch_seq_8ipf.html">File MIES_AnalysisFunctions_MultiPatchSeq.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_functions___patch_seq_8ipf.html">File MIES_AnalysisFunctions_PatchSeq.ipf</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">File MIES_AnalysisMaster.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___artefact_removal_8ipf.html">File MIES_ArtefactRemoval.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___async_8ipf.html">File MIES_Async.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___asynchronous_data_8ipf.html">File MIES_AsynchronousData.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___background_watchdog_8ipf.html">File MIES_BackgroundWatchdog.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___blowout_8ipf.html">File MIES_Blowout.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___browser_settings_panel_8ipf.html">File MIES_BrowserSettingsPanel.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___cache_8ipf.html">File MIES_Cache.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___check_installation_8ipf.html">File MIES_CheckInstallation.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___constants_8ipf.html">File MIES_Constants.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___d_a_c-_hardware_8ipf.html">File MIES_DAC-Hardware.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___d_a_ephys_8ipf.html">File MIES_DAEphys.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___d_a_ephys___gui_state_8ipf.html">File MIES_DAEphys_GuiState.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___d_a_ephys___macro_8ipf.html">File MIES_DAEphys_Macro.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___data_acquisition_8ipf.html">File MIES_DataAcquisition.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___data_acquisition___multi_8ipf.html">File MIES_DataAcquisition_Multi.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___data_acquisition___single_8ipf.html">File MIES_DataAcquisition_Single.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___data_browser_8ipf.html">File MIES_DataBrowser.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___data_configurator_i_t_c_8ipf.html">File MIES_DataConfiguratorITC.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___debug_panel_8ipf.html">File MIES_DebugPanel.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___debugging_8ipf.html">File MIES_Debugging.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___downsample_8ipf.html">File MIES_Downsample.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___enhanced_w_m_routines_8ipf.html">File MIES_EnhancedWMRoutines.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___event_detection_code_8ipf.html">File MIES_EventDetectionCode.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___experiment_config_8ipf.html">File MIES_ExperimentConfig.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___experiment_documentation_8ipf.html">File MIES_ExperimentDocumentation.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___foreign_function_interface_8ipf.html">File MIES_ForeignFunctionInterface.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___global_string_and_variable_access_8ipf.html">File MIES_GlobalStringAndVariableAccess.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___gui_utilities_8ipf.html">File MIES_GuiUtilities.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___h_d_f5_ops_8ipf.html">File MIES_HDF5Ops.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___igor_hooks_8ipf.html">File MIES_IgorHooks.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___include_8ipf.html">File MIES_Include.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___indexing_8ipf.html">File MIES_Indexing.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___menu_8ipf.html">File MIES_Menu.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___mies_utilities_8ipf.html">File MIES_MiesUtilities.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___neuro_data_without_borders_8ipf.html">File MIES_NeuroDataWithoutBorders.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___optimzed_overlap_distributed_acquisition_8ipf.html">File MIES_OptimzedOverlapDistributedAcquisition.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___oscilloscope_8ipf.html">File MIES_Oscilloscope.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___overlay_sweeps_8ipf.html">File MIES_OverlaySweeps.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___pressure_control_8ipf.html">File MIES_PressureControl.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___programmatic_g_u_i_control_8ipf.html">File MIES_ProgrammaticGUIControl.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___pulse_averaging_8ipf.html">File MIES_PulseAveraging.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___repeated_acquisition_8ipf.html">File MIES_RepeatedAcquisition.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___sampling_interval_8ipf.html">File MIES_SamplingInterval.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___structures_8ipf.html">File MIES_Structures.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___sweep_saving_8ipf.html">File MIES_SweepSaving.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___tango_interact_8ipf.html">File MIES_TangoInteract.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___test_pulse_8ipf.html">File MIES_TestPulse.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___test_pulse___multi_8ipf.html">File MIES_TestPulse_Multi.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___test_pulse___single_8ipf.html">File MIES_TestPulse_Single.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___threaded_f_i_f_o_handling_8ipf.html">File MIES_ThreadedFIFOHandling.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___threadsafe_utilities_8ipf.html">File MIES_ThreadsafeUtilities.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___utilities_8ipf.html">File MIES_Utilities.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___wave_builder_8ipf.html">File MIES_WaveBuilder.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___wave_builder_panel_8ipf.html">File MIES_WaveBuilderPanel.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___wave_data_folder_getters_8ipf.html">File MIES_WaveDataFolderGetters.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_zero_m_q___interop_8ipf.html">File ZeroMQ_Interop.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interface_8h.html">File interface.h</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../structlist.html">Struct list</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../namespacelist.html">Namespace list</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CalculateTPLikePropsFromSweep.html">CalculateTPLikePropsFromSweep Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IPNWB.html">Igor Pro module for reading and writing NeurodataWithoutBorder files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TPAnalysis_algorithm.html">Testpulse Analysis Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../asyncframework.html">Async Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ZeroMQ-XOP-Readme.html">ZeroMQ XOP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../labnotebook-docs.html">Labnotebook documentation for developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mies-concepts.html">Important MIES concepts for developers</a></li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="_m_i_e_s___analysis_functions___patch_seq_8ipf.html"
+                        title="previous chapter">File MIES_AnalysisFunctions_PatchSeq.ipf</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="_m_i_e_s___artefact_removal_8ipf.html"
+                        title="next chapter">File MIES_ArtefactRemoval.ipf</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/file/_m_i_e_s___analysis_master_8ipf.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="_m_i_e_s___artefact_removal_8ipf.html" title="File MIES_ArtefactRemoval.ipf"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="_m_i_e_s___analysis_functions___patch_seq_8ipf.html" title="File MIES_AnalysisFunctions_PatchSeq.ipf"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">MIES Igor (master) latest-52-g2ffc1636 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../filelist.html" >File list</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright .
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.3.
+    </div>
+  </body>
+</html>

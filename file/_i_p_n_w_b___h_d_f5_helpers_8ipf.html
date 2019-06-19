@@ -1,0 +1,656 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>File IPNWB_HDF5Helpers.ipf &#8212; MIES Igor (master) latest-52-g2ffc1636 documentation</title>
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" />
+    
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    
+    <script type="text/javascript" src="../_static/sidebar.js"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="File IPNWB_Include.ipf" href="_i_p_n_w_b___include_8ipf.html" />
+    <link rel="prev" title="File IPNWB_Debugging.ipf" href="_i_p_n_w_b___debugging_8ipf.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="_i_p_n_w_b___include_8ipf.html" title="File IPNWB_Include.ipf"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="_i_p_n_w_b___debugging_8ipf.html" title="File IPNWB_Debugging.ipf"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">MIES Igor (master) latest-52-g2ffc1636 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../filelist.html" accesskey="U">File list</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="file-ipnwb-hdf5helpers-ipf">
+<span id="id1"></span><h1>File IPNWB_HDF5Helpers.ipf<a class="headerlink" href="#file-ipnwb-hdf5helpers-ipf" title="Permalink to this headline">¶</a></h1>
+<p><strong>H5</strong> Wrapper functions for convenient use of the HDF5 operations </p>
+<dl class="type">
+<dt id="_CPPv35IPNWB">
+<span id="_CPPv25IPNWB"></span><span id="IPNWB"></span><span class="target" id="namespace_i_p_n_w_b"></span><em class="property">namespace </em><code class="descname">IPNWB</code><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Constants for FunctionInfo and WaveType</p>
+<p></p>
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Channel constants (inspired by the ITC XOP)</p>
+<p></p>
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Constants for the acquisition modes</p>
+<p></p>
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Constants for the compression modes</p>
+<p></p>
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Unnamed Group</p>
+<dl class="member">
+<dt id="_CPPv3N5IPNWB20kHDF5DataInfoVersionE">
+<span id="_CPPv2N5IPNWB20kHDF5DataInfoVersionE"></span><span id="IPNWB::kHDF5DataInfoVersion__variableC"></span><span class="target" id="namespace_i_p_n_w_b_1aaa96dfdbee3a40e915f4667ce5058058"></span><em class="property">const</em> variable <code class="descname">kHDF5DataInfoVersion</code> = 1000<a class="headerlink" href="#_CPPv3N5IPNWB20kHDF5DataInfoVersionE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Taken from HDF5 Browser.ipf</p>
+<p>Included here for convenience. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5IPNWB12H5S_MAX_RANKE">
+<span id="_CPPv2N5IPNWB12H5S_MAX_RANKE"></span><span id="IPNWB::H5S_MAX_RANK__variableC"></span><span class="target" id="namespace_i_p_n_w_b_1a56d922252f00f3d9a4c46b207bfd155e"></span><em class="property">const</em> variable <code class="descname">H5S_MAX_RANK</code> = 32<a class="headerlink" href="#_CPPv3N5IPNWB12H5S_MAX_RANKE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5IPNWB16InitHDF5DataInfoEP12HDF5DataInfo">
+<span id="_CPPv2N5IPNWB16InitHDF5DataInfoEP12HDF5DataInfo"></span><span id="IPNWB::InitHDF5DataInfo__HDF5DataInfoP"></span><span class="target" id="namespace_i_p_n_w_b_1aebdf0fb5d38bba29ed7097bf055425e3"></span><em class="property">static</em> variable <code class="descname">InitHDF5DataInfo</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv3N5IPNWB12HDF5DataInfoE" title="IPNWB::HDF5DataInfo">HDF5DataInfo</a> *<em>di</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5IPNWB16InitHDF5DataInfoEP12HDF5DataInfo" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Functions</p>
+<dl class="function">
+<dt id="_CPPv3N5IPNWB19H5_WriteTextDatasetE8variable6string6string14WaveTextOrNull8variable8variable8variable8variable">
+<span id="_CPPv2N5IPNWB19H5_WriteTextDatasetE8variable6string6string14WaveTextOrNull8variable8variable8variable8variable"></span><span id="IPNWB::H5_WriteTextDataset__variable.string.string.WaveTextOrNull.variable.variable.variable.variable"></span><span class="target" id="namespace_i_p_n_w_b_1a78c25016658b85a3360461212b6fda02"></span>variable <code class="descname">H5_WriteTextDataset</code><span class="sig-paren">(</span>variable <em>locationID</em>, string <em>name</em>, string <em>str</em> = defaultValue, WaveTextOrNull <em>wvText</em> = defaultValue, variable <em>overwrite</em> = defaultValue, variable <em>compressionMode</em> = defaultValue, variable <em>skipIfExists</em> = defaultValue, variable <em>writeIgorAttr</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5IPNWB19H5_WriteTextDatasetE8variable6string6string14WaveTextOrNull8variable8variable8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Write a string or text wave into a HDF5 dataset. </p>
+<p><p>Only one of </p>
+<code class="docutils literal notranslate"><span class="pre">str</span></code> or <code class="docutils literal notranslate"><span class="pre">wvText</span></code> can be given. <dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">locationID</span></code>: HDF5 identifier, can be a file or group </li>
+<li><code class="docutils literal notranslate"><span class="pre">name</span></code>: Name of the HDF5 dataset </li>
+<li><code class="docutils literal notranslate"><span class="pre">str</span></code>: Contents to write into the dataset </li>
+<li><code class="docutils literal notranslate"><span class="pre">wvText</span></code>: Contents to write into the dataset </li>
+<li><code class="docutils literal notranslate"><span class="pre">overwrite</span></code>: [optional, defaults to false] Should existing datasets be overwritten </li>
+<li><code class="docutils literal notranslate"><span class="pre">compressionMode</span></code>: [optional, defaults to NO_COMPRESSION] Type of compression to use, one of CompressionMode </li>
+<li><code class="docutils literal notranslate"><span class="pre">skipIfExists</span></code>: [optional, defaults to false] Do nothing if the dataset already exists </li>
+<li><code class="docutils literal notranslate"><span class="pre">writeIgorAttr</span></code>: [optional, defaults to false] Add Igor specific attributes to the dataset, see the <code class="docutils literal notranslate"><span class="pre">/IGOR</span></code> flag of <code class="docutils literal notranslate"><span class="pre">HDF5SaveData</span></code></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5IPNWB15H5_WriteDatasetE8variable6string8variable8variable10WaveOrNull8variable8variable8variable8variable">
+<span id="_CPPv2N5IPNWB15H5_WriteDatasetE8variable6string8variable8variable10WaveOrNull8variable8variable8variable8variable"></span><span id="IPNWB::H5_WriteDataset__variable.string.variable.variable.WaveOrNull.variable.variable.variable.variable"></span><span class="target" id="namespace_i_p_n_w_b_1a9b2c069a6809689c53e47a4e0dc9f633"></span>variable <code class="descname">H5_WriteDataset</code><span class="sig-paren">(</span>variable <em>locationID</em>, string <em>name</em>, variable <em>var</em> = defaultValue, variable <em>varType</em> = defaultValue, WaveOrNull <em>wv</em> = defaultValue, variable <em>overwrite</em> = defaultValue, variable <em>compressionMode</em> = defaultValue, variable <em>skipIfExists</em> = defaultValue, variable <em>writeIgorAttr</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5IPNWB15H5_WriteDatasetE8variable6string8variable8variable10WaveOrNull8variable8variable8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Write a variable or text wave into a HDF5 dataset. </p>
+<p><p>Only one of </p>
+<code class="docutils literal notranslate"><span class="pre">var</span></code> or <code class="docutils literal notranslate"><span class="pre">wv</span></code> can be given. <dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">locationID</span></code>: HDF5 identifier, can be a file or group </li>
+<li><code class="docutils literal notranslate"><span class="pre">name</span></code>: Name of the HDF5 dataset </li>
+<li><code class="docutils literal notranslate"><span class="pre">var</span></code>: Contents to write into the dataset </li>
+<li><code class="docutils literal notranslate"><span class="pre">varType</span></code>: Type of the data, must be given if <code class="docutils literal notranslate"><span class="pre">var</span></code> is supplied. See IgorTypes </li>
+<li><code class="docutils literal notranslate"><span class="pre">wv</span></code>: Contents to write into the dataset </li>
+<li><code class="docutils literal notranslate"><span class="pre">overwrite</span></code>: [optional, defaults to false] Should existing datasets be overwritten </li>
+<li><code class="docutils literal notranslate"><span class="pre">compressionMode</span></code>: [optional, defaults to NO_COMPRESSION] Type of compression to use, one of CompressionMode </li>
+<li><code class="docutils literal notranslate"><span class="pre">skipIfExists</span></code>: [optional, defaults to false] Do nothing if the dataset already exists </li>
+<li><code class="docutils literal notranslate"><span class="pre">writeIgorAttr</span></code>: [optional, defaults to false] Add Igor specific attributes to the dataset, see the <code class="docutils literal notranslate"><span class="pre">/IGOR</span></code> flag of <code class="docutils literal notranslate"><span class="pre">HDF5SaveData</span></code></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5IPNWB16H5_GetChunkSizesE4wave8variable">
+<span id="_CPPv2N5IPNWB16H5_GetChunkSizesE4wave8variable"></span><span id="IPNWB::H5_GetChunkSizes__wave.variable"></span><span class="target" id="namespace_i_p_n_w_b_1a9abd429c280cfeb7eff7ce34709c2c1b"></span><em class="property">static</em> wave <code class="descname">H5_GetChunkSizes</code><span class="sig-paren">(</span>wave <em>wv</em>, variable <em>compressionMode</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5IPNWB16H5_GetChunkSizesE4wave8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return a wave for the valid chunk sizes of each dimension taking into account the compression mode. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5IPNWB23H5_WriteDatasetLowLevelE8variable6string4wave8variable8variable8variable8variable">
+<span id="_CPPv2N5IPNWB23H5_WriteDatasetLowLevelE8variable6string4wave8variable8variable8variable8variable"></span><span id="IPNWB::H5_WriteDatasetLowLevel__variable.string.wave.variable.variable.variable.variable"></span><span class="target" id="namespace_i_p_n_w_b_1aa9fe51847eac825b859462fadce08328"></span><em class="property">static</em> variable <code class="descname">H5_WriteDatasetLowLevel</code><span class="sig-paren">(</span>variable <em>locationID</em>, string <em>name</em>, wave <em>wv</em>, variable <em>overwrite</em>, variable <em>compressionMode</em>, variable <em>skipIfExists</em>, variable <em>writeIgorAttr</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5IPNWB23H5_WriteDatasetLowLevelE8variable6string4wave8variable8variable8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><a class="reference internal" href="../namespace/namespace_i_p_n_w_b.html#namespace_i_p_n_w_b_1a78c25016658b85a3360461212b6fda02"><span class="std std-ref">H5_WriteTextDataset</span></a> or <a class="reference internal" href="../namespace/namespace_i_p_n_w_b.html#namespace_i_p_n_w_b_1a9b2c069a6809689c53e47a4e0dc9f633"><span class="std std-ref">H5_WriteDataset</span></a> </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5IPNWB21H5_WriteTextAttributeE8variable6string6string6string6string8variable">
+<span id="_CPPv2N5IPNWB21H5_WriteTextAttributeE8variable6string6string6string6string8variable"></span><span id="IPNWB::H5_WriteTextAttribute__variable.string.string.string.string.variable"></span><span class="target" id="namespace_i_p_n_w_b_1ab3bfe1cdae9c7bf914e1a26b28634f03"></span>variable <code class="descname">H5_WriteTextAttribute</code><span class="sig-paren">(</span>variable <em>locationID</em>, string <em>attrName</em>, string <em>path</em>, string <em>list</em> = defaultValue, string <em>str</em> = defaultValue, variable <em>overwrite</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5IPNWB21H5_WriteTextAttributeE8variable6string6string6string6string8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Attach a text attribute to the given location. </p>
+<p><p>Only one of </p>
+<code class="docutils literal notranslate"><span class="pre">str</span></code> or <code class="docutils literal notranslate"><span class="pre">list</span></code> can be given. <dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">locationID</span></code>: HDF5 identifier, can be a file, group or dataset </li>
+<li><code class="docutils literal notranslate"><span class="pre">attrName</span></code>: Name of the attribute </li>
+<li><code class="docutils literal notranslate"><span class="pre">path</span></code>: Additional path on top of <code class="docutils literal notranslate"><span class="pre">locationID</span></code> which identifies the object onto which the attribute should be attached. </li>
+<li><code class="docutils literal notranslate"><span class="pre">list</span></code>: Contents to write into the attribute, list will be always written as 1D-array </li>
+<li><code class="docutils literal notranslate"><span class="pre">str</span></code>: Contents to write into the attribute </li>
+<li><code class="docutils literal notranslate"><span class="pre">overwrite</span></code>: [optional, defaults to false] Should existing attributes be overwritten</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5IPNWB17H5_WriteAttributeE8variable6string6string8variable8variable8variable">
+<span id="_CPPv2N5IPNWB17H5_WriteAttributeE8variable6string6string8variable8variable8variable"></span><span id="IPNWB::H5_WriteAttribute__variable.string.string.variable.variable.variable"></span><span class="target" id="namespace_i_p_n_w_b_1a6a9d07aec3d23acf3da06602ad5d7475"></span>variable <code class="descname">H5_WriteAttribute</code><span class="sig-paren">(</span>variable <em>locationID</em>, string <em>attrName</em>, string <em>path</em>, variable <em>var</em>, variable <em>varType</em>, variable <em>overwrite</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5IPNWB17H5_WriteAttributeE8variable6string6string8variable8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Attach a numerical attribute to the given location. </p>
+<p><p>Only one of </p>
+<code class="docutils literal notranslate"><span class="pre">str</span></code>, <code class="docutils literal notranslate"><span class="pre">wvText</span></code> or <code class="docutils literal notranslate"><span class="pre">list</span></code> can be given. <dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">locationID</span></code>: HDF5 identifier, can be a file, group or dataset </li>
+<li><code class="docutils literal notranslate"><span class="pre">attrName</span></code>: Name of the attribute </li>
+<li><code class="docutils literal notranslate"><span class="pre">path</span></code>: Additional path on top of <code class="docutils literal notranslate"><span class="pre">locationID</span></code> which identifies the object onto which the attribute should be attached. </li>
+<li><code class="docutils literal notranslate"><span class="pre">var</span></code>: Contents to write into the attribute </li>
+<li><code class="docutils literal notranslate"><span class="pre">varType</span></code>: Type of the attribute, see IgorTypes </li>
+<li><code class="docutils literal notranslate"><span class="pre">overwrite</span></code>: [optional, defaults to false] Should existing attributes be overwritten</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5IPNWB11H5_OpenFileE6string8variable">
+<span id="_CPPv2N5IPNWB11H5_OpenFileE6string8variable"></span><span id="IPNWB::H5_OpenFile__string.variable"></span><span class="target" id="namespace_i_p_n_w_b_1a0b648f7ce79b8502756d919923a6c712"></span>variable <code class="descname">H5_OpenFile</code><span class="sig-paren">(</span>string <em>discLocation</em>, variable <em>write</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5IPNWB11H5_OpenFileE6string8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Open HDF5 file and return ID. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>ID for referencing open hdf5 file </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">discLocation</span></code>: full path to nwb file </li>
+<li><code class="docutils literal notranslate"><span class="pre">write</span></code>: open file for writing. default is readonly. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5IPNWB12H5_CloseFileE8variable">
+<span id="_CPPv2N5IPNWB12H5_CloseFileE8variable"></span><span id="IPNWB::H5_CloseFile__variable"></span><span class="target" id="namespace_i_p_n_w_b_1afe720d322f923283e290265fa69a1006"></span>variable <code class="descname">H5_CloseFile</code><span class="sig-paren">(</span>variable <em>fileID</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5IPNWB12H5_CloseFileE8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Close HDF5 file. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>open state as true/false </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">fileID</span></code>: ID of open hdf5 file </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5IPNWB13H5_IsFileOpenE8variable">
+<span id="_CPPv2N5IPNWB13H5_IsFileOpenE8variable"></span><span id="IPNWB::H5_IsFileOpen__variable"></span><span class="target" id="namespace_i_p_n_w_b_1a219e3f077ddf6cc11b1628942142121d"></span>variable <code class="descname">H5_IsFileOpen</code><span class="sig-paren">(</span>variable <em>fileID</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5IPNWB13H5_IsFileOpenE8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return 1 if the given HDF5 file is already open, 0 otherwise. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">fileID</span></code>: HDF5 locationID from <code class="docutils literal notranslate"><span class="pre">HDF5OpenFile</span></code>. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5IPNWB16H5_DatasetExistsE8variable6string">
+<span id="_CPPv2N5IPNWB16H5_DatasetExistsE8variable6string"></span><span id="IPNWB::H5_DatasetExists__variable.string"></span><span class="target" id="namespace_i_p_n_w_b_1aa2548fcbfe8d0f6809035befe116a314"></span>variable <code class="descname">H5_DatasetExists</code><span class="sig-paren">(</span>variable <em>locationID</em>, string <em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5IPNWB16H5_DatasetExistsE8variable6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return 1 if the given HDF5 dataset exists, 0 otherwise. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">locationID</span></code>: HDF5 identifier, can be a file or group </li>
+<li><code class="docutils literal notranslate"><span class="pre">name</span></code>: Additional path on top of <code class="docutils literal notranslate"><span class="pre">locationID</span></code> which identifies the dataset </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5IPNWB14H5_LoadDatasetE8variable6string">
+<span id="_CPPv2N5IPNWB14H5_LoadDatasetE8variable6string"></span><span id="IPNWB::H5_LoadDataset__variable.string"></span><span class="target" id="namespace_i_p_n_w_b_1a8f602a3f355d38184c063cdfe93bc536"></span>wave <code class="descname">H5_LoadDataset</code><span class="sig-paren">(</span>variable <em>locationID</em>, string <em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5IPNWB14H5_LoadDatasetE8variable6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Load a specified dataset as wave. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>reference to wave containing loaded data </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">locationID</span></code>: HDF5 identifier, can be a file or group </li>
+<li><code class="docutils literal notranslate"><span class="pre">name</span></code>: path on top of <code class="docutils literal notranslate"><span class="pre">locationID</span></code> which identifies the dataset</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5IPNWB18H5_AttributeExistsE8variable6string6stringP8variable">
+<span id="_CPPv2N5IPNWB18H5_AttributeExistsE8variable6string6stringP8variable"></span><span id="IPNWB::H5_AttributeExists__variable.string.string.variableP"></span><span class="target" id="namespace_i_p_n_w_b_1ad141987ae9c96f0cfe5236c0475ddeb8"></span>variable <code class="descname">H5_AttributeExists</code><span class="sig-paren">(</span>variable <em>locationID</em>, string <em>path</em>, string <em>attribute</em>, variable *<em>objectType</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5IPNWB18H5_AttributeExistsE8variable6string6stringP8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Check if a given attribute exists. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">locationID</span></code>: HDF5 identifier, can be a file or group </li>
+<li><code class="docutils literal notranslate"><span class="pre">path</span></code>: Additional path on top of <code class="docutils literal notranslate"><span class="pre">locationID</span></code> which identifies the group or dataset </li>
+<li><code class="docutils literal notranslate"><span class="pre">attribute</span></code>: Name of the attribute </li>
+<li><code class="docutils literal notranslate"><span class="pre">objectType</span></code>: [optional] Return the type of the element to which the attribute is attached to. Can be used for subsequent HDF5LoadData calls. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5IPNWB16H5_LoadAttributeE8variable6string6string">
+<span id="_CPPv2N5IPNWB16H5_LoadAttributeE8variable6string6string"></span><span id="IPNWB::H5_LoadAttribute__variable.string.string"></span><span class="target" id="namespace_i_p_n_w_b_1ac9e45ac23c2b11ad4ac8376381db742b"></span>wave <code class="descname">H5_LoadAttribute</code><span class="sig-paren">(</span>variable <em>locationID</em>, string <em>path</em>, string <em>attribute</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5IPNWB16H5_LoadAttributeE8variable6string6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Load the given attribute and return its contents. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">locationID</span></code>: HDF5 identifier, can be a file or group </li>
+<li><code class="docutils literal notranslate"><span class="pre">path</span></code>: Additional path on top of <code class="docutils literal notranslate"><span class="pre">locationID</span></code> which identifies the group or dataset </li>
+<li><code class="docutils literal notranslate"><span class="pre">attribute</span></code>: Name of the attribute to load </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5IPNWB14H5_GroupExistsE8variable6stringP8variable">
+<span id="_CPPv2N5IPNWB14H5_GroupExistsE8variable6stringP8variable"></span><span id="IPNWB::H5_GroupExists__variable.string.variableP"></span><span class="target" id="namespace_i_p_n_w_b_1a91d54adfd2adae8b9223762dae44036d"></span>variable <code class="descname">H5_GroupExists</code><span class="sig-paren">(</span>variable <em>locationID</em>, string <em>path</em>, variable *<em>groupID</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5IPNWB14H5_GroupExistsE8variable6stringP8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return 1 if the given HDF5 group exists, 0 otherwise. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">locationID</span></code>: HDF5 identifier, can be a file or group </li>
+<li><code class="docutils literal notranslate"><span class="pre">path</span></code>: Additional path on top of <code class="docutils literal notranslate"><span class="pre">locationID</span></code> which identifies the group </li>
+<li><code class="docutils literal notranslate"><span class="pre">groupID</span></code>: [optional] Allows to return the locationID of the group, zero in case the group does not exist. If this parameter is not provided, the group is closed before the function returns. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5IPNWB26H5_CreateGroupsRecursivelyE8variable6stringP8variable">
+<span id="_CPPv2N5IPNWB26H5_CreateGroupsRecursivelyE8variable6stringP8variable"></span><span id="IPNWB::H5_CreateGroupsRecursively__variable.string.variableP"></span><span class="target" id="namespace_i_p_n_w_b_1a34a8b06e469b6379dbbc56e1c2cd8997"></span>variable <code class="descname">H5_CreateGroupsRecursively</code><span class="sig-paren">(</span>variable <em>locationID</em>, string <em>fullPath</em>, variable *<em>groupID</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5IPNWB26H5_CreateGroupsRecursivelyE8variable6stringP8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Create all groups along the given path. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">locationID</span></code>: HDF5 identifier, can be a file or group </li>
+<li><code class="docutils literal notranslate"><span class="pre">fullPath</span></code>: Additional path on top of <code class="docutils literal notranslate"><span class="pre">locationID</span></code> which identifies the group </li>
+<li><code class="docutils literal notranslate"><span class="pre">groupID</span></code>: [optional] Allows to return the locationID of the group, zero in case the group could not be created. If this parameter is not provided, the group is closed before the function returns. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5IPNWB20H5_IsValidIdentifierE6string">
+<span id="_CPPv2N5IPNWB20H5_IsValidIdentifierE6string"></span><span id="IPNWB::H5_IsValidIdentifier__string"></span><span class="target" id="namespace_i_p_n_w_b_1a659164bf4683963c93cd5cda05b2285b"></span>variable <code class="descname">H5_IsValidIdentifier</code><span class="sig-paren">(</span>string <em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5IPNWB20H5_IsValidIdentifierE6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return true if <code class="docutils literal notranslate"><span class="pre">name</span></code> is a valid hdf5 identifier. </p>
+<p>This is more restrictive than the actual HDF5 library checks. See the BNF Grammar <a class="reference external" href="https://www.hdfgroup.org/HDF5/doc/UG/HDF5_Users_Guide-Responsive%20HTML5/index.html#t=HDF5_Users_Guide%2FGroups%2FHDF5_Groups.htm%3Frhtocid%3Dtoc4.0_1%23TOC_4_1_Introductionbc-1">here</a>. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5IPNWB19H5_ListGroupMembersE8variable6string">
+<span id="_CPPv2N5IPNWB19H5_ListGroupMembersE8variable6string"></span><span id="IPNWB::H5_ListGroupMembers__variable.string"></span><span class="target" id="namespace_i_p_n_w_b_1a3a9c577c6a5105078a769cfdb43d9f95"></span>string <code class="descname">H5_ListGroupMembers</code><span class="sig-paren">(</span>variable <em>locationID</em>, string <em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5IPNWB19H5_ListGroupMembersE8variable6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>List all datasets at path (non-recursively) </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">locationID</span></code>: HDF5 identifier, can be a file or group </li>
+<li><code class="docutils literal notranslate"><span class="pre">path</span></code>: Additional path on top of <code class="docutils literal notranslate"><span class="pre">locationID</span></code> which identifies the group </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5IPNWB13H5_ListGroupsE8variable6string">
+<span id="_CPPv2N5IPNWB13H5_ListGroupsE8variable6string"></span><span id="IPNWB::H5_ListGroups__variable.string"></span><span class="target" id="namespace_i_p_n_w_b_1a498837c36ffdeda44619531949f7feb0"></span>string <code class="descname">H5_ListGroups</code><span class="sig-paren">(</span>variable <em>fileID</em>, string <em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5IPNWB13H5_ListGroupsE8variable6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>List all groups inside a group (non-recursively) </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">fileID</span></code>: HDF5 file identifier </li>
+<li><code class="docutils literal notranslate"><span class="pre">path</span></code>: Full path to the group inside fileID </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5IPNWB12H5_OpenGroupE8variable6string">
+<span id="_CPPv2N5IPNWB12H5_OpenGroupE8variable6string"></span><span id="IPNWB::H5_OpenGroup__variable.string"></span><span class="target" id="namespace_i_p_n_w_b_1a5c0ef4de2a58552d3e69f2f3ea65c619"></span>variable <code class="descname">H5_OpenGroup</code><span class="sig-paren">(</span>variable <em>locationID</em>, string <em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5IPNWB12H5_OpenGroupE8variable6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Open the group reachable via <code class="docutils literal notranslate"><span class="pre">locationID</span></code> and <code class="docutils literal notranslate"><span class="pre">path</span></code> and return its ID. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">locationID</span></code>: HDF5 file identifier </li>
+<li><code class="docutils literal notranslate"><span class="pre">path</span></code>: Full path to the group inside locationID </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3N5IPNWB12H5_FlushFileE8variable6string8variable">
+<span id="_CPPv2N5IPNWB12H5_FlushFileE8variable6string8variable"></span><span id="IPNWB::H5_FlushFile__variable.string.variable"></span><span class="target" id="namespace_i_p_n_w_b_1a99ef89f7f6e602aa203bdcf481813741"></span>variable <code class="descname">H5_FlushFile</code><span class="sig-paren">(</span>variable <em>fileID</em>, string <em>discLocation</em>, variable <em>write</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3N5IPNWB12H5_FlushFileE8variable6string8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Flush the file contents to disc. </p>
+<p>Currently uses open/close and thus it is not very fast. This approach results in the fileID being changed!</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>changed fileID </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">fileID</span></code>: HDF5 file identifier </li>
+<li><code class="docutils literal notranslate"><span class="pre">discLocation</span></code>: Full path to the HDF5 file </li>
+<li><code class="docutils literal notranslate"><span class="pre">write</span></code>: [optional, defaults to false] Reopen the file for writing</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Variables</p>
+<dl class="member">
+<dt id="_CPPv3N5IPNWB23H5_ATTRIBUTE_SIZE_LIMITE">
+<span id="_CPPv2N5IPNWB23H5_ATTRIBUTE_SIZE_LIMITE"></span><span id="IPNWB::H5_ATTRIBUTE_SIZE_LIMIT__variableC"></span><span class="target" id="namespace_i_p_n_w_b_1a62b3c454a435d7fa39bb3c6227ba98aa"></span><em class="property">const</em> variable <code class="descname">H5_ATTRIBUTE_SIZE_LIMIT</code> = 60e3<a class="headerlink" href="#_CPPv3N5IPNWB23H5_ATTRIBUTE_SIZE_LIMITE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5IPNWB13H5_CHUNK_SIZEE">
+<span id="_CPPv2N5IPNWB13H5_CHUNK_SIZEE"></span><span id="IPNWB::H5_CHUNK_SIZE__variableC"></span><span class="target" id="namespace_i_p_n_w_b_1a369464dff53c5cc71329550b89bef458"></span><em class="property">const</em> variable <code class="descname">H5_CHUNK_SIZE</code> = 8192<a class="headerlink" href="#_CPPv3N5IPNWB13H5_CHUNK_SIZEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="class">
+<dt id="_CPPv3N5IPNWB12HDF5DataInfoE">
+<span id="_CPPv2N5IPNWB12HDF5DataInfoE"></span><span id="IPNWB::HDF5DataInfo"></span><span class="target" id="struct_i_p_n_w_b_1_1_h_d_f5_data_info"></span><em class="property">struct </em><code class="descname">HDF5DataInfo</code><a class="headerlink" href="#_CPPv3N5IPNWB12HDF5DataInfoE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="member">
+<dt id="_CPPv3N5IPNWB12HDF5DataInfo7versionE">
+<span id="_CPPv2N5IPNWB12HDF5DataInfo7versionE"></span><span id="IPNWB::HDF5DataInfo::version__uint32"></span><span class="target" id="struct_i_p_n_w_b_1_1_h_d_f5_data_info_1af1065584bf00c80e7ff7ad3c7e92913d"></span>uint32 <code class="descname">version</code><a class="headerlink" href="#_CPPv3N5IPNWB12HDF5DataInfo7versionE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5IPNWB12HDF5DataInfo10structNameE">
+<span id="_CPPv2N5IPNWB12HDF5DataInfo10structNameE"></span><span id="IPNWB::HDF5DataInfo::structName__cA"></span><span class="target" id="struct_i_p_n_w_b_1_1_h_d_f5_data_info_1a4514c8d41c027a2c6815e3f6b78fa194"></span>char <code class="descname">structName</code>[16]<a class="headerlink" href="#_CPPv3N5IPNWB12HDF5DataInfo10structNameE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5IPNWB12HDF5DataInfo14datatype_classE">
+<span id="_CPPv2N5IPNWB12HDF5DataInfo14datatype_classE"></span><span id="IPNWB::HDF5DataInfo::datatype_class__double"></span><span class="target" id="struct_i_p_n_w_b_1_1_h_d_f5_data_info_1ac9955d8ed42571bb9ea02348d08657a1"></span>double <code class="descname">datatype_class</code><a class="headerlink" href="#_CPPv3N5IPNWB12HDF5DataInfo14datatype_classE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5IPNWB12HDF5DataInfo18datatype_class_strE">
+<span id="_CPPv2N5IPNWB12HDF5DataInfo18datatype_class_strE"></span><span id="IPNWB::HDF5DataInfo::datatype_class_str__cA"></span><span class="target" id="struct_i_p_n_w_b_1_1_h_d_f5_data_info_1a78b0530f8ee845b1197c5512d3feb061"></span>char <code class="descname">datatype_class_str</code>[32]<a class="headerlink" href="#_CPPv3N5IPNWB12HDF5DataInfo18datatype_class_strE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5IPNWB12HDF5DataInfo13datatype_sizeE">
+<span id="_CPPv2N5IPNWB12HDF5DataInfo13datatype_sizeE"></span><span id="IPNWB::HDF5DataInfo::datatype_size__double"></span><span class="target" id="struct_i_p_n_w_b_1_1_h_d_f5_data_info_1a33bb327dc7370189b3fddff5be1a7e88"></span>double <code class="descname">datatype_size</code><a class="headerlink" href="#_CPPv3N5IPNWB12HDF5DataInfo13datatype_sizeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5IPNWB12HDF5DataInfo13datatype_signE">
+<span id="_CPPv2N5IPNWB12HDF5DataInfo13datatype_signE"></span><span id="IPNWB::HDF5DataInfo::datatype_sign__double"></span><span class="target" id="struct_i_p_n_w_b_1_1_h_d_f5_data_info_1a3169de8bd5fe1dc95f56ba39d359cb8d"></span>double <code class="descname">datatype_sign</code><a class="headerlink" href="#_CPPv3N5IPNWB12HDF5DataInfo13datatype_signE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5IPNWB12HDF5DataInfo14datatype_orderE">
+<span id="_CPPv2N5IPNWB12HDF5DataInfo14datatype_orderE"></span><span id="IPNWB::HDF5DataInfo::datatype_order__double"></span><span class="target" id="struct_i_p_n_w_b_1_1_h_d_f5_data_info_1a34d0957e2a7618be87fa6a499904a48c"></span>double <code class="descname">datatype_order</code><a class="headerlink" href="#_CPPv3N5IPNWB12HDF5DataInfo14datatype_orderE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5IPNWB12HDF5DataInfo12datatype_strE">
+<span id="_CPPv2N5IPNWB12HDF5DataInfo12datatype_strE"></span><span id="IPNWB::HDF5DataInfo::datatype_str__cA"></span><span class="target" id="struct_i_p_n_w_b_1_1_h_d_f5_data_info_1ae698fe1680898120e06658a983b8587b"></span>char <code class="descname">datatype_str</code>[64]<a class="headerlink" href="#_CPPv3N5IPNWB12HDF5DataInfo12datatype_strE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5IPNWB12HDF5DataInfo14dataspace_typeE">
+<span id="_CPPv2N5IPNWB12HDF5DataInfo14dataspace_typeE"></span><span id="IPNWB::HDF5DataInfo::dataspace_type__double"></span><span class="target" id="struct_i_p_n_w_b_1_1_h_d_f5_data_info_1abd7449d3220847647fa1f920bcc9e41a"></span>double <code class="descname">dataspace_type</code><a class="headerlink" href="#_CPPv3N5IPNWB12HDF5DataInfo14dataspace_typeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5IPNWB12HDF5DataInfo5ndimsE">
+<span id="_CPPv2N5IPNWB12HDF5DataInfo5ndimsE"></span><span id="IPNWB::HDF5DataInfo::ndims__double"></span><span class="target" id="struct_i_p_n_w_b_1_1_h_d_f5_data_info_1aba288e4bfbe52e02b5c67961084a10e1"></span>double <code class="descname">ndims</code><a class="headerlink" href="#_CPPv3N5IPNWB12HDF5DataInfo5ndimsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5IPNWB12HDF5DataInfo4dimsE">
+<span id="_CPPv2N5IPNWB12HDF5DataInfo4dimsE"></span><span id="IPNWB::HDF5DataInfo::dims__doubleA"></span><span class="target" id="struct_i_p_n_w_b_1_1_h_d_f5_data_info_1a178ee8bb9ec4ba0ebe15d8efd58226d2"></span>double <code class="descname">dims</code>[<code class="descname">H5S_MAX_RANK</code>]<a class="headerlink" href="#_CPPv3N5IPNWB12HDF5DataInfo4dimsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N5IPNWB12HDF5DataInfo7maxdimsE">
+<span id="_CPPv2N5IPNWB12HDF5DataInfo7maxdimsE"></span><span id="IPNWB::HDF5DataInfo::maxdims__doubleA"></span><span class="target" id="struct_i_p_n_w_b_1_1_h_d_f5_data_info_1a58f536ed719fc74bfae3916556f2fe20"></span>double <code class="descname">maxdims</code>[<code class="descname">H5S_MAX_RANK</code>]<a class="headerlink" href="#_CPPv3N5IPNWB12HDF5DataInfo7maxdimsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table of Contents</a></h3>
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../developers.html">Developer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manualinstallation.html">Manual installation instructions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reportingbugs.html">Bug reporting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../releasenotes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grouplist.html">Group list</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../filelist.html">File list</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="_compilation_tester_8ipf.html">File CompilationTester.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_compilation_tester_utils_8ipf.html">File CompilationTesterUtils.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___constants_8ipf.html">File IPNWB_Constants.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___debugging_8ipf.html">File IPNWB_Debugging.ipf</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">File IPNWB_HDF5Helpers.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___include_8ipf.html">File IPNWB_Include.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___reader_8ipf.html">File IPNWB_Reader.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___structures_8ipf.html">File IPNWB_Structures.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___utils_8ipf.html">File IPNWB_Utils.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___writer_8ipf.html">File IPNWB_Writer.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___amplifier_interaction_8ipf.html">File MIES_AmplifierInteraction.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_browser_8ipf.html">File MIES_AnalysisBrowser.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_browser___lab_notebook_t_p_storage_browser_8ipf.html">File MIES_AnalysisBrowser_LabNotebookTPStorageBrowser.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_browser___sweep_browser_8ipf.html">File MIES_AnalysisBrowser_SweepBrowser.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_browser___sweep_browser___export_8ipf.html">File MIES_AnalysisBrowser_SweepBrowser_Export.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_function_helpers_8ipf.html">File MIES_AnalysisFunctionHelpers.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_function_management_8ipf.html">File MIES_AnalysisFunctionManagement.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_function_prototypes_8ipf.html">File MIES_AnalysisFunctionPrototypes.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_functions_8ipf.html">File MIES_AnalysisFunctions.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_functions___dashboard_8ipf.html">File MIES_AnalysisFunctions_Dashboard.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_functions___multi_patch_seq_8ipf.html">File MIES_AnalysisFunctions_MultiPatchSeq.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_functions___patch_seq_8ipf.html">File MIES_AnalysisFunctions_PatchSeq.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_master_8ipf.html">File MIES_AnalysisMaster.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___artefact_removal_8ipf.html">File MIES_ArtefactRemoval.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___async_8ipf.html">File MIES_Async.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___asynchronous_data_8ipf.html">File MIES_AsynchronousData.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___background_watchdog_8ipf.html">File MIES_BackgroundWatchdog.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___blowout_8ipf.html">File MIES_Blowout.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___browser_settings_panel_8ipf.html">File MIES_BrowserSettingsPanel.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___cache_8ipf.html">File MIES_Cache.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___check_installation_8ipf.html">File MIES_CheckInstallation.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___constants_8ipf.html">File MIES_Constants.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___d_a_c-_hardware_8ipf.html">File MIES_DAC-Hardware.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___d_a_ephys_8ipf.html">File MIES_DAEphys.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___d_a_ephys___gui_state_8ipf.html">File MIES_DAEphys_GuiState.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___d_a_ephys___macro_8ipf.html">File MIES_DAEphys_Macro.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___data_acquisition_8ipf.html">File MIES_DataAcquisition.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___data_acquisition___multi_8ipf.html">File MIES_DataAcquisition_Multi.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___data_acquisition___single_8ipf.html">File MIES_DataAcquisition_Single.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___data_browser_8ipf.html">File MIES_DataBrowser.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___data_configurator_i_t_c_8ipf.html">File MIES_DataConfiguratorITC.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___debug_panel_8ipf.html">File MIES_DebugPanel.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___debugging_8ipf.html">File MIES_Debugging.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___downsample_8ipf.html">File MIES_Downsample.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___enhanced_w_m_routines_8ipf.html">File MIES_EnhancedWMRoutines.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___event_detection_code_8ipf.html">File MIES_EventDetectionCode.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___experiment_config_8ipf.html">File MIES_ExperimentConfig.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___experiment_documentation_8ipf.html">File MIES_ExperimentDocumentation.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___foreign_function_interface_8ipf.html">File MIES_ForeignFunctionInterface.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___global_string_and_variable_access_8ipf.html">File MIES_GlobalStringAndVariableAccess.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___gui_utilities_8ipf.html">File MIES_GuiUtilities.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___h_d_f5_ops_8ipf.html">File MIES_HDF5Ops.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___igor_hooks_8ipf.html">File MIES_IgorHooks.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___include_8ipf.html">File MIES_Include.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___indexing_8ipf.html">File MIES_Indexing.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___menu_8ipf.html">File MIES_Menu.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___mies_utilities_8ipf.html">File MIES_MiesUtilities.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___neuro_data_without_borders_8ipf.html">File MIES_NeuroDataWithoutBorders.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___optimzed_overlap_distributed_acquisition_8ipf.html">File MIES_OptimzedOverlapDistributedAcquisition.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___oscilloscope_8ipf.html">File MIES_Oscilloscope.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___overlay_sweeps_8ipf.html">File MIES_OverlaySweeps.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___pressure_control_8ipf.html">File MIES_PressureControl.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___programmatic_g_u_i_control_8ipf.html">File MIES_ProgrammaticGUIControl.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___pulse_averaging_8ipf.html">File MIES_PulseAveraging.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___repeated_acquisition_8ipf.html">File MIES_RepeatedAcquisition.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___sampling_interval_8ipf.html">File MIES_SamplingInterval.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___structures_8ipf.html">File MIES_Structures.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___sweep_saving_8ipf.html">File MIES_SweepSaving.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___tango_interact_8ipf.html">File MIES_TangoInteract.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___test_pulse_8ipf.html">File MIES_TestPulse.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___test_pulse___multi_8ipf.html">File MIES_TestPulse_Multi.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___test_pulse___single_8ipf.html">File MIES_TestPulse_Single.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___threaded_f_i_f_o_handling_8ipf.html">File MIES_ThreadedFIFOHandling.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___threadsafe_utilities_8ipf.html">File MIES_ThreadsafeUtilities.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___utilities_8ipf.html">File MIES_Utilities.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___wave_builder_8ipf.html">File MIES_WaveBuilder.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___wave_builder_panel_8ipf.html">File MIES_WaveBuilderPanel.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___wave_data_folder_getters_8ipf.html">File MIES_WaveDataFolderGetters.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_zero_m_q___interop_8ipf.html">File ZeroMQ_Interop.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interface_8h.html">File interface.h</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../structlist.html">Struct list</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../namespacelist.html">Namespace list</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CalculateTPLikePropsFromSweep.html">CalculateTPLikePropsFromSweep Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IPNWB.html">Igor Pro module for reading and writing NeurodataWithoutBorder files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TPAnalysis_algorithm.html">Testpulse Analysis Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../asyncframework.html">Async Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ZeroMQ-XOP-Readme.html">ZeroMQ XOP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../labnotebook-docs.html">Labnotebook documentation for developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mies-concepts.html">Important MIES concepts for developers</a></li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="_i_p_n_w_b___debugging_8ipf.html"
+                        title="previous chapter">File IPNWB_Debugging.ipf</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="_i_p_n_w_b___include_8ipf.html"
+                        title="next chapter">File IPNWB_Include.ipf</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/file/_i_p_n_w_b___h_d_f5_helpers_8ipf.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="_i_p_n_w_b___include_8ipf.html" title="File IPNWB_Include.ipf"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="_i_p_n_w_b___debugging_8ipf.html" title="File IPNWB_Debugging.ipf"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">MIES Igor (master) latest-52-g2ffc1636 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../filelist.html" >File list</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright .
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.3.
+    </div>
+  </body>
+</html>

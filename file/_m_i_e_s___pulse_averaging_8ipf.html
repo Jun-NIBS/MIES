@@ -1,0 +1,523 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>File MIES_PulseAveraging.ipf &#8212; MIES Igor (master) latest-52-g2ffc1636 documentation</title>
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" />
+    
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    
+    <script type="text/javascript" src="../_static/sidebar.js"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="File MIES_RepeatedAcquisition.ipf" href="_m_i_e_s___repeated_acquisition_8ipf.html" />
+    <link rel="prev" title="File MIES_ProgrammaticGUIControl.ipf" href="_m_i_e_s___programmatic_g_u_i_control_8ipf.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="_m_i_e_s___repeated_acquisition_8ipf.html" title="File MIES_RepeatedAcquisition.ipf"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="_m_i_e_s___programmatic_g_u_i_control_8ipf.html" title="File MIES_ProgrammaticGUIControl.ipf"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">MIES Igor (master) latest-52-g2ffc1636 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../filelist.html" accesskey="U">File list</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="file-mies-pulseaveraging-ipf">
+<span id="id1"></span><h1>File MIES_PulseAveraging.ipf<a class="headerlink" href="#file-mies-pulseaveraging-ipf" title="Permalink to this headline">¶</a></h1>
+<p><strong>PA</strong> Routines for dealing with pulse averaging. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Functions</p>
+<dl class="function">
+<dt id="_CPPv319PA_GetAverageGraphsv">
+<span id="_CPPv219PA_GetAverageGraphsv"></span><span id="PA_GetAverageGraphs"></span><span class="target" id="_m_i_e_s___pulse_averaging_8ipf_1a209e6f9064581ca2868bebdda7c33fef"></span>string <code class="descname">PA_GetAverageGraphs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv319PA_GetAverageGraphsv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return a list of all average graphs. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv315PA_GetGraphName8variable6string8variable8variable">
+<span id="_CPPv215PA_GetGraphName8variable6string8variable8variable"></span><span id="PA_GetGraphName__variable.string.variable.variable"></span><span class="target" id="_m_i_e_s___pulse_averaging_8ipf_1aca2ebd43c66497ef5688cb7028f0b528"></span><em class="property">static</em> string <code class="descname">PA_GetGraphName</code><span class="sig-paren">(</span>variable <em>multipleGraphs</em>, string <em>channelTypeStr</em>, variable <em>channelNumber</em>, variable <em>activeRegionCount</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv315PA_GetGraphName8variable6string8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv311PA_GetGraph6string8variable6string8variable8variable8variable8variable">
+<span id="_CPPv211PA_GetGraph6string8variable6string8variable8variable8variable8variable"></span><span id="PA_GetGraph__string.variable.string.variable.variable.variable.variable"></span><span class="target" id="_m_i_e_s___pulse_averaging_8ipf_1ad6abce255552fcafe846df6dae06743c"></span><em class="property">static</em> string <code class="descname">PA_GetGraph</code><span class="sig-paren">(</span>string <em>mainWin</em>, variable <em>multipleGraphs</em>, string <em>channelTypeStr</em>, variable <em>channelNumber</em>, variable <em>region</em>, variable <em>activeRegionCount</em>, variable <em>activeChanCount</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv311PA_GetGraph6string8variable6string8variable8variable8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return the name of the pulse average graph. </p>
+<p>This function takes care of creating a graph if it does not exist, and laying it out correctly</p>
+<p>Layout scheme for multiple graphs turned on:<ul class="simple">
+<li>Positions the graphs right to <code class="docutils literal notranslate"><span class="pre">mainWin</span></code> in matrix form</li>
+<li>Columns: Regions (aka headstages with pulse starting time information respecting region selection in GUI)</li>
+<li>Rows: Active unique channels </li>
+</ul>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv310PA_GetAxes8variable8variable8variableP6stringP6string">
+<span id="_CPPv210PA_GetAxes8variable8variable8variableP6stringP6string"></span><span id="PA_GetAxes__variable.variable.variable.stringP.stringP"></span><span class="target" id="_m_i_e_s___pulse_averaging_8ipf_1a1a2fdeb405342c6ec87ae5776f8b2b45"></span><em class="property">static</em> variable <code class="descname">PA_GetAxes</code><span class="sig-paren">(</span>variable <em>multipleGraphs</em>, variable <em>activeRegionCount</em>, variable <em>activeChanCount</em>, string *<em>vertAxis</em>, string *<em>horizAxis</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv310PA_GetAxes8variable8variable8variableP6stringP6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return the names of the vertical and horizontal axes. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv327PA_CalculatePulseStartTimes4wave8variable">
+<span id="_CPPv227PA_CalculatePulseStartTimes4wave8variable"></span><span id="PA_CalculatePulseStartTimes__wave.variable"></span><span class="target" id="_m_i_e_s___pulse_averaging_8ipf_1ab46e1ac11bf992db5aaea8f46aed0899"></span><em class="property">static</em> wave <code class="descname">PA_CalculatePulseStartTimes</code><span class="sig-paren">(</span>wave <em>DA</em>, variable <em>totalOnsetDelay</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv327PA_CalculatePulseStartTimes4wave8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Derive the pulse starting times from a DA wave. </p>
+<p>Uses plain FindLevels after the onset delay using 10% of the full range above the minimum as threshold</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>wave with pulse starting times, or an invalid wave reference if none could be found. </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv324PA_AddMissingADTraceInfo8WaveText">
+<span id="_CPPv224PA_AddMissingADTraceInfo8WaveText"></span><span id="PA_AddMissingADTraceInfo__WaveText"></span><span class="target" id="_m_i_e_s___pulse_averaging_8ipf_1ad8ca6e9ba691907c5ce09e3a9a6f2cb8"></span><em class="property">static</em> variable <code class="descname">PA_AddMissingADTraceInfo</code><span class="sig-paren">(</span>WaveText <em>traceData</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv324PA_AddMissingADTraceInfo8WaveText" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Add all available sweep data to traceData. </p>
+<p>This function can fill in the available data for traces which are <em>not</em> shown. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv316PA_GetTraceInfos6string8variable8variable">
+<span id="_CPPv216PA_GetTraceInfos6string8variable8variable"></span><span id="PA_GetTraceInfos__string.variable.variable"></span><span class="target" id="_m_i_e_s___pulse_averaging_8ipf_1ac63509ebf49117394411bff681cc31a1"></span>wave <code class="descname">PA_GetTraceInfos</code><span class="sig-paren">(</span>string <em>graph</em>, variable <em>includeOtherADData</em> = defaultValue, variable <em>channelType</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv316PA_GetTraceInfos6string8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return a list of all sweep traces in the graph skipping traces which refer to the same wave. </p>
+<p>Columns have colum labels and include various userdata readout from the traces. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv322PA_GetUniqueHeadstages8WaveText10WaveOrNull">
+<span id="_CPPv222PA_GetUniqueHeadstages8WaveText10WaveOrNull"></span><span id="PA_GetUniqueHeadstages__WaveText.WaveOrNull"></span><span class="target" id="_m_i_e_s___pulse_averaging_8ipf_1a4cb8993d6cf2bb129dae98a44d9f2c66"></span><em class="property">static</em> wave <code class="descname">PA_GetUniqueHeadstages</code><span class="sig-paren">(</span>WaveText <em>traceData</em>, WaveOrNull <em>indizesChannelType</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv322PA_GetUniqueHeadstages8WaveText10WaveOrNull" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return a wave with headstage numbers, duplicates replaced with NaN so that the indizes still correspond the ones in traceData. </p>
+<p>Returns an invalid wave reference in case indizesChannelType does not exist. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv321PA_GetPulseStartTimes8WaveText8variable8variable6string8variable">
+<span id="_CPPv221PA_GetPulseStartTimes8WaveText8variable8variable6string8variable"></span><span id="PA_GetPulseStartTimes__WaveText.variable.variable.string.variable"></span><span class="target" id="_m_i_e_s___pulse_averaging_8ipf_1aba9d492cf47650e319547b4ea1053f81"></span>wave <code class="descname">PA_GetPulseStartTimes</code><span class="sig-paren">(</span>WaveText <em>traceData</em>, variable <em>idx</em>, variable <em>region</em>, string <em>channelTypeStr</em>, variable <em>removeOnsetDelay</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv321PA_GetPulseStartTimes8WaveText8variable8variable6string8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return the pulse starting times. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">traceData</span></code>: 2D wave with trace information, usually generated by <a class="reference internal" href="#_m_i_e_s___pulse_averaging_8ipf_1ac63509ebf49117394411bff681cc31a1"><span class="std std-ref">PA_GetTraceInfos()</span></a> </li>
+<li><code class="docutils literal notranslate"><span class="pre">idx</span></code>: Index into traceData, used for determining sweep numbers, labnotebooks, etc. </li>
+<li><code class="docutils literal notranslate"><span class="pre">region</span></code>: Region (headstage) to get pulse starting times for </li>
+<li><code class="docutils literal notranslate"><span class="pre">channelTypeStr</span></code>: Type of the channel, one of <a class="reference internal" href="_m_i_e_s___constants_8ipf.html#_m_i_e_s___constants_8ipf_1ae26b0aea7aa055ddfbdb9bdf37f0d0c2"><span class="std std-ref">ITC_CHANNEL_NAMES</span></a> </li>
+<li><code class="docutils literal notranslate"><span class="pre">removeOnsetDelay</span></code>: [optional, defaults to true] Remove the onset delay from the starting times (true) or not (false) </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv317PA_GetPulseLength4wave8variable8variable8variable">
+<span id="_CPPv217PA_GetPulseLength4wave8variable8variable8variable"></span><span id="PA_GetPulseLength__wave.variable.variable.variable"></span><span class="target" id="_m_i_e_s___pulse_averaging_8ipf_1a48538883a89f1c53f0989149425ee3c8"></span><em class="property">static</em> variable <code class="descname">PA_GetPulseLength</code><span class="sig-paren">(</span>wave <em>pulseStartTimes</em>, variable <em>startingPulse</em>, variable <em>endingPulse</em>, variable <em>fallbackPulseLength</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv317PA_GetPulseLength4wave8variable8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv330PA_CreateAndFillPulseWaveIfReq10WaveOrNull5dfref8variable8variable8variable8variable8variable8variable">
+<span id="_CPPv230PA_CreateAndFillPulseWaveIfReq10WaveOrNull5dfref8variable8variable8variable8variable8variable8variable"></span><span id="PA_CreateAndFillPulseWaveIfReq__WaveOrNull.dfref.variable.variable.variable.variable.variable.variable"></span><span class="target" id="_m_i_e_s___pulse_averaging_8ipf_1a413a910c91b8cab1cf10d6640a0beede"></span><em class="property">static</em> wave <code class="descname">PA_CreateAndFillPulseWaveIfReq</code><span class="sig-paren">(</span>WaveOrNull <em>wv</em>, dfref <em>singleSweepFolder</em>, variable <em>channelType</em>, variable <em>channelNumber</em>, variable <em>region</em>, variable <em>pulseIndex</em>, variable <em>first</em>, variable <em>length</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv330PA_CreateAndFillPulseWaveIfReq10WaveOrNull5dfref8variable8variable8variable8variable8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv317PA_GatherSettings6stringP16PostPlotSettings">
+<span id="_CPPv217PA_GatherSettings6stringP16PostPlotSettings"></span><span id="PA_GatherSettings__string.PostPlotSettingsP"></span><span class="target" id="_m_i_e_s___pulse_averaging_8ipf_1a2971db8706c57831d92b762230ff4c2b"></span>variable <code class="descname">PA_GatherSettings</code><span class="sig-paren">(</span>string <em>win</em>, <a class="reference internal" href="_m_i_e_s___structures_8ipf.html#_CPPv316PostPlotSettings" title="PostPlotSettings">PostPlotSettings</a> *<em>pps</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv317PA_GatherSettings6stringP16PostPlotSettings" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Populates pps.pulseAverSett with the user selection from the panel. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv323PA_DeconvGatherSettings6stringP26PulseAverageDeconvSettings">
+<span id="_CPPv223PA_DeconvGatherSettings6stringP26PulseAverageDeconvSettings"></span><span id="PA_DeconvGatherSettings__string.PulseAverageDeconvSettingsP"></span><span class="target" id="_m_i_e_s___pulse_averaging_8ipf_1a3822519bb9ea5c08acfc6c66ed0e84cc"></span>variable <code class="descname">PA_DeconvGatherSettings</code><span class="sig-paren">(</span>string <em>win</em>, <a class="reference internal" href="_m_i_e_s___structures_8ipf.html#_CPPv326PulseAverageDeconvSettings" title="PulseAverageDeconvSettings">PulseAverageDeconvSettings</a> *<em>deconvolution</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv323PA_DeconvGatherSettings6stringP26PulseAverageDeconvSettings" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>gather deconvolution settings from PA section in BSP </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv313PA_ShowPulses6string5dfrefP20PulseAverageSettings">
+<span id="_CPPv213PA_ShowPulses6string5dfrefP20PulseAverageSettings"></span><span id="PA_ShowPulses__string.dfref.PulseAverageSettingsP"></span><span class="target" id="_m_i_e_s___pulse_averaging_8ipf_1ade092fbf0d7eb1695987a556c222df4b"></span>variable <code class="descname">PA_ShowPulses</code><span class="sig-paren">(</span>string <em>win</em>, dfref <em>dfr</em>, <a class="reference internal" href="_m_i_e_s___structures_8ipf.html#_CPPv320PulseAverageSettings" title="PulseAverageSettings">PulseAverageSettings</a> *<em>pa</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv313PA_ShowPulses6string5dfrefP20PulseAverageSettings" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv311PA_BaseName6string8variable8variable">
+<span id="_CPPv211PA_BaseName6string8variable8variable"></span><span id="PA_BaseName__string.variable.variable"></span><span class="target" id="_m_i_e_s___pulse_averaging_8ipf_1a4d1ba019b8d4fb0cceb64311a1e42ff9"></span><em class="property">static</em> string <code class="descname">PA_BaseName</code><span class="sig-paren">(</span>string <em>channelTypeStr</em>, variable <em>channelNumber</em>, variable <em>headStage</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv311PA_BaseName6string8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Generate a static base name for objects in the current averaging folder. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv313PA_ZeroTraces6string8variable">
+<span id="_CPPv213PA_ZeroTraces6string8variable"></span><span id="PA_ZeroTraces__string.variable"></span><span class="target" id="_m_i_e_s___pulse_averaging_8ipf_1ab2b900d08bbc8a41e564bd9eb9d09dd9"></span><em class="property">static</em> variable <code class="descname">PA_ZeroTraces</code><span class="sig-paren">(</span>string <em>listOfWaves</em>, variable <em>setZero</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv313PA_ZeroTraces6string8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Zero pulse averaging traces using <code class="docutils literal notranslate"><span class="pre">ZeroWave</span></code>. </p>
+<p>This function has to be the first function to call before altering waves from listofWaves.</p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">listOfWaves</span></code>: a list with full wave paths where to apply zeroing </li>
+<li><code class="docutils literal notranslate"><span class="pre">setZero</span></code>: add/remove zeroing from the wave </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv310PA_Average6string5dfref6string">
+<span id="_CPPv210PA_Average6string5dfref6string"></span><span id="PA_Average__string.dfref.string"></span><span class="target" id="_m_i_e_s___pulse_averaging_8ipf_1ab60e9defbd560621b3245e01502e3b53"></span>wave <code class="descname">PA_Average</code><span class="sig-paren">(</span>string <em>listOfWaves</em>, dfref <em>outputDFR</em>, string <em>outputWaveName</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv310PA_Average6string5dfref6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>calculate the average wave from a <code class="docutils literal notranslate"><span class="pre">listOfWaves</span></code> </p>
+<p>Note: <a class="reference internal" href="_m_i_e_s___enhanced_w_m_routines_8ipf.html#_m_i_e_s___enhanced_w_m_routines_8ipf_1aea3dc6914e5491bcf8b0ea6c219baecb"><span class="std std-ref">MIES_fWaveAverage()</span></a> usually takes 5 times longer than <a class="reference internal" href="_m_i_e_s___cache_8ipf.html#_m_i_e_s___cache_8ipf_1ad14ced48ec463a07ebffd588541b1870"><span class="std std-ref">CA_AveragingKey()</span></a></p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>wave reference to the average wave specified by <code class="docutils literal notranslate"><span class="pre">outputDFR</span></code> and <code class="docutils literal notranslate"><span class="pre">outputWaveName</span></code> </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv315PA_SmoothDeconv4waveP26PulseAverageDeconvSettings">
+<span id="_CPPv215PA_SmoothDeconv4waveP26PulseAverageDeconvSettings"></span><span id="PA_SmoothDeconv__wave.PulseAverageDeconvSettingsP"></span><span class="target" id="_m_i_e_s___pulse_averaging_8ipf_1a25b8c994513f8298c5e91f4c7502b2fa"></span>wave <code class="descname">PA_SmoothDeconv</code><span class="sig-paren">(</span>wave <em>input</em>, <a class="reference internal" href="_m_i_e_s___structures_8ipf.html#_CPPv326PulseAverageDeconvSettings" title="PulseAverageDeconvSettings">PulseAverageDeconvSettings</a> *<em>deconvolution</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv315PA_SmoothDeconv4waveP26PulseAverageDeconvSettings" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv316PA_Deconvolution4wave5dfref6stringP26PulseAverageDeconvSettings">
+<span id="_CPPv216PA_Deconvolution4wave5dfref6stringP26PulseAverageDeconvSettings"></span><span id="PA_Deconvolution__wave.dfref.string.PulseAverageDeconvSettingsP"></span><span class="target" id="_m_i_e_s___pulse_averaging_8ipf_1a6a3e00ba5ed1bc33c71864299f30fedc"></span>wave <code class="descname">PA_Deconvolution</code><span class="sig-paren">(</span>wave <em>average</em>, dfref <em>outputDFR</em>, string <em>outputWaveName</em>, <a class="reference internal" href="_m_i_e_s___structures_8ipf.html#_CPPv326PulseAverageDeconvSettings" title="PulseAverageDeconvSettings">PulseAverageDeconvSettings</a> *<em>deconvolution</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv316PA_Deconvolution4wave5dfref6stringP26PulseAverageDeconvSettings" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv319PA_CheckProc_CommonP16WMCheckboxAction">
+<span id="_CPPv219PA_CheckProc_CommonP16WMCheckboxAction"></span><span id="PA_CheckProc_Common__WMCheckboxActionP"></span><span class="target" id="_m_i_e_s___pulse_averaging_8ipf_1abf3033920c2acd63101ad34a40698694"></span>variable <code class="descname">PA_CheckProc_Common</code><span class="sig-paren">(</span>WMCheckboxAction *<em>cba</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv319PA_CheckProc_CommonP16WMCheckboxAction" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv323PA_CheckProc_IndividualP16WMCheckboxAction">
+<span id="_CPPv223PA_CheckProc_IndividualP16WMCheckboxAction"></span><span id="PA_CheckProc_Individual__WMCheckboxActionP"></span><span class="target" id="_m_i_e_s___pulse_averaging_8ipf_1a3ad0b8433cd27530cce684536dd959e2"></span>variable <code class="descname">PA_CheckProc_Individual</code><span class="sig-paren">(</span>WMCheckboxAction *<em>cba</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv323PA_CheckProc_IndividualP16WMCheckboxAction" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv320PA_CheckProc_AverageP16WMCheckboxAction">
+<span id="_CPPv220PA_CheckProc_AverageP16WMCheckboxAction"></span><span id="PA_CheckProc_Average__WMCheckboxActionP"></span><span class="target" id="_m_i_e_s___pulse_averaging_8ipf_1a2792e17d7edc6457eb291c8f7c990a58"></span>variable <code class="descname">PA_CheckProc_Average</code><span class="sig-paren">(</span>WMCheckboxAction *<em>cba</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv320PA_CheckProc_AverageP16WMCheckboxAction" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv326PA_CheckProc_DeconvolutionP16WMCheckboxAction">
+<span id="_CPPv226PA_CheckProc_DeconvolutionP16WMCheckboxAction"></span><span id="PA_CheckProc_Deconvolution__WMCheckboxActionP"></span><span class="target" id="_m_i_e_s___pulse_averaging_8ipf_1ad5b88456843644aa0e3b9afef2a9443a"></span>variable <code class="descname">PA_CheckProc_Deconvolution</code><span class="sig-paren">(</span>WMCheckboxAction *<em>cba</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv326PA_CheckProc_DeconvolutionP16WMCheckboxAction" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv320PA_SetVarProc_CommonP19WMSetVariableAction">
+<span id="_CPPv220PA_SetVarProc_CommonP19WMSetVariableAction"></span><span id="PA_SetVarProc_Common__WMSetVariableActionP"></span><span class="target" id="_m_i_e_s___pulse_averaging_8ipf_1aee8cc1a9cac8f67d288120d4ae9c30ae"></span>variable <code class="descname">PA_SetVarProc_Common</code><span class="sig-paren">(</span>WMSetVariableAction *<em>sva</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv320PA_SetVarProc_CommonP19WMSetVariableAction" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv311PA_IsActive6string">
+<span id="_CPPv211PA_IsActive6string"></span><span id="PA_IsActive__string"></span><span class="target" id="_m_i_e_s___pulse_averaging_8ipf_1ae655174da3f8c6a6d284541692398b0d"></span>variable <code class="descname">PA_IsActive</code><span class="sig-paren">(</span>string <em>win</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv311PA_IsActive6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>checks if PA is active. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv321PA_IndividualIsActive6string">
+<span id="_CPPv221PA_IndividualIsActive6string"></span><span id="PA_IndividualIsActive__string"></span><span class="target" id="_m_i_e_s___pulse_averaging_8ipf_1abd63dbc18ae6a9ad02534f701fb462a0"></span>variable <code class="descname">PA_IndividualIsActive</code><span class="sig-paren">(</span>string <em>win</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv321PA_IndividualIsActive6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>checks if “show individual traces” in PA is activated. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv318PA_AverageIsActive6string">
+<span id="_CPPv218PA_AverageIsActive6string"></span><span id="PA_AverageIsActive__string"></span><span class="target" id="_m_i_e_s___pulse_averaging_8ipf_1a0ec5d86d5257fdde6cd4adb50979039c"></span>variable <code class="descname">PA_AverageIsActive</code><span class="sig-paren">(</span>string <em>win</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv318PA_AverageIsActive6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>checks if “show average trace” in PA is activated. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv324PA_DeconvolutionIsActive6string">
+<span id="_CPPv224PA_DeconvolutionIsActive6string"></span><span id="PA_DeconvolutionIsActive__string"></span><span class="target" id="_m_i_e_s___pulse_averaging_8ipf_1a96b830dbedb74442391083e92d6ae950"></span>variable <code class="descname">PA_DeconvolutionIsActive</code><span class="sig-paren">(</span>string <em>win</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv324PA_DeconvolutionIsActive6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>checks if “show average trace” in PA is activated. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv331PA_UpdateSweepPlotDeconvolution6string8variable">
+<span id="_CPPv231PA_UpdateSweepPlotDeconvolution6string8variable"></span><span id="PA_UpdateSweepPlotDeconvolution__string.variable"></span><span class="target" id="_m_i_e_s___pulse_averaging_8ipf_1a53a4d519e49123344d699a16487f8257"></span>variable <code class="descname">PA_UpdateSweepPlotDeconvolution</code><span class="sig-paren">(</span>string <em>win</em>, variable <em>show</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv331PA_UpdateSweepPlotDeconvolution6string8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Update deconvolution traces in Sweep Plots. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv325PA_AutomaticTimeAlignment6string">
+<span id="_CPPv225PA_AutomaticTimeAlignment6string"></span><span id="PA_AutomaticTimeAlignment__string"></span><span class="target" id="_m_i_e_s___pulse_averaging_8ipf_1a62a9bf101428e6f086b6a368cd5b04a5"></span>variable <code class="descname">PA_AutomaticTimeAlignment</code><span class="sig-paren">(</span>string <em>refTraces</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv325PA_AutomaticTimeAlignment6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>use reference trace from graph for time alignment </p>
+<p>A reference trace for automatic time alignment is usually the first trace added to a graph where region and channelnumber have the same counter. These traces are plotted on the diagonal graphs/axes of the PA graph(s).</p>
+<p><dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd>PA_GetReferenceTraces(win) </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">refTraces</span></code>: list of graph::trace entries as reference for time alignment fill complete list using </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv321PA_GetReferenceTraces6string">
+<span id="_CPPv221PA_GetReferenceTraces6string"></span><span id="PA_GetReferenceTraces__string"></span><span class="target" id="_m_i_e_s___pulse_averaging_8ipf_1afea0d8d78b2d5c41991ada8d91f4c026"></span><em class="property">static</em> string <code class="descname">PA_GetReferenceTraces</code><span class="sig-paren">(</span>string <em>win</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv321PA_GetReferenceTraces6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get a list of all reference traces in all PA graphs. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>graphtraces in the form graph::trace </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">win</span></code>: main DB/SB graph or any subwindow panel. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv330PA_GetReferenceTracesFromGraph6string">
+<span id="_CPPv230PA_GetReferenceTracesFromGraph6string"></span><span id="PA_GetReferenceTracesFromGraph__string"></span><span class="target" id="_m_i_e_s___pulse_averaging_8ipf_1aeea53b8f91e6a764a43b8b4a7c62e735"></span><em class="property">static</em> string <code class="descname">PA_GetReferenceTracesFromGraph</code><span class="sig-paren">(</span>string <em>graph</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv330PA_GetReferenceTracesFromGraph6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get all traces marked as reference traces for the current graph. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>graphtraces in the form graph::trace if the graph is a valid reference graph </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">graph</span></code>: Pulse Averaging Reference Graph (diagonal elements when multiple graphs) </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv323PA_ResetWavesIfRequired6stringP20PulseAverageSettings">
+<span id="_CPPv223PA_ResetWavesIfRequired6stringP20PulseAverageSettings"></span><span id="PA_ResetWavesIfRequired__string.PulseAverageSettingsP"></span><span class="target" id="_m_i_e_s___pulse_averaging_8ipf_1a407ed8b47fd5006d3148f022c9a80401"></span><em class="property">static</em> variable <code class="descname">PA_ResetWavesIfRequired</code><span class="sig-paren">(</span>string <em>listOfWaves</em>, <a class="reference internal" href="_m_i_e_s___structures_8ipf.html#_CPPv320PulseAverageSettings" title="PulseAverageSettings">PulseAverageSettings</a> *<em>pa</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv323PA_ResetWavesIfRequired6stringP20PulseAverageSettings" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Reset All Waves from a list of waves to its original state if they are outdated. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Variables</p>
+<dl class="member">
+<dt id="_CPPv326PULSE_AVERAGE_GRAPH_PREFIX">
+<span id="_CPPv226PULSE_AVERAGE_GRAPH_PREFIX"></span><span id="PULSE_AVERAGE_GRAPH_PREFIX__stringC"></span><span class="target" id="_m_i_e_s___pulse_averaging_8ipf_1a2e8fe3f1398589673677b53a93570587"></span><em class="property">const</em> string <code class="descname">PULSE_AVERAGE_GRAPH_PREFIX</code> = &quot;PulseAverage&quot;<a class="headerlink" href="#_CPPv326PULSE_AVERAGE_GRAPH_PREFIX" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv321SOURCE_WAVE_TIMESTAMP">
+<span id="_CPPv221SOURCE_WAVE_TIMESTAMP"></span><span id="SOURCE_WAVE_TIMESTAMP__stringC"></span><span class="target" id="_m_i_e_s___pulse_averaging_8ipf_1ad56c3ea5f1f2af024760c3d9f8f2c75c"></span><em class="property">const</em> string <code class="descname">SOURCE_WAVE_TIMESTAMP</code> = &quot;SOURCE_WAVE_TS&quot;<a class="headerlink" href="#_CPPv321SOURCE_WAVE_TIMESTAMP" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv322PA_AVERAGE_WAVE_PREFIX">
+<span id="_CPPv222PA_AVERAGE_WAVE_PREFIX"></span><span id="PA_AVERAGE_WAVE_PREFIX__stringC"></span><span class="target" id="_m_i_e_s___pulse_averaging_8ipf_1a57e0f13b557e672f4e9425099d872908"></span><em class="property">const</em> string <code class="descname">PA_AVERAGE_WAVE_PREFIX</code> = &quot;average_&quot;<a class="headerlink" href="#_CPPv322PA_AVERAGE_WAVE_PREFIX" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv328PA_DECONVOLUTION_WAVE_PREFIX">
+<span id="_CPPv228PA_DECONVOLUTION_WAVE_PREFIX"></span><span id="PA_DECONVOLUTION_WAVE_PREFIX__stringC"></span><span class="target" id="_m_i_e_s___pulse_averaging_8ipf_1a0f995c3b75b5deae422fcb9245a4be9e"></span><em class="property">const</em> string <code class="descname">PA_DECONVOLUTION_WAVE_PREFIX</code> = &quot;deconv_&quot;<a class="headerlink" href="#_CPPv328PA_DECONVOLUTION_WAVE_PREFIX" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv326PA_USERDATA_SPECIAL_TRACES">
+<span id="_CPPv226PA_USERDATA_SPECIAL_TRACES"></span><span id="PA_USERDATA_SPECIAL_TRACES__stringC"></span><span class="target" id="_m_i_e_s___pulse_averaging_8ipf_1abe067a34cced8042ca044ac27baf733f"></span><em class="property">const</em> string <code class="descname">PA_USERDATA_SPECIAL_TRACES</code> = &quot;SPECIAL_TRACES&quot;<a class="headerlink" href="#_CPPv326PA_USERDATA_SPECIAL_TRACES" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv328PA_USERDATA_REFERENCE_TRACES">
+<span id="_CPPv228PA_USERDATA_REFERENCE_TRACES"></span><span id="PA_USERDATA_REFERENCE_TRACES__stringC"></span><span class="target" id="_m_i_e_s___pulse_averaging_8ipf_1aa701135824391d2fa37c6b36d209962b"></span><em class="property">const</em> string <code class="descname">PA_USERDATA_REFERENCE_TRACES</code> = &quot;REFERENCE_TRACES&quot;<a class="headerlink" href="#_CPPv328PA_USERDATA_REFERENCE_TRACES" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv327PA_USERDATA_REFERENCE_GRAPH">
+<span id="_CPPv227PA_USERDATA_REFERENCE_GRAPH"></span><span id="PA_USERDATA_REFERENCE_GRAPH__stringC"></span><span class="target" id="_m_i_e_s___pulse_averaging_8ipf_1a50ea2b4cab89d9c89fbcb95392cf7b7a"></span><em class="property">const</em> string <code class="descname">PA_USERDATA_REFERENCE_GRAPH</code> = &quot;REFERENCE&quot;<a class="headerlink" href="#_CPPv327PA_USERDATA_REFERENCE_GRAPH" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv316PA_PLOT_STEPPING">
+<span id="_CPPv216PA_PLOT_STEPPING"></span><span id="PA_PLOT_STEPPING__variableC"></span><span class="target" id="_m_i_e_s___pulse_averaging_8ipf_1a0a666ed17520c300d309b8c9cbf65e21"></span><em class="property">const</em> variable <code class="descname">PA_PLOT_STEPPING</code> = 16<a class="headerlink" href="#_CPPv316PA_PLOT_STEPPING" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table of Contents</a></h3>
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../developers.html">Developer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manualinstallation.html">Manual installation instructions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reportingbugs.html">Bug reporting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../releasenotes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grouplist.html">Group list</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../filelist.html">File list</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="_compilation_tester_8ipf.html">File CompilationTester.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_compilation_tester_utils_8ipf.html">File CompilationTesterUtils.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___constants_8ipf.html">File IPNWB_Constants.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___debugging_8ipf.html">File IPNWB_Debugging.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___h_d_f5_helpers_8ipf.html">File IPNWB_HDF5Helpers.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___include_8ipf.html">File IPNWB_Include.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___reader_8ipf.html">File IPNWB_Reader.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___structures_8ipf.html">File IPNWB_Structures.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___utils_8ipf.html">File IPNWB_Utils.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___writer_8ipf.html">File IPNWB_Writer.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___amplifier_interaction_8ipf.html">File MIES_AmplifierInteraction.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_browser_8ipf.html">File MIES_AnalysisBrowser.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_browser___lab_notebook_t_p_storage_browser_8ipf.html">File MIES_AnalysisBrowser_LabNotebookTPStorageBrowser.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_browser___sweep_browser_8ipf.html">File MIES_AnalysisBrowser_SweepBrowser.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_browser___sweep_browser___export_8ipf.html">File MIES_AnalysisBrowser_SweepBrowser_Export.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_function_helpers_8ipf.html">File MIES_AnalysisFunctionHelpers.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_function_management_8ipf.html">File MIES_AnalysisFunctionManagement.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_function_prototypes_8ipf.html">File MIES_AnalysisFunctionPrototypes.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_functions_8ipf.html">File MIES_AnalysisFunctions.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_functions___dashboard_8ipf.html">File MIES_AnalysisFunctions_Dashboard.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_functions___multi_patch_seq_8ipf.html">File MIES_AnalysisFunctions_MultiPatchSeq.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_functions___patch_seq_8ipf.html">File MIES_AnalysisFunctions_PatchSeq.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_master_8ipf.html">File MIES_AnalysisMaster.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___artefact_removal_8ipf.html">File MIES_ArtefactRemoval.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___async_8ipf.html">File MIES_Async.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___asynchronous_data_8ipf.html">File MIES_AsynchronousData.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___background_watchdog_8ipf.html">File MIES_BackgroundWatchdog.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___blowout_8ipf.html">File MIES_Blowout.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___browser_settings_panel_8ipf.html">File MIES_BrowserSettingsPanel.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___cache_8ipf.html">File MIES_Cache.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___check_installation_8ipf.html">File MIES_CheckInstallation.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___constants_8ipf.html">File MIES_Constants.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___d_a_c-_hardware_8ipf.html">File MIES_DAC-Hardware.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___d_a_ephys_8ipf.html">File MIES_DAEphys.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___d_a_ephys___gui_state_8ipf.html">File MIES_DAEphys_GuiState.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___d_a_ephys___macro_8ipf.html">File MIES_DAEphys_Macro.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___data_acquisition_8ipf.html">File MIES_DataAcquisition.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___data_acquisition___multi_8ipf.html">File MIES_DataAcquisition_Multi.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___data_acquisition___single_8ipf.html">File MIES_DataAcquisition_Single.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___data_browser_8ipf.html">File MIES_DataBrowser.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___data_configurator_i_t_c_8ipf.html">File MIES_DataConfiguratorITC.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___debug_panel_8ipf.html">File MIES_DebugPanel.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___debugging_8ipf.html">File MIES_Debugging.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___downsample_8ipf.html">File MIES_Downsample.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___enhanced_w_m_routines_8ipf.html">File MIES_EnhancedWMRoutines.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___event_detection_code_8ipf.html">File MIES_EventDetectionCode.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___experiment_config_8ipf.html">File MIES_ExperimentConfig.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___experiment_documentation_8ipf.html">File MIES_ExperimentDocumentation.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___foreign_function_interface_8ipf.html">File MIES_ForeignFunctionInterface.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___global_string_and_variable_access_8ipf.html">File MIES_GlobalStringAndVariableAccess.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___gui_utilities_8ipf.html">File MIES_GuiUtilities.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___h_d_f5_ops_8ipf.html">File MIES_HDF5Ops.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___igor_hooks_8ipf.html">File MIES_IgorHooks.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___include_8ipf.html">File MIES_Include.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___indexing_8ipf.html">File MIES_Indexing.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___menu_8ipf.html">File MIES_Menu.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___mies_utilities_8ipf.html">File MIES_MiesUtilities.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___neuro_data_without_borders_8ipf.html">File MIES_NeuroDataWithoutBorders.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___optimzed_overlap_distributed_acquisition_8ipf.html">File MIES_OptimzedOverlapDistributedAcquisition.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___oscilloscope_8ipf.html">File MIES_Oscilloscope.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___overlay_sweeps_8ipf.html">File MIES_OverlaySweeps.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___pressure_control_8ipf.html">File MIES_PressureControl.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___programmatic_g_u_i_control_8ipf.html">File MIES_ProgrammaticGUIControl.ipf</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">File MIES_PulseAveraging.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___repeated_acquisition_8ipf.html">File MIES_RepeatedAcquisition.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___sampling_interval_8ipf.html">File MIES_SamplingInterval.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___structures_8ipf.html">File MIES_Structures.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___sweep_saving_8ipf.html">File MIES_SweepSaving.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___tango_interact_8ipf.html">File MIES_TangoInteract.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___test_pulse_8ipf.html">File MIES_TestPulse.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___test_pulse___multi_8ipf.html">File MIES_TestPulse_Multi.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___test_pulse___single_8ipf.html">File MIES_TestPulse_Single.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___threaded_f_i_f_o_handling_8ipf.html">File MIES_ThreadedFIFOHandling.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___threadsafe_utilities_8ipf.html">File MIES_ThreadsafeUtilities.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___utilities_8ipf.html">File MIES_Utilities.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___wave_builder_8ipf.html">File MIES_WaveBuilder.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___wave_builder_panel_8ipf.html">File MIES_WaveBuilderPanel.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___wave_data_folder_getters_8ipf.html">File MIES_WaveDataFolderGetters.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_zero_m_q___interop_8ipf.html">File ZeroMQ_Interop.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interface_8h.html">File interface.h</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../structlist.html">Struct list</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../namespacelist.html">Namespace list</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CalculateTPLikePropsFromSweep.html">CalculateTPLikePropsFromSweep Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IPNWB.html">Igor Pro module for reading and writing NeurodataWithoutBorder files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TPAnalysis_algorithm.html">Testpulse Analysis Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../asyncframework.html">Async Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ZeroMQ-XOP-Readme.html">ZeroMQ XOP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../labnotebook-docs.html">Labnotebook documentation for developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mies-concepts.html">Important MIES concepts for developers</a></li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="_m_i_e_s___programmatic_g_u_i_control_8ipf.html"
+                        title="previous chapter">File MIES_ProgrammaticGUIControl.ipf</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="_m_i_e_s___repeated_acquisition_8ipf.html"
+                        title="next chapter">File MIES_RepeatedAcquisition.ipf</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/file/_m_i_e_s___pulse_averaging_8ipf.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="_m_i_e_s___repeated_acquisition_8ipf.html" title="File MIES_RepeatedAcquisition.ipf"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="_m_i_e_s___programmatic_g_u_i_control_8ipf.html" title="File MIES_ProgrammaticGUIControl.ipf"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">MIES Igor (master) latest-52-g2ffc1636 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../filelist.html" >File list</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright .
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.3.
+    </div>
+  </body>
+</html>

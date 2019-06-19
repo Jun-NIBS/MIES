@@ -1,0 +1,2139 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>File MIES_Utilities.ipf &#8212; MIES Igor (master) latest-52-g2ffc1636 documentation</title>
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" />
+    
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    
+    <script type="text/javascript" src="../_static/sidebar.js"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="File MIES_WaveBuilder.ipf" href="_m_i_e_s___wave_builder_8ipf.html" />
+    <link rel="prev" title="File MIES_ThreadsafeUtilities.ipf" href="_m_i_e_s___threadsafe_utilities_8ipf.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="_m_i_e_s___wave_builder_8ipf.html" title="File MIES_WaveBuilder.ipf"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="_m_i_e_s___threadsafe_utilities_8ipf.html" title="File MIES_ThreadsafeUtilities.ipf"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">MIES Igor (master) latest-52-g2ffc1636 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../filelist.html" accesskey="U">File list</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="file-mies-utilities-ipf">
+<span id="id1"></span><h1>File MIES_Utilities.ipf<a class="headerlink" href="#file-mies-utilities-ipf" title="Permalink to this headline">¶</a></h1>
+<p>General utility functions. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Debugger state constants for DisableDebugger and ResetDebuggerState</p>
+<dl class="member">
+<dt id="_CPPv316DEBUGGER_ENABLED">
+<span id="_CPPv216DEBUGGER_ENABLED"></span><span id="DEBUGGER_ENABLED__variableC"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1ac134dc5d9acd7b52e2e94c656440fdd4"></span><em class="property">const</em> variable <code class="descname">DEBUGGER_ENABLED</code> = 0x01<a class="headerlink" href="#_CPPv316DEBUGGER_ENABLED" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv323DEBUGGER_DEBUG_ON_ERROR">
+<span id="_CPPv223DEBUGGER_DEBUG_ON_ERROR"></span><span id="DEBUGGER_DEBUG_ON_ERROR__variableC"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a5a503b95c19f1217f68bc8f7f25e51f9"></span><em class="property">const</em> variable <code class="descname">DEBUGGER_DEBUG_ON_ERROR</code> = 0x02<a class="headerlink" href="#_CPPv323DEBUGGER_DEBUG_ON_ERROR" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv322DEBUGGER_NVAR_CHECKING">
+<span id="_CPPv222DEBUGGER_NVAR_CHECKING"></span><span id="DEBUGGER_NVAR_CHECKING__variableC"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1af5c7dcc07eb6161dd02007049108724d"></span><em class="property">const</em> variable <code class="descname">DEBUGGER_NVAR_CHECKING</code> = 0x04<a class="headerlink" href="#_CPPv322DEBUGGER_NVAR_CHECKING" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Functions</p>
+<dl class="function">
+<dt id="_CPPv38IsFinite8variable">
+<span id="_CPPv28IsFinite8variable"></span><span id="IsFinite__variable"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a096c8733076753f7b87aba2a96a70c38"></span>variable <code class="descname">IsFinite</code><span class="sig-paren">(</span>variable <em>var</em><span class="sig-paren">)</span><br /></dt>
+<dd><p>Returns 1 if var is a finite/normal number, 0 otherwise. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv35IsNaN8variable">
+<span id="_CPPv25IsNaN8variable"></span><span id="IsNaN__variable"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a907650c83bf62d17af01f8c90674692c"></span>variable <code class="descname">IsNaN</code><span class="sig-paren">(</span>variable <em>var</em><span class="sig-paren">)</span><br /></dt>
+<dd><p>Returns 1 if var is a NaN, 0 otherwise. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv36IsNullP6string">
+<span id="_CPPv26IsNullP6string"></span><span id="IsNull__stringP"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1ae96078d18c5710629bd2d4b7920e4c9a"></span>variable <code class="descname">IsNull</code><span class="sig-paren">(</span>string *<em>str</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv36IsNullP6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns 1 if str is null, 0 otherwise. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">str</span></code>: must not be a SVAR </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv37IsEmptyP6string">
+<span id="_CPPv27IsEmptyP6string"></span><span id="IsEmpty__stringP"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1af4d0425cb18ea687e1dd0b2cad28a58a"></span>variable <code class="descname">IsEmpty</code><span class="sig-paren">(</span>string *<em>str</em><span class="sig-paren">)</span><br /></dt>
+<dd><p>Returns one if str is empty or null, zero otherwise. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">str</span></code>: must not be a SVAR </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv36ASSERT8variable6string">
+<span id="_CPPv26ASSERT8variable6string"></span><span id="ASSERT__variable.string"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1adedff2d30b70aff25b0fe5366700f564"></span>variable <code class="descname">ASSERT</code><span class="sig-paren">(</span>variable <em>var</em>, string <em>errorMsg</em><span class="sig-paren">)</span><br /></dt>
+<dd><p>Low overhead function to check assertions. </p>
+<p><p>Example usage: </p>
+<div class="highlight-igorpro notranslate"><div class="highlight"><pre><span></span><span class="nc">ControlInfo</span>/W = $panelTitle popup_MoreSettings_DeviceType
+ASSERT(V_flag &gt; 0, <span class="s">&quot;Non-existing control or window&quot;</span>)
+<span class="k">do</span> something with S_value
+</pre></div>
+</div>
+ <dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">var</span></code>: if zero an error message is printed into the history and procedure execution is aborted, nothing is done otherwise. If the debugger is enabled, it also steps into it. </li>
+<li><code class="docutils literal notranslate"><span class="pre">errorMsg</span></code>: error message to output in failure case</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv39ASSERT_TS8variable6string">
+<span id="_CPPv29ASSERT_TS8variable6string"></span><span id="ASSERT_TS__variable.string"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1aff3fd239b0eb0234d08375bc95715f82"></span>variable <code class="descname">ASSERT_TS</code><span class="sig-paren">(</span>variable <em>var</em>, string <em>errorMsg</em><span class="sig-paren">)</span><br /></dt>
+<dd><p>Low overhead function to check assertions (threadsafe variant) </p>
+<p><p>Example usage: </p>
+<div class="highlight-igorpro notranslate"><div class="highlight"><pre><span></span>ASSERT(DataFolderExistsDFR(dfr), <span class="s">&quot;MyFunc: dfr does not exist&quot;</span>)
+<span class="k">do</span> something with dfr
+</pre></div>
+</div>
+<dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">var</span></code>: if zero an error message is printed into the history and procedure execution is aborted, nothing is done otherwise. </li>
+<li><code class="docutils literal notranslate"><span class="pre">errorMsg</span></code>: error message to output in failure case</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p>Unlike <a class="reference internal" href="#_m_i_e_s___utilities_8ipf_1adedff2d30b70aff25b0fe5366700f564"><span class="std std-ref">ASSERT()</span></a> this function does not print a stacktrace or jumps into the debugger. The reasons are Igor Pro limitations. Therefore it is advised to prefix <code class="docutils literal notranslate"><span class="pre">errorMsg</span></code> with the current function name. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv312windowExists6string">
+<span id="_CPPv212windowExists6string"></span><span id="windowExists__string"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a4dd07a82e454f267bd47cec2eed5e6dd"></span>variable <code class="descname">windowExists</code><span class="sig-paren">(</span>string <em>win</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv312windowExists6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Checks if the given name exists as window. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv316GetListOfObjects5dfref6string8variable6string6string8variable8variable">
+<span id="_CPPv216GetListOfObjects5dfref6string8variable6string6string8variable8variable"></span><span id="GetListOfObjects__dfref.string.variable.string.string.variable.variable"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a9cc388ce493d36a493460d904b2682dc"></span>string <code class="descname">GetListOfObjects</code><span class="sig-paren">(</span>dfref <em>dfr</em>, string <em>regExpStr</em>, variable <em>typeFlag</em> = defaultValue, string <em>matchList</em> = defaultValue, string <em>waveProperty</em> = defaultValue, variable <em>fullPath</em> = defaultValue, variable <em>recursive</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv316GetListOfObjects5dfref6string8variable6string6string8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Alternative implementation for WaveList/VariableList/etc. which honours a dfref and thus does not require SetDataFolder calls. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>list of wave names matching regExpStr located in dfr </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">dfr</span></code>: datafolder reference to search for the waves </li>
+<li><code class="docutils literal notranslate"><span class="pre">regExpStr</span></code>: regular expression matching the waves, see the help of GrepString for an introduction to regular expressions </li>
+<li><code class="docutils literal notranslate"><span class="pre">typeFlag</span></code>: [optional, default: COUNTOBJECTS_WAVES] One of TypeFlags </li>
+<li><code class="docutils literal notranslate"><span class="pre">matchList</span></code>: [optional, empty] additional semicolon delimited list of wave names, allows to further qualify the returned wave names. </li>
+<li><code class="docutils literal notranslate"><span class="pre">waveProperty</span></code>: [optional, empty] additional properties of matching waves, inspired by WaveList, currently implemented are <code class="docutils literal notranslate"><span class="pre">MINCOLS</span></code> and <code class="docutils literal notranslate"><span class="pre">TEXT</span></code> </li>
+<li><code class="docutils literal notranslate"><span class="pre">fullPath</span></code>: [optional, default: false] should only the wavename or the absolute path of the wave be returned. </li>
+<li><code class="docutils literal notranslate"><span class="pre">recursive</span></code>: [optional, default: false] descent into all subfolders recursively</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv321EnsureLargeEnoughWave4wave8variable8variable8variable8variable">
+<span id="_CPPv221EnsureLargeEnoughWave4wave8variable8variable8variable8variable"></span><span id="EnsureLargeEnoughWave__wave.variable.variable.variable.variable"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1abdb32751b52d03f1a2a231a6e297968f"></span>variable <code class="descname">EnsureLargeEnoughWave</code><span class="sig-paren">(</span>wave <em>wv</em>, variable <em>minimumSize</em> = defaultValue, variable <em>dimension</em> = defaultValue, variable <em>initialValue</em> = defaultValue, variable <em>checkFreeMemory</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv321EnsureLargeEnoughWave4wave8variable8variable8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Redimension the wave to at least the given size. </p>
+<p>The redimensioning is only done if it is required.</p>
+<p>Can be used to fill a wave one at a time with the minimum number of redimensions.</p>
+<p><div class="highlight-igorpro notranslate"><div class="highlight"><pre><span></span><span class="nc">Make</span>/FREE/N=(MINIMUM_WAVE_SIZE) data
+SetNumberInWaveNote(data, NOTE_INDEX, 0)
+<span class="c1">// ...</span>
+<span class="k">for</span>(...)
+    index = GetNumberFromWaveNote(data, NOTE_INDEX)
+    <span class="c1">// ...</span>
+    EnsureLargeEnoughWave(data, dimension = ROWS, minimumSize = index)
+    data[index] = ...
+    <span class="c1">// ...</span>
+    SetNumberInWaveNote(data, NOTE_INDEX, ++index)
+<span class="k">endfor</span>
+</pre></div>
+</div>
+</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>0 on success, (only for checkFreeMemory = True) 1 if increasing the wave’s size would fail due to little memory </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">wv</span></code>: wave to redimension </li>
+<li><code class="docutils literal notranslate"><span class="pre">minimumSize</span></code>: [optional, default is implementation defined] the minimum size of the wave. The actual size of the wave after the function returns might be larger. </li>
+<li><code class="docutils literal notranslate"><span class="pre">dimension</span></code>: [optional, defaults to ROWS] dimension to resize, all other dimensions are left untouched. </li>
+<li><code class="docutils literal notranslate"><span class="pre">initialValue</span></code>: [optional, defaults to zero] initialValue of the new wave points </li>
+<li><code class="docutils literal notranslate"><span class="pre">checkFreeMemory</span></code>: [optional, defaults to false] check if the free memory is enough for increasing the size</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv317ValueCanBeWritten10WaveOrNull8variable">
+<span id="_CPPv217ValueCanBeWritten10WaveOrNull8variable"></span><span id="ValueCanBeWritten__WaveOrNull.variable"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a9a4c59ec02061754aea4f88068736ce6"></span>variable <code class="descname">ValueCanBeWritten</code><span class="sig-paren">(</span>WaveOrNull <em>wv</em>, variable <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv317ValueCanBeWritten10WaveOrNull8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Check that the given value can be stored in the wave. </p>
+<p>Does currently ignore floating point precision and ranges for integer waves </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv321EnsureSmallEnoughWave4wave8variable">
+<span id="_CPPv221EnsureSmallEnoughWave4wave8variable"></span><span id="EnsureSmallEnoughWave__wave.variable"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a3f8e2c2f473148d3f61454933a3fef05"></span>variable <code class="descname">EnsureSmallEnoughWave</code><span class="sig-paren">(</span>wave <em>wv</em>, variable <em>maximumSize</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv321EnsureSmallEnoughWave4wave8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Resize the number of rows to maximumSize if it is larger than that. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">wv</span></code>: wave to redimension </li>
+<li><code class="docutils literal notranslate"><span class="pre">maximumSize</span></code>: maximum number of the rows, defaults to MAXIMUM_SIZE </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv321ConvertFromBytesToMiB8variable">
+<span id="_CPPv221ConvertFromBytesToMiB8variable"></span><span id="ConvertFromBytesToMiB__variable"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a5e30d6374c5baf76cd7ab0cabe3660cb"></span>variable <code class="descname">ConvertFromBytesToMiB</code><span class="sig-paren">(</span>variable <em>var</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv321ConvertFromBytesToMiB8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Convert Bytes to MiBs, a mebibyte being 2^20. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv311GetWaveSize10WaveOrNull8variable">
+<span id="_CPPv211GetWaveSize10WaveOrNull8variable"></span><span id="GetWaveSize__WaveOrNull.variable"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1abc03730185019abb08c713b4552ecdad"></span>variable <code class="descname">GetWaveSize</code><span class="sig-paren">(</span>WaveOrNull <em>wv</em>, variable <em>recursive</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv311GetWaveSize10WaveOrNull8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns the size of the wave in bytes. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv329ConvertSamplingIntervalToRate8variable">
+<span id="_CPPv229ConvertSamplingIntervalToRate8variable"></span><span id="ConvertSamplingIntervalToRate__variable"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a5fe7e09cc9f0a69e6e36f45dcf6961c7"></span>variable <code class="descname">ConvertSamplingIntervalToRate</code><span class="sig-paren">(</span>variable <em>val</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv329ConvertSamplingIntervalToRate8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Convert the sampling interval in microseconds (1e-6s) to the rate in kHz. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv329ConvertRateToSamplingInterval8variable">
+<span id="_CPPv229ConvertRateToSamplingInterval8variable"></span><span id="ConvertRateToSamplingInterval__variable"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1afceef779ed2219f04830a390754ef437"></span>variable <code class="descname">ConvertRateToSamplingInterval</code><span class="sig-paren">(</span>variable <em>val</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv329ConvertRateToSamplingInterval8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Convert the rate in kHz to the sampling interval in microseconds (1e-6s) </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv319DataFolderExistsDFR5dfref">
+<span id="_CPPv219DataFolderExistsDFR5dfref"></span><span id="DataFolderExistsDFR__dfref"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a75e35ab385383442c6438751ac24be3a"></span>variable <code class="descname">DataFolderExistsDFR</code><span class="sig-paren">(</span>dfref <em>dfr</em><span class="sig-paren">)</span><br /></dt>
+<dd><p>Checks if the datafolder referenced by dfr exists. </p>
+<p>Unlike DataFolderExists() a dfref pointing to an empty (“”) dataFolder is considered non-existing here. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>one if dfr is valid and references an existing or free datafolder, zero otherwise Taken from <a class="reference external" href="http://www.igorexchange.com/node/2055">http://www.igorexchange.com/node/2055</a> </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv322createDFWithAllParents6string">
+<span id="_CPPv222createDFWithAllParents6string"></span><span id="createDFWithAllParents__string"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a9f7661dcd698e3337049bd26abef1cc6"></span>dfr <code class="descname">createDFWithAllParents</code><span class="sig-paren">(</span>string <em>dataFolder</em><span class="sig-paren">)</span><br /></dt>
+<dd><p>Create a datafolder and all its parents,. </p>
+<p>Includes fast handling of the common case that the datafolder exists. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>reference to the datafolder </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv39IsInteger8variable">
+<span id="_CPPv29IsInteger8variable"></span><span id="IsInteger__variable"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a72d9059712b62572474a3ba3c26f6733"></span>variable <code class="descname">IsInteger</code><span class="sig-paren">(</span>variable <em>var</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv39IsInteger8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns one if var is an integer and zero otherwise. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv310Downsample10WaveOrNull8variable8variable8variable6string">
+<span id="_CPPv210Downsample10WaveOrNull8variable8variable8variable6string"></span><span id="Downsample__WaveOrNull.variable.variable.variable.string"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a019d128090aed62b5148deb9bed6ae47"></span>variable <code class="descname">Downsample</code><span class="sig-paren">(</span>WaveOrNull <em>wv</em>, variable <em>downsampleFactor</em>, variable <em>upsampleFactor</em>, variable <em>mode</em>, string <em>winFunction</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv310Downsample10WaveOrNull8variable8variable8variable6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Downsample data. </p>
+<p>Downsampling is performed on each <strong>column</strong> of the input wave. Edge-points of the output wave are by default set to zero. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>One on error, zero otherwise </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">wv</span></code>: numeric wave, its row must hold more points than downsampleFactor. Will hold the downsampled data on successfull return, in the error case the contents are undetermined </li>
+<li><code class="docutils literal notranslate"><span class="pre">downsampleFactor</span></code>: positive non-zero integer by which the wave should be downsampled </li>
+<li><code class="docutils literal notranslate"><span class="pre">upsampleFactor</span></code>: positive non-zero integer by which the wave should be upsampled </li>
+<li><code class="docutils literal notranslate"><span class="pre">mode</span></code>: decimation mode, one of <a class="reference internal" href="_m_i_e_s___constants_8ipf.html#_m_i_e_s___constants_8ipf_1a58a6176186a63bc1a0d32a9408ceec36"><span class="std std-ref">DECIMATION_BY_OMISSION</span></a>, <a class="reference internal" href="_m_i_e_s___constants_8ipf.html#_m_i_e_s___constants_8ipf_1a3863e06523798824dffa7890a6f75918"><span class="std std-ref">DECIMATION_BY_AVERAGING</span></a> or <a class="reference internal" href="_m_i_e_s___constants_8ipf.html#_m_i_e_s___constants_8ipf_1a21e846cb020257a6303afa264c734778"><span class="std std-ref">DECIMATION_BY_SMOOTHING</span></a>. </li>
+<li><code class="docutils literal notranslate"><span class="pre">winFunction</span></code>: Windowing function for <a class="reference internal" href="_m_i_e_s___constants_8ipf.html#_m_i_e_s___constants_8ipf_1a21e846cb020257a6303afa264c734778"><span class="std std-ref">DECIMATION_BY_SMOOTHING</span></a> mode, must be one of <a class="reference internal" href="_m_i_e_s___constants_8ipf.html#_m_i_e_s___constants_8ipf_1a9b180e85febe37a0313266297a0e289e"><span class="std std-ref">ALL_WINDOW_FUNCTIONS</span></a>. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv312CalculateLCM8variable8variable">
+<span id="_CPPv212CalculateLCM8variable8variable"></span><span id="CalculateLCM__variable.variable"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a857deb961c934a51d1011f73bd21c0db"></span>variable <code class="descname">CalculateLCM</code><span class="sig-paren">(</span>variable <em>a</em>, variable <em>b</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv312CalculateLCM8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Compute the least common multiplier of two variables. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv318CalculateLCMOfWave4wave">
+<span id="_CPPv218CalculateLCMOfWave4wave"></span><span id="CalculateLCMOfWave__wave"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a66fb0b2993942a21c9f896c25ea7c6b6"></span>variable <code class="descname">CalculateLCMOfWave</code><span class="sig-paren">(</span>wave <em>wv</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv318CalculateLCMOfWave4wave" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Compute the least common multiplier of all entries in the 1D-wave. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv316GetUniqueEntries4wave8variable">
+<span id="_CPPv216GetUniqueEntries4wave8variable"></span><span id="GetUniqueEntries__wave.variable"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a89ad121c35e550252ef0abbf24d93a67"></span>wave <code class="descname">GetUniqueEntries</code><span class="sig-paren">(</span>wave <em>wv</em>, variable <em>caseSensitive</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv316GetUniqueEntries4wave8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns an unsorted free wave with all unique entries from wv neglecting NaN/Inf. </p>
+<p>uses built-in igor function FindDuplicates. Entries are deleted from left to right. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv328GetUniqueTextEntriesFromList6string6string8variable">
+<span id="_CPPv228GetUniqueTextEntriesFromList6string6string8variable"></span><span id="GetUniqueTextEntriesFromList__string.string.variable"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a7fbd71708aed336a2098df4dee3b4216"></span>string <code class="descname">GetUniqueTextEntriesFromList</code><span class="sig-paren">(</span>string <em>list</em>, string <em>sep</em> = defaultValue, variable <em>caseSensitive</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv328GetUniqueTextEntriesFromList6string6string8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Convenience wrapper around <a class="reference internal" href="#_m_i_e_s___utilities_8ipf_1a7b7ab96c2ebc20701846768a53f62475"><span class="std std-ref">GetUniqueTextEntries()</span></a> for string lists. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv320GetUniqueTextEntries8WaveText8variable">
+<span id="_CPPv220GetUniqueTextEntries8WaveText8variable"></span><span id="GetUniqueTextEntries__WaveText.variable"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a7b7ab96c2ebc20701846768a53f62475"></span><em class="property">static</em> wave <code class="descname">GetUniqueTextEntries</code><span class="sig-paren">(</span>WaveText <em>wv</em>, variable <em>caseSensitive</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv320GetUniqueTextEntries8WaveText8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Search and Remove Duplicates from Text Wave wv. </p>
+<p>Duplicates are removed from left to right</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>free wave with unique entries </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">wv</span></code>: text wave reference </li>
+<li><code class="docutils literal notranslate"><span class="pre">caseSensitive</span></code>: [optional] Indicates whether comparison should be case sensitive. defaults to True</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv321RemoveEmptyDataFolder5dfref">
+<span id="_CPPv221RemoveEmptyDataFolder5dfref"></span><span id="RemoveEmptyDataFolder__dfref"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1ada073dc7820a186e4a8272533761a7d0"></span>variable <code class="descname">RemoveEmptyDataFolder</code><span class="sig-paren">(</span>dfref <em>dfr</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv321RemoveEmptyDataFolder5dfref" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Removes the datafolder reference if there are no objects in it anymore. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>1 in case the folder was removed and 0 in all other cases </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">dfr</span></code>: data folder reference to kill </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv325RemoveAllEmptyDataFolders5dfref">
+<span id="_CPPv225RemoveAllEmptyDataFolders5dfref"></span><span id="RemoveAllEmptyDataFolders__dfref"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a9d5062932234f8094a352db1515deb98"></span>variable <code class="descname">RemoveAllEmptyDataFolders</code><span class="sig-paren">(</span>dfref <em>sourceDFR</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv325RemoveAllEmptyDataFolders5dfref" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Removes all empty datafolders in the passed datafolder reference. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv330RecursiveRemoveEmptyDataFolder5dfref">
+<span id="_CPPv230RecursiveRemoveEmptyDataFolder5dfref"></span><span id="RecursiveRemoveEmptyDataFolder__dfref"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1ab85f4f987a429923eeb7f2e86458b70c"></span>variable <code class="descname">RecursiveRemoveEmptyDataFolder</code><span class="sig-paren">(</span>dfref <em>dfr</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv330RecursiveRemoveEmptyDataFolder5dfref" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Recursively remove all folders from the datafolder path, if and only if all are empty. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv315DisableDebuggerv">
+<span id="_CPPv215DisableDebuggerv"></span><span id="DisableDebugger"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1ac6abc1946f0eb2ab5433c879c2c458ad"></span>variable <code class="descname">DisableDebugger</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv315DisableDebuggerv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Disable the debugger. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>the full debugger state binary encoded. first bit: on/off, second bit: debugOnError on/off, third bit: nvar/svar/wave checking on/off </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv318ResetDebuggerState8variable">
+<span id="_CPPv218ResetDebuggerState8variable"></span><span id="ResetDebuggerState__variable"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a858623cebd95c65064813c43ba67c33f"></span>variable <code class="descname">ResetDebuggerState</code><span class="sig-paren">(</span>variable <em>debuggerState</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv318ResetDebuggerState8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Reset the debugger to the given state. </p>
+<p>Useful in conjunction with <a class="reference internal" href="#_m_i_e_s___utilities_8ipf_1ac6abc1946f0eb2ab5433c879c2c458ad"><span class="std std-ref">DisableDebugger()</span></a> to temporarily disable the debugger <div class="highlight-igorpro notranslate"><div class="highlight"><pre><span></span><span class="kt">variable</span> debuggerState = DisableDebugger()
+<span class="c1">// code which might trigger the debugger, e.g. CurveFit</span>
+ResetDebuggerState(debuggerState)
+<span class="c1">// now the debugger is in the same state as before</span>
+</pre></div>
+</div>
+ </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv319DisableDebugOnErrorv">
+<span id="_CPPv219DisableDebugOnErrorv"></span><span id="DisableDebugOnError"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a13da034daf5444d992bf30d86497b926"></span>variable <code class="descname">DisableDebugOnError</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv319DisableDebugOnErrorv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Disable Debug on Error. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>1 if it was enabled, 0 if not, pass this value to <a class="reference internal" href="#_m_i_e_s___utilities_8ipf_1aec5f2cae9026a5c3ca41c27f9b51e905"><span class="std std-ref">ResetDebugOnError()</span></a> </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv317ResetDebugOnError8variable">
+<span id="_CPPv217ResetDebugOnError8variable"></span><span id="ResetDebugOnError__variable"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1aec5f2cae9026a5c3ca41c27f9b51e905"></span>variable <code class="descname">ResetDebugOnError</code><span class="sig-paren">(</span>variable <em>debugOnError</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv317ResetDebugOnError8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Reset Debug on Error state. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">debugOnError</span></code>: state before, usually the same value as <a class="reference internal" href="#_m_i_e_s___utilities_8ipf_1a13da034daf5444d992bf30d86497b926"><span class="std std-ref">DisableDebugOnError()</span></a> returned </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv321GetNumberFromWaveNote4wave6string">
+<span id="_CPPv221GetNumberFromWaveNote4wave6string"></span><span id="GetNumberFromWaveNote__wave.string"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a5bb9c63f5cddda48388e3e5544ba7513"></span>variable <code class="descname">GetNumberFromWaveNote</code><span class="sig-paren">(</span>wave <em>wv</em>, string <em>key</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv321GetNumberFromWaveNote4wave6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns the numeric value of <code class="docutils literal notranslate"><span class="pre">key</span></code> found in the wave note, returns NaN if it could not be found. </p>
+<p>The expected wave note format is: <code class="docutils literal notranslate"><span class="pre">key1:val1;key2:val2;</span></code> </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv319SetNumberInWaveNote4wave6string8variable6string">
+<span id="_CPPv219SetNumberInWaveNote4wave6string8variable6string"></span><span id="SetNumberInWaveNote__wave.string.variable.string"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a122df701dde7327663a1539c5f4881bd"></span>variable <code class="descname">SetNumberInWaveNote</code><span class="sig-paren">(</span>wave <em>wv</em>, string <em>key</em>, variable <em>val</em>, string <em>format</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv319SetNumberInWaveNote4wave6string8variable6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Updates the numeric value of <code class="docutils literal notranslate"><span class="pre">key</span></code> found in the wave note to <code class="docutils literal notranslate"><span class="pre">val</span></code> </p>
+<p><p>The expected wave note format is: </p>
+<code class="docutils literal notranslate"><span class="pre">key1:val1;key2:val2;</span></code> <dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">wv</span></code>: wave </li>
+<li><code class="docutils literal notranslate"><span class="pre">key</span></code>: key of the Key/Value pair </li>
+<li><code class="docutils literal notranslate"><span class="pre">val</span></code>: value of the Key/Value pair </li>
+<li><code class="docutils literal notranslate"><span class="pre">format</span></code>: [optional] printf compatible format string to set the conversion to string for <code class="docutils literal notranslate"><span class="pre">val</span></code></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv321GetStringFromWaveNote4wave6string6string6string">
+<span id="_CPPv221GetStringFromWaveNote4wave6string6string6string"></span><span id="GetStringFromWaveNote__wave.string.string.string"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a412a5ca7de34c0544e28f45659dc61c0"></span>string <code class="descname">GetStringFromWaveNote</code><span class="sig-paren">(</span>wave <em>wv</em>, string <em>key</em>, string <em>keySep</em> = defaultValue, string <em>listSep</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv321GetStringFromWaveNote4wave6string6string6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return the string value of <code class="docutils literal notranslate"><span class="pre">key</span></code> found in the wave note default expected wave note format: <code class="docutils literal notranslate"><span class="pre">key1:val1;key2:str2;</span></code> counterpart of AddEntryIntoWaveNoteAsList when supplied with keySep = “=”. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>the value on success. An empty string is returned if it could not be found </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">wv</span></code>: wave reference where the WaveNote is taken from </li>
+<li><code class="docutils literal notranslate"><span class="pre">key</span></code>: search for the value at key:value; </li>
+<li><code class="docutils literal notranslate"><span class="pre">keySep</span></code>: [optional, defaults to <code class="docutils literal notranslate"><span class="pre">:</span></code>] separation character for (key, value) pairs </li>
+<li><code class="docutils literal notranslate"><span class="pre">listSep</span></code>: [optional, defaults to <code class="docutils literal notranslate"><span class="pre">;</span></code>] list separation character</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv321ExtractStringFromPair6string6string6string6string">
+<span id="_CPPv221ExtractStringFromPair6string6string6string6string"></span><span id="ExtractStringFromPair__string.string.string.string"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1aa073e5c775501e60a437f855c5506c79"></span>string <code class="descname">ExtractStringFromPair</code><span class="sig-paren">(</span>string <em>str</em>, string <em>key</em>, string <em>keySep</em> = defaultValue, string <em>listSep</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv321ExtractStringFromPair6string6string6string6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Same functionality as <a class="reference internal" href="#_m_i_e_s___utilities_8ipf_1a412a5ca7de34c0544e28f45659dc61c0"><span class="std std-ref">GetStringFromWaveNote()</span></a> but accepts a string. </p>
+<p><dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><a class="reference internal" href="#_m_i_e_s___utilities_8ipf_1a412a5ca7de34c0544e28f45659dc61c0"><span class="std std-ref">GetStringFromWaveNote()</span></a> </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv319SetStringInWaveNote4wave6string6string">
+<span id="_CPPv219SetStringInWaveNote4wave6string6string"></span><span id="SetStringInWaveNote__wave.string.string"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a9a6705afcbe3be0d2b43cde352cbaf88"></span>variable <code class="descname">SetStringInWaveNote</code><span class="sig-paren">(</span>wave <em>wv</em>, string <em>key</em>, string <em>str</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv319SetStringInWaveNote4wave6string6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Update the string value of <code class="docutils literal notranslate"><span class="pre">key</span></code> found in the wave note to <code class="docutils literal notranslate"><span class="pre">str</span></code> </p>
+<p>The expected wave note format is: <code class="docutils literal notranslate"><span class="pre">key1:val1;key2:str2;</span></code> </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv319PossiblyUnquoteName6string">
+<span id="_CPPv219PossiblyUnquoteName6string"></span><span id="PossiblyUnquoteName__string"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a0c462f8423f91c2d9ecc9e37e423fab0"></span>string <code class="descname">PossiblyUnquoteName</code><span class="sig-paren">(</span>string <em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv319PossiblyUnquoteName6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Remove the single quotes from a liberal wave name if they can be found. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv326AddEntryIntoWaveNoteAsList4wave6string8variable6string8variable8variable6string">
+<span id="_CPPv226AddEntryIntoWaveNoteAsList4wave6string8variable6string8variable8variable6string"></span><span id="AddEntryIntoWaveNoteAsList__wave.string.variable.string.variable.variable.string"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a86a8498dd801874d10236dc2c4994efc"></span>variable <code class="descname">AddEntryIntoWaveNoteAsList</code><span class="sig-paren">(</span>wave <em>wv</em>, string <em>key</em>, variable <em>var</em> = defaultValue, string <em>str</em> = defaultValue, variable <em>appendCR</em> = defaultValue, variable <em>replaceEntry</em> = defaultValue, string <em>format</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv326AddEntryIntoWaveNoteAsList4wave6string8variable6string8variable8variable6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Structured writing of numerical values with names into wave notes. </p>
+<p>The general layout is <code class="docutils literal notranslate"><span class="pre">key1</span> <span class="pre">=</span> <span class="pre">var;key2</span> <span class="pre">=</span> <span class="pre">str;</span></code> and the note is never prefixed with a carriage return (“\r”). <dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">wv</span></code>: wave to add the wave note to </li>
+<li><code class="docutils literal notranslate"><span class="pre">key</span></code>: string identifier </li>
+<li><code class="docutils literal notranslate"><span class="pre">var</span></code>: variable to output </li>
+<li><code class="docutils literal notranslate"><span class="pre">str</span></code>: string to output </li>
+<li><code class="docutils literal notranslate"><span class="pre">appendCR</span></code>: 0 (default) or 1, should a carriage return (“\r”) be appended to the note </li>
+<li><code class="docutils literal notranslate"><span class="pre">replaceEntry</span></code>: 0 (default) or 1, should existing keys named <code class="docutils literal notranslate"><span class="pre">key</span></code> be replaced (does only work reliable in wave note lists without carriage returns). </li>
+<li><code class="docutils literal notranslate"><span class="pre">format</span></code>: [optional, defaults to <code class="docutils literal notranslate"><span class="pre">g</span></code>] format string used for converting <code class="docutils literal notranslate"><span class="pre">var</span></code> to <code class="docutils literal notranslate"><span class="pre">str</span></code> </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv322HasEntryInWaveNoteList4wave6string6string">
+<span id="_CPPv222HasEntryInWaveNoteList4wave6string6string"></span><span id="HasEntryInWaveNoteList__wave.string.string"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a607b372dd77fde5e07a344a747ce47b7"></span>variable <code class="descname">HasEntryInWaveNoteList</code><span class="sig-paren">(</span>wave <em>wv</em>, string <em>key</em>, string <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv322HasEntryInWaveNoteList4wave6string6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Checks if <code class="docutils literal notranslate"><span class="pre">key</span> <span class="pre">=</span> <span class="pre">value;</span></code> can be found in the wave note. </p>
+<p>Ignores spaces around the equal (“=”) sign.</p>
+<p><dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><a class="reference internal" href="#_m_i_e_s___utilities_8ipf_1a86a8498dd801874d10236dc2c4994efc"><span class="std std-ref">AddEntryIntoWaveNoteAsList()</span></a> </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv322IsWaveDisplayedOnGraph6string10WaveOrNull5dfref">
+<span id="_CPPv222IsWaveDisplayedOnGraph6string10WaveOrNull5dfref"></span><span id="IsWaveDisplayedOnGraph__string.WaveOrNull.dfref"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a29fe8b993c45f56f6eadc52147f14c88"></span>variable <code class="descname">IsWaveDisplayedOnGraph</code><span class="sig-paren">(</span>string <em>win</em>, WaveOrNull <em>wv</em> = defaultValue, dfref <em>dfr</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv322IsWaveDisplayedOnGraph6string10WaveOrNull5dfref" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Check if a given wave, or at least one wave from the dfr, is displayed on a graph. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>one if one is displayed, zero otherwise </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv318KillCursorInGraphs6string6string">
+<span id="_CPPv218KillCursorInGraphs6string6string"></span><span id="KillCursorInGraphs__string.string"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1ac6c1f8e71c3079bb93d4c7b976b8bafd"></span>variable <code class="descname">KillCursorInGraphs</code><span class="sig-paren">(</span>string <em>graphs</em>, string <em>cursorName</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv318KillCursorInGraphs6string6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Kill all cursors in a given list of graphs. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">graphs</span></code>: semicolon separated list of graph names </li>
+<li><code class="docutils literal notranslate"><span class="pre">cursorName</span></code>: name of cursor as string </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv318FindCursorInGraphs6string6string">
+<span id="_CPPv218FindCursorInGraphs6string6string"></span><span id="FindCursorInGraphs__string.string"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a56c3b3f7b3258c5386c195083ff751e3"></span>string <code class="descname">FindCursorInGraphs</code><span class="sig-paren">(</span>string <em>graphs</em>, string <em>cursorName</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv318FindCursorInGraphs6string6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Find the first match for a given cursor in a list of graph names. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>graph where cursor was found </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">graphs</span></code>: semicolon separated list of graph names </li>
+<li><code class="docutils literal notranslate"><span class="pre">cursorName</span></code>: name of cursor as string</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv320GetCursorXPositionAB6stringP8variableP8variable">
+<span id="_CPPv220GetCursorXPositionAB6stringP8variableP8variable"></span><span id="GetCursorXPositionAB__string.variableP.variableP"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a8271d5071d74155084ff0de595e240a4"></span>variable <code class="descname">GetCursorXPositionAB</code><span class="sig-paren">(</span>string <em>graph</em>, variable *<em>csrAx</em>, variable *<em>csrBx</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv320GetCursorXPositionAB6stringP8variableP8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>get the x value of the cursors A and B </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">graph</span></code>: where the cursor are </li>
+<li><code class="docutils literal notranslate"><span class="pre">csrAx</span></code>: Position of cursor A </li>
+<li><code class="docutils literal notranslate"><span class="pre">csrBx</span></code>: Position of cursor B </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv326RemoveAnnotationsFromGraph6string">
+<span id="_CPPv226RemoveAnnotationsFromGraph6string"></span><span id="RemoveAnnotationsFromGraph__string"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a176a9327d7af68da7d6973f9b587365b"></span>variable <code class="descname">RemoveAnnotationsFromGraph</code><span class="sig-paren">(</span>string <em>graph</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv326RemoveAnnotationsFromGraph6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Removes all annotations from the graph. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv36MDsort4wave8variable8variable8variable8variable">
+<span id="_CPPv26MDsort4wave8variable8variable8variable8variable"></span><span id="MDsort__wave.variable.variable.variable.variable"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a00fb024da6cb89cd42c63d89c4caeb4d"></span>variable <code class="descname">MDsort</code><span class="sig-paren">(</span>wave <em>w</em>, variable <em>keyColPrimary</em>, variable <em>keyColSecondary</em> = defaultValue, variable <em>keyColTertiary</em> = defaultValue, variable <em>reversed</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv36MDsort4wave8variable8variable8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sort 2D waves in-place with one column being the key. </p>
+<p>By default an alphanumeric sorting is performed. <p>Taken from </p>
+<a class="reference external" href="http://www.igorexchange.com/node/599">http://www.igorexchange.com/node/599</a> with some cosmetic changes and extended for the two key <dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">w</span></code>: wave of arbitrary type </li>
+<li><code class="docutils literal notranslate"><span class="pre">keyColPrimary</span></code>: column of the primary key </li>
+<li><code class="docutils literal notranslate"><span class="pre">keyColSecondary</span></code>: [optional] column of the secondary key </li>
+<li><code class="docutils literal notranslate"><span class="pre">keyColTertiary</span></code>: [optional] column of the tertiary key </li>
+<li><code class="docutils literal notranslate"><span class="pre">reversed</span></code>: [optional] do an descending sort instead of an ascending one</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv331LineBreakingIntoParWithMinWidth6string">
+<span id="_CPPv231LineBreakingIntoParWithMinWidth6string"></span><span id="LineBreakingIntoParWithMinWidth__string"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1acde8499a2f404a839dddaef55beaad5f"></span>string <code class="descname">LineBreakingIntoParWithMinWidth</code><span class="sig-paren">(</span>string <em>str</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv331LineBreakingIntoParWithMinWidth6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Breaking a string into multiple lines. </p>
+<p>Currently all spaces and tabs which are not followed by numbers are replace by carriage returns (\r). Therefore the algorithm creates a paragraph with minimum width.</p>
+<p>A generic solution would either implement the real deal</p>
+<p>Knuth, Donald E.; Plass, Michael F. (1981), Breaking paragraphs into lines Software: Practice and Experience 11 (11): 1119-1184, doi:10.1002/spe.4380111102.</p>
+<p>or translate <a class="reference external" href="http://api.kde.org/4.x-api/kdelibs-apidocs/kdeui/html/classKWordWrap.html">1</a> from C++ to Igor Pro. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv311FindIndizes4wave8variable6string8variable6string8variable8variable8variable8variable8variable">
+<span id="_CPPv211FindIndizes4wave8variable6string8variable6string8variable8variable8variable8variable8variable"></span><span id="FindIndizes__wave.variable.string.variable.string.variable.variable.variable.variable.variable"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a96ad657bd5d3c18e158bfa93f7ffa274"></span>wave <code class="descname">FindIndizes</code><span class="sig-paren">(</span>wave <em>numericOrTextWave</em>, variable <em>col</em> = defaultValue, string <em>colLabel</em> = defaultValue, variable <em>var</em> = defaultValue, string <em>str</em> = defaultValue, variable <em>prop</em> = defaultValue, variable <em>startRow</em> = defaultValue, variable <em>endRow</em> = defaultValue, variable <em>startLayer</em> = defaultValue, variable <em>endLayer</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv311FindIndizes4wave8variable6string8variable6string8variable8variable8variable8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Extended version of <code class="docutils literal notranslate"><span class="pre">FindValue</span></code> </p>
+<p>Allows to search only the specified column for a value and returns all matching row indizes in a wave. By defaults only looks into the first layer for backward compatibility reasons.</p>
+<p>Exactly one of <code class="docutils literal notranslate"><span class="pre">var</span></code>/<code class="docutils literal notranslate"><span class="pre">str</span></code>/<code class="docutils literal notranslate"><span class="pre">prop</span></code> has to be given except for <code class="docutils literal notranslate"><span class="pre">prop</span> <span class="pre">==</span> <span class="pre">PROP_MATCHES_VAR_BIT_MASK</span></code> and <code class="docutils literal notranslate"><span class="pre">prop</span> <span class="pre">==</span> <span class="pre">PROP_NOT_MATCHES_VAR_BIT_MASK</span></code> which requires a <code class="docutils literal notranslate"><span class="pre">var</span></code>/<code class="docutils literal notranslate"><span class="pre">str</span></code> parameter as well.</p>
+<p>Exactly one of <code class="docutils literal notranslate"><span class="pre">col</span></code>/<code class="docutils literal notranslate"><span class="pre">colLabel</span></code> has to be given.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>A wave with the row indizes of the found values. An invalid wave reference if the value could not be found. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">numericOrTextWave</span></code>: wave to search in </li>
+<li><code class="docutils literal notranslate"><span class="pre">col</span></code>: [optional] column to search in only </li>
+<li><code class="docutils literal notranslate"><span class="pre">colLabel</span></code>: [optional] column label to search in only </li>
+<li><code class="docutils literal notranslate"><span class="pre">var</span></code>: [optional] numeric value to search </li>
+<li><code class="docutils literal notranslate"><span class="pre">str</span></code>: [optional] string value to search </li>
+<li><code class="docutils literal notranslate"><span class="pre">prop</span></code>: [optional] property to search, see FindIndizesProps </li>
+<li><code class="docutils literal notranslate"><span class="pre">startRow</span></code>: [optional] starting row to restrict the search to </li>
+<li><code class="docutils literal notranslate"><span class="pre">endRow</span></code>: [optional] ending row to restrict the search to </li>
+<li><code class="docutils literal notranslate"><span class="pre">startLayer</span></code>: [optional, defaults to zero] starting layer to restrict search to </li>
+<li><code class="docutils literal notranslate"><span class="pre">endLayer</span></code>: [optional, defaults to zero] ending layer to restrict search to</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv316UniqueDataFolder5dfref6string">
+<span id="_CPPv216UniqueDataFolder5dfref6string"></span><span id="UniqueDataFolder__dfref.string"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1ac904e1ade29026628e466fe998fb4358"></span><a class="reference internal" href="#_CPPv316UniqueDataFolder5dfref6string" title="UniqueDataFolder::dfr">dfr</a> <code class="descname">UniqueDataFolder</code><span class="sig-paren">(</span>dfref <em>dfr</em>, string <em>baseName</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv316UniqueDataFolder5dfref6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns a reference to a newly created datafolder. </p>
+<p>Basically a datafolder aware version of UniqueName for datafolders</p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">dfr</span></code>: datafolder reference where the new datafolder should be created </li>
+<li><code class="docutils literal notranslate"><span class="pre">baseName</span></code>: first part of the datafolder, might be shortend due to Igor Pro limitations </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv320UniqueDataFolderName5dfref6string">
+<span id="_CPPv220UniqueDataFolderName5dfref6string"></span><span id="UniqueDataFolderName__dfref.string"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a04472ac28f5c004cbc1ad3fc8d4f79a5"></span>string <code class="descname">UniqueDataFolderName</code><span class="sig-paren">(</span>dfref <em>dfr</em>, string <em>baseName</em><span class="sig-paren">)</span><br /></dt>
+<dd><p>Return a unique data folder name which does not exist in dfr. </p>
+<p>If you want to have the datafolder created for you and don’t need a threadsafe function, use <a class="reference internal" href="#_m_i_e_s___utilities_8ipf_1ac904e1ade29026628e466fe998fb4358"><span class="std std-ref">UniqueDataFolder()</span></a> instead.</p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">dfr</span></code>: datafolder to search </li>
+<li><code class="docutils literal notranslate"><span class="pre">baseName</span></code>: first part of the datafolder, must be a <em>valid</em> Igor Pro object name</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv314UniqueWaveName5dfref6string">
+<span id="_CPPv214UniqueWaveName5dfref6string"></span><span id="UniqueWaveName__dfref.string"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1aecf3cff75b4fd770e7e921e6d5b0b117"></span>string <code class="descname">UniqueWaveName</code><span class="sig-paren">(</span>dfref <em>dfr</em>, string <em>baseName</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv314UniqueWaveName5dfref6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns a wave name not used in the given datafolder. </p>
+<p>Basically a datafolder aware version of UniqueName for datafolders</p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">dfr</span></code>: datafolder reference where the new datafolder should be created </li>
+<li><code class="docutils literal notranslate"><span class="pre">baseName</span></code>: first part of the wave name, might be shorted due to Igor Pro limitations </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv312RemovePrefix6string6string">
+<span id="_CPPv212RemovePrefix6string6string"></span><span id="RemovePrefix__string.string"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a2635b521e3e80922272cbf617e6ff1de"></span>string <code class="descname">RemovePrefix</code><span class="sig-paren">(</span>string <em>str</em>, string <em>startStr</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv312RemovePrefix6string6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Remove str with the first character removed, or if given with startStr removed. </p>
+<p>Same semantics as the RemoveEnding builtin </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv318SetDimensionLabels8WaveText4wave">
+<span id="_CPPv218SetDimensionLabels8WaveText4wave"></span><span id="SetDimensionLabels__WaveText.wave"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a1c2cee6274f31411bb185b29cdb93808"></span>variable <code class="descname">SetDimensionLabels</code><span class="sig-paren">(</span>WaveText <em>keys</em>, wave <em>values</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv318SetDimensionLabels8WaveText4wave" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set column dimension labels from the first row of the key wave. </p>
+<p>Specialized function from the experiment documentation file needed also in other places. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv310UniqueFile6string6string6string">
+<span id="_CPPv210UniqueFile6string6string6string"></span><span id="UniqueFile__string.string.string"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a0f6d8c7767667448e53c8855cf210f0d"></span>string <code class="descname">UniqueFile</code><span class="sig-paren">(</span>string <em>symbPath</em>, string <em>baseName</em>, string <em>suffix</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv310UniqueFile6string6string6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns a unique and non-existing file name. </p>
+<p><dl class="docutils">
+<dt><strong>Warning</strong></dt>
+<dd>This function must <em>not</em> be used for security relevant purposes, as for that the check-and-file-creation must be an atomic operation.</dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">symbPath</span></code>: symbolic path </li>
+<li><code class="docutils literal notranslate"><span class="pre">baseName</span></code>: base name of the file, must not be empty </li>
+<li><code class="docutils literal notranslate"><span class="pre">suffix</span></code>: file suffix, e.g. “.txt”, must not be empty </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv317GetExperimentNamev">
+<span id="_CPPv217GetExperimentNamev"></span><span id="GetExperimentName"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1acef9080de18c3031de55d8803620fad0"></span>string <code class="descname">GetExperimentName</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv317GetExperimentNamev" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return the name of the experiment without the file suffix. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv312GetTimeStamp8variable8variable">
+<span id="_CPPv212GetTimeStamp8variable8variable"></span><span id="GetTimeStamp__variable.variable"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a08928b31b9057f2098cfa7721f5f0a3a"></span>string <code class="descname">GetTimeStamp</code><span class="sig-paren">(</span>variable <em>secondsSinceIgorEpoch</em> = defaultValue, variable <em>humanReadable</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv312GetTimeStamp8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return a formatted timestamp of the form <code class="docutils literal notranslate"><span class="pre">YY_MM_DD_HHMMSS</span></code> </p>
+<p>Uses the local time zone and <em>not</em> UTC.</p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">humanReadable</span></code>: [optional, default to false] Return a format viable for display in a GUI </li>
+<li><code class="docutils literal notranslate"><span class="pre">secondsSinceIgorEpoch</span></code>: [optional, defaults to number of seconds until now] Seconds since the Igor Pro epoch (1/1/1904) </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv328CALL_FUNCTION_LIST_PROTOTYPE6string">
+<span id="_CPPv228CALL_FUNCTION_LIST_PROTOTYPE6string"></span><span id="CALL_FUNCTION_LIST_PROTOTYPE__string"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a59794f4f5f3cf0f754d941f854d77f72"></span>variable <code class="descname">CALL_FUNCTION_LIST_PROTOTYPE</code><span class="sig-paren">(</span>string <em>str</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv328CALL_FUNCTION_LIST_PROTOTYPE6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Function prototype for use with <a class="reference internal" href="#_m_i_e_s___utilities_8ipf_1a8b1dacdf9e9c080a3f2e2b28e8bc9af5"><span class="std std-ref">CallFunctionForEachListItem</span></a>. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv327CallFunctionForEachListItem28CALL_FUNCTION_LIST_PROTOTYPE6string6string">
+<span id="_CPPv227CallFunctionForEachListItem28CALL_FUNCTION_LIST_PROTOTYPE6string6string"></span><span id="CallFunctionForEachListItem__CALL_FUNCTION_LIST_PROTOTYPE.string.string"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a8b1dacdf9e9c080a3f2e2b28e8bc9af5"></span>variable <code class="descname">CallFunctionForEachListItem</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv328CALL_FUNCTION_LIST_PROTOTYPE6string" title="CALL_FUNCTION_LIST_PROTOTYPE">CALL_FUNCTION_LIST_PROTOTYPE</a> <em>f</em>, string <em>list</em>, string <em>sep</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv327CallFunctionForEachListItem28CALL_FUNCTION_LIST_PROTOTYPE6string6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Convenience function to call the function f with each list item. </p>
+<p>The function’s type must be <a class="reference internal" href="#_m_i_e_s___utilities_8ipf_1a59794f4f5f3cf0f754d941f854d77f72"><span class="std std-ref">CALL_FUNCTION_LIST_PROTOTYPE</span></a> where the return type is ignored. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv312IsDriveValid6string">
+<span id="_CPPv212IsDriveValid6string"></span><span id="IsDriveValid__string"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a8669583b4ea58b8fac99058d26e0d1d8"></span>variable <code class="descname">IsDriveValid</code><span class="sig-paren">(</span>string <em>absPath</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv312IsDriveValid6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return true if the given absolute path refers to an existing drive letter. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv318CreateFolderOnDisk6string">
+<span id="_CPPv218CreateFolderOnDisk6string"></span><span id="CreateFolderOnDisk__string"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1ac5fe706b4bf6afd4e77df63b12dd437e"></span>variable <code class="descname">CreateFolderOnDisk</code><span class="sig-paren">(</span>string <em>absPath</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv318CreateFolderOnDisk6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Create a folder recursively on disk given an absolute path. </p>
+<p>If you pass windows style paths using backslashes remember to always <em>double</em> them. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv311GetRowIndex4wave8variable6string10WaveOrNull">
+<span id="_CPPv211GetRowIndex4wave8variable6string10WaveOrNull"></span><span id="GetRowIndex__wave.variable.string.WaveOrNull"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1aefe60e71c601f92a6ee7d64340a3f2e4"></span>variable <code class="descname">GetRowIndex</code><span class="sig-paren">(</span>wave <em>wv</em>, variable <em>val</em> = defaultValue, string <em>str</em> = defaultValue, WaveOrNull <em>refWave</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv311GetRowIndex4wave8variable6string10WaveOrNull" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return the row index of the given value, string converted to a variable, or wv. </p>
+<p>Assumes wv being one dimensional </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv318ConvertListOfWaves6string">
+<span id="_CPPv218ConvertListOfWaves6string"></span><span id="ConvertListOfWaves__string"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1ac1e9b653e725d398fc7506914b8d4143"></span>wave <code class="descname">ConvertListOfWaves</code><span class="sig-paren">(</span>string <em>list</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv318ConvertListOfWaves6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Converts a list of strings referencing waves with full paths to a wave of wave references. </p>
+<p>It is assumed that all created wave references refer to an <em>existing</em> wave </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv321ConvertListToTextWave6string6string">
+<span id="_CPPv221ConvertListToTextWave6string6string"></span><span id="ConvertListToTextWave__string.string"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1af9294a1739633506b2809cef868cfbcf"></span>wave <code class="descname">ConvertListToTextWave</code><span class="sig-paren">(</span>string <em>list</em>, string <em>listSepString</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv321ConvertListToTextWave6string6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Convert a list of strings to a text wave. </p>
+<p>Counterpart <dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><a class="reference internal" href="#_m_i_e_s___utilities_8ipf_1a8c2b9eb2826200b3c446e7fddc4f7d31"><span class="std std-ref">TextWaveToList</span></a> </dd>
+<dt><strong>See</strong></dt>
+<dd><a class="reference internal" href="#_m_i_e_s___utilities_8ipf_1af736a259593597875ea229dfda364b68"><span class="std std-ref">ListToNumericWave</span></a> </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv312ListFromList6string8variable8variable6string">
+<span id="_CPPv212ListFromList6string8variable8variable6string"></span><span id="ListFromList__string.variable.variable.string"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a68158e32633bfa84cefc8a02217c0e19"></span>string <code class="descname">ListFromList</code><span class="sig-paren">(</span>string <em>list</em>, variable <em>itemBegin</em>, variable <em>itemEnd</em>, string <em>listSep</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv312ListFromList6string8variable8variable6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>return a subset of the input list </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>a list with elements ranging from itemBegin to itemEnd of the input list </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">list</span></code>: input list </li>
+<li><code class="docutils literal notranslate"><span class="pre">itemBegin</span></code>: first item </li>
+<li><code class="docutils literal notranslate"><span class="pre">itemEnd</span></code>: last item </li>
+<li><code class="docutils literal notranslate"><span class="pre">listSep</span></code>: [optional] list Separation character. default is “;”</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv317GetListDifference6string6string">
+<span id="_CPPv217GetListDifference6string6string"></span><span id="GetListDifference__string.string"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1ae3f10e3789b8735e397cab0eb25717ef"></span>string <code class="descname">GetListDifference</code><span class="sig-paren">(</span>string <em>list1</em>, string <em>list2</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv317GetListDifference6string6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>calculates the relative complement of list2 in list1 </p>
+<p>Every list item of <code class="docutils literal notranslate"><span class="pre">list1</span></code> must be in <code class="docutils literal notranslate"><span class="pre">list2</span></code>.</p>
+<p>also called the set-theoretic difference of list1 and list2 <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>difference as list </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv320GetListOfDataFolders5dfref8variable">
+<span id="_CPPv220GetListOfDataFolders5dfref8variable"></span><span id="GetListOfDataFolders__dfref.variable"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a6dafb1c6af727c60f3296a1662759590"></span>string <code class="descname">GetListOfDataFolders</code><span class="sig-paren">(</span>dfref <em>dfr</em>, variable <em>absolute</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv320GetListOfDataFolders5dfref8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return a list of datafolders located in <code class="docutils literal notranslate"><span class="pre">dfr</span></code> </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">dfr</span></code>: base folder </li>
+<li><code class="docutils literal notranslate"><span class="pre">absolute</span></code>: [optional, defaults to false] return absolute paths </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv311GetBaseName6string6string">
+<span id="_CPPv211GetBaseName6string6string"></span><span id="GetBaseName__string.string"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1ae282b7c6bca56413716cb947a7361891"></span>string <code class="descname">GetBaseName</code><span class="sig-paren">(</span>string <em>filePathWithSuffix</em>, string <em>sep</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv311GetBaseName6string6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return the base name of the file. </p>
+<p>Given <code class="docutils literal notranslate"><span class="pre">path/file.suffix</span></code> this gives <code class="docutils literal notranslate"><span class="pre">file</span></code>.</p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">filePathWithSuffix</span></code>: full path </li>
+<li><code class="docutils literal notranslate"><span class="pre">sep</span></code>: [optional, defaults to “:”] character separating the path components </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv313GetFileSuffix6string6string">
+<span id="_CPPv213GetFileSuffix6string6string"></span><span id="GetFileSuffix__string.string"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1adaf2e6492b4a69f1469a4dbf8c68a043"></span>string <code class="descname">GetFileSuffix</code><span class="sig-paren">(</span>string <em>filePathWithSuffix</em>, string <em>sep</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv313GetFileSuffix6string6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return the file extension (suffix) </p>
+<p>Given <code class="docutils literal notranslate"><span class="pre">path/file.suffix</span></code> this gives <code class="docutils literal notranslate"><span class="pre">suffix</span></code>.</p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">filePathWithSuffix</span></code>: full path </li>
+<li><code class="docutils literal notranslate"><span class="pre">sep</span></code>: [optional, defaults to “:”] character separating the path components </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv39GetFolder6string6string">
+<span id="_CPPv29GetFolder6string6string"></span><span id="GetFolder__string.string"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1aca6dce2200aff5ccadabd60d2b966164"></span>string <code class="descname">GetFolder</code><span class="sig-paren">(</span>string <em>filePathWithSuffix</em>, string <em>sep</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv39GetFolder6string6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return the folder of the file. </p>
+<p>Given <code class="docutils literal notranslate"><span class="pre">path/file.suffix</span></code> this gives <code class="docutils literal notranslate"><span class="pre">path</span></code>.</p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">filePathWithSuffix</span></code>: full path </li>
+<li><code class="docutils literal notranslate"><span class="pre">sep</span></code>: [optional, defaults to “:”] character separating the path components </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv37GetFile6string6string">
+<span id="_CPPv27GetFile6string6string"></span><span id="GetFile__string.string"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a3f8c2314ac69c2d2996a85803999cacb"></span>string <code class="descname">GetFile</code><span class="sig-paren">(</span>string <em>filePathWithSuffix</em>, string <em>sep</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv37GetFile6string6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return the filename with extension. </p>
+<p>Given <code class="docutils literal notranslate"><span class="pre">path/file.suffix</span></code> this gives <code class="docutils literal notranslate"><span class="pre">file.suffix</span></code>.</p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">filePathWithSuffix</span></code>: full path </li>
+<li><code class="docutils literal notranslate"><span class="pre">sep</span></code>: [optional, defaults to “:”] character separating the path components </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv314GetWindowsPath6string">
+<span id="_CPPv214GetWindowsPath6string"></span><span id="GetWindowsPath__string"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a96bce9fe68faa625f250f51788bfcd00"></span>string <code class="descname">GetWindowsPath</code><span class="sig-paren">(</span>string <em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv314GetWindowsPath6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return the path converted to a windows style path. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv36SetBit8variable8variable">
+<span id="_CPPv26SetBit8variable8variable"></span><span id="SetBit__variable.variable"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a5f83165f8c60adde2528eb5d5aa51167"></span>variable <code class="descname">SetBit</code><span class="sig-paren">(</span>variable <em>var</em>, variable <em>bit</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv36SetBit8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set the given bit mask in var. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv38ClearBit8variable8variable">
+<span id="_CPPv28ClearBit8variable8variable"></span><span id="ClearBit__variable.variable"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1afe5a1b70d29ef8ecdb31df2f7d5830bf"></span>variable <code class="descname">ClearBit</code><span class="sig-paren">(</span>variable <em>var</em>, variable <em>bit</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv38ClearBit8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Clear the given bit mask in var. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv39BuildList6string8variable8variable8variable">
+<span id="_CPPv29BuildList6string8variable8variable8variable"></span><span id="BuildList__string.variable.variable.variable"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1abd8b81f73424c671e9443810622b58b9"></span>string <code class="descname">BuildList</code><span class="sig-paren">(</span>string <em>format</em>, variable <em>start</em>, variable <em>step</em>, variable <em>stop</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv39BuildList6string8variable8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Create a list of strings using the given format in the given range. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">format</span></code>: formatting string, must have exactly one specifier which accepts a number </li>
+<li><code class="docutils literal notranslate"><span class="pre">start</span></code>: first point of the range </li>
+<li><code class="docutils literal notranslate"><span class="pre">step</span></code>: step size for iterating over the range </li>
+<li><code class="docutils literal notranslate"><span class="pre">stop</span></code>: last point of the range </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv320GetLastNonEmptyEntry8WaveText6string8variable">
+<span id="_CPPv220GetLastNonEmptyEntry8WaveText6string8variable"></span><span id="GetLastNonEmptyEntry__WaveText.string.variable"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1ac95a42fc996946f8593e3e6f2753e78c"></span>string <code class="descname">GetLastNonEmptyEntry</code><span class="sig-paren">(</span>WaveText <em>wv</em>, string <em>colLabel</em>, variable <em>endRow</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv320GetLastNonEmptyEntry8WaveText6string8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Searches the column colLabel in wv for an non-empty entry with a row number smaller or equal to endRow. </p>
+<p>Return an empty string if nothing could be found.</p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">wv</span></code>: text wave to search in </li>
+<li><code class="docutils literal notranslate"><span class="pre">colLabel</span></code>: column label from wv </li>
+<li><code class="docutils literal notranslate"><span class="pre">endRow</span></code>: maximum row index to consider </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv313GetFreeMemoryv">
+<span id="_CPPv213GetFreeMemoryv"></span><span id="GetFreeMemory"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a3f7d8bef223395d9a2d3817d58ceb615"></span>variable <code class="descname">GetFreeMemory</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv313GetFreeMemoryv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return the amount of free memory in GB. </p>
+<p>Due to memory fragmentation you can not assume that you can still create a wave occupying as much space as returned. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv318RemoveEndingRegExp6string6string">
+<span id="_CPPv218RemoveEndingRegExp6string6string"></span><span id="RemoveEndingRegExp__string.string"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a6a82ce1218def1e5a94dbfb7448ab4fc"></span>string <code class="descname">RemoveEndingRegExp</code><span class="sig-paren">(</span>string <em>str</em>, string <em>endingRegExp</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv318RemoveEndingRegExp6string6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Remove the given reguluar expression from the end of the string. </p>
+<p>In case the regular expression does not match, the string is returned unaltered.</p>
+<p>See also <code class="docutils literal notranslate"><span class="pre">DisplayHelpTopic</span> <span class="pre">&quot;Regular</span> <span class="pre">Expressions&quot;</span></code>. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv318SearchWordInString6string6stringP6stringP6string">
+<span id="_CPPv218SearchWordInString6string6stringP6stringP6string"></span><span id="SearchWordInString__string.string.stringP.stringP"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a68915b396fb8e78421685779abf07895"></span>variable <code class="descname">SearchWordInString</code><span class="sig-paren">(</span>string <em>str</em>, string <em>word</em>, string *<em>prefix</em> = defaultValue, string *<em>suffix</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv318SearchWordInString6string6stringP6stringP6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Search for a Word inside a String. </p>
+<p><p>example of the usage of SearchStringBase (basically the same as WM GrepString()) </p>
+<div class="highlight-igorpro notranslate"><div class="highlight"><pre><span></span><span class="kr">Function</span> SearchString(str, substring)
+    <span class="kt">string</span> str, substring
+
+    ASSERT(<span class="nf">strlen</span>(substring) &gt; 0, <span class="s">&quot;supplied substring has zero length&quot;</span>)
+    <span class="kt">WAVE</span>/Z/T wv = SearchStringBase(str, <span class="s">&quot;(.*)\\Q&quot;</span> + substring + <span class="s">&quot;\\E(.*)&quot;</span>)
+
+    <span class="k">return</span> <span class="nf">WaveExists</span>(wv)
+<span class="kr">End</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">str</span></code>: input text in which word should be searched </li>
+<li><code class="docutils literal notranslate"><span class="pre">word</span></code>: searchpattern (non-regex-sensitive) </li>
+<li><code class="docutils literal notranslate"><span class="pre">prefix</span></code>: (optional) string preceding word. (“” for unmatched pattern) </li>
+<li><code class="docutils literal notranslate"><span class="pre">suffix</span></code>: (optional) string succeeding word.</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>1 if word was found in str and word was not “”. 0 if not. </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv316SearchStringBase6string6string">
+<span id="_CPPv216SearchStringBase6string6string"></span><span id="SearchStringBase__string.string"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1ad01b1846e60e99e5cb5368adacea46db"></span>wave <code class="descname">SearchStringBase</code><span class="sig-paren">(</span>string <em>str</em>, string <em>regex</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv316SearchStringBase6string6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>More advanced version of SplitString. </p>
+<p>supports 6 subpatterns, specified by curly brackets in regex</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>text wave containing subpatterns of regex call </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv315CountSubstrings6string6string">
+<span id="_CPPv215CountSubstrings6string6string"></span><span id="CountSubstrings__string.string"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a4227f5ace5c7e7247785a75effc73af8"></span>variable <code class="descname">CountSubstrings</code><span class="sig-paren">(</span>string <em>str</em>, string <em>pattern</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv315CountSubstrings6string6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Search for the occurence of pattern in string. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>number of occurences </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv321GetRowWithSameContent8WaveText8WaveText8variable">
+<span id="_CPPv221GetRowWithSameContent8WaveText8WaveText8variable"></span><span id="GetRowWithSameContent__WaveText.WaveText.variable"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a7b4ae131c436a629ccfbe68f6c44e73a"></span>variable <code class="descname">GetRowWithSameContent</code><span class="sig-paren">(</span>WaveText <em>refWave</em>, WaveText <em>sourceWave</em>, variable <em>row</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv321GetRowWithSameContent8WaveText8WaveText8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Search the row in refWave which has the same contents as the given row in the sourceWave. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv320InPlaceRandomShuffle4wave8variable">
+<span id="_CPPv220InPlaceRandomShuffle4wave8variable"></span><span id="InPlaceRandomShuffle__wave.variable"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1aacbb6f5908d389cd22e3e0570bcb51c8"></span>variable <code class="descname">InPlaceRandomShuffle</code><span class="sig-paren">(</span>wave <em>inwave</em>, variable <em>noiseGenMode</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv320InPlaceRandomShuffle4wave8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Random shuffle of the wave contents. </p>
+<p>Function was taken from: <a class="reference external" href="http://www.igorexchange.com/node/1614">http://www.igorexchange.com/node/1614</a> author s.r.chinn</p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">inwave</span></code>: The wave that will have its rows shuffled. </li>
+<li><code class="docutils literal notranslate"><span class="pre">noiseGenMode</span></code>: [optional, defaults to <a class="reference internal" href="_m_i_e_s___constants_8ipf.html#_m_i_e_s___constants_8ipf_1a80dda1ff1880b056db1896ed264c2fb1"><span class="std std-ref">NOISE_GEN_LINEAR_CONGRUENTIAL</span></a>] type of RNG to use </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv319Convert1DWaveToList4wave">
+<span id="_CPPv219Convert1DWaveToList4wave"></span><span id="Convert1DWaveToList__wave"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a9719a4a2d6ca49ed62c7505b044b1770"></span>string <code class="descname">Convert1DWaveToList</code><span class="sig-paren">(</span>wave <em>wv</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv319Convert1DWaveToList4wave" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Convert a 1D numeric wave to a list. </p>
+<p>Counterpart <dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><a class="reference internal" href="#_m_i_e_s___utilities_8ipf_1af736a259593597875ea229dfda364b68"><span class="std std-ref">ListToNumericWave</span></a> Similar </dd>
+<dt><strong>See</strong></dt>
+<dd><a class="reference internal" href="#_m_i_e_s___utilities_8ipf_1ad6d07502ce3fcfe569b596376fe52e78"><span class="std std-ref">NumericWaveToList</span></a> </dd>
+<dt><strong>See</strong></dt>
+<dd><a class="reference internal" href="#_m_i_e_s___utilities_8ipf_1af736a259593597875ea229dfda364b68"><span class="std std-ref">ListToNumericWave</span></a> </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv315UniqueTraceName6string6string">
+<span id="_CPPv215UniqueTraceName6string6string"></span><span id="UniqueTraceName__string.string"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a7a92f59a3edcc0563b56464bd12476c0"></span>string <code class="descname">UniqueTraceName</code><span class="sig-paren">(</span>string <em>graph</em>, string <em>baseName</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv315UniqueTraceName6string6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return a unique trace name in the graph. </p>
+<p>Remember that it might be necessary to call <code class="docutils literal notranslate"><span class="pre">DoUpdate</span></code> if you added possibly colliding trace names in the current function run.</p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">graph</span></code>: existing graph </li>
+<li><code class="docutils literal notranslate"><span class="pre">baseName</span></code>: base name of the trace, must not be empty </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv324WaveListHasSameWaveNames6stringP6string">
+<span id="_CPPv224WaveListHasSameWaveNames6stringP6string"></span><span id="WaveListHasSameWaveNames__string.stringP"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a3ddf7af55c5d4201861906d0739d01b1"></span>variable <code class="descname">WaveListHasSameWaveNames</code><span class="sig-paren">(</span>string <em>listOfWaves</em>, string *<em>baseName</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv324WaveListHasSameWaveNames6stringP6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Checks wether the wave names of all waves in the list are equal Returns 1 if true, 0 if false and NaN for empty lists. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">listOfWaves</span></code>: list of waves with full path </li>
+<li><code class="docutils literal notranslate"><span class="pre">baseName</span></code>: Returns the common baseName if the list has one, otherwise this will be an empty string. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv323IsBackgroundTaskRunning6string">
+<span id="_CPPv223IsBackgroundTaskRunning6string"></span><span id="IsBackgroundTaskRunning__string"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a2b9212df07b847c7a21ed240a043f30a"></span>variable <code class="descname">IsBackgroundTaskRunning</code><span class="sig-paren">(</span>string <em>task</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv323IsBackgroundTaskRunning6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Check wether the given background task is currently running. </p>
+<p>Note: Background functions which are currently waiting for their period to be reached are also running.</p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">task</span></code>: Named background task identifier, this is <em>not</em> the function set with <code class="docutils literal notranslate"><span class="pre">proc=</span></code> </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv38PopCount8variable">
+<span id="_CPPv28PopCount8variable"></span><span id="PopCount__variable"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a39f22f11f273a14461961f7cd452b7e8"></span>variable <code class="descname">PopCount</code><span class="sig-paren">(</span>variable <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv38PopCount8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Count the number of ones in <code class="docutils literal notranslate"><span class="pre">value</span></code> </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">value</span></code>: will be truncated to an integer value </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv313NewRandomSeedv">
+<span id="_CPPv213NewRandomSeedv"></span><span id="NewRandomSeed"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a7772fd99baab9df21eb31b087d2d7818"></span>variable <code class="descname">NewRandomSeed</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv313NewRandomSeedv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Initializes the random number generator with a new seed between (0,1] The time base is assumed to be at least 0.1 microsecond precise, so a new seed is available every 0.1 microsecond. </p>
+<p>Usage example for the case that one needs n non reproducible random numbers. Whenever the following code block is executed a new seed is set, resulting in a different series of numbers</p>
+<p><div class="highlight-igorpro notranslate"><div class="highlight"><pre><span></span><span class="nc">Make</span>/D/N=(n) newRandoms
+NewRandomSeed() <span class="c1">// Initialize random number series with a new seed</span>
+newRandoms[] = GetReproducibleRandom() <span class="c1">// Get n randoms from the new series</span>
+</pre></div>
+</div>
+ </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv321GetReproducibleRandomv">
+<span id="_CPPv221GetReproducibleRandomv"></span><span id="GetReproducibleRandom"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1ac8f44eeb5911fbba651d7590c10ce3a1"></span>variable <code class="descname">GetReproducibleRandom</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv321GetReproducibleRandomv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return a random value in the range (0,1] which can be used as a seed for <code class="docutils literal notranslate"><span class="pre">SetRandomSeed</span></code> </p>
+<p>Return a reproducible random number depending on the RNG seed. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv316GetUniqueIntegerv">
+<span id="_CPPv216GetUniqueIntegerv"></span><span id="GetUniqueInteger"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a467799116fdc00550dbd538b68888ae2"></span>variable <code class="descname">GetUniqueInteger</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv316GetUniqueIntegerv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return a unique integer. </p>
+<p>The returned values can <em>not</em> be used for statistical purposes as the distribution is not uniform anymore. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv323AddPrefixToEachListItem6string6string">
+<span id="_CPPv223AddPrefixToEachListItem6string6string"></span><span id="AddPrefixToEachListItem__string.string"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1ae06ce11a65d995a76c4c8a66b95285fe"></span>string <code class="descname">AddPrefixToEachListItem</code><span class="sig-paren">(</span>string <em>prefix</em>, string <em>list</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv323AddPrefixToEachListItem6string6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Add a string prefix to each list item and return the new list. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv324RemovePrefixFromListItem6string6string6string">
+<span id="_CPPv224RemovePrefixFromListItem6string6string6string"></span><span id="RemovePrefixFromListItem__string.string.string"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1ad686192dcb0a7481dab14d30ef46dc96"></span>string <code class="descname">RemovePrefixFromListItem</code><span class="sig-paren">(</span>string <em>prefix</em>, string <em>list</em>, string <em>listSep</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv324RemovePrefixFromListItem6string6string6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Remove a string prefix from each list item and return the new list. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv317FuncRefIsAssigned6string">
+<span id="_CPPv217FuncRefIsAssigned6string"></span><span id="FuncRefIsAssigned__string"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a8a4283ac24ef15cfe852824163fa535d"></span>variable <code class="descname">FuncRefIsAssigned</code><span class="sig-paren">(</span>string <em>funcInfo</em><span class="sig-paren">)</span><br /></dt>
+<dd><p>Check wether the function reference points to the prototype function or to an assigned function. </p>
+<p>Due to Igor Pro limitations you need to pass the function info from <code class="docutils literal notranslate"><span class="pre">FuncRefInfo</span></code> and not the function reference itself.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>1 if pointing to prototype function, 0 otherwise </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv313DateTimeInUTCv">
+<span id="_CPPv213DateTimeInUTCv"></span><span id="DateTimeInUTC"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a7a00e19be174b3b4d19f6604f3731f99"></span>variable <code class="descname">DateTimeInUTC</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv313DateTimeInUTCv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return the seconds, including fractional part, since Igor Pro epoch (1/1/1904) in UTC time zone. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv319GetISO8601TimeStamp8variable8variable8variable">
+<span id="_CPPv219GetISO8601TimeStamp8variable8variable8variable"></span><span id="GetISO8601TimeStamp__variable.variable.variable"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1acab06495a61c5016a5fe156ad388c50e"></span>string <code class="descname">GetISO8601TimeStamp</code><span class="sig-paren">(</span>variable <em>secondsSinceIgorEpoch</em> = defaultValue, variable <em>numFracSecondsDigits</em> = defaultValue, variable <em>localTimeZone</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv319GetISO8601TimeStamp8variable8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return a string in ISO 8601 format with timezone UTC. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">secondsSinceIgorEpoch</span></code>: [optional, defaults to number of seconds until now] Seconds since the Igor Pro epoch (1/1/1904) in UTC </li>
+<li><code class="docutils literal notranslate"><span class="pre">numFracSecondsDigits</span></code>: [optional, defaults to zero] Number of sub-second digits </li>
+<li><code class="docutils literal notranslate"><span class="pre">localTimeZone</span></code>: [optional, defaults to false] Use the local time zone instead of UTC </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv39ParseUnit6stringP6stringP8variableP6string">
+<span id="_CPPv29ParseUnit6stringP6stringP8variableP6string"></span><span id="ParseUnit__string.stringP.variableP.stringP"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a2a183c21c3a75a0e517c7f7e46908e26"></span>variable <code class="descname">ParseUnit</code><span class="sig-paren">(</span>string <em>unitWithPrefix</em>, string *<em>prefix</em>, variable *<em>numPrefix</em>, string *<em>unit</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv39ParseUnit6stringP6stringP8variableP6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Parses a simple unit with prefix into its prefix and unit. </p>
+<p>Note: The currently allowed units are the SI base units [1] and other common derived units. And in accordance to SI definitions, “kg” is a <em>base</em> unit.</p>
+<p><table border="1" class="docutils">
+<colgroup>
+<col width="19%" />
+<col width="23%" />
+<col width="58%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Symbol</th>
+<th class="head">Numerical value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>yotta</td>
+<td>Y</td>
+<td>1e24</td>
+</tr>
+<tr class="row-odd"><td>zetta</td>
+<td>Z</td>
+<td>1e21</td>
+</tr>
+<tr class="row-even"><td>exa</td>
+<td>E</td>
+<td>1e18</td>
+</tr>
+<tr class="row-odd"><td>peta</td>
+<td>P</td>
+<td>1e15</td>
+</tr>
+<tr class="row-even"><td>tera</td>
+<td>T</td>
+<td>1e12</td>
+</tr>
+<tr class="row-odd"><td>giga</td>
+<td>G</td>
+<td>1e9</td>
+</tr>
+<tr class="row-even"><td>mega</td>
+<td>M</td>
+<td>1e6</td>
+</tr>
+<tr class="row-odd"><td>kilo</td>
+<td>k</td>
+<td>1e3</td>
+</tr>
+<tr class="row-even"><td>hecto</td>
+<td>h</td>
+<td>1e2</td>
+</tr>
+<tr class="row-odd"><td>deca</td>
+<td>da</td>
+<td>1e1</td>
+</tr>
+<tr class="row-even"><td>deci</td>
+<td>d</td>
+<td>1e-1</td>
+</tr>
+<tr class="row-odd"><td>centi</td>
+<td>c</td>
+<td>1e-2</td>
+</tr>
+<tr class="row-even"><td>milli</td>
+<td>m</td>
+<td>1e-3</td>
+</tr>
+<tr class="row-odd"><td>micro</td>
+<td>mu</td>
+<td>1e-6</td>
+</tr>
+<tr class="row-even"><td>nano</td>
+<td>n</td>
+<td>1e-9</td>
+</tr>
+<tr class="row-odd"><td>pico</td>
+<td>p</td>
+<td>1e-12</td>
+</tr>
+<tr class="row-even"><td>femto</td>
+<td>f</td>
+<td>1e-15</td>
+</tr>
+<tr class="row-odd"><td>atto</td>
+<td>a</td>
+<td>1e-18</td>
+</tr>
+<tr class="row-even"><td>zepto</td>
+<td>z</td>
+<td>1e-21</td>
+</tr>
+<tr class="row-odd"><td>yocto</td>
+<td>y</td>
+<td>1e-24</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">unitWithPrefix</span></code>: string to parse, examples are “ms” or “kHz” </li>
+<li><code class="docutils literal notranslate"><span class="pre">prefix</span></code>: symbol of decimal multipler of the unit, see below or [1] chapter 3 for the full list </li>
+<li><code class="docutils literal notranslate"><span class="pre">numPrefix</span></code>: numerical value of the decimal multiplier </li>
+<li><code class="docutils literal notranslate"><span class="pre">unit</span></code>: unit</li>
+</ul>
+</dd>
+</dl>
+</p>
+<p>[1]: 8th edition of the SI Brochure (2014), <a class="reference external" href="http://www.bipm.org/en/publications/si-brochure">http://www.bipm.org/en/publications/si-brochure</a> </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv325GetDecimalMultiplierValue6string">
+<span id="_CPPv225GetDecimalMultiplierValue6string"></span><span id="GetDecimalMultiplierValue__string"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1ad3afe852231b8568567f27eec6292678"></span>variable <code class="descname">GetDecimalMultiplierValue</code><span class="sig-paren">(</span>string <em>prefix</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv325GetDecimalMultiplierValue6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return the numerical value of a SI decimal multiplier. </p>
+<p><dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><a class="reference internal" href="#_m_i_e_s___utilities_8ipf_1a2a183c21c3a75a0e517c7f7e46908e26"><span class="std std-ref">ParseUnit</span></a> </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv318QuerySetIgorOption6string8variable">
+<span id="_CPPv218QuerySetIgorOption6string8variable"></span><span id="QuerySetIgorOption__string.variable"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a60dc2d5036f9120303d88fd28e34b119"></span>variable <code class="descname">QuerySetIgorOption</code><span class="sig-paren">(</span>string <em>name</em>, variable <em>globalSymbol</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv318QuerySetIgorOption6string8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Query a numeric option settable with <code class="docutils literal notranslate"><span class="pre">SetIgorOption</span></code> </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">name</span></code>: name of the keyword/setting </li>
+<li><code class="docutils literal notranslate"><span class="pre">globalSymbol</span></code>: [optional, defaults to false] <code class="docutils literal notranslate"><span class="pre">name</span></code> refers to a global symbol set via <code class="docutils literal notranslate"><span class="pre">poundDefine</span></code> </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv321ParseISO8601TimeStamp6string">
+<span id="_CPPv221ParseISO8601TimeStamp6string"></span><span id="ParseISO8601TimeStamp__string"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a49ecc9f1818e470856fcbe8ea26f4306"></span>variable <code class="descname">ParseISO8601TimeStamp</code><span class="sig-paren">(</span>string <em>timestamp</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv321ParseISO8601TimeStamp6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Parse a ISO8601 timestamp, e.g. created by <a class="reference internal" href="#_m_i_e_s___utilities_8ipf_1acab06495a61c5016a5fe156ad388c50e"><span class="std std-ref">GetISO8601TimeStamp()</span></a>, and returns the number of seconds, including fractional parts, since Igor Pro epoch (1/1/1904) in UTC time zone. </p>
+<p>Accepts also the following specialities:<ul class="simple">
+<li>no UTC timezone specifier (UTC timezone is still used)</li>
+<li>/<code class="docutils literal notranslate"><span class="pre">T</span></code> between date and time</li>
+<li>fractional seconds</li>
+<li><code class="docutils literal notranslate"><span class="pre">,</span></code>/<code class="docutils literal notranslate"><span class="pre">.</span></code> as decimal separator </li>
+</ul>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv326GetIgorExtensionFolderNamev">
+<span id="_CPPv226GetIgorExtensionFolderNamev"></span><span id="GetIgorExtensionFolderName"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a1a38220b009261b544a2dbef04046860"></span>string <code class="descname">GetIgorExtensionFolderName</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv326GetIgorExtensionFolderNamev" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return the disc folder name where the XOPs are located. </p>
+<p>Distinguishes between i386 and x64 Igor versions </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv312ResolveAlias6string6string">
+<span id="_CPPv212ResolveAlias6string6string"></span><span id="ResolveAlias__string.string"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1aeb15d7071f890a97bfc9b2ffe34f88d0"></span>string <code class="descname">ResolveAlias</code><span class="sig-paren">(</span>string <em>pathName</em>, string <em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv312ResolveAlias6string6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Recursively resolve shortcuts to files/directories. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>full path or an empty string if the file does not exist or the shortcut points to a non existing file/folder </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv316DeleteDuplicates4wave">
+<span id="_CPPv216DeleteDuplicates4wave"></span><span id="DeleteDuplicates__wave"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a97f19b39a5a502e44eacc553c23e6291"></span>wave <code class="descname">DeleteDuplicates</code><span class="sig-paren">(</span>wave <em>Wv</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv316DeleteDuplicates4wave" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return a text or numeric free wave with all duplicates deleted, might change the relative order of the entries. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv319DeleteDuplicatesTxt8WaveText">
+<span id="_CPPv219DeleteDuplicatesTxt8WaveText"></span><span id="DeleteDuplicatesTxt__WaveText"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a1b643eea3ae78fb7d3e8ce3459e90607"></span><em class="property">static</em> wave <code class="descname">DeleteDuplicatesTxt</code><span class="sig-paren">(</span>WaveText <em>txtWave</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv319DeleteDuplicatesTxt8WaveText" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return a text free wave with all duplicates removed, might change the relative order of the entries. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv319DeleteDuplicatesNum4wave">
+<span id="_CPPv219DeleteDuplicatesNum4wave"></span><span id="DeleteDuplicatesNum__wave"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1abca846b9098017241ce79dd80fc819b3"></span><em class="property">static</em> wave <code class="descname">DeleteDuplicatesNum</code><span class="sig-paren">(</span>wave <em>numWave</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv319DeleteDuplicatesNum4wave" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return a numeric free wave with all duplicates removed, might change the relative order of the entries. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv319GetArchitectureBitsv">
+<span id="_CPPv219GetArchitectureBitsv"></span><span id="GetArchitectureBits"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a1d83dd0074789e90293e5b7bc33be609"></span>variable <code class="descname">GetArchitectureBits</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv319GetArchitectureBitsv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return the number of bits of the architecture Igor Pro was built for. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv317GetIgorProVersionv">
+<span id="_CPPv217GetIgorProVersionv"></span><span id="GetIgorProVersion"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a6131be46d04acfb6cb9dc55ff539acf5"></span>string <code class="descname">GetIgorProVersion</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv317GetIgorProVersionv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return the Igor Pro version string. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv321GetUniqueSymbolicPath6string">
+<span id="_CPPv221GetUniqueSymbolicPath6string"></span><span id="GetUniqueSymbolicPath__string"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1abe7eae12945773c6be75d7a39b731c51"></span>string <code class="descname">GetUniqueSymbolicPath</code><span class="sig-paren">(</span>string <em>prefix</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv321GetUniqueSymbolicPath6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return a unique symbolic path name. </p>
+<p><div class="highlight-igorpro notranslate"><div class="highlight"><pre><span></span><span class="kt">string</span> symbPath = GetUniqueSymbolicPath()
+<span class="nc">NewPath</span>/Q/O $symbPath, <span class="s">&quot;C:&quot;</span>
+</pre></div>
+</div>
+ </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv330GetAllFilesRecursivelyFromPath6string6string">
+<span id="_CPPv230GetAllFilesRecursivelyFromPath6string6string"></span><span id="GetAllFilesRecursivelyFromPath__string.string"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1ad2bf90f6830e37603aa197e07c14235a"></span>string <code class="descname">GetAllFilesRecursivelyFromPath</code><span class="sig-paren">(</span>string <em>pathName</em>, string <em>extension</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv330GetAllFilesRecursivelyFromPath6string6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return a list of all files from the given symbolic path and its subfolders. The list is pipe (<code class="docutils literal notranslate"><span class="pre">|</span></code>) separated as the semicolon (<code class="docutils literal notranslate"><span class="pre">;</span></code>) is a valid character in filenames. </p>
+<p>Note: This function does <em>not</em> work on MacOSX as there filenames are allowed to have pipe symbols in them.</p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">pathName</span></code>: igor symbolic path to search recursively </li>
+<li><code class="docutils literal notranslate"><span class="pre">extension</span></code>: [optional, defaults to all files] file suffixes to search for </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv314TextWaveToList8WaveText6string6string8variable">
+<span id="_CPPv214TextWaveToList8WaveText6string6string8variable"></span><span id="TextWaveToList__WaveText.string.string.variable"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a8c2b9eb2826200b3c446e7fddc4f7d31"></span>string <code class="descname">TextWaveToList</code><span class="sig-paren">(</span>WaveText <em>txtWave</em>, string <em>sep</em> = defaultValue, string <em>colSep</em> = defaultValue, variable <em>stopOnEmpty</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv314TextWaveToList8WaveText6string6string8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Convert a text wave to string list. </p>
+<p><p>Counterpart </p>
+<dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>string with wave entries separated as list using given separators</dd>
+<dt><strong>See</strong></dt>
+<dd><a class="reference internal" href="#_m_i_e_s___utilities_8ipf_1af9294a1739633506b2809cef868cfbcf"><span class="std std-ref">ConvertListToTextWave</span></a> </dd>
+<dt><strong>See</strong></dt>
+<dd><a class="reference internal" href="#_m_i_e_s___utilities_8ipf_1ad6d07502ce3fcfe569b596376fe52e78"><span class="std std-ref">NumericWaveToList</span></a> </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">txtWave</span></code>: 1D or 2D input text wave </li>
+<li><code class="docutils literal notranslate"><span class="pre">sep</span></code>: separator for row entries </li>
+<li><code class="docutils literal notranslate"><span class="pre">colSep</span></code>: [optional, default = “,”] separator for column entries </li>
+<li><code class="docutils literal notranslate"><span class="pre">stopOnEmpty</span></code>: [optional, default = 0] when 1 stops generating the list when an empty string entry in txtWave is encountered </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv317NumericWaveToList4wave6string6string">
+<span id="_CPPv217NumericWaveToList4wave6string6string"></span><span id="NumericWaveToList__wave.string.string"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1ad6d07502ce3fcfe569b596376fe52e78"></span>string <code class="descname">NumericWaveToList</code><span class="sig-paren">(</span>wave <em>wv</em>, string <em>sep</em>, string <em>format</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv317NumericWaveToList4wave6string6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Convert a numeric wave to string list. </p>
+<p>Counterpart <dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><a class="reference internal" href="#_m_i_e_s___utilities_8ipf_1af736a259593597875ea229dfda364b68"><span class="std std-ref">ListToNumericWave</span></a> Similar </dd>
+<dt><strong>See</strong></dt>
+<dd><a class="reference internal" href="#_m_i_e_s___utilities_8ipf_1a9719a4a2d6ca49ed62c7505b044b1770"><span class="std std-ref">Convert1DWaveToList</span></a> </dd>
+<dt><strong>See</strong></dt>
+<dd><a class="reference internal" href="#_m_i_e_s___utilities_8ipf_1a8c2b9eb2826200b3c446e7fddc4f7d31"><span class="std std-ref">TextWaveToList</span></a></dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">wv</span></code>: numeric wave </li>
+<li><code class="docutils literal notranslate"><span class="pre">sep</span></code>: separator </li>
+<li><code class="docutils literal notranslate"><span class="pre">format</span></code>: [optional, defaults to <code class="docutils literal notranslate"><span class="pre">g</span></code>] sprintf conversion specifier </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv317ListToNumericWave6string6string8variable">
+<span id="_CPPv217ListToNumericWave6string6string8variable"></span><span id="ListToNumericWave__string.string.variable"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1af736a259593597875ea229dfda364b68"></span>wave <code class="descname">ListToNumericWave</code><span class="sig-paren">(</span>string <em>list</em>, string <em>sep</em>, variable <em>type</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv317ListToNumericWave6string6string8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Convert a list to a numeric wave. </p>
+<p>Counterpart <dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><a class="reference internal" href="#_m_i_e_s___utilities_8ipf_1ad6d07502ce3fcfe569b596376fe52e78"><span class="std std-ref">NumericWaveToList()</span></a>. </dd>
+<dt><strong>See</strong></dt>
+<dd><a class="reference internal" href="#_m_i_e_s___utilities_8ipf_1a8c2b9eb2826200b3c446e7fddc4f7d31"><span class="std std-ref">TextWaveToList</span></a></dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">list</span></code>: list with numeric entries </li>
+<li><code class="docutils literal notranslate"><span class="pre">sep</span></code>: separator </li>
+<li><code class="docutils literal notranslate"><span class="pre">type</span></code>: [optional, defaults to double precision float (<code class="docutils literal notranslate"><span class="pre">IGOR_TYPE_64BIT_FLOAT</span></code>)] type of the created numeric wave </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv326GetColfromWavewithDimLabel4wave6string">
+<span id="_CPPv226GetColfromWavewithDimLabel4wave6string"></span><span id="GetColfromWavewithDimLabel__wave.string"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a2dde72a7c032a191a570b7b5675fc459"></span>wave <code class="descname">GetColfromWavewithDimLabel</code><span class="sig-paren">(</span>wave <em>waveRef</em>, string <em>dimLabel</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv326GetColfromWavewithDimLabel4wave6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns the column from a multidimensional wave using the dimlabel. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv312MakeWaveFree4wave">
+<span id="_CPPv212MakeWaveFree4wave"></span><span id="MakeWaveFree__wave"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1aae463fa16b4760ffb09794fdba54e441"></span>wave <code class="descname">MakeWaveFree</code><span class="sig-paren">(</span>wave <em>wv</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv312MakeWaveFree4wave" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Turn a persistent wave into a free wave. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv315SetWaveDimLabel4wave6string8variable8variable">
+<span id="_CPPv215SetWaveDimLabel4wave6string8variable8variable"></span><span id="SetWaveDimLabel__wave.string.variable.variable"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a10b369a42384574c752b20b3f25d96ca"></span>variable <code class="descname">SetWaveDimLabel</code><span class="sig-paren">(</span>wave <em>wv</em>, string <em>list</em>, variable <em>dim</em>, variable <em>startPos</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv315SetWaveDimLabel4wave6string8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets the dimensionlabes of a wave. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">wv</span></code>: Wave to add dimLables </li>
+<li><code class="docutils literal notranslate"><span class="pre">list</span></code>: List of dimension labels, semicolon separated. </li>
+<li><code class="docutils literal notranslate"><span class="pre">dim</span></code>: Wave dimension, see, WaveDimensions </li>
+<li><code class="docutils literal notranslate"><span class="pre">startPos</span></code>: [optional, defaults to 0] First dimLabel index </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv312CheckIfClose8variable8variable8variable8variable">
+<span id="_CPPv212CheckIfClose8variable8variable8variable8variable"></span><span id="CheckIfClose__variable.variable.variable.variable"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1ad2fba114640a1e2276ebfb4c2e9607a4"></span>variable <code class="descname">CheckIfClose</code><span class="sig-paren">(</span>variable <em>var1</em>, variable <em>var2</em>, variable <em>tol</em> = defaultValue, variable <em>strong_or_weak</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv312CheckIfClose8variable8variable8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Compare two variables and determines if they are close. </p>
+<p>Based on the implementation of “Floating-point comparison algorithms” in the C++ Boost unit testing framework.</p>
+<p>Literature:<p> The art of computer programming (Vol II). Donald. E. Knuth. 0-201-89684-2. Addison-Wesley Professional; 3 edition, page 234 equation (34) and (35).</p>
+</p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">var1</span></code>: first variable </li>
+<li><code class="docutils literal notranslate"><span class="pre">var2</span></code>: second variable </li>
+<li><code class="docutils literal notranslate"><span class="pre">tol</span></code>: [optional, defaults to 1e-8] tolerance </li>
+<li><code class="docutils literal notranslate"><span class="pre">strong_or_weak</span></code>: [optional, defaults to strong] type of condition, can be zero for weak or 1 for strong </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv312CheckIfSmall8variable8variable">
+<span id="_CPPv212CheckIfSmall8variable8variable"></span><span id="CheckIfSmall__variable.variable"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a9155c2b508b88fe1d5d5891d4a08579f"></span>variable <code class="descname">CheckIfSmall</code><span class="sig-paren">(</span>variable <em>var</em>, variable <em>tol</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv312CheckIfSmall8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Test if a variable is small using the inequality <img class="math" src="../_images/math/95c607918888540391369197861fab22d036eaa3.png" alt="| var | &lt; | tol |"/>. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">var</span></code>: variable </li>
+<li><code class="docutils literal notranslate"><span class="pre">tol</span></code>: [optional, defaults to 1e-8] tolerance </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv325ListHasOnlyOneUniqueEntry6string6string">
+<span id="_CPPv225ListHasOnlyOneUniqueEntry6string6string"></span><span id="ListHasOnlyOneUniqueEntry__string.string"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a365ac27e2c6991738cab01651ddced01"></span>variable <code class="descname">ListHasOnlyOneUniqueEntry</code><span class="sig-paren">(</span>string <em>list</em>, string <em>sep</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv325ListHasOnlyOneUniqueEntry6string6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Check if all elements of the string list are the same. </p>
+<p>Returns true for lists with less than one element </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv319ExtractFromSubrange6string8variable">
+<span id="_CPPv219ExtractFromSubrange6string8variable"></span><span id="ExtractFromSubrange__string.variable"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1aae1a5a8e49a9dc0486a91bc515923794"></span>wave <code class="descname">ExtractFromSubrange</code><span class="sig-paren">(</span>string <em>listOfRanges</em>, variable <em>dim</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv319ExtractFromSubrange6string8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Extract the values of a list of subrange specifications See also DisplayHelpTopic “Subrange Display”. </p>
+<p>Example invocations: <div class="highlight-igorpro notranslate"><div class="highlight"><pre><span></span><span class="kt">wAVE</span> ranges = ExtractFromSubrange(<span class="s">&quot;[3,4]_[*]_[1, *;4]_[]_[5][]&quot;</span>, 0)
+</pre></div>
+</div>
+</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>2-dim wave with the start, stop, step as columns and rows as number of elements. Returns -1 instead of <code class="docutils literal notranslate"><span class="pre">*</span></code> or ``. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">listOfRanges</span></code>: list of subrange specifications separated by **_** </li>
+<li><code class="docutils literal notranslate"><span class="pre">dim</span></code>: dimension to extract</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv317IsValidObjectName6string">
+<span id="_CPPv217IsValidObjectName6string"></span><span id="IsValidObjectName__string"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a1a81874fc48ddda52ad27e29939f2af8"></span>variable <code class="descname">IsValidObjectName</code><span class="sig-paren">(</span>string <em>wvName</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv317IsValidObjectName6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Check if a name for an object adheres to the strict naming rules. </p>
+<p><dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><code class="docutils literal notranslate"><span class="pre">DisplayHelpTopic</span> <span class="pre">&quot;ObjectName&quot;</span></code> </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv313FindNextPower8variable8variable">
+<span id="_CPPv213FindNextPower8variable8variable"></span><span id="FindNextPower__variable.variable"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a1652054de6929383783b08a520a0a3e8"></span>variable <code class="descname">FindNextPower</code><span class="sig-paren">(</span>variable <em>a</em>, variable <em>p</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv313FindNextPower8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Find an integer <code class="docutils literal notranslate"><span class="pre">x</span></code> which is larger than <code class="docutils literal notranslate"><span class="pre">a</span></code> but the smallest possible power of <code class="docutils literal notranslate"><span class="pre">p</span></code>. </p>
+<p><img class="math" src="../_images/math/9b5003571be698b337202ffb54a6ab110c8dfc82.png" alt="x &gt; a"/> where <img class="math" src="../_images/math/784f0d4ecf71a37a8f88fb8b8ce33cfbda900ce9.png" alt="x = c^p"/> holds and <img class="math" src="../_images/math/510e0feecdd4a069497f5459289ff8c57f6e2789.png" alt="x"/> is the smallest possible value. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv319DeepCopyWaveRefWave11WaveRefWave8variable8variable4wave">
+<span id="_CPPv219DeepCopyWaveRefWave11WaveRefWave8variable8variable4wave"></span><span id="DeepCopyWaveRefWave__WaveRefWave.variable.variable.wave"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a2a7a1e58d0101d25bf08190d05ba369e"></span>wave <code class="descname">DeepCopyWaveRefWave</code><span class="sig-paren">(</span>WaveRefWave <em>src</em>, variable <em>dimension</em> = defaultValue, variable <em>index</em> = defaultValue, wave <em>indexWave</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv319DeepCopyWaveRefWave11WaveRefWave8variable8variable4wave" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return a wave with deep copies of all referenced waves. </p>
+<p>The deep copied waves will be free waves. Does not allow invalid wave references in <code class="docutils literal notranslate"><span class="pre">src</span></code>.</p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">src</span></code>: wave reference wave </li>
+<li><code class="docutils literal notranslate"><span class="pre">dimension</span></code>: [optional] copy only a single dimension, requires <code class="docutils literal notranslate"><span class="pre">index</span></code> or <code class="docutils literal notranslate"><span class="pre">indexWave</span></code> as well </li>
+<li><code class="docutils literal notranslate"><span class="pre">index</span></code>: [optional] specifies the index into <code class="docutils literal notranslate"><span class="pre">dimension</span></code> </li>
+<li><code class="docutils literal notranslate"><span class="pre">indexWave</span></code>: [optional] specifies the indizes into <code class="docutils literal notranslate"><span class="pre">dimension</span></code>, allows for differing indizes per <code class="docutils literal notranslate"><span class="pre">src</span></code> entry </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv310IsTextWave4wave">
+<span id="_CPPv210IsTextWave4wave"></span><span id="IsTextWave__wave"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1aa3af8db33a71413dd5cf4545eba30348"></span>variable <code class="descname">IsTextWave</code><span class="sig-paren">(</span>wave <em>wv</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv310IsTextWave4wave" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return 1 if the wave is a text wave, zero otherwise. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv313IsNumericWave4wave">
+<span id="_CPPv213IsNumericWave4wave"></span><span id="IsNumericWave__wave"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a1fb4d79c126207e9ec0536df2682a25c"></span>variable <code class="descname">IsNumericWave</code><span class="sig-paren">(</span>wave <em>wv</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv313IsNumericWave4wave" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return 1 if the wave is a numeric wave, zero otherwise. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv313IsWaveRefWave4wave">
+<span id="_CPPv213IsWaveRefWave4wave"></span><span id="IsWaveRefWave__wave"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a461bad6d5e26e867fe2c468e5d1adb66"></span>variable <code class="descname">IsWaveRefWave</code><span class="sig-paren">(</span>wave <em>wv</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv313IsWaveRefWave4wave" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return 1 if the wave is a wave reference wave, zero otherwise. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv319IsFloatingPointWave4wave">
+<span id="_CPPv219IsFloatingPointWave4wave"></span><span id="IsFloatingPointWave__wave"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1ad487ff74aa64a76d6a6288d2352126ab"></span>variable <code class="descname">IsFloatingPointWave</code><span class="sig-paren">(</span>wave <em>wv</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv319IsFloatingPointWave4wave" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return 1 if the wave is a floating point wave. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv312IsGlobalWave4wave">
+<span id="_CPPv212IsGlobalWave4wave"></span><span id="IsGlobalWave__wave"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1abaf6ef41db7693371213c3bd86f54659"></span>variable <code class="descname">IsGlobalWave</code><span class="sig-paren">(</span>wave <em>wv</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv312IsGlobalWave4wave" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return 1 if the wave is a global wave (not a null wave and not a free wave) </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv317GetSystemUserNamev">
+<span id="_CPPv217GetSystemUserNamev"></span><span id="GetSystemUserName"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a8986311194bf0486ce5ee66cb7e683d0"></span>string <code class="descname">GetSystemUserName</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv317GetSystemUserNamev" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return the user name of the running user. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv320ControlWindowToFrontv">
+<span id="_CPPv220ControlWindowToFrontv"></span><span id="ControlWindowToFront"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1ab419ee680d3adc6de1230fe9234640f5"></span>variable <code class="descname">ControlWindowToFront</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv320ControlWindowToFrontv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Bring the control window (the window with the command line) to the front of the desktop. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv312GetAlignment8variable">
+<span id="_CPPv212GetAlignment8variable"></span><span id="GetAlignment__variable"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a2f0e76a2bfd22be66dc0a1b266a24039"></span>variable <code class="descname">GetAlignment</code><span class="sig-paren">(</span>variable <em>val</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv312GetAlignment8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return the alignment of the decimal number (usually a 32bit/64bit pointer) </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv318RemoveAllDimLabels10WaveOrNull">
+<span id="_CPPv218RemoveAllDimLabels10WaveOrNull"></span><span id="RemoveAllDimLabels__WaveOrNull"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a88e879230916ebc7db220e97ed33dbc2"></span>variable <code class="descname">RemoveAllDimLabels</code><span class="sig-paren">(</span>WaveOrNull <em>wv</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv318RemoveAllDimLabels10WaveOrNull" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Remove the dimlabels of all dimensions with data. </p>
+<p>Due to no better solutions the dim labels are actually overwritten with an empty string </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv313GetMarkerSkip8variable8variable">
+<span id="_CPPv213GetMarkerSkip8variable8variable"></span><span id="GetMarkerSkip__variable.variable"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a86f51e9518414cc74c036e701fcd3a47"></span>variable <code class="descname">GetMarkerSkip</code><span class="sig-paren">(</span>variable <em>numPoints</em>, variable <em>numMarkers</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv313GetMarkerSkip8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Calculate the value for <code class="docutils literal notranslate"><span class="pre">mskip</span></code> of <code class="docutils literal notranslate"><span class="pre">ModifyGraph</span></code> </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">numPoints</span></code>: number of points shown </li>
+<li><code class="docutils literal notranslate"><span class="pre">numMarkers</span></code>: desired number of markers </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv318GetSetIntersection4wave4wave">
+<span id="_CPPv218GetSetIntersection4wave4wave"></span><span id="GetSetIntersection__wave.wave"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1acfc5d4925cd0994cb07a49555de94964"></span>wave <code class="descname">GetSetIntersection</code><span class="sig-paren">(</span>wave <em>wave1</em>, wave <em>wave2</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv318GetSetIntersection4wave4wave" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return a wave with the set theory style intersection of wave1 and wave2. </p>
+<p>Given {1, 2, 4, 10} and {2, 5, 11} this will return {2}.</p>
+<p>Inspired by <a class="reference external" href="http://www.igorexchange.com/node/366">http://www.igorexchange.com/node/366</a> but adapted to modern Igor Pro</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>free wave with the set intersection or an invalid wave reference if the intersection is an empty set </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv311KillWindows6string">
+<span id="_CPPv211KillWindows6string"></span><span id="KillWindows__string"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a60fe4376b2619d7181f1c29cb7c8a7a3"></span>variable <code class="descname">KillWindows</code><span class="sig-paren">(</span>string <em>list</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv311KillWindows6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Kill all passed windows. </p>
+<p>Silently ignore errors. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv311str2numSafe6string">
+<span id="_CPPv211str2numSafe6string"></span><span id="str2numSafe__string"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a2af68f9516aa38313fb30e39e6906d54"></span>variable <code class="descname">str2numSafe</code><span class="sig-paren">(</span>string <em>str</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv311str2numSafe6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>str2num variant with no runtime error on invalid conversions </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv324AskUserForExistingFolder6string">
+<span id="_CPPv224AskUserForExistingFolder6string"></span><span id="AskUserForExistingFolder__string"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1acee9655ac714aa78a61583b3c77a4f3a"></span>string <code class="descname">AskUserForExistingFolder</code><span class="sig-paren">(</span>string <em>baseFolder</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv324AskUserForExistingFolder6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Open a folder selection dialog. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>a string denoting the selected folder, or an empty string if nothing was supplied. </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv325GetAllAxesWithOrientation6string8variable">
+<span id="_CPPv225GetAllAxesWithOrientation6string8variable"></span><span id="GetAllAxesWithOrientation__string.variable"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1aea61a5764b6537a2acd966a31c70946f"></span>string <code class="descname">GetAllAxesWithOrientation</code><span class="sig-paren">(</span>string <em>graph</em>, variable <em>axisOrientation</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv325GetAllAxesWithOrientation6string8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return all axes with the given orientation. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">graph</span></code>: graph </li>
+<li><code class="docutils literal notranslate"><span class="pre">axisOrientation</span></code>: One of AxisOrientationConstants </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv319GetNumFromModifyStr6string6string6string8variable">
+<span id="_CPPv219GetNumFromModifyStr6string6string6string8variable"></span><span id="GetNumFromModifyStr__string.string.string.variable"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1ad3f73b50ac28a81011cb5616761b0ea1"></span><em class="property">static</em> variable <code class="descname">GetNumFromModifyStr</code><span class="sig-paren">(</span>string <em>info</em>, string <em>key</em>, string <em>listChar</em>, variable <em>item</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv319GetNumFromModifyStr6string6string6string8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Polished version of <code class="docutils literal notranslate"><span class="pre">GetNumFromModifyStr</span></code> from <code class="docutils literal notranslate"><span class="pre">Readback</span> <span class="pre">ModifyStr.ipf</span></code> </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">info</span></code>: string as returned by AxisInfo or TraceInfo </li>
+<li><code class="docutils literal notranslate"><span class="pre">key</span></code>: keyword </li>
+<li><code class="docutils literal notranslate"><span class="pre">listChar</span></code>: empty, <code class="docutils literal notranslate"><span class="pre">{</span></code> or <code class="docutils literal notranslate"><span class="pre">(</span></code> depending on keyword style </li>
+<li><code class="docutils literal notranslate"><span class="pre">item</span></code>: return the given element from the extracted list </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv312SortAxisList6string6string">
+<span id="_CPPv212SortAxisList6string6string"></span><span id="SortAxisList__string.string"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1af15fc165d33b174eed652e4a5cae75f2"></span>string <code class="descname">SortAxisList</code><span class="sig-paren">(</span>string <em>graph</em>, string <em>list</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv312SortAxisList6string6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return the list of axis sorted from highest to lowest starting value of the <code class="docutils literal notranslate"><span class="pre">axisEnab</span></code> keyword. </p>
+<p><code class="docutils literal notranslate"><span class="pre">list</span></code> must be from one orientation, usually something returned by <a class="reference internal" href="#_m_i_e_s___utilities_8ipf_1aea61a5764b6537a2acd966a31c70946f"><span class="std std-ref">GetAllAxesWithOrientation()</span></a> </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv319ReplaceWordInString6string6string6string">
+<span id="_CPPv219ReplaceWordInString6string6string6string"></span><span id="ReplaceWordInString__string.string.string"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a8b83743800bbb559e422f3e7488c2592"></span>string <code class="descname">ReplaceWordInString</code><span class="sig-paren">(</span>string <em>word</em>, string <em>str</em>, string <em>replacement</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv319ReplaceWordInString6string6string6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Replaces all occurences of the string <code class="docutils literal notranslate"><span class="pre">word</span></code>, treated as regexp word, in <code class="docutils literal notranslate"><span class="pre">str</span></code> with <code class="docutils literal notranslate"><span class="pre">replacement</span></code>. Does not ignore case. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv322ExecuteListOfFunctions6string">
+<span id="_CPPv222ExecuteListOfFunctions6string"></span><span id="ExecuteListOfFunctions__string"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a1b1effca33001624bd9189f9c1bba794"></span>variable <code class="descname">ExecuteListOfFunctions</code><span class="sig-paren">(</span>string <em>funcList</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv322ExecuteListOfFunctions6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Execute a list of functions via the Operation Queue. </p>
+<p>Special purpose function. Not intended for normal use. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv324GetInteractiveMode_PROTOv">
+<span id="_CPPv224GetInteractiveMode_PROTOv"></span><span id="GetInteractiveMode_PROTO"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1af8c2bb44cb026c11df6851d23f1f7a49"></span>string <code class="descname">GetInteractiveMode_PROTO</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv324GetInteractiveMode_PROTOv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv325GetInteractiveModeWrapperv">
+<span id="_CPPv225GetInteractiveModeWrapperv"></span><span id="GetInteractiveModeWrapper"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a8af3cbc203e2eb3ff313a4d49a59c7be"></span>string <code class="descname">GetInteractiveModeWrapper</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv325GetInteractiveModeWrapperv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Wrapper function for GetInteractiveMode in case it is not available. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv310DoAbortNow6string">
+<span id="_CPPv210DoAbortNow6string"></span><span id="DoAbortNow__string"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a88866a4cca53639d6318fcbb67eebf8c"></span>variable <code class="descname">DoAbortNow</code><span class="sig-paren">(</span>string <em>msg</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv310DoAbortNow6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Wrapper function for <code class="docutils literal notranslate"><span class="pre">Abort</span></code> which honours our interactive mode setting. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv321FloatWithMinSigDigits8variable8variable">
+<span id="_CPPv221FloatWithMinSigDigits8variable8variable"></span><span id="FloatWithMinSigDigits__variable.variable"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a7e7fc6be451e2704e8bab9a6d85ee4be"></span>string <code class="descname">FloatWithMinSigDigits</code><span class="sig-paren">(</span>variable <em>var</em>, variable <em>numMinSignDigits</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv321FloatWithMinSigDigits8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return a floating point value as string rounded to the given number of minimum significant digits. </p>
+<p>This allows to specify the minimum number of significant digits. The normal printf/sprintf specifier only allows the maximum number of significant digits for <code class="docutils literal notranslate"><span class="pre">g</span></code>. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv314NormalizeToEOL6string6string">
+<span id="_CPPv214NormalizeToEOL6string6string"></span><span id="NormalizeToEOL__string.string"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1aab342afddfd12ae20d30a1e5c916fd3b"></span>string <code class="descname">NormalizeToEOL</code><span class="sig-paren">(</span>string <em>str</em>, string <em>eol</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv314NormalizeToEOL6string6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Normalize the line endings in the given string to either classic Mac OS/Igor Pro EOLs (<code class="docutils literal notranslate"><span class="pre">\r</span></code>) or Unix EOLs (<code class="docutils literal notranslate"><span class="pre">\n</span></code>) </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv313GetStackTrace6string">
+<span id="_CPPv213GetStackTrace6string"></span><span id="GetStackTrace__string"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a71e9a0e51f9164c664145f82666fe8b4"></span>string <code class="descname">GetStackTrace</code><span class="sig-paren">(</span>string <em>prefix</em> = defaultValue<span class="sig-paren">)</span><br /></dt>
+<dd><p>Return a nicely formatted multiline stacktrace. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv315StopAllMSTimersv">
+<span id="_CPPv215StopAllMSTimersv"></span><span id="StopAllMSTimers"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a69b1259d2e206a2fb1df35c706f5284e"></span>variable <code class="descname">StopAllMSTimers</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv315StopAllMSTimersv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Stop all millisecond Igor Pro timers. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv319RelativeNowHighPrecv">
+<span id="_CPPv219RelativeNowHighPrecv"></span><span id="RelativeNowHighPrec"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1abdc6acfd230e0143c0f861379e0cec64"></span>variable <code class="descname">RelativeNowHighPrec</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv319RelativeNowHighPrecv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return a time in seconds with high precision, microsecond resolution, using an arbitrary zero point. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv318SleepHighPrecision8variable">
+<span id="_CPPv218SleepHighPrecision8variable"></span><span id="SleepHighPrecision__variable"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a2a11b6dc4f88d48ae0ce5a875f5caf04"></span>variable <code class="descname">SleepHighPrecision</code><span class="sig-paren">(</span>variable <em>var</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv318SleepHighPrecision8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>High precision version of the builtin Sleep command. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">var</span></code>: time in seconds to busy-sleep (current precision is around 0.1ms) </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv317GetMachineEpsilon8variable">
+<span id="_CPPv217GetMachineEpsilon8variable"></span><span id="GetMachineEpsilon__variable"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a2780553f6a32f6f47da1284e627ffbbe"></span>variable <code class="descname">GetMachineEpsilon</code><span class="sig-paren">(</span>variable <em>type</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv317GetMachineEpsilon8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return the machine epsilon for the given wave type. </p>
+<p>Experimentally determined with Igor Pro 7.08 </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv310IsFreeWave4wave">
+<span id="_CPPv210IsFreeWave4wave"></span><span id="IsFreeWave__wave"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a1a1d3af58998e5e6754a9eab7341d955"></span>variable <code class="descname">IsFreeWave</code><span class="sig-paren">(</span>wave <em>wv</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv310IsFreeWave4wave" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return true if wv is a free wave, false otherwise. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv319WaveModCountWrapper4wave">
+<span id="_CPPv219WaveModCountWrapper4wave"></span><span id="WaveModCountWrapper__wave"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a093cac8107a611b8c2c481ca745e3ad1"></span>variable <code class="descname">WaveModCountWrapper</code><span class="sig-paren">(</span>wave <em>wv</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv319WaveModCountWrapper4wave" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return the modification count of the (permanent) wave. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv310ToPassFail8variable">
+<span id="_CPPv210ToPassFail8variable"></span><span id="ToPassFail__variable"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a5ef0c8ed413fe09dde5835f6aa2b8683"></span>string <code class="descname">ToPassFail</code><span class="sig-paren">(</span>variable <em>passedOrFailed</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv310ToPassFail8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv311ToTrueFalse8variable">
+<span id="_CPPv211ToTrueFalse8variable"></span><span id="ToTrueFalse__variable"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1af1ad7af435433dc29de937c8f92a9a0e"></span>string <code class="descname">ToTrueFalse</code><span class="sig-paren">(</span>variable <em>var</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv311ToTrueFalse8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv316HasOneValidEntry4wave">
+<span id="_CPPv216HasOneValidEntry4wave"></span><span id="HasOneValidEntry__wave"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1aeff517342d701734f3927894088d0087"></span>variable <code class="descname">HasOneValidEntry</code><span class="sig-paren">(</span>wave <em>wv</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv316HasOneValidEntry4wave" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return true if not all wave entries are NaN, false otherwise. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv313MergeTwoWaves4wave4wave">
+<span id="_CPPv213MergeTwoWaves4wave4wave"></span><span id="MergeTwoWaves__wave.wave"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a4f52c973bcd168936307ddd9f3bd7ecb"></span>wave <code class="descname">MergeTwoWaves</code><span class="sig-paren">(</span>wave <em>wv1</em>, wave <em>wv2</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv313MergeTwoWaves4wave4wave" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Merge two floating point waves labnotebook waves. </p>
+<p>The result will hold the finite row entry of either <code class="docutils literal notranslate"><span class="pre">wv1</span></code> or <code class="docutils literal notranslate"><span class="pre">wv2</span></code>. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv321CreateHistoryNotebookv">
+<span id="_CPPv221CreateHistoryNotebookv"></span><span id="CreateHistoryNotebook"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1add57d49e5b565160292fa3a7c5d321a2"></span>variable <code class="descname">CreateHistoryNotebook</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv321CreateHistoryNotebookv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Create the special Notebook “HistoryCarbonCopy” which will hold a readable copy of the history starting from the time of the notebook creation. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv322GetHistoryNotebookTextv">
+<span id="_CPPv222GetHistoryNotebookTextv"></span><span id="GetHistoryNotebookText"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a7a3b02b50ad19f69e3fe35273adf0da6"></span>string <code class="descname">GetHistoryNotebookText</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv322GetHistoryNotebookTextv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return the text of the history notebook. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv312ClearRTErrorv">
+<span id="_CPPv212ClearRTErrorv"></span><span id="ClearRTError"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1abac9cd30a7e94843c149393a967c4115"></span>variable <code class="descname">ClearRTError</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv312ClearRTErrorv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Helper function for try/catch with AbortOnRTE. </p>
+<p>Not clearing the RTE before calling <code class="docutils literal notranslate"><span class="pre">AbortOnRTE</span></code> will always trigger the RTE no matter what you do in that line.</p>
+<p>Usage: <div class="highlight-igorpro notranslate"><div class="highlight"><pre><span></span><span class="k">try</span>
+   ClearRTError()
+   myFunc(); <span class="k">AbortOnRTE</span>
+<span class="k">catch</span>
+  err = <span class="nf">GetRTError</span>(1)
+<span class="k">endtry</span>
+</pre></div>
+</div>
+ </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv318DAQRunModeToString8variable">
+<span id="_CPPv218DAQRunModeToString8variable"></span><span id="DAQRunModeToString__variable"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a5fee6c68a7d39ce97464e3170cc76a58"></span>string <code class="descname">DAQRunModeToString</code><span class="sig-paren">(</span>variable <em>runMode</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv318DAQRunModeToString8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Convert the DAQ run mode to a string. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">runMode</span></code>: One of DAQRunModes </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv324TestPulseRunModeToString8variable">
+<span id="_CPPv224TestPulseRunModeToString8variable"></span><span id="TestPulseRunModeToString__variable"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a15420ac755e48ec3f0e381237552464f"></span>string <code class="descname">TestPulseRunModeToString</code><span class="sig-paren">(</span>variable <em>runMode</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv324TestPulseRunModeToString8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Convert the Testpulse run mode to a string. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">runMode</span></code>: One of TestPulseRunModes </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv314ChangeWaveLock11WaveRefWave8variable">
+<span id="_CPPv214ChangeWaveLock11WaveRefWave8variable"></span><span id="ChangeWaveLock__WaveRefWave.variable"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1a0963283a75a5eb42369e6b9d553f4e8e"></span>variable <code class="descname">ChangeWaveLock</code><span class="sig-paren">(</span>WaveRefWave <em>wv</em>, variable <em>val</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv314ChangeWaveLock11WaveRefWave8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Adapt the wave lock status on the wave and its contained waves. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv315DeleteWavePoint4wave8variable8variable">
+<span id="_CPPv215DeleteWavePoint4wave8variable8variable"></span><span id="DeleteWavePoint__wave.variable.variable"></span><span class="target" id="_m_i_e_s___utilities_8ipf_1abd232948e267fbf074efbc44f02c9352"></span>variable <code class="descname">DeleteWavePoint</code><span class="sig-paren">(</span>wave <em>wv</em>, variable <em>dim</em>, variable <em>index</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv315DeleteWavePoint4wave8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Deletes one row, column, layer or chunk from a wave Advantages over DeletePoints: Keeps the dimensionality of the wave when deleting the last row, column, layer or chunk in a wave Implements range check Advantages over DeletePoints + KillWaves: The wave reference stays valid. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">wv</span></code>: wave where the row, column, layer or chunk should be deleted</li>
+<li><code class="docutils literal notranslate"><span class="pre">dim</span></code>: dimension 0 - rows, 1 - column, 2 - layer, 3 - chunk</li>
+<li><code class="docutils literal notranslate"><span class="pre">index</span></code>: index where one point in the given dimension is deleted </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table of Contents</a></h3>
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../developers.html">Developer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manualinstallation.html">Manual installation instructions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reportingbugs.html">Bug reporting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../releasenotes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grouplist.html">Group list</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../filelist.html">File list</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="_compilation_tester_8ipf.html">File CompilationTester.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_compilation_tester_utils_8ipf.html">File CompilationTesterUtils.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___constants_8ipf.html">File IPNWB_Constants.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___debugging_8ipf.html">File IPNWB_Debugging.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___h_d_f5_helpers_8ipf.html">File IPNWB_HDF5Helpers.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___include_8ipf.html">File IPNWB_Include.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___reader_8ipf.html">File IPNWB_Reader.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___structures_8ipf.html">File IPNWB_Structures.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___utils_8ipf.html">File IPNWB_Utils.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___writer_8ipf.html">File IPNWB_Writer.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___amplifier_interaction_8ipf.html">File MIES_AmplifierInteraction.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_browser_8ipf.html">File MIES_AnalysisBrowser.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_browser___lab_notebook_t_p_storage_browser_8ipf.html">File MIES_AnalysisBrowser_LabNotebookTPStorageBrowser.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_browser___sweep_browser_8ipf.html">File MIES_AnalysisBrowser_SweepBrowser.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_browser___sweep_browser___export_8ipf.html">File MIES_AnalysisBrowser_SweepBrowser_Export.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_function_helpers_8ipf.html">File MIES_AnalysisFunctionHelpers.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_function_management_8ipf.html">File MIES_AnalysisFunctionManagement.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_function_prototypes_8ipf.html">File MIES_AnalysisFunctionPrototypes.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_functions_8ipf.html">File MIES_AnalysisFunctions.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_functions___dashboard_8ipf.html">File MIES_AnalysisFunctions_Dashboard.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_functions___multi_patch_seq_8ipf.html">File MIES_AnalysisFunctions_MultiPatchSeq.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_functions___patch_seq_8ipf.html">File MIES_AnalysisFunctions_PatchSeq.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_master_8ipf.html">File MIES_AnalysisMaster.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___artefact_removal_8ipf.html">File MIES_ArtefactRemoval.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___async_8ipf.html">File MIES_Async.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___asynchronous_data_8ipf.html">File MIES_AsynchronousData.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___background_watchdog_8ipf.html">File MIES_BackgroundWatchdog.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___blowout_8ipf.html">File MIES_Blowout.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___browser_settings_panel_8ipf.html">File MIES_BrowserSettingsPanel.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___cache_8ipf.html">File MIES_Cache.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___check_installation_8ipf.html">File MIES_CheckInstallation.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___constants_8ipf.html">File MIES_Constants.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___d_a_c-_hardware_8ipf.html">File MIES_DAC-Hardware.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___d_a_ephys_8ipf.html">File MIES_DAEphys.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___d_a_ephys___gui_state_8ipf.html">File MIES_DAEphys_GuiState.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___d_a_ephys___macro_8ipf.html">File MIES_DAEphys_Macro.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___data_acquisition_8ipf.html">File MIES_DataAcquisition.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___data_acquisition___multi_8ipf.html">File MIES_DataAcquisition_Multi.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___data_acquisition___single_8ipf.html">File MIES_DataAcquisition_Single.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___data_browser_8ipf.html">File MIES_DataBrowser.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___data_configurator_i_t_c_8ipf.html">File MIES_DataConfiguratorITC.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___debug_panel_8ipf.html">File MIES_DebugPanel.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___debugging_8ipf.html">File MIES_Debugging.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___downsample_8ipf.html">File MIES_Downsample.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___enhanced_w_m_routines_8ipf.html">File MIES_EnhancedWMRoutines.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___event_detection_code_8ipf.html">File MIES_EventDetectionCode.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___experiment_config_8ipf.html">File MIES_ExperimentConfig.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___experiment_documentation_8ipf.html">File MIES_ExperimentDocumentation.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___foreign_function_interface_8ipf.html">File MIES_ForeignFunctionInterface.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___global_string_and_variable_access_8ipf.html">File MIES_GlobalStringAndVariableAccess.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___gui_utilities_8ipf.html">File MIES_GuiUtilities.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___h_d_f5_ops_8ipf.html">File MIES_HDF5Ops.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___igor_hooks_8ipf.html">File MIES_IgorHooks.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___include_8ipf.html">File MIES_Include.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___indexing_8ipf.html">File MIES_Indexing.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___menu_8ipf.html">File MIES_Menu.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___mies_utilities_8ipf.html">File MIES_MiesUtilities.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___neuro_data_without_borders_8ipf.html">File MIES_NeuroDataWithoutBorders.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___optimzed_overlap_distributed_acquisition_8ipf.html">File MIES_OptimzedOverlapDistributedAcquisition.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___oscilloscope_8ipf.html">File MIES_Oscilloscope.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___overlay_sweeps_8ipf.html">File MIES_OverlaySweeps.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___pressure_control_8ipf.html">File MIES_PressureControl.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___programmatic_g_u_i_control_8ipf.html">File MIES_ProgrammaticGUIControl.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___pulse_averaging_8ipf.html">File MIES_PulseAveraging.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___repeated_acquisition_8ipf.html">File MIES_RepeatedAcquisition.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___sampling_interval_8ipf.html">File MIES_SamplingInterval.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___structures_8ipf.html">File MIES_Structures.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___sweep_saving_8ipf.html">File MIES_SweepSaving.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___tango_interact_8ipf.html">File MIES_TangoInteract.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___test_pulse_8ipf.html">File MIES_TestPulse.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___test_pulse___multi_8ipf.html">File MIES_TestPulse_Multi.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___test_pulse___single_8ipf.html">File MIES_TestPulse_Single.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___threaded_f_i_f_o_handling_8ipf.html">File MIES_ThreadedFIFOHandling.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___threadsafe_utilities_8ipf.html">File MIES_ThreadsafeUtilities.ipf</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">File MIES_Utilities.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___wave_builder_8ipf.html">File MIES_WaveBuilder.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___wave_builder_panel_8ipf.html">File MIES_WaveBuilderPanel.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___wave_data_folder_getters_8ipf.html">File MIES_WaveDataFolderGetters.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_zero_m_q___interop_8ipf.html">File ZeroMQ_Interop.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interface_8h.html">File interface.h</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../structlist.html">Struct list</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../namespacelist.html">Namespace list</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CalculateTPLikePropsFromSweep.html">CalculateTPLikePropsFromSweep Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IPNWB.html">Igor Pro module for reading and writing NeurodataWithoutBorder files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TPAnalysis_algorithm.html">Testpulse Analysis Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../asyncframework.html">Async Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ZeroMQ-XOP-Readme.html">ZeroMQ XOP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../labnotebook-docs.html">Labnotebook documentation for developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mies-concepts.html">Important MIES concepts for developers</a></li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="_m_i_e_s___threadsafe_utilities_8ipf.html"
+                        title="previous chapter">File MIES_ThreadsafeUtilities.ipf</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="_m_i_e_s___wave_builder_8ipf.html"
+                        title="next chapter">File MIES_WaveBuilder.ipf</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/file/_m_i_e_s___utilities_8ipf.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="_m_i_e_s___wave_builder_8ipf.html" title="File MIES_WaveBuilder.ipf"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="_m_i_e_s___threadsafe_utilities_8ipf.html" title="File MIES_ThreadsafeUtilities.ipf"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">MIES Igor (master) latest-52-g2ffc1636 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../filelist.html" >File list</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright .
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.3.
+    </div>
+  </body>
+</html>

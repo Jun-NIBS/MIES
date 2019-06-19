@@ -1,0 +1,370 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>File MIES_OverlaySweeps.ipf &#8212; MIES Igor (master) latest-52-g2ffc1636 documentation</title>
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" />
+    
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    
+    <script type="text/javascript" src="../_static/sidebar.js"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="File MIES_PressureControl.ipf" href="_m_i_e_s___pressure_control_8ipf.html" />
+    <link rel="prev" title="File MIES_Oscilloscope.ipf" href="_m_i_e_s___oscilloscope_8ipf.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="_m_i_e_s___pressure_control_8ipf.html" title="File MIES_PressureControl.ipf"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="_m_i_e_s___oscilloscope_8ipf.html" title="File MIES_Oscilloscope.ipf"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">MIES Igor (master) latest-52-g2ffc1636 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../filelist.html" accesskey="U">File list</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="file-mies-overlaysweeps-ipf">
+<span id="id1"></span><h1>File MIES_OverlaySweeps.ipf<a class="headerlink" href="#file-mies-overlaysweeps-ipf" title="Permalink to this headline">¶</a></h1>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Functions</p>
+<dl class="function">
+<dt id="_CPPv328OVS_IgnoreHeadstageInOverlayv">
+<span id="_CPPv228OVS_IgnoreHeadstageInOverlayv"></span><span id="OVS_IgnoreHeadstageInOverlay"></span><span class="target" id="_m_i_e_s___overlay_sweeps_8ipf_1ae9eb58f7f9077ff3bfd627b1c8cb45c1"></span>variable <code class="descname">OVS_IgnoreHeadstageInOverlay</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv328OVS_IgnoreHeadstageInOverlayv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>This user trace menu function allows the user to select a trace in overlay sweeps mode which should be ignored. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv328OVS_GetSweepSelectionChoices6string">
+<span id="_CPPv228OVS_GetSweepSelectionChoices6string"></span><span id="OVS_GetSweepSelectionChoices__string"></span><span class="target" id="_m_i_e_s___overlay_sweeps_8ipf_1abe010d76f2c7b2917d8dee070f68cdc7"></span>string <code class="descname">OVS_GetSweepSelectionChoices</code><span class="sig-paren">(</span>string <em>win</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv328OVS_GetSweepSelectionChoices6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return a list of choices for the sweep selection popup. </p>
+<p>Includes a unique list of the DA stimsets of all available sweeps </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv313OVS_GetFolder6string">
+<span id="_CPPv213OVS_GetFolder6string"></span><span id="OVS_GetFolder__string"></span><span class="target" id="_m_i_e_s___overlay_sweeps_8ipf_1ac2b2d5c860b3f8e562d828c42099075b"></span>dfr <code class="descname">OVS_GetFolder</code><span class="sig-paren">(</span>string <em>win</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv313OVS_GetFolder6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return the datafolder reference to the folder storing the listbox and selection wave. </p>
+<p>Requires the user data <code class="docutils literal notranslate"><span class="pre">PANEL_FOLDER</span></code> of the BrowserSettings panel</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>a valid DFREF or an invalid one in case the external panel could not be found </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv315OVS_UpdatePanel6string8WaveText4wave8WaveText6string11WaveRefWave8WaveText11WaveRefWave8WaveText">
+<span id="_CPPv215OVS_UpdatePanel6string8WaveText4wave8WaveText6string11WaveRefWave8WaveText11WaveRefWave8WaveText"></span><span id="OVS_UpdatePanel__string.WaveText.wave.WaveText.string.WaveRefWave.WaveText.WaveRefWave.WaveText"></span><span class="target" id="_m_i_e_s___overlay_sweeps_8ipf_1a161fcd0cf13a0372d1ea3832f296d6ab"></span>variable <code class="descname">OVS_UpdatePanel</code><span class="sig-paren">(</span>string <em>win</em>, WaveText <em>listBoxWave</em>, wave <em>listBoxSelWave</em>, WaveText <em>sweepSelectionChoices</em>, string <em>sweepWaveList</em>, WaveRefWave <em>allTextualValues</em> = defaultValue, WaveText <em>textualValues</em> = defaultValue, WaveRefWave <em>allNumericalValues</em> = defaultValue, WaveText <em>numericalValues</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv315OVS_UpdatePanel6string8WaveText4wave8WaveText6string11WaveRefWave8WaveText11WaveRefWave8WaveText" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Update the overlay sweep waves. </p>
+<p>Must be called after the sweeps changed. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv321OVS_GetSelectedSweeps6string8variable">
+<span id="_CPPv221OVS_GetSelectedSweeps6string8variable"></span><span id="OVS_GetSelectedSweeps__string.variable"></span><span class="target" id="_m_i_e_s___overlay_sweeps_8ipf_1ae6a16f8aa22f5d9138b54ae64ea327ed"></span>wave <code class="descname">OVS_GetSelectedSweeps</code><span class="sig-paren">(</span>string <em>win</em>, variable <em>mode</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv321OVS_GetSelectedSweeps6string8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return the selected sweeps (either indizes or the real sweep numbers) </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>invalid wave reference in case nothing is selected or indizes/sweep numbers depending on mode parameter </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">win</span></code>: window (databrowser or sweepbrowser) </li>
+<li><code class="docutils literal notranslate"><span class="pre">mode</span></code>: one of <a class="reference internal" href="_m_i_e_s___constants_8ipf.html#_m_i_e_s___constants_8ipf_1ae0db3a7b08272ee230996ebb246df825"><span class="std std-ref">OVS_SWEEP_SELECTION_INDEX</span></a> or <a class="reference internal" href="_m_i_e_s___constants_8ipf.html#_m_i_e_s___constants_8ipf_1acb0d1c90bb37459399e7a02dd8134ea0"><span class="std std-ref">OVS_SWEEP_SELECTION_SWEEPNO</span></a></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv324OVS_InvertSweepSelection6string8variable8variable">
+<span id="_CPPv224OVS_InvertSweepSelection6string8variable8variable"></span><span id="OVS_InvertSweepSelection__string.variable.variable"></span><span class="target" id="_m_i_e_s___overlay_sweeps_8ipf_1a87b2a8de5ab903f3481934c1e8e4e44a"></span>variable <code class="descname">OVS_InvertSweepSelection</code><span class="sig-paren">(</span>string <em>win</em>, variable <em>sweepNo</em> = defaultValue, variable <em>index</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv324OVS_InvertSweepSelection6string8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Invert the selection of the given sweep in the listbox wave. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv329OVS_ChangeSweepSelectionState6string8variable8variable8variable">
+<span id="_CPPv229OVS_ChangeSweepSelectionState6string8variable8variable8variable"></span><span id="OVS_ChangeSweepSelectionState__string.variable.variable.variable"></span><span class="target" id="_m_i_e_s___overlay_sweeps_8ipf_1a72da2d10499b1f64c10fe1280a9c1d53"></span>variable <code class="descname">OVS_ChangeSweepSelectionState</code><span class="sig-paren">(</span>string <em>win</em>, variable <em>newState</em>, variable <em>sweepNo</em> = defaultValue, variable <em>index</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv329OVS_ChangeSweepSelectionState6string8variable8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Change the selection state of the the given sweep in the listbox wave. </p>
+<p><p>One of </p>
+<code class="docutils literal notranslate"><span class="pre">sweepNo</span></code>/<code class="docutils literal notranslate"><span class="pre">index</span></code> is required. <dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">win</span></code>: panel </li>
+<li><code class="docutils literal notranslate"><span class="pre">sweepNo</span></code>: [optional] sweep number </li>
+<li><code class="docutils literal notranslate"><span class="pre">index</span></code>: [optional] index into the listbox wave </li>
+<li><code class="docutils literal notranslate"><span class="pre">newState</span></code>: new checkbox state of the given sweep.</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv312OVS_IsActive6string">
+<span id="_CPPv212OVS_IsActive6string"></span><span id="OVS_IsActive__string"></span><span class="target" id="_m_i_e_s___overlay_sweeps_8ipf_1ac291682eb164669d98543ca491f52224"></span>variable <code class="descname">OVS_IsActive</code><span class="sig-paren">(</span>string <em>win</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv312OVS_IsActive6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>checks if OVS is active. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv319OVS_AddToIgnoreList6string8variable8variable8variable">
+<span id="_CPPv219OVS_AddToIgnoreList6string8variable8variable8variable"></span><span id="OVS_AddToIgnoreList__string.variable.variable.variable"></span><span class="target" id="_m_i_e_s___overlay_sweeps_8ipf_1a4fb549ce7925e83e2fa3cd04baaea460"></span><em class="property">static</em> variable <code class="descname">OVS_AddToIgnoreList</code><span class="sig-paren">(</span>string <em>win</em>, variable <em>headstage</em>, variable <em>sweepNo</em> = defaultValue, variable <em>index</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv319OVS_AddToIgnoreList6string8variable8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Add <code class="docutils literal notranslate"><span class="pre">headstage</span></code> to the ignore list of the given <code class="docutils literal notranslate"><span class="pre">sweepNo/index</span></code> </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv319OVS_ParseIgnoreList6stringP8variableP8variableP8variable">
+<span id="_CPPv219OVS_ParseIgnoreList6stringP8variableP8variableP8variable"></span><span id="OVS_ParseIgnoreList__string.variableP.variableP.variableP"></span><span class="target" id="_m_i_e_s___overlay_sweeps_8ipf_1adb4909782180f1ca3627c988594a121e"></span>wave <code class="descname">OVS_ParseIgnoreList</code><span class="sig-paren">(</span>string <em>win</em>, variable *<em>highlightSweep</em>, variable *<em>sweepNo</em> = defaultValue, variable *<em>index</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv319OVS_ParseIgnoreList6stringP8variableP8variableP8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Parse the ignore list of the given sweep. </p>
+<p>The expected format of the ignore list entries is a semicolon (“;”) separated list of subranges (without the possibility denoting the step size).</p>
+<p>Examples:<ul class="simple">
+<li>0 (ignore HS 0)</li>
+<li>1,3;0 (ignore HS 0 to 3)</li>
+<li>* (ignore all headstages)</li>
+</ul>
+</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>free wave of size <code class="docutils literal notranslate"><span class="pre">NUM_HEADSTAGES</span></code> denoting with 0/1 the active state of the headstage </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">win</span></code>: name of mainPanel </li>
+<li><code class="docutils literal notranslate"><span class="pre">highlightSweep</span></code>: return of OVS_IsSweepHighlighted, defaults to no sweep highlighted </li>
+<li><code class="docutils literal notranslate"><span class="pre">sweepNo</span></code>: [optional] search sweepNo in list to get index </li>
+<li><code class="docutils literal notranslate"><span class="pre">index</span></code>: [optional] specify sweep directly by index </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv326OVS_CheckBoxProc_HS_SelectP16WMCheckboxAction">
+<span id="_CPPv226OVS_CheckBoxProc_HS_SelectP16WMCheckboxAction"></span><span id="OVS_CheckBoxProc_HS_Select__WMCheckboxActionP"></span><span class="target" id="_m_i_e_s___overlay_sweeps_8ipf_1a8d01cfa694b6057aee9c37b35a824e28"></span>variable <code class="descname">OVS_CheckBoxProc_HS_Select</code><span class="sig-paren">(</span>WMCheckboxAction *<em>cba</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv326OVS_CheckBoxProc_HS_SelectP16WMCheckboxAction" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv318OVS_HighlightSweep6string8variable">
+<span id="_CPPv218OVS_HighlightSweep6string8variable"></span><span id="OVS_HighlightSweep__string.variable"></span><span class="target" id="_m_i_e_s___overlay_sweeps_8ipf_1ab5b6b3d9095840cdbb4b01ce34703ef6"></span><em class="property">static</em> variable <code class="descname">OVS_HighlightSweep</code><span class="sig-paren">(</span>string <em>win</em>, variable <em>index</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv318OVS_HighlightSweep6string8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv322OVS_IsSweepHighlighted8WaveText8variable">
+<span id="_CPPv222OVS_IsSweepHighlighted8WaveText8variable"></span><span id="OVS_IsSweepHighlighted__WaveText.variable"></span><span class="target" id="_m_i_e_s___overlay_sweeps_8ipf_1a3bbafed8fc734eafc35afea148a01cce"></span><em class="property">static</em> variable <code class="descname">OVS_IsSweepHighlighted</code><span class="sig-paren">(</span>WaveText <em>listBoxWave</em>, variable <em>index</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv322OVS_IsSweepHighlighted8WaveText8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return the state of the sweep highlightning. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>NaN no sweep highlighted, or 1/0 if index needs highlightning or not </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv324OVS_ChangeSweepSelection6string6string">
+<span id="_CPPv224OVS_ChangeSweepSelection6string6string"></span><span id="OVS_ChangeSweepSelection__string.string"></span><span class="target" id="_m_i_e_s___overlay_sweeps_8ipf_1a36bc7a3160c8be52c7a0357d85b90535"></span><em class="property">static</em> variable <code class="descname">OVS_ChangeSweepSelection</code><span class="sig-paren">(</span>string <em>win</em>, string <em>choiceString</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv324OVS_ChangeSweepSelection6string6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Change the selected sweep according to one of the popup menu options. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv319OVS_MainListBoxProcP15WMListboxAction">
+<span id="_CPPv219OVS_MainListBoxProcP15WMListboxAction"></span><span id="OVS_MainListBoxProc__WMListboxActionP"></span><span class="target" id="_m_i_e_s___overlay_sweeps_8ipf_1a94200107143e3c34a24042063212d915"></span>variable <code class="descname">OVS_MainListBoxProc</code><span class="sig-paren">(</span>WMListboxAction *<em>lba</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv319OVS_MainListBoxProcP15WMListboxAction" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv322OVS_PopMenuProc_SelectP13WMPopupAction">
+<span id="_CPPv222OVS_PopMenuProc_SelectP13WMPopupAction"></span><span id="OVS_PopMenuProc_Select__WMPopupActionP"></span><span class="target" id="_m_i_e_s___overlay_sweeps_8ipf_1af348beeba032f944f53b456f678818df"></span>variable <code class="descname">OVS_PopMenuProc_Select</code><span class="sig-paren">(</span>WMPopupAction *<em>pa</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv322OVS_PopMenuProc_SelectP13WMPopupAction" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv329OVS_SetVarProc_SelectionRangeP19WMSetVariableAction">
+<span id="_CPPv229OVS_SetVarProc_SelectionRangeP19WMSetVariableAction"></span><span id="OVS_SetVarProc_SelectionRange__WMSetVariableActionP"></span><span class="target" id="_m_i_e_s___overlay_sweeps_8ipf_1aa9e8e209ec0e8c3c5b515ad0ea78b984"></span>variable <code class="descname">OVS_SetVarProc_SelectionRange</code><span class="sig-paren">(</span>WMSetVariableAction *<em>sva</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv329OVS_SetVarProc_SelectionRangeP19WMSetVariableAction" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table of Contents</a></h3>
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../developers.html">Developer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manualinstallation.html">Manual installation instructions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reportingbugs.html">Bug reporting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../releasenotes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grouplist.html">Group list</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../filelist.html">File list</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="_compilation_tester_8ipf.html">File CompilationTester.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_compilation_tester_utils_8ipf.html">File CompilationTesterUtils.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___constants_8ipf.html">File IPNWB_Constants.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___debugging_8ipf.html">File IPNWB_Debugging.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___h_d_f5_helpers_8ipf.html">File IPNWB_HDF5Helpers.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___include_8ipf.html">File IPNWB_Include.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___reader_8ipf.html">File IPNWB_Reader.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___structures_8ipf.html">File IPNWB_Structures.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___utils_8ipf.html">File IPNWB_Utils.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___writer_8ipf.html">File IPNWB_Writer.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___amplifier_interaction_8ipf.html">File MIES_AmplifierInteraction.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_browser_8ipf.html">File MIES_AnalysisBrowser.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_browser___lab_notebook_t_p_storage_browser_8ipf.html">File MIES_AnalysisBrowser_LabNotebookTPStorageBrowser.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_browser___sweep_browser_8ipf.html">File MIES_AnalysisBrowser_SweepBrowser.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_browser___sweep_browser___export_8ipf.html">File MIES_AnalysisBrowser_SweepBrowser_Export.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_function_helpers_8ipf.html">File MIES_AnalysisFunctionHelpers.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_function_management_8ipf.html">File MIES_AnalysisFunctionManagement.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_function_prototypes_8ipf.html">File MIES_AnalysisFunctionPrototypes.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_functions_8ipf.html">File MIES_AnalysisFunctions.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_functions___dashboard_8ipf.html">File MIES_AnalysisFunctions_Dashboard.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_functions___multi_patch_seq_8ipf.html">File MIES_AnalysisFunctions_MultiPatchSeq.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_functions___patch_seq_8ipf.html">File MIES_AnalysisFunctions_PatchSeq.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_master_8ipf.html">File MIES_AnalysisMaster.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___artefact_removal_8ipf.html">File MIES_ArtefactRemoval.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___async_8ipf.html">File MIES_Async.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___asynchronous_data_8ipf.html">File MIES_AsynchronousData.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___background_watchdog_8ipf.html">File MIES_BackgroundWatchdog.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___blowout_8ipf.html">File MIES_Blowout.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___browser_settings_panel_8ipf.html">File MIES_BrowserSettingsPanel.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___cache_8ipf.html">File MIES_Cache.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___check_installation_8ipf.html">File MIES_CheckInstallation.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___constants_8ipf.html">File MIES_Constants.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___d_a_c-_hardware_8ipf.html">File MIES_DAC-Hardware.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___d_a_ephys_8ipf.html">File MIES_DAEphys.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___d_a_ephys___gui_state_8ipf.html">File MIES_DAEphys_GuiState.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___d_a_ephys___macro_8ipf.html">File MIES_DAEphys_Macro.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___data_acquisition_8ipf.html">File MIES_DataAcquisition.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___data_acquisition___multi_8ipf.html">File MIES_DataAcquisition_Multi.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___data_acquisition___single_8ipf.html">File MIES_DataAcquisition_Single.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___data_browser_8ipf.html">File MIES_DataBrowser.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___data_configurator_i_t_c_8ipf.html">File MIES_DataConfiguratorITC.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___debug_panel_8ipf.html">File MIES_DebugPanel.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___debugging_8ipf.html">File MIES_Debugging.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___downsample_8ipf.html">File MIES_Downsample.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___enhanced_w_m_routines_8ipf.html">File MIES_EnhancedWMRoutines.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___event_detection_code_8ipf.html">File MIES_EventDetectionCode.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___experiment_config_8ipf.html">File MIES_ExperimentConfig.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___experiment_documentation_8ipf.html">File MIES_ExperimentDocumentation.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___foreign_function_interface_8ipf.html">File MIES_ForeignFunctionInterface.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___global_string_and_variable_access_8ipf.html">File MIES_GlobalStringAndVariableAccess.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___gui_utilities_8ipf.html">File MIES_GuiUtilities.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___h_d_f5_ops_8ipf.html">File MIES_HDF5Ops.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___igor_hooks_8ipf.html">File MIES_IgorHooks.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___include_8ipf.html">File MIES_Include.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___indexing_8ipf.html">File MIES_Indexing.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___menu_8ipf.html">File MIES_Menu.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___mies_utilities_8ipf.html">File MIES_MiesUtilities.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___neuro_data_without_borders_8ipf.html">File MIES_NeuroDataWithoutBorders.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___optimzed_overlap_distributed_acquisition_8ipf.html">File MIES_OptimzedOverlapDistributedAcquisition.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___oscilloscope_8ipf.html">File MIES_Oscilloscope.ipf</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">File MIES_OverlaySweeps.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___pressure_control_8ipf.html">File MIES_PressureControl.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___programmatic_g_u_i_control_8ipf.html">File MIES_ProgrammaticGUIControl.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___pulse_averaging_8ipf.html">File MIES_PulseAveraging.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___repeated_acquisition_8ipf.html">File MIES_RepeatedAcquisition.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___sampling_interval_8ipf.html">File MIES_SamplingInterval.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___structures_8ipf.html">File MIES_Structures.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___sweep_saving_8ipf.html">File MIES_SweepSaving.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___tango_interact_8ipf.html">File MIES_TangoInteract.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___test_pulse_8ipf.html">File MIES_TestPulse.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___test_pulse___multi_8ipf.html">File MIES_TestPulse_Multi.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___test_pulse___single_8ipf.html">File MIES_TestPulse_Single.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___threaded_f_i_f_o_handling_8ipf.html">File MIES_ThreadedFIFOHandling.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___threadsafe_utilities_8ipf.html">File MIES_ThreadsafeUtilities.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___utilities_8ipf.html">File MIES_Utilities.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___wave_builder_8ipf.html">File MIES_WaveBuilder.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___wave_builder_panel_8ipf.html">File MIES_WaveBuilderPanel.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___wave_data_folder_getters_8ipf.html">File MIES_WaveDataFolderGetters.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_zero_m_q___interop_8ipf.html">File ZeroMQ_Interop.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interface_8h.html">File interface.h</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../structlist.html">Struct list</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../namespacelist.html">Namespace list</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CalculateTPLikePropsFromSweep.html">CalculateTPLikePropsFromSweep Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IPNWB.html">Igor Pro module for reading and writing NeurodataWithoutBorder files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TPAnalysis_algorithm.html">Testpulse Analysis Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../asyncframework.html">Async Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ZeroMQ-XOP-Readme.html">ZeroMQ XOP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../labnotebook-docs.html">Labnotebook documentation for developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mies-concepts.html">Important MIES concepts for developers</a></li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="_m_i_e_s___oscilloscope_8ipf.html"
+                        title="previous chapter">File MIES_Oscilloscope.ipf</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="_m_i_e_s___pressure_control_8ipf.html"
+                        title="next chapter">File MIES_PressureControl.ipf</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/file/_m_i_e_s___overlay_sweeps_8ipf.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="_m_i_e_s___pressure_control_8ipf.html" title="File MIES_PressureControl.ipf"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="_m_i_e_s___oscilloscope_8ipf.html" title="File MIES_Oscilloscope.ipf"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">MIES Igor (master) latest-52-g2ffc1636 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../filelist.html" >File list</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright .
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.3.
+    </div>
+  </body>
+</html>

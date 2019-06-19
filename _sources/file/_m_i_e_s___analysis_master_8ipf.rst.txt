@@ -1,0 +1,6 @@
+.. _File MIES_AnalysisMaster.ipf:
+
+File MIES_AnalysisMaster.ipf
+============================
+
+.. doxygenfile:: MIES_AnalysisMaster.ipf

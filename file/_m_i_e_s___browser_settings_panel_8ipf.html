@@ -1,0 +1,780 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>File MIES_BrowserSettingsPanel.ipf &#8212; MIES Igor (master) latest-52-g2ffc1636 documentation</title>
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" />
+    
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    
+    <script type="text/javascript" src="../_static/sidebar.js"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="File MIES_Cache.ipf" href="_m_i_e_s___cache_8ipf.html" />
+    <link rel="prev" title="File MIES_Blowout.ipf" href="_m_i_e_s___blowout_8ipf.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="_m_i_e_s___cache_8ipf.html" title="File MIES_Cache.ipf"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="_m_i_e_s___blowout_8ipf.html" title="File MIES_Blowout.ipf"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">MIES Igor (master) latest-52-g2ffc1636 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../filelist.html" accesskey="U">File list</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="file-mies-browsersettingspanel-ipf">
+<span id="id1"></span><h1>File MIES_BrowserSettingsPanel.ipf<a class="headerlink" href="#file-mies-browsersettingspanel-ipf" title="Permalink to this headline">¶</a></h1>
+<p><strong>BSP</strong> Panel for <strong>DB</strong> and <strong>AB</strong> (SweepBrowser) that combines different settings in a tabcontrol. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Functions</p>
+<dl class="function">
+<dt id="_CPPv312BSP_GetPanel6string">
+<span id="_CPPv212BSP_GetPanel6string"></span><span id="BSP_GetPanel__string"></span><span class="target" id="_m_i_e_s___browser_settings_panel_8ipf_1af1d8914d7aba0763461d944bfe54371a"></span>string <code class="descname">BSP_GetPanel</code><span class="sig-paren">(</span>string <em>mainPanel</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv312BSP_GetPanel6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>return the name of the external panel depending on main window name </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">mainPanel</span></code>: mainWindow panel name </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv324BSP_GetNotebookSubWindow6string">
+<span id="_CPPv224BSP_GetNotebookSubWindow6string"></span><span id="BSP_GetNotebookSubWindow__string"></span><span class="target" id="_m_i_e_s___browser_settings_panel_8ipf_1a9f789c4ad2499bea7b62709502fffe66"></span>string <code class="descname">BSP_GetNotebookSubWindow</code><span class="sig-paren">(</span>string <em>win</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv324BSP_GetNotebookSubWindow6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>return the name of the WaveNote Display inside BSP </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv325BSP_GetSweepControlsPanel6string">
+<span id="_CPPv225BSP_GetSweepControlsPanel6string"></span><span id="BSP_GetSweepControlsPanel__string"></span><span class="target" id="_m_i_e_s___browser_settings_panel_8ipf_1a05d8173849a3e13013c83b6d4a009250"></span>string <code class="descname">BSP_GetSweepControlsPanel</code><span class="sig-paren">(</span>string <em>mainPanel</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv325BSP_GetSweepControlsPanel6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>return the name of the bottom Panel </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">mainPanel</span></code>: mainWindow panel name </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv313BSP_OpenPanel6string">
+<span id="_CPPv213BSP_OpenPanel6string"></span><span id="BSP_OpenPanel__string"></span><span class="target" id="_m_i_e_s___browser_settings_panel_8ipf_1aa3d3b7a97d96c1e9a88797f92078fa5e"></span>variable <code class="descname">BSP_OpenPanel</code><span class="sig-paren">(</span>string <em>mainPanel</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv313BSP_OpenPanel6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>open BrowserSettings side Panel </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">mainPanel</span></code>: mainWindow panel name </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv321BSP_OpenSettingsPanel6string">
+<span id="_CPPv221BSP_OpenSettingsPanel6string"></span><span id="BSP_OpenSettingsPanel__string"></span><span class="target" id="_m_i_e_s___browser_settings_panel_8ipf_1a4fe9a889c9b8c1a873f10cca2728acd8"></span>variable <code class="descname">BSP_OpenSettingsPanel</code><span class="sig-paren">(</span>string <em>mainPanel</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv321BSP_OpenSettingsPanel6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv321BSP_OpenSweepControls6string">
+<span id="_CPPv221BSP_OpenSweepControls6string"></span><span id="BSP_OpenSweepControls__string"></span><span class="target" id="_m_i_e_s___browser_settings_panel_8ipf_1ac36bef6150bf76cd0912e99dd862549e"></span>variable <code class="descname">BSP_OpenSweepControls</code><span class="sig-paren">(</span>string <em>mainPanel</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv321BSP_OpenSweepControls6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>open bottom Panel </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">mainPanel</span></code>: mainWindow panel name </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv324BSP_DynamicSweepControls6string">
+<span id="_CPPv224BSP_DynamicSweepControls6string"></span><span id="BSP_DynamicSweepControls__string"></span><span class="target" id="_m_i_e_s___browser_settings_panel_8ipf_1af76340a60ec49ffd430e3bbfb01b16a4"></span><em class="property">static</em> variable <code class="descname">BSP_DynamicSweepControls</code><span class="sig-paren">(</span>string <em>mainPanel</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv324BSP_DynamicSweepControls6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>dynamic settings for bottom panel at initialization </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">mainPanel</span></code>: mainWindow panel name </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv326BSP_DynamicStartupSettings6string">
+<span id="_CPPv226BSP_DynamicStartupSettings6string"></span><span id="BSP_DynamicStartupSettings__string"></span><span class="target" id="_m_i_e_s___browser_settings_panel_8ipf_1a4c4d89498fdf5ddba75a80a593b184a6"></span>variable <code class="descname">BSP_DynamicStartupSettings</code><span class="sig-paren">(</span>string <em>mainPanel</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv326BSP_DynamicStartupSettings6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>dynamic settings for panel initialization </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">mainPanel</span></code>: mainWindow panel name </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv320BSP_BindListBoxWaves6string">
+<span id="_CPPv220BSP_BindListBoxWaves6string"></span><span id="BSP_BindListBoxWaves__string"></span><span class="target" id="_m_i_e_s___browser_settings_panel_8ipf_1ad7f2df6bdba5b35212e9611903852d3a"></span>variable <code class="descname">BSP_BindListBoxWaves</code><span class="sig-paren">(</span>string <em>win</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv320BSP_BindListBoxWaves6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv320BSP_AddBrowserPrefix6string6string">
+<span id="_CPPv220BSP_AddBrowserPrefix6string6string"></span><span id="BSP_AddBrowserPrefix__string.string"></span><span class="target" id="_m_i_e_s___browser_settings_panel_8ipf_1a3c1a0801628fdcdcef87b3dd9ea33a22"></span>string <code class="descname">BSP_AddBrowserPrefix</code><span class="sig-paren">(</span>string <em>win</em>, string <em>str</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv320BSP_AddBrowserPrefix6string6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>add SB_* or DB_* prefix to the input string depending on current window </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv327BSP_GetChannelSelectionWave6string">
+<span id="_CPPv227BSP_GetChannelSelectionWave6string"></span><span id="BSP_GetChannelSelectionWave__string"></span><span class="target" id="_m_i_e_s___browser_settings_panel_8ipf_1a51c3de9cfa4b5acc53fa0a9dd2bb45d3"></span>wave <code class="descname">BSP_GetChannelSelectionWave</code><span class="sig-paren">(</span>string <em>win</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv327BSP_GetChannelSelectionWave6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>get the channel selection wave stored in main window property CSW_FOLDER </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>channel selection wave </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">win</span></code>: name of external panel or main window </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv313BSP_GetFolder6string6string">
+<span id="_CPPv213BSP_GetFolder6string6string"></span><span id="BSP_GetFolder__string.string"></span><span class="target" id="_m_i_e_s___browser_settings_panel_8ipf_1af9569c46c460e39286d847194977b673"></span>dfr <code class="descname">BSP_GetFolder</code><span class="sig-paren">(</span>string <em>win</em>, string <em>MIES_BSP_FOLDER_TYPE</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv313BSP_GetFolder6string6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>get a FOLDER property from the specified panel </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>DFR to specified folder. No check for invalid folders </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">win</span></code>: name of external panel or main window </li>
+<li><code class="docutils literal notranslate"><span class="pre">MIES_BSP_FOLDER_TYPE</span></code>: see the FOLDER constants in this file</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv313BSP_SetFolder6string5dfref6string">
+<span id="_CPPv213BSP_SetFolder6string5dfref6string"></span><span id="BSP_SetFolder__string.dfref.string"></span><span class="target" id="_m_i_e_s___browser_settings_panel_8ipf_1abc09c491b6f446b8dd78ba5ff2fef0e7"></span>variable <code class="descname">BSP_SetFolder</code><span class="sig-paren">(</span>string <em>win</em>, dfref <em>dfr</em>, string <em>MIES_BSP_FOLDER_TYPE</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv313BSP_SetFolder6string5dfref6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>set a FOLDER property at the specified panel </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">win</span></code>: name of external panel or main window </li>
+<li><code class="docutils literal notranslate"><span class="pre">dfr</span></code>: DataFolder Reference to the folder </li>
+<li><code class="docutils literal notranslate"><span class="pre">MIES_BSP_FOLDER_TYPE</span></code>: see the FOLDER constants in this file </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv313BSP_GetDevice6string">
+<span id="_CPPv213BSP_GetDevice6string"></span><span id="BSP_GetDevice__string"></span><span class="target" id="_m_i_e_s___browser_settings_panel_8ipf_1a16b0d099ac827ab409b67d5c1caafcb0"></span>string <code class="descname">BSP_GetDevice</code><span class="sig-paren">(</span>string <em>win</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv313BSP_GetDevice6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>get the assigned DEVICE property from the main panel </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>device as string </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">win</span></code>: name of external panel or main window</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv313BSP_SetDevice6string6string">
+<span id="_CPPv213BSP_SetDevice6string6string"></span><span id="BSP_SetDevice__string.string"></span><span class="target" id="_m_i_e_s___browser_settings_panel_8ipf_1a611a7b75821d24c2505ee30beda6b84d"></span>string <code class="descname">BSP_SetDevice</code><span class="sig-paren">(</span>string <em>win</em>, string <em>device</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv313BSP_SetDevice6string6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>set DEVICE property to the userdata of the main panel </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">win</span></code>: name of external panel or main window </li>
+<li><code class="docutils literal notranslate"><span class="pre">device</span></code>: bound device as string </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv318BSP_GetBrowserType6string">
+<span id="_CPPv218BSP_GetBrowserType6string"></span><span id="BSP_GetBrowserType__string"></span><span class="target" id="_m_i_e_s___browser_settings_panel_8ipf_1a8e1ea8c4ad57816714614cd8818290bd"></span><em class="property">static</em> string <code class="descname">BSP_GetBrowserType</code><span class="sig-paren">(</span>string <em>win</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv318BSP_GetBrowserType6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>get the MIES Browser Type </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>D for DataBrowser or S for SweepBrowser </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">win</span></code>: name of external panel or main window</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv318BSP_SetBrowserType6string6string">
+<span id="_CPPv218BSP_SetBrowserType6string6string"></span><span id="BSP_SetBrowserType__string.string"></span><span class="target" id="_m_i_e_s___browser_settings_panel_8ipf_1a07d592f95e2986d86d7de455443b5885"></span><em class="property">static</em> string <code class="descname">BSP_SetBrowserType</code><span class="sig-paren">(</span>string <em>win</em>, string <em>type</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv318BSP_SetBrowserType6string6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>set DEVICE property to the userdata of the main panel </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">win</span></code>: name of external panel or main window </li>
+<li><code class="docutils literal notranslate"><span class="pre">type</span></code>: One of <a class="reference internal" href="#_m_i_e_s___browser_settings_panel_8ipf_1a6bd815e52983db19e2d6a16f2009b66b"><span class="std std-ref">BROWSERTYPE_DATABROWSER</span></a> or <a class="reference internal" href="#_m_i_e_s___browser_settings_panel_8ipf_1aa1822af7c63379b70a3035c487bd2b3b"><span class="std std-ref">BROWSERTYPE_SWEEPBROWSER</span></a> </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv318BSP_SetDataBrowser6string">
+<span id="_CPPv218BSP_SetDataBrowser6string"></span><span id="BSP_SetDataBrowser__string"></span><span class="target" id="_m_i_e_s___browser_settings_panel_8ipf_1ace174b0885237870b83570c3fc3e3932"></span>variable <code class="descname">BSP_SetDataBrowser</code><span class="sig-paren">(</span>string <em>win</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv318BSP_SetDataBrowser6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>wrapper function for external calls </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv319BSP_SetSweepBrowser6string">
+<span id="_CPPv219BSP_SetSweepBrowser6string"></span><span id="BSP_SetSweepBrowser__string"></span><span class="target" id="_m_i_e_s___browser_settings_panel_8ipf_1a1cee1aa60807536aaff1d5cfb16c579e"></span>variable <code class="descname">BSP_SetSweepBrowser</code><span class="sig-paren">(</span>string <em>win</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv319BSP_SetSweepBrowser6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>wrapper function for external calls </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv317BSP_IsDataBrowser6string">
+<span id="_CPPv217BSP_IsDataBrowser6string"></span><span id="BSP_IsDataBrowser__string"></span><span class="target" id="_m_i_e_s___browser_settings_panel_8ipf_1a97fd1cb98a42cc894ae848986a0026e1"></span>variable <code class="descname">BSP_IsDataBrowser</code><span class="sig-paren">(</span>string <em>win</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv317BSP_IsDataBrowser6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>wrapper function for external calls </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv318BSP_HasBoundDevice6string">
+<span id="_CPPv218BSP_HasBoundDevice6string"></span><span id="BSP_HasBoundDevice__string"></span><span class="target" id="_m_i_e_s___browser_settings_panel_8ipf_1ae33f1e860e4495bf2f44390849b03380"></span>variable <code class="descname">BSP_HasBoundDevice</code><span class="sig-paren">(</span>string <em>win</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv318BSP_HasBoundDevice6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>check if the DEVICE property has a not nullstring property </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>1 if device is assigned and 0 otherwise. does not check if device is valid. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">win</span></code>: name of external panel or main window </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv311BSP_GetDDAQ6string">
+<span id="_CPPv211BSP_GetDDAQ6string"></span><span id="BSP_GetDDAQ__string"></span><span class="target" id="_m_i_e_s___browser_settings_panel_8ipf_1a07c981629a8629ebadbf9e5134ad747d"></span>variable <code class="descname">BSP_GetDDAQ</code><span class="sig-paren">(</span>string <em>win</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv311BSP_GetDDAQ6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>get the selected headstage from the slider position </p>
+<p>if the slider is at position -1, all headstages are selected this equals to dDAQ checkbox beeing deactivated</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>the headstage number if active and -1 if the headstage slider was not found or is deactivated </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">win</span></code>: name of external panel or main window </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv316BSP_DDAQisActive6string">
+<span id="_CPPv216BSP_DDAQisActive6string"></span><span id="BSP_DDAQisActive__string"></span><span class="target" id="_m_i_e_s___browser_settings_panel_8ipf_1a5e932584a9570faaf348c965a8ebfeb2"></span><em class="property">static</em> variable <code class="descname">BSP_DDAQisActive</code><span class="sig-paren">(</span>string <em>win</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv316BSP_DDAQisActive6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>get the status of the dDAQ control </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>the status of the checkbox control “dDAQ” in the BrowserSettings Panel </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">win</span></code>: name of external panel or main window </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv322BSP_InitMainCheckboxes6string">
+<span id="_CPPv222BSP_InitMainCheckboxes6string"></span><span id="BSP_InitMainCheckboxes__string"></span><span class="target" id="_m_i_e_s___browser_settings_panel_8ipf_1a4e31d694be94f7cfc9ba16ceaced5b0e"></span><em class="property">static</em> variable <code class="descname">BSP_InitMainCheckboxes</code><span class="sig-paren">(</span>string <em>win</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv322BSP_InitMainCheckboxes6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>set the initial state of the enable/disable buttons </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">win</span></code>: name of external panel or main window </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv319BSP_SetCSButtonProc6string6string">
+<span id="_CPPv219BSP_SetCSButtonProc6string6string"></span><span id="BSP_SetCSButtonProc__string.string"></span><span class="target" id="_m_i_e_s___browser_settings_panel_8ipf_1ad4137a19b2d2542757e916708d413de4"></span><em class="property">static</em> variable <code class="descname">BSP_SetCSButtonProc</code><span class="sig-paren">(</span>string <em>win</em>, string <em>procedure</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv319BSP_SetCSButtonProc6string6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>overwrite the control action of all Channel Selection Buttons </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv323BSP_SetOVSControlStatus6string">
+<span id="_CPPv223BSP_SetOVSControlStatus6string"></span><span id="BSP_SetOVSControlStatus__string"></span><span class="target" id="_m_i_e_s___browser_settings_panel_8ipf_1ab2e16a1684e6df70e68a6d732e815af9"></span>variable <code class="descname">BSP_SetOVSControlStatus</code><span class="sig-paren">(</span>string <em>win</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv323BSP_SetOVSControlStatus6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>enable/disable the OVS buttons </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">win</span></code>: specify mainPanel or bsPanel with OVS controls </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv322BSP_SetARControlStatus6string">
+<span id="_CPPv222BSP_SetARControlStatus6string"></span><span id="BSP_SetARControlStatus__string"></span><span class="target" id="_m_i_e_s___browser_settings_panel_8ipf_1ac7c96ffe6e5eec2a983052469e06e4a0"></span>variable <code class="descname">BSP_SetARControlStatus</code><span class="sig-paren">(</span>string <em>win</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv322BSP_SetARControlStatus6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>enable/disable the AR buttons </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">win</span></code>: specify mainPanel or bsPanel with OVS controls </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv322BSP_SetPAControlStatus6string">
+<span id="_CPPv222BSP_SetPAControlStatus6string"></span><span id="BSP_SetPAControlStatus__string"></span><span class="target" id="_m_i_e_s___browser_settings_panel_8ipf_1afa8ff2034004172d4cd729b567bdf7ff"></span>variable <code class="descname">BSP_SetPAControlStatus</code><span class="sig-paren">(</span>string <em>win</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv322BSP_SetPAControlStatus6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>enable/disable the PA buttons </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">win</span></code>: specify mainPanel or bsPanel with OVS controls </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv330BSP_SetIndividualControlStatus6string">
+<span id="_CPPv230BSP_SetIndividualControlStatus6string"></span><span id="BSP_SetIndividualControlStatus__string"></span><span class="target" id="_m_i_e_s___browser_settings_panel_8ipf_1a778d0073ead251a4bf360396cb23fd01"></span>variable <code class="descname">BSP_SetIndividualControlStatus</code><span class="sig-paren">(</span>string <em>win</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv330BSP_SetIndividualControlStatus6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>enable/disable the buttons that rely on displayed traces </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">win</span></code>: specify mainPanel or bsPanel with OVS controls </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv326BSP_SetDeconvControlStatus6string">
+<span id="_CPPv226BSP_SetDeconvControlStatus6string"></span><span id="BSP_SetDeconvControlStatus__string"></span><span class="target" id="_m_i_e_s___browser_settings_panel_8ipf_1aa42247027520ddb0aa0082c0b6bd70af"></span>variable <code class="descname">BSP_SetDeconvControlStatus</code><span class="sig-paren">(</span>string <em>win</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv326BSP_SetDeconvControlStatus6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>enable/disable deconvolution buttons depending on the status of <code class="docutils literal notranslate"><span class="pre">check_pulseAver_showAver</span></code> </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">win</span></code>: specify mainPanel or bsPanel with OVS controls </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv320BSP_SetControlStatus6string6string8variable">
+<span id="_CPPv220BSP_SetControlStatus6string6string8variable"></span><span id="BSP_SetControlStatus__string.string.variable"></span><span class="target" id="_m_i_e_s___browser_settings_panel_8ipf_1acfff78fdefd2cc0601bee11f64f7ed20"></span>variable <code class="descname">BSP_SetControlStatus</code><span class="sig-paren">(</span>string <em>win</em>, string <em>controlList</em>, variable <em>status</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv320BSP_SetControlStatus6string6string8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>enable/disable a list of controls </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">win</span></code>: specify mainPanel or bsPanel with OVS controls </li>
+<li><code class="docutils literal notranslate"><span class="pre">controlList</span></code>: list of controls </li>
+<li><code class="docutils literal notranslate"><span class="pre">status</span></code>: 1: enable; 0: disable </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv325BSP_MainPanelButtonToggle6string8variable">
+<span id="_CPPv225BSP_MainPanelButtonToggle6string8variable"></span><span id="BSP_MainPanelButtonToggle__string.variable"></span><span class="target" id="_m_i_e_s___browser_settings_panel_8ipf_1a60f2b8c8ecd25f992f4bf354e2f229f8"></span>variable <code class="descname">BSP_MainPanelButtonToggle</code><span class="sig-paren">(</span>string <em>mainPanel</em>, variable <em>visible</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv325BSP_MainPanelButtonToggle6string8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>action for button in mainPanel </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">mainPanel</span></code>: main Panel window </li>
+<li><code class="docutils literal notranslate"><span class="pre">visible</span></code>: set status of external Panel (opened: visible = 1) </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv318BSP_ClosePanelHookP15WMWinHookStruct">
+<span id="_CPPv218BSP_ClosePanelHookP15WMWinHookStruct"></span><span id="BSP_ClosePanelHook__WMWinHookStructP"></span><span class="target" id="_m_i_e_s___browser_settings_panel_8ipf_1a296ff0bc8ba48b66aa522d8d5c71a902"></span>variable <code class="descname">BSP_ClosePanelHook</code><span class="sig-paren">(</span>WMWinHookStruct *<em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv318BSP_ClosePanelHookP15WMWinHookStruct" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>panel close hook for side panel </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv317SweepControlPanelv">
+<span id="_CPPv217SweepControlPanelv"></span><span id="SweepControlPanel"></span><span class="target" id="_m_i_e_s___browser_settings_panel_8ipf_1a04ed1c81e840616c7a858e0874d0117d"></span>void <code class="descname">SweepControlPanel</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv317SweepControlPanelv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>window macro for bottom panel </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv320BrowserSettingsPanelv">
+<span id="_CPPv220BrowserSettingsPanelv"></span><span id="BrowserSettingsPanel"></span><span class="target" id="_m_i_e_s___browser_settings_panel_8ipf_1ab6b6b944cc4fd5cc2f719dc45214f665"></span>void <code class="descname">BrowserSettingsPanel</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv320BrowserSettingsPanelv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>window macro for side panel </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv327BSP_CheckBoxProc_ArtRemovalP16WMCheckBoxAction">
+<span id="_CPPv227BSP_CheckBoxProc_ArtRemovalP16WMCheckBoxAction"></span><span id="BSP_CheckBoxProc_ArtRemoval__WMCheckBoxActionP"></span><span class="target" id="_m_i_e_s___browser_settings_panel_8ipf_1a2b80a81aa7c97387adc286457805549c"></span>variable <code class="descname">BSP_CheckBoxProc_ArtRemoval</code><span class="sig-paren">(</span>WMCheckBoxAction *<em>cba</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv327BSP_CheckBoxProc_ArtRemovalP16WMCheckBoxAction" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>enable/disable checkbox control for side panel </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv329BSP_CheckBoxProc_PerPulseAverP16WMCheckBoxAction">
+<span id="_CPPv229BSP_CheckBoxProc_PerPulseAverP16WMCheckBoxAction"></span><span id="BSP_CheckBoxProc_PerPulseAver__WMCheckBoxActionP"></span><span class="target" id="_m_i_e_s___browser_settings_panel_8ipf_1a466b4672bd100fcb1786d97a084c9f81"></span>variable <code class="descname">BSP_CheckBoxProc_PerPulseAver</code><span class="sig-paren">(</span>WMCheckBoxAction *<em>cba</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv329BSP_CheckBoxProc_PerPulseAverP16WMCheckBoxAction" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>enable/disable checkbox control for side panel </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv320BSP_ButtonProc_PanelP14WMButtonAction">
+<span id="_CPPv220BSP_ButtonProc_PanelP14WMButtonAction"></span><span id="BSP_ButtonProc_Panel__WMButtonActionP"></span><span class="target" id="_m_i_e_s___browser_settings_panel_8ipf_1a8a4e3958e3d8eb53dcbe1f9eb1127077"></span>variable <code class="descname">BSP_ButtonProc_Panel</code><span class="sig-paren">(</span>WMButtonAction *<em>ba</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv320BSP_ButtonProc_PanelP14WMButtonAction" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>procedure for the open button of the side panel </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv329BSP_SliderProc_ChangedSettingP14WMSliderAction">
+<span id="_CPPv229BSP_SliderProc_ChangedSettingP14WMSliderAction"></span><span id="BSP_SliderProc_ChangedSetting__WMSliderActionP"></span><span class="target" id="_m_i_e_s___browser_settings_panel_8ipf_1a970eedb884f315f3ea374f4bfd0ae59f"></span>variable <code class="descname">BSP_SliderProc_ChangedSetting</code><span class="sig-paren">(</span>WMSliderAction *<em>spa</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv329BSP_SliderProc_ChangedSettingP14WMSliderAction" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv321BSP_TimeAlignmentProcP16WMCheckBoxAction">
+<span id="_CPPv221BSP_TimeAlignmentProcP16WMCheckBoxAction"></span><span id="BSP_TimeAlignmentProc__WMCheckBoxActionP"></span><span class="target" id="_m_i_e_s___browser_settings_panel_8ipf_1abf5710750f4d93c4563e7cfe9c7ab6d0"></span>variable <code class="descname">BSP_TimeAlignmentProc</code><span class="sig-paren">(</span>WMCheckBoxAction *<em>cba</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv321BSP_TimeAlignmentProcP16WMCheckBoxAction" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><a class="reference internal" href="_m_i_e_s___analysis_browser___sweep_browser_8ipf.html#_m_i_e_s___analysis_browser___sweep_browser_8ipf_1aec6ce55ce93604fc989626cf1ce90096"><span class="std std-ref">SB_DoTimeAlignment</span></a> <a class="reference internal" href="_m_i_e_s___data_browser_8ipf.html#_m_i_e_s___data_browser_8ipf_1a8e8e1940056f1962716523c3f65cd401"><span class="std std-ref">DB_DoTimeAlignment</span></a> </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv322BSP_TimeAlignmentPopupP13WMPopupAction">
+<span id="_CPPv222BSP_TimeAlignmentPopupP13WMPopupAction"></span><span id="BSP_TimeAlignmentPopup__WMPopupActionP"></span><span class="target" id="_m_i_e_s___browser_settings_panel_8ipf_1a9232baa833c7d1abfc9d65cf8f7b1b2d"></span>variable <code class="descname">BSP_TimeAlignmentPopup</code><span class="sig-paren">(</span>WMPopupAction *<em>pa</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv322BSP_TimeAlignmentPopupP13WMPopupAction" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv322BSP_TimeAlignmentLevelP19WMSetVariableAction">
+<span id="_CPPv222BSP_TimeAlignmentLevelP19WMSetVariableAction"></span><span id="BSP_TimeAlignmentLevel__WMSetVariableActionP"></span><span class="target" id="_m_i_e_s___browser_settings_panel_8ipf_1ab9a20c744253fb355eaf07384b046278"></span>variable <code class="descname">BSP_TimeAlignmentLevel</code><span class="sig-paren">(</span>WMSetVariableAction *<em>sva</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv322BSP_TimeAlignmentLevelP19WMSetVariableAction" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv323BSP_UpdateSweepControls6string6string8variable8variable">
+<span id="_CPPv223BSP_UpdateSweepControls6string6string8variable8variable"></span><span id="BSP_UpdateSweepControls__string.string.variable.variable"></span><span class="target" id="_m_i_e_s___browser_settings_panel_8ipf_1a6701ba6bcbc6e02ac98bbd488b86a2be"></span>variable <code class="descname">BSP_UpdateSweepControls</code><span class="sig-paren">(</span>string <em>win</em>, string <em>ctrl</em>, variable <em>firstSweep</em>, variable <em>lastSweep</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv323BSP_UpdateSweepControls6string6string8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>update controls in scPanel and change to new sweep </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>the new sweep number in case of DB or the index for SB </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">win</span></code>: name of external panel or main window </li>
+<li><code class="docutils literal notranslate"><span class="pre">ctrl</span></code>: name of the button that was pressed and is initiating the update </li>
+<li><code class="docutils literal notranslate"><span class="pre">firstSweep</span></code>: first available sweep(DB) or index(SB) </li>
+<li><code class="docutils literal notranslate"><span class="pre">lastSweep</span></code>: first available sweep(DB) or index(SB) </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv324BSP_MainPanelNeedsUpdate6string">
+<span id="_CPPv224BSP_MainPanelNeedsUpdate6string"></span><span id="BSP_MainPanelNeedsUpdate__string"></span><span class="target" id="_m_i_e_s___browser_settings_panel_8ipf_1a5f063ad54bb0d7afa91cb3f23713ee72"></span>variable <code class="descname">BSP_MainPanelNeedsUpdate</code><span class="sig-paren">(</span>string <em>win</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv324BSP_MainPanelNeedsUpdate6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>check the DataBrowser or SweepBrowser panel if it has the required version </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>0 if panel has latest version and 1 if update is required </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">win</span></code>: name of external panel or main window </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv320BSP_PanelNeedsUpdate6string">
+<span id="_CPPv220BSP_PanelNeedsUpdate6string"></span><span id="BSP_PanelNeedsUpdate__string"></span><span class="target" id="_m_i_e_s___browser_settings_panel_8ipf_1a93b748553a100f667471e3bca1b6abcd"></span><em class="property">static</em> variable <code class="descname">BSP_PanelNeedsUpdate</code><span class="sig-paren">(</span>string <em>win</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv320BSP_PanelNeedsUpdate6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>check the BrowserSettings Panel if it has the required version </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>0 if panel has latest version and 1 if update is required </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">win</span></code>: name of external panel or main window </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv312BSP_IsActive6string8variable">
+<span id="_CPPv212BSP_IsActive6string8variable"></span><span id="BSP_IsActive__string.variable"></span><span class="target" id="_m_i_e_s___browser_settings_panel_8ipf_1a885685361d2e72e28aaf36df880e828e"></span>variable <code class="descname">BSP_IsActive</code><span class="sig-paren">(</span>string <em>win</em>, variable <em>elementID</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv312BSP_IsActive6string8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>check if the specified setting is activated </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>1 if setting was activated, 0 otherwise </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">win</span></code>: name of external panel or main window </li>
+<li><code class="docutils literal notranslate"><span class="pre">elementID</span></code>: one of MIES_BSP_* constants like MIES_BSP_PA </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Variables</p>
+<dl class="member">
+<dt id="_CPPv319EXT_PANEL_SUBWINDOW">
+<span id="_CPPv219EXT_PANEL_SUBWINDOW"></span><span id="EXT_PANEL_SUBWINDOW__stringC"></span><span class="target" id="_m_i_e_s___browser_settings_panel_8ipf_1a29dc9192ccf7d0522930ce816f0130f4"></span><em class="property">const</em> string <code class="descname">EXT_PANEL_SUBWINDOW</code> = &quot;BrowserSettingsPanel&quot;<a class="headerlink" href="#_CPPv319EXT_PANEL_SUBWINDOW" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv322EXT_PANEL_SWEEPCONTROL">
+<span id="_CPPv222EXT_PANEL_SWEEPCONTROL"></span><span id="EXT_PANEL_SWEEPCONTROL__stringC"></span><span class="target" id="_m_i_e_s___browser_settings_panel_8ipf_1a858e22f9514c0519238185dc7d17405b"></span><em class="property">const</em> string <code class="descname">EXT_PANEL_SWEEPCONTROL</code> = &quot;SweepControl&quot;<a class="headerlink" href="#_CPPv322EXT_PANEL_SWEEPCONTROL" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv329BROWSERSETTINGS_PANEL_VERSION">
+<span id="_CPPv229BROWSERSETTINGS_PANEL_VERSION"></span><span id="BROWSERSETTINGS_PANEL_VERSION__variableC"></span><span class="target" id="_m_i_e_s___browser_settings_panel_8ipf_1a49f60c66adb1793428c25d51d3594e47"></span><em class="property">const</em> variable <code class="descname">BROWSERSETTINGS_PANEL_VERSION</code> = 4<a class="headerlink" href="#_CPPv329BROWSERSETTINGS_PANEL_VERSION" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv323BROWSERTYPE_DATABROWSER">
+<span id="_CPPv223BROWSERTYPE_DATABROWSER"></span><span id="BROWSERTYPE_DATABROWSER__stringC"></span><span class="target" id="_m_i_e_s___browser_settings_panel_8ipf_1a6bd815e52983db19e2d6a16f2009b66b"></span><em class="property">const</em> string <code class="descname">BROWSERTYPE_DATABROWSER</code> = &quot;D&quot;<a class="headerlink" href="#_CPPv323BROWSERTYPE_DATABROWSER" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv324BROWSERTYPE_SWEEPBROWSER">
+<span id="_CPPv224BROWSERTYPE_SWEEPBROWSER"></span><span id="BROWSERTYPE_SWEEPBROWSER__stringC"></span><span class="target" id="_m_i_e_s___browser_settings_panel_8ipf_1aa1822af7c63379b70a3035c487bd2b3b"></span><em class="property">const</em> string <code class="descname">BROWSERTYPE_SWEEPBROWSER</code> = &quot;S&quot;<a class="headerlink" href="#_CPPv324BROWSERTYPE_SWEEPBROWSER" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table of Contents</a></h3>
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../developers.html">Developer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manualinstallation.html">Manual installation instructions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reportingbugs.html">Bug reporting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../releasenotes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grouplist.html">Group list</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../filelist.html">File list</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="_compilation_tester_8ipf.html">File CompilationTester.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_compilation_tester_utils_8ipf.html">File CompilationTesterUtils.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___constants_8ipf.html">File IPNWB_Constants.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___debugging_8ipf.html">File IPNWB_Debugging.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___h_d_f5_helpers_8ipf.html">File IPNWB_HDF5Helpers.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___include_8ipf.html">File IPNWB_Include.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___reader_8ipf.html">File IPNWB_Reader.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___structures_8ipf.html">File IPNWB_Structures.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___utils_8ipf.html">File IPNWB_Utils.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___writer_8ipf.html">File IPNWB_Writer.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___amplifier_interaction_8ipf.html">File MIES_AmplifierInteraction.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_browser_8ipf.html">File MIES_AnalysisBrowser.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_browser___lab_notebook_t_p_storage_browser_8ipf.html">File MIES_AnalysisBrowser_LabNotebookTPStorageBrowser.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_browser___sweep_browser_8ipf.html">File MIES_AnalysisBrowser_SweepBrowser.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_browser___sweep_browser___export_8ipf.html">File MIES_AnalysisBrowser_SweepBrowser_Export.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_function_helpers_8ipf.html">File MIES_AnalysisFunctionHelpers.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_function_management_8ipf.html">File MIES_AnalysisFunctionManagement.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_function_prototypes_8ipf.html">File MIES_AnalysisFunctionPrototypes.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_functions_8ipf.html">File MIES_AnalysisFunctions.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_functions___dashboard_8ipf.html">File MIES_AnalysisFunctions_Dashboard.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_functions___multi_patch_seq_8ipf.html">File MIES_AnalysisFunctions_MultiPatchSeq.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_functions___patch_seq_8ipf.html">File MIES_AnalysisFunctions_PatchSeq.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_master_8ipf.html">File MIES_AnalysisMaster.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___artefact_removal_8ipf.html">File MIES_ArtefactRemoval.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___async_8ipf.html">File MIES_Async.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___asynchronous_data_8ipf.html">File MIES_AsynchronousData.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___background_watchdog_8ipf.html">File MIES_BackgroundWatchdog.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___blowout_8ipf.html">File MIES_Blowout.ipf</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">File MIES_BrowserSettingsPanel.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___cache_8ipf.html">File MIES_Cache.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___check_installation_8ipf.html">File MIES_CheckInstallation.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___constants_8ipf.html">File MIES_Constants.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___d_a_c-_hardware_8ipf.html">File MIES_DAC-Hardware.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___d_a_ephys_8ipf.html">File MIES_DAEphys.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___d_a_ephys___gui_state_8ipf.html">File MIES_DAEphys_GuiState.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___d_a_ephys___macro_8ipf.html">File MIES_DAEphys_Macro.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___data_acquisition_8ipf.html">File MIES_DataAcquisition.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___data_acquisition___multi_8ipf.html">File MIES_DataAcquisition_Multi.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___data_acquisition___single_8ipf.html">File MIES_DataAcquisition_Single.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___data_browser_8ipf.html">File MIES_DataBrowser.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___data_configurator_i_t_c_8ipf.html">File MIES_DataConfiguratorITC.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___debug_panel_8ipf.html">File MIES_DebugPanel.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___debugging_8ipf.html">File MIES_Debugging.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___downsample_8ipf.html">File MIES_Downsample.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___enhanced_w_m_routines_8ipf.html">File MIES_EnhancedWMRoutines.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___event_detection_code_8ipf.html">File MIES_EventDetectionCode.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___experiment_config_8ipf.html">File MIES_ExperimentConfig.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___experiment_documentation_8ipf.html">File MIES_ExperimentDocumentation.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___foreign_function_interface_8ipf.html">File MIES_ForeignFunctionInterface.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___global_string_and_variable_access_8ipf.html">File MIES_GlobalStringAndVariableAccess.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___gui_utilities_8ipf.html">File MIES_GuiUtilities.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___h_d_f5_ops_8ipf.html">File MIES_HDF5Ops.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___igor_hooks_8ipf.html">File MIES_IgorHooks.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___include_8ipf.html">File MIES_Include.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___indexing_8ipf.html">File MIES_Indexing.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___menu_8ipf.html">File MIES_Menu.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___mies_utilities_8ipf.html">File MIES_MiesUtilities.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___neuro_data_without_borders_8ipf.html">File MIES_NeuroDataWithoutBorders.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___optimzed_overlap_distributed_acquisition_8ipf.html">File MIES_OptimzedOverlapDistributedAcquisition.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___oscilloscope_8ipf.html">File MIES_Oscilloscope.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___overlay_sweeps_8ipf.html">File MIES_OverlaySweeps.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___pressure_control_8ipf.html">File MIES_PressureControl.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___programmatic_g_u_i_control_8ipf.html">File MIES_ProgrammaticGUIControl.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___pulse_averaging_8ipf.html">File MIES_PulseAveraging.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___repeated_acquisition_8ipf.html">File MIES_RepeatedAcquisition.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___sampling_interval_8ipf.html">File MIES_SamplingInterval.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___structures_8ipf.html">File MIES_Structures.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___sweep_saving_8ipf.html">File MIES_SweepSaving.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___tango_interact_8ipf.html">File MIES_TangoInteract.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___test_pulse_8ipf.html">File MIES_TestPulse.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___test_pulse___multi_8ipf.html">File MIES_TestPulse_Multi.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___test_pulse___single_8ipf.html">File MIES_TestPulse_Single.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___threaded_f_i_f_o_handling_8ipf.html">File MIES_ThreadedFIFOHandling.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___threadsafe_utilities_8ipf.html">File MIES_ThreadsafeUtilities.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___utilities_8ipf.html">File MIES_Utilities.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___wave_builder_8ipf.html">File MIES_WaveBuilder.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___wave_builder_panel_8ipf.html">File MIES_WaveBuilderPanel.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___wave_data_folder_getters_8ipf.html">File MIES_WaveDataFolderGetters.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_zero_m_q___interop_8ipf.html">File ZeroMQ_Interop.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interface_8h.html">File interface.h</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../structlist.html">Struct list</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../namespacelist.html">Namespace list</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CalculateTPLikePropsFromSweep.html">CalculateTPLikePropsFromSweep Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IPNWB.html">Igor Pro module for reading and writing NeurodataWithoutBorder files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TPAnalysis_algorithm.html">Testpulse Analysis Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../asyncframework.html">Async Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ZeroMQ-XOP-Readme.html">ZeroMQ XOP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../labnotebook-docs.html">Labnotebook documentation for developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mies-concepts.html">Important MIES concepts for developers</a></li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="_m_i_e_s___blowout_8ipf.html"
+                        title="previous chapter">File MIES_Blowout.ipf</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="_m_i_e_s___cache_8ipf.html"
+                        title="next chapter">File MIES_Cache.ipf</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/file/_m_i_e_s___browser_settings_panel_8ipf.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="_m_i_e_s___cache_8ipf.html" title="File MIES_Cache.ipf"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="_m_i_e_s___blowout_8ipf.html" title="File MIES_Blowout.ipf"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">MIES Igor (master) latest-52-g2ffc1636 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../filelist.html" >File list</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright .
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.3.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,421 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>File MIES_Cache.ipf &#8212; MIES Igor (master) latest-52-g2ffc1636 documentation</title>
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" />
+    
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    
+    <script type="text/javascript" src="../_static/sidebar.js"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="File MIES_CheckInstallation.ipf" href="_m_i_e_s___check_installation_8ipf.html" />
+    <link rel="prev" title="File MIES_BrowserSettingsPanel.ipf" href="_m_i_e_s___browser_settings_panel_8ipf.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="_m_i_e_s___check_installation_8ipf.html" title="File MIES_CheckInstallation.ipf"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="_m_i_e_s___browser_settings_panel_8ipf.html" title="File MIES_BrowserSettingsPanel.ipf"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">MIES Igor (master) latest-52-g2ffc1636 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../filelist.html" accesskey="U">File list</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="file-mies-cache-ipf">
+<span id="id1"></span><h1>File MIES_Cache.ipf<a class="headerlink" href="#file-mies-cache-ipf" title="Permalink to this headline">¶</a></h1>
+<p><strong>CA</strong> This file holds functions related to caching of waves. </p>
+<p>The cache allows to store waves using a unique key for later retrieval. The stored waves are kept until they are explicitly removed.</p>
+<p>Usage:<ul class="simple">
+<li>Write a key generator function returning a string The parameters to CA_GenKey() must completely determine the wave you will later store. The appended version string to the key allows you to invalidate old keys if the algorithm creating the wave changes, but all input stays the same.</li>
+</ul>
+</p>
+<p><div class="highlight-igorpro notranslate"><div class="highlight"><pre><span></span><span class="kr">Function</span>/S CA_GenKey(input)
+    <span class="kt">variable</span> input
+
+    <span class="k">return</span> <span class="nf">stringCRC</span>(0, <span class="nf">num2str</span>(input)) + <span class="s">&quot;Version 1&quot;</span>
+<span class="kr">End</span>
+</pre></div>
+</div>
+</p>
+<p><ul class="simple">
+<li>Write your main function as in the following example. The first time MyFancyCalculation(input) is called you get a cache miss and result has to be created from scratch, but all subsequent calls are fast as the entry is fetched from the cache.</li>
+</ul>
+</p>
+<p><div class="highlight-igorpro notranslate"><div class="highlight"><pre><span></span><span class="kr">Function</span>/<span class="kt">WAVE</span> MyFancyCalculation(input)
+    <span class="kt">variable</span> input
+
+    <span class="kt">string</span> key = CA_GenKey(input)
+
+    <span class="kt">WAVE</span>/Z result = CA_TryFetchingEntryFromCache(key)
+
+    <span class="k">if</span>(<span class="nf">WaveExists</span>(result))
+        <span class="k">return</span> result
+    <span class="k">endif</span>
+
+    <span class="c1">// create result from scratch</span>
+    <span class="c1">// ...</span>
+
+    CA_StoreEntryIntoCache(key, result)
+
+    <span class="k">return</span> result
+<span class="kr">End</span>
+</pre></div>
+</div>
+</p>
+<p><ul class="simple">
+<li>Deleting cache entries has to be done <em>manually</em> via <a class="reference internal" href="#_m_i_e_s___cache_8ipf_1a95de4c6b9d2d345a13e7bf2bb891fc82"><span class="std std-ref">CA_DeleteCacheEntry()</span></a>. The cache is also stored in a packed experiment.</li>
+<li>The entries in the cache are stored as free wave copies of what you feed into <a class="reference internal" href="#_m_i_e_s___cache_8ipf_1a4765bad04ec6d55e60b32d81b031ac81"><span class="std std-ref">CA_StoreEntryIntoCache()</span></a>. Similiary you get a free wave copy from <a class="reference internal" href="#_m_i_e_s___cache_8ipf_1a647d0bbb41e2d3e699c682f03beb15e6"><span class="std std-ref">CA_TryFetchingEntryFromCache()</span></a>.</li>
+<li>Storing 1D wave reference waves is supported, they are by default deep copied. </li>
+</ul>
+</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Cache key generators</p>
+<p></p>
+<dl class="function">
+<dt id="_CPPv324CA_DistDAQCreateCacheKeyP12OOdDAQParams">
+<span id="_CPPv224CA_DistDAQCreateCacheKeyP12OOdDAQParams"></span><span id="CA_DistDAQCreateCacheKey__OOdDAQParamsP"></span><span class="target" id="_m_i_e_s___cache_8ipf_1a3d26c7b337569593a134c240048a5c40"></span>string <code class="descname">CA_DistDAQCreateCacheKey</code><span class="sig-paren">(</span><a class="reference internal" href="_m_i_e_s___structures_8ipf.html#_CPPv312OOdDAQParams" title="OOdDAQParams">OOdDAQParams</a> *<em>params</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv324CA_DistDAQCreateCacheKeyP12OOdDAQParams" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Cache key generator for oodDAQ offset waves. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv318CA_PulseStartTimes4wave8variable">
+<span id="_CPPv218CA_PulseStartTimes4wave8variable"></span><span id="CA_PulseStartTimes__wave.variable"></span><span class="target" id="_m_i_e_s___cache_8ipf_1a7c499a078687aae1985ac7802341f789"></span>string <code class="descname">CA_PulseStartTimes</code><span class="sig-paren">(</span>wave <em>wv</em>, variable <em>totalOnsetDelay</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv318CA_PulseStartTimes4wave8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Cache key generator for <code class="docutils literal notranslate"><span class="pre">FindLevel</span></code> in <a class="reference internal" href="_m_i_e_s___pulse_averaging_8ipf.html#_m_i_e_s___pulse_averaging_8ipf_1ab46e1ac11bf992db5aaea8f46aed0899"><span class="std std-ref">PA_CalculatePulseStartTimes()</span></a> </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv315CA_SmoothDeconv4wave8variable8variable">
+<span id="_CPPv215CA_SmoothDeconv4wave8variable8variable"></span><span id="CA_SmoothDeconv__wave.variable.variable"></span><span class="target" id="_m_i_e_s___cache_8ipf_1ab35cc2210efb6e8d88baf134ee83b122"></span>string <code class="descname">CA_SmoothDeconv</code><span class="sig-paren">(</span>wave <em>wv</em>, variable <em>smoothingFactor</em>, variable <em>range_pnts</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv315CA_SmoothDeconv4wave8variable8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Cache key generator for <a class="reference internal" href="_m_i_e_s___pulse_averaging_8ipf.html#_m_i_e_s___pulse_averaging_8ipf_1a25b8c994513f8298c5e91f4c7502b2fa"><span class="std std-ref">PA_SmoothDeconv()</span></a> </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">wv</span></code>: input wave (average) </li>
+<li><code class="docutils literal notranslate"><span class="pre">smoothingFactor</span></code>: smoothing factor </li>
+<li><code class="docutils literal notranslate"><span class="pre">range_pnts</span></code>: number of points (p) the smoothing was performed </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv39CA_Deconv4wave8variable">
+<span id="_CPPv29CA_Deconv4wave8variable"></span><span id="CA_Deconv__wave.variable"></span><span class="target" id="_m_i_e_s___cache_8ipf_1ac786f553849c9e524f8ffb0106995d12"></span>string <code class="descname">CA_Deconv</code><span class="sig-paren">(</span>wave <em>wv</em>, variable <em>tau</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv39CA_Deconv4wave8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Cache key generator for <a class="reference internal" href="_m_i_e_s___pulse_averaging_8ipf.html#_m_i_e_s___pulse_averaging_8ipf_1a6a3e00ba5ed1bc33c71864299f30fedc"><span class="std std-ref">PA_Deconvolution()</span></a> </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">wv</span></code>: input wave (smoothed average) </li>
+<li><code class="docutils literal notranslate"><span class="pre">tau</span></code>: convolution time </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv327CA_ArtefactRemovalRangesKey5dfref8variable">
+<span id="_CPPv227CA_ArtefactRemovalRangesKey5dfref8variable"></span><span id="CA_ArtefactRemovalRangesKey__dfref.variable"></span><span class="target" id="_m_i_e_s___cache_8ipf_1a54ec1862ee17609d964b9056258c2370"></span>string <code class="descname">CA_ArtefactRemovalRangesKey</code><span class="sig-paren">(</span>dfref <em>singleSweepDFR</em>, variable <em>sweepNo</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv327CA_ArtefactRemovalRangesKey5dfref8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Cache key generator for artefact removal ranges. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv315CA_AveragingKey11WaveRefWave">
+<span id="_CPPv215CA_AveragingKey11WaveRefWave"></span><span id="CA_AveragingKey__WaveRefWave"></span><span class="target" id="_m_i_e_s___cache_8ipf_1ad14ced48ec463a07ebffd588541b1870"></span>string <code class="descname">CA_AveragingKey</code><span class="sig-paren">(</span>WaveRefWave <em>waveRefs</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv315CA_AveragingKey11WaveRefWave" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Cache key generator for averaging. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv317CA_WaveScalingCRC8variable4wave8variable">
+<span id="_CPPv217CA_WaveScalingCRC8variable4wave8variable"></span><span id="CA_WaveScalingCRC__variable.wave.variable"></span><span class="target" id="_m_i_e_s___cache_8ipf_1a9bbb2304e5aa7cd2ac16514f657a6cf4"></span><em class="property">static</em> variable <code class="descname">CA_WaveScalingCRC</code><span class="sig-paren">(</span>variable <em>crc</em>, wave <em>wv</em>, variable <em>dimension</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv317CA_WaveScalingCRC8variable4wave8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Calculate the CRC of all metadata of a dimension. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv311CA_WaveCRCs11WaveRefWave8variable">
+<span id="_CPPv211CA_WaveCRCs11WaveRefWave8variable"></span><span id="CA_WaveCRCs__WaveRefWave.variable"></span><span class="target" id="_m_i_e_s___cache_8ipf_1a5f1e45fd514ede74b6bfdcefe18baa16"></span><em class="property">static</em> string <code class="descname">CA_WaveCRCs</code><span class="sig-paren">(</span>WaveRefWave <em>waveRefs</em>, variable <em>crcMode</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv311CA_WaveCRCs11WaveRefWave8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Calculate all CRC values of the waves referenced in waveRefs. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">waveRefs</span></code>: wave reference wave </li>
+<li><code class="docutils literal notranslate"><span class="pre">crcMode</span></code>: parameter to WaveCRC </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Functions</p>
+<dl class="function">
+<dt id="_CPPv323CA_MakeSpaceForNewEntryv">
+<span id="_CPPv223CA_MakeSpaceForNewEntryv"></span><span id="CA_MakeSpaceForNewEntry"></span><span class="target" id="_m_i_e_s___cache_8ipf_1a2dbd1b09f1004095a88dfd6129a0f890"></span><em class="property">static</em> variable <code class="descname">CA_MakeSpaceForNewEntry</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv323CA_MakeSpaceForNewEntryv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Make space for one new entry in the cache waves. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>index into cache waves </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv322CA_StoreEntryIntoCache6string4wave8variable">
+<span id="_CPPv222CA_StoreEntryIntoCache6string4wave8variable"></span><span id="CA_StoreEntryIntoCache__string.wave.variable"></span><span class="target" id="_m_i_e_s___cache_8ipf_1a4765bad04ec6d55e60b32d81b031ac81"></span>variable <code class="descname">CA_StoreEntryIntoCache</code><span class="sig-paren">(</span>string <em>key</em>, wave <em>val</em>, variable <em>options</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv322CA_StoreEntryIntoCache6string4wave8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Add a new entry into the cache. </p>
+<p><p>Existing entries with the same key are overwritten. </p>
+<dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">key</span></code>: string which uniquely identifies the cached wave </li>
+<li><code class="docutils literal notranslate"><span class="pre">val</span></code>: wave to store </li>
+<li><code class="docutils literal notranslate"><span class="pre">options</span></code>: [optional, defaults to none] One or multiple constants from CacheFetchOptions</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv316CA_GetCacheIndex6string">
+<span id="_CPPv216CA_GetCacheIndex6string"></span><span id="CA_GetCacheIndex__string"></span><span class="target" id="_m_i_e_s___cache_8ipf_1a6e5797f6b8b5dceb6eaaaf183c2b6b1c"></span><em class="property">static</em> variable <code class="descname">CA_GetCacheIndex</code><span class="sig-paren">(</span>string <em>key</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv316CA_GetCacheIndex6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return the index of the entry <code class="docutils literal notranslate"><span class="pre">key</span></code> </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>non-negative number or <code class="docutils literal notranslate"><span class="pre">NaN</span></code> if it could not be found. </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv328CA_TryFetchingEntryFromCache6string8variable">
+<span id="_CPPv228CA_TryFetchingEntryFromCache6string8variable"></span><span id="CA_TryFetchingEntryFromCache__string.variable"></span><span class="target" id="_m_i_e_s___cache_8ipf_1a647d0bbb41e2d3e699c682f03beb15e6"></span>wave <code class="descname">CA_TryFetchingEntryFromCache</code><span class="sig-paren">(</span>string <em>key</em>, variable <em>options</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv328CA_TryFetchingEntryFromCache6string8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Try to fetch the wave stored under key from the cache. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>A wave reference with the stored data or a invalid wave reference if nothing could be found. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">key</span></code>: string which uniquely identifies the cached wave </li>
+<li><code class="docutils literal notranslate"><span class="pre">options</span></code>: [optional, defaults to none] One or multiple constants from CacheFetchOptions</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv319CA_DeleteCacheEntry6string">
+<span id="_CPPv219CA_DeleteCacheEntry6string"></span><span id="CA_DeleteCacheEntry__string"></span><span class="target" id="_m_i_e_s___cache_8ipf_1a95de4c6b9d2d345a13e7bf2bb891fc82"></span>variable <code class="descname">CA_DeleteCacheEntry</code><span class="sig-paren">(</span>string <em>key</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv319CA_DeleteCacheEntry6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Try to delete a cache entry. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>One if it could be found and deleted, zero otherwise </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv313CA_FlushCachev">
+<span id="_CPPv213CA_FlushCachev"></span><span id="CA_FlushCache"></span><span class="target" id="_m_i_e_s___cache_8ipf_1a91d9ef3e90908e66941751cf3a7aad96"></span>variable <code class="descname">CA_FlushCache</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv313CA_FlushCachev" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Remove all entries from the wave cache. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv324CA_OutputCacheStatisticsv">
+<span id="_CPPv224CA_OutputCacheStatisticsv"></span><span id="CA_OutputCacheStatistics"></span><span class="target" id="_m_i_e_s___cache_8ipf_1a067b1f76ae48b5838434dfcc42d780c5"></span>variable <code class="descname">CA_OutputCacheStatistics</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv324CA_OutputCacheStatisticsv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Output cache statistics. </p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table of Contents</a></h3>
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../developers.html">Developer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manualinstallation.html">Manual installation instructions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reportingbugs.html">Bug reporting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../releasenotes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grouplist.html">Group list</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../filelist.html">File list</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="_compilation_tester_8ipf.html">File CompilationTester.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_compilation_tester_utils_8ipf.html">File CompilationTesterUtils.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___constants_8ipf.html">File IPNWB_Constants.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___debugging_8ipf.html">File IPNWB_Debugging.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___h_d_f5_helpers_8ipf.html">File IPNWB_HDF5Helpers.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___include_8ipf.html">File IPNWB_Include.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___reader_8ipf.html">File IPNWB_Reader.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___structures_8ipf.html">File IPNWB_Structures.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___utils_8ipf.html">File IPNWB_Utils.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___writer_8ipf.html">File IPNWB_Writer.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___amplifier_interaction_8ipf.html">File MIES_AmplifierInteraction.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_browser_8ipf.html">File MIES_AnalysisBrowser.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_browser___lab_notebook_t_p_storage_browser_8ipf.html">File MIES_AnalysisBrowser_LabNotebookTPStorageBrowser.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_browser___sweep_browser_8ipf.html">File MIES_AnalysisBrowser_SweepBrowser.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_browser___sweep_browser___export_8ipf.html">File MIES_AnalysisBrowser_SweepBrowser_Export.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_function_helpers_8ipf.html">File MIES_AnalysisFunctionHelpers.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_function_management_8ipf.html">File MIES_AnalysisFunctionManagement.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_function_prototypes_8ipf.html">File MIES_AnalysisFunctionPrototypes.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_functions_8ipf.html">File MIES_AnalysisFunctions.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_functions___dashboard_8ipf.html">File MIES_AnalysisFunctions_Dashboard.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_functions___multi_patch_seq_8ipf.html">File MIES_AnalysisFunctions_MultiPatchSeq.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_functions___patch_seq_8ipf.html">File MIES_AnalysisFunctions_PatchSeq.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_master_8ipf.html">File MIES_AnalysisMaster.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___artefact_removal_8ipf.html">File MIES_ArtefactRemoval.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___async_8ipf.html">File MIES_Async.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___asynchronous_data_8ipf.html">File MIES_AsynchronousData.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___background_watchdog_8ipf.html">File MIES_BackgroundWatchdog.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___blowout_8ipf.html">File MIES_Blowout.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___browser_settings_panel_8ipf.html">File MIES_BrowserSettingsPanel.ipf</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">File MIES_Cache.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___check_installation_8ipf.html">File MIES_CheckInstallation.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___constants_8ipf.html">File MIES_Constants.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___d_a_c-_hardware_8ipf.html">File MIES_DAC-Hardware.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___d_a_ephys_8ipf.html">File MIES_DAEphys.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___d_a_ephys___gui_state_8ipf.html">File MIES_DAEphys_GuiState.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___d_a_ephys___macro_8ipf.html">File MIES_DAEphys_Macro.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___data_acquisition_8ipf.html">File MIES_DataAcquisition.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___data_acquisition___multi_8ipf.html">File MIES_DataAcquisition_Multi.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___data_acquisition___single_8ipf.html">File MIES_DataAcquisition_Single.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___data_browser_8ipf.html">File MIES_DataBrowser.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___data_configurator_i_t_c_8ipf.html">File MIES_DataConfiguratorITC.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___debug_panel_8ipf.html">File MIES_DebugPanel.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___debugging_8ipf.html">File MIES_Debugging.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___downsample_8ipf.html">File MIES_Downsample.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___enhanced_w_m_routines_8ipf.html">File MIES_EnhancedWMRoutines.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___event_detection_code_8ipf.html">File MIES_EventDetectionCode.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___experiment_config_8ipf.html">File MIES_ExperimentConfig.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___experiment_documentation_8ipf.html">File MIES_ExperimentDocumentation.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___foreign_function_interface_8ipf.html">File MIES_ForeignFunctionInterface.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___global_string_and_variable_access_8ipf.html">File MIES_GlobalStringAndVariableAccess.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___gui_utilities_8ipf.html">File MIES_GuiUtilities.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___h_d_f5_ops_8ipf.html">File MIES_HDF5Ops.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___igor_hooks_8ipf.html">File MIES_IgorHooks.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___include_8ipf.html">File MIES_Include.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___indexing_8ipf.html">File MIES_Indexing.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___menu_8ipf.html">File MIES_Menu.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___mies_utilities_8ipf.html">File MIES_MiesUtilities.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___neuro_data_without_borders_8ipf.html">File MIES_NeuroDataWithoutBorders.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___optimzed_overlap_distributed_acquisition_8ipf.html">File MIES_OptimzedOverlapDistributedAcquisition.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___oscilloscope_8ipf.html">File MIES_Oscilloscope.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___overlay_sweeps_8ipf.html">File MIES_OverlaySweeps.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___pressure_control_8ipf.html">File MIES_PressureControl.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___programmatic_g_u_i_control_8ipf.html">File MIES_ProgrammaticGUIControl.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___pulse_averaging_8ipf.html">File MIES_PulseAveraging.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___repeated_acquisition_8ipf.html">File MIES_RepeatedAcquisition.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___sampling_interval_8ipf.html">File MIES_SamplingInterval.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___structures_8ipf.html">File MIES_Structures.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___sweep_saving_8ipf.html">File MIES_SweepSaving.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___tango_interact_8ipf.html">File MIES_TangoInteract.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___test_pulse_8ipf.html">File MIES_TestPulse.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___test_pulse___multi_8ipf.html">File MIES_TestPulse_Multi.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___test_pulse___single_8ipf.html">File MIES_TestPulse_Single.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___threaded_f_i_f_o_handling_8ipf.html">File MIES_ThreadedFIFOHandling.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___threadsafe_utilities_8ipf.html">File MIES_ThreadsafeUtilities.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___utilities_8ipf.html">File MIES_Utilities.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___wave_builder_8ipf.html">File MIES_WaveBuilder.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___wave_builder_panel_8ipf.html">File MIES_WaveBuilderPanel.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___wave_data_folder_getters_8ipf.html">File MIES_WaveDataFolderGetters.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_zero_m_q___interop_8ipf.html">File ZeroMQ_Interop.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interface_8h.html">File interface.h</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../structlist.html">Struct list</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../namespacelist.html">Namespace list</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CalculateTPLikePropsFromSweep.html">CalculateTPLikePropsFromSweep Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IPNWB.html">Igor Pro module for reading and writing NeurodataWithoutBorder files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TPAnalysis_algorithm.html">Testpulse Analysis Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../asyncframework.html">Async Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ZeroMQ-XOP-Readme.html">ZeroMQ XOP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../labnotebook-docs.html">Labnotebook documentation for developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mies-concepts.html">Important MIES concepts for developers</a></li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="_m_i_e_s___browser_settings_panel_8ipf.html"
+                        title="previous chapter">File MIES_BrowserSettingsPanel.ipf</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="_m_i_e_s___check_installation_8ipf.html"
+                        title="next chapter">File MIES_CheckInstallation.ipf</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/file/_m_i_e_s___cache_8ipf.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="_m_i_e_s___check_installation_8ipf.html" title="File MIES_CheckInstallation.ipf"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="_m_i_e_s___browser_settings_panel_8ipf.html" title="File MIES_BrowserSettingsPanel.ipf"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">MIES Igor (master) latest-52-g2ffc1636 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../filelist.html" >File list</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright .
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.3.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,391 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>File MIES_AnalysisBrowser_SweepBrowser_Export.ipf &#8212; MIES Igor (master) latest-52-g2ffc1636 documentation</title>
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" />
+    
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    
+    <script type="text/javascript" src="../_static/sidebar.js"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="File MIES_AnalysisFunctionHelpers.ipf" href="_m_i_e_s___analysis_function_helpers_8ipf.html" />
+    <link rel="prev" title="File MIES_AnalysisBrowser_SweepBrowser.ipf" href="_m_i_e_s___analysis_browser___sweep_browser_8ipf.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="_m_i_e_s___analysis_function_helpers_8ipf.html" title="File MIES_AnalysisFunctionHelpers.ipf"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="_m_i_e_s___analysis_browser___sweep_browser_8ipf.html" title="File MIES_AnalysisBrowser_SweepBrowser.ipf"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">MIES Igor (master) latest-52-g2ffc1636 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../filelist.html" accesskey="U">File list</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="file-mies-analysisbrowser-sweepbrowser-export-ipf">
+<span id="id1"></span><h1>File MIES_AnalysisBrowser_SweepBrowser_Export.ipf<a class="headerlink" href="#file-mies-analysisbrowser-sweepbrowser-export-ipf" title="Permalink to this headline">¶</a></h1>
+<p><strong>SBE</strong> Panel for exporting sweepbrowser traces to new graphs or existing graphs </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Functions</p>
+<dl class="function">
+<dt id="_CPPv322SBE_FillExportSettings6stringP18SBE_ExportSettings">
+<span id="_CPPv222SBE_FillExportSettings6stringP18SBE_ExportSettings"></span><span id="SBE_FillExportSettings__string.SBE_ExportSettingsP"></span><span class="target" id="_m_i_e_s___analysis_browser___sweep_browser___export_8ipf_1ae59472c655a45d991f651c327bbaadd5"></span><em class="property">static</em> variable <code class="descname">SBE_FillExportSettings</code><span class="sig-paren">(</span>string <em>win</em>, <a class="reference internal" href="#_CPPv318SBE_ExportSettings" title="SBE_ExportSettings">SBE_ExportSettings</a> *<em>sett</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv322SBE_FillExportSettings6stringP18SBE_ExportSettings" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv319SBE_GetSelectedAxis6string8variable">
+<span id="_CPPv219SBE_GetSelectedAxis6string8variable"></span><span id="SBE_GetSelectedAxis__string.variable"></span><span class="target" id="_m_i_e_s___analysis_browser___sweep_browser___export_8ipf_1a281cf803dd7c84267d6bdbfe9e7eed1d"></span>string <code class="descname">SBE_GetSelectedAxis</code><span class="sig-paren">(</span>string <em>graphPopup</em>, variable <em>axisOrientation</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv319SBE_GetSelectedAxis6string8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return a list of possible axes for the export panel. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv328SBE_GetPulseStartTimesForSelv">
+<span id="_CPPv228SBE_GetPulseStartTimesForSelv"></span><span id="SBE_GetPulseStartTimesForSel"></span><span class="target" id="_m_i_e_s___analysis_browser___sweep_browser___export_8ipf_1a1ce531d26d12fde76387efd3c13c8614"></span><em class="property">static</em> wave <code class="descname">SBE_GetPulseStartTimesForSel</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv328SBE_GetPulseStartTimesForSelv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv319SBE_ShowExportPanel6string">
+<span id="_CPPv219SBE_ShowExportPanel6string"></span><span id="SBE_ShowExportPanel__string"></span><span class="target" id="_m_i_e_s___analysis_browser___sweep_browser___export_8ipf_1a7351feb3dfc3186225301f9dbd83cba7"></span>variable <code class="descname">SBE_ShowExportPanel</code><span class="sig-paren">(</span>string <em>sourceWindow</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv319SBE_ShowExportPanel6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Display the export panel. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv322SBE_ListOfGraphsAndNewv">
+<span id="_CPPv222SBE_ListOfGraphsAndNewv"></span><span id="SBE_ListOfGraphsAndNew"></span><span class="target" id="_m_i_e_s___analysis_browser___sweep_browser___export_8ipf_1a60349059ff268bdac3ca5e357814055d"></span>string <code class="descname">SBE_ListOfGraphsAndNew</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv322SBE_ListOfGraphsAndNewv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return a list of possible target graphs for the export panel. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv321SBE_ListOfSweepGraphsv">
+<span id="_CPPv221SBE_ListOfSweepGraphsv"></span><span id="SBE_ListOfSweepGraphs"></span><span class="target" id="_m_i_e_s___analysis_browser___sweep_browser___export_8ipf_1aa4a9a48810e4102924d926ca35a14436"></span>string <code class="descname">SBE_ListOfSweepGraphs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv321SBE_ListOfSweepGraphsv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return a list of possible source graphs for the export panel. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv326SBE_GetSourceGraphADTracesv">
+<span id="_CPPv226SBE_GetSourceGraphADTracesv"></span><span id="SBE_GetSourceGraphADTraces"></span><span class="target" id="_m_i_e_s___analysis_browser___sweep_browser___export_8ipf_1af5e7f9c96c08a1b8e166e31b5c619fed"></span>string <code class="descname">SBE_GetSourceGraphADTraces</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv326SBE_GetSourceGraphADTracesv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return a list of all AD traces from the selected target graph. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv322SBE_ExportSweepBrowserP18SBE_ExportSettings">
+<span id="_CPPv222SBE_ExportSweepBrowserP18SBE_ExportSettings"></span><span id="SBE_ExportSweepBrowser__SBE_ExportSettingsP"></span><span class="target" id="_m_i_e_s___analysis_browser___sweep_browser___export_8ipf_1a5237940d122c43a261b962c21335cb08"></span><em class="property">static</em> variable <code class="descname">SBE_ExportSweepBrowser</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv318SBE_ExportSettings" title="SBE_ExportSettings">SBE_ExportSettings</a> *<em>sett</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv322SBE_ExportSweepBrowserP18SBE_ExportSettings" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Export the sweep browser traces to a user given folder. </p>
+<p>Creates a new graph from it or appends to an existing one. Only duplicates the main graph without external subwindows </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv323SBE_ExportSettingsPanelv">
+<span id="_CPPv223SBE_ExportSettingsPanelv"></span><span id="SBE_ExportSettingsPanel"></span><span class="target" id="_m_i_e_s___analysis_browser___sweep_browser___export_8ipf_1aa4815a26ec3b054b03427cec27eb81b8"></span>void <code class="descname">SBE_ExportSettingsPanel</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv323SBE_ExportSettingsPanelv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv328SBE_PopMenu_ExportTargetAxisP13WMPopupAction">
+<span id="_CPPv228SBE_PopMenu_ExportTargetAxisP13WMPopupAction"></span><span id="SBE_PopMenu_ExportTargetAxis__WMPopupActionP"></span><span class="target" id="_m_i_e_s___analysis_browser___sweep_browser___export_8ipf_1a1b4efef894488ecbd7f2f2ceaba5cf50"></span>variable <code class="descname">SBE_PopMenu_ExportTargetAxis</code><span class="sig-paren">(</span>WMPopupAction *<em>pa</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv328SBE_PopMenu_ExportTargetAxisP13WMPopupAction" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv329SBE_PopMenu_ExportTargetGraphP13WMPopupAction">
+<span id="_CPPv229SBE_PopMenu_ExportTargetGraphP13WMPopupAction"></span><span id="SBE_PopMenu_ExportTargetGraph__WMPopupActionP"></span><span class="target" id="_m_i_e_s___analysis_browser___sweep_browser___export_8ipf_1a762dfb721c2f555d3679acefdbfced8a"></span>variable <code class="descname">SBE_PopMenu_ExportTargetGraph</code><span class="sig-paren">(</span>WMPopupAction *<em>pa</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv329SBE_PopMenu_ExportTargetGraphP13WMPopupAction" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv328SBE_ButtonProc_PerformExportP14WMButtonAction">
+<span id="_CPPv228SBE_ButtonProc_PerformExportP14WMButtonAction"></span><span id="SBE_ButtonProc_PerformExport__WMButtonActionP"></span><span class="target" id="_m_i_e_s___analysis_browser___sweep_browser___export_8ipf_1ac10d86fa5f0e27a52f36cf23beeb1c23"></span>variable <code class="descname">SBE_ButtonProc_PerformExport</code><span class="sig-paren">(</span>WMButtonAction *<em>ba</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv328SBE_ButtonProc_PerformExportP14WMButtonAction" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv331SBE_CheckProc_UsePulseForXRangeP16WMCheckboxAction">
+<span id="_CPPv231SBE_CheckProc_UsePulseForXRangeP16WMCheckboxAction"></span><span id="SBE_CheckProc_UsePulseForXRange__WMCheckboxActionP"></span><span class="target" id="_m_i_e_s___analysis_browser___sweep_browser___export_8ipf_1a97a51de9fcaf6d3190006849ce4e998c"></span>variable <code class="descname">SBE_CheckProc_UsePulseForXRange</code><span class="sig-paren">(</span>WMCheckboxAction *<em>cba</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv331SBE_CheckProc_UsePulseForXRangeP16WMCheckboxAction" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv329SBE_PopMenuProc_PulsesADTraceP13WMPopupAction">
+<span id="_CPPv229SBE_PopMenuProc_PulsesADTraceP13WMPopupAction"></span><span id="SBE_PopMenuProc_PulsesADTrace__WMPopupActionP"></span><span class="target" id="_m_i_e_s___analysis_browser___sweep_browser___export_8ipf_1a033f1e7637204e83bdf8969add711bc2"></span>variable <code class="descname">SBE_PopMenuProc_PulsesADTrace</code><span class="sig-paren">(</span>WMPopupAction *<em>pa</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv329SBE_PopMenuProc_PulsesADTraceP13WMPopupAction" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Variables</p>
+<dl class="member">
+<dt id="_CPPv316SBE_EXPORT_PANEL">
+<span id="_CPPv216SBE_EXPORT_PANEL"></span><span id="SBE_EXPORT_PANEL__stringC"></span><span class="target" id="_m_i_e_s___analysis_browser___sweep_browser___export_8ipf_1a5a492104d2167c579705cd8332ff770d"></span><em class="property">const</em> string <code class="descname">SBE_EXPORT_PANEL</code> = &quot;SBE_ExportSettingsPanel&quot;<a class="headerlink" href="#_CPPv316SBE_EXPORT_PANEL" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="class">
+<dt id="_CPPv318SBE_ExportSettings">
+<span id="_CPPv218SBE_ExportSettings"></span><span id="SBE_ExportSettings"></span><span class="target" id="struct_s_b_e___export_settings"></span><em class="property">struct </em><code class="descname">SBE_ExportSettings</code><a class="headerlink" href="#_CPPv318SBE_ExportSettings" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="member">
+<dt id="_CPPv3N18SBE_ExportSettings10dataFolderE">
+<span id="_CPPv2N18SBE_ExportSettings10dataFolderE"></span><span id="SBE_ExportSettings::dataFolder__string"></span><span class="target" id="struct_s_b_e___export_settings_1a3a253957dc66eb19e06c4d2ec63064d7"></span>string <code class="descname">dataFolder</code><a class="headerlink" href="#_CPPv3N18SBE_ExportSettings10dataFolderE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N18SBE_ExportSettings14useCursorRangeE">
+<span id="_CPPv2N18SBE_ExportSettings14useCursorRangeE"></span><span id="SBE_ExportSettings::useCursorRange__variable"></span><span class="target" id="struct_s_b_e___export_settings_1a0026f5d847b52468dcc466ced68c7245"></span>variable <code class="descname">useCursorRange</code><a class="headerlink" href="#_CPPv3N18SBE_ExportSettings14useCursorRangeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N18SBE_ExportSettings13resetWaveZeroE">
+<span id="_CPPv2N18SBE_ExportSettings13resetWaveZeroE"></span><span id="SBE_ExportSettings::resetWaveZero__variable"></span><span class="target" id="struct_s_b_e___export_settings_1a464262e75f06009d8d957351ebb54498"></span>variable <code class="descname">resetWaveZero</code><a class="headerlink" href="#_CPPv3N18SBE_ExportSettings13resetWaveZeroE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N18SBE_ExportSettings16manualRangeBeginE">
+<span id="_CPPv2N18SBE_ExportSettings16manualRangeBeginE"></span><span id="SBE_ExportSettings::manualRangeBegin__variable"></span><span class="target" id="struct_s_b_e___export_settings_1aef022e203a47155230fc67a92d8eecd4"></span>variable <code class="descname">manualRangeBegin</code><a class="headerlink" href="#_CPPv3N18SBE_ExportSettings16manualRangeBeginE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N18SBE_ExportSettings14manualRangeEndE">
+<span id="_CPPv2N18SBE_ExportSettings14manualRangeEndE"></span><span id="SBE_ExportSettings::manualRangeEnd__variable"></span><span class="target" id="struct_s_b_e___export_settings_1a958694457eaedeabf8419c753fa65748"></span>variable <code class="descname">manualRangeEnd</code><a class="headerlink" href="#_CPPv3N18SBE_ExportSettings14manualRangeEndE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N18SBE_ExportSettings8leftAxisE">
+<span id="_CPPv2N18SBE_ExportSettings8leftAxisE"></span><span id="SBE_ExportSettings::leftAxis__string"></span><span class="target" id="struct_s_b_e___export_settings_1a51acea7a9b9fee123582e09c28982cc4"></span>string <code class="descname">leftAxis</code><a class="headerlink" href="#_CPPv3N18SBE_ExportSettings8leftAxisE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N18SBE_ExportSettings10bottomAxisE">
+<span id="_CPPv2N18SBE_ExportSettings10bottomAxisE"></span><span id="SBE_ExportSettings::bottomAxis__string"></span><span class="target" id="struct_s_b_e___export_settings_1adfb5c9a04ec6f63914a55921b60b64db"></span>string <code class="descname">bottomAxis</code><a class="headerlink" href="#_CPPv3N18SBE_ExportSettings10bottomAxisE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N18SBE_ExportSettings11targetGraphE">
+<span id="_CPPv2N18SBE_ExportSettings11targetGraphE"></span><span id="SBE_ExportSettings::targetGraph__string"></span><span class="target" id="struct_s_b_e___export_settings_1a559b4b82f469da4a166db35dd1133ed5"></span>string <code class="descname">targetGraph</code><a class="headerlink" href="#_CPPv3N18SBE_ExportSettings11targetGraphE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N18SBE_ExportSettings11sourceGraphE">
+<span id="_CPPv2N18SBE_ExportSettings11sourceGraphE"></span><span id="SBE_ExportSettings::sourceGraph__string"></span><span class="target" id="struct_s_b_e___export_settings_1a5187d947a8c6ea560b1b9cc1aaa2c823"></span>string <code class="descname">sourceGraph</code><a class="headerlink" href="#_CPPv3N18SBE_ExportSettings11sourceGraphE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N18SBE_ExportSettings14axisEqualizingE">
+<span id="_CPPv2N18SBE_ExportSettings14axisEqualizingE"></span><span id="SBE_ExportSettings::axisEqualizing__variable"></span><span class="target" id="struct_s_b_e___export_settings_1af635c93d1f25ca4541db81d7a6f39eeb"></span>variable <code class="descname">axisEqualizing</code><a class="headerlink" href="#_CPPv3N18SBE_ExportSettings14axisEqualizingE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N18SBE_ExportSettings11equalYRangeE">
+<span id="_CPPv2N18SBE_ExportSettings11equalYRangeE"></span><span id="SBE_ExportSettings::equalYRange__variable"></span><span class="target" id="struct_s_b_e___export_settings_1adad35666094526debfe7a1b8b67c13fa"></span>variable <code class="descname">equalYRange</code><a class="headerlink" href="#_CPPv3N18SBE_ExportSettings11equalYRangeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N18SBE_ExportSettings9usePulsesE">
+<span id="_CPPv2N18SBE_ExportSettings9usePulsesE"></span><span id="SBE_ExportSettings::usePulses__variable"></span><span class="target" id="struct_s_b_e___export_settings_1a469b458164ae91affdec99e1ccdf8dde"></span>variable <code class="descname">usePulses</code><a class="headerlink" href="#_CPPv3N18SBE_ExportSettings9usePulsesE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N18SBE_ExportSettings9numPulsesE">
+<span id="_CPPv2N18SBE_ExportSettings9numPulsesE"></span><span id="SBE_ExportSettings::numPulses__variable"></span><span class="target" id="struct_s_b_e___export_settings_1a051b395e7ec92b833f314350a12504b6"></span>variable <code class="descname">numPulses</code><a class="headerlink" href="#_CPPv3N18SBE_ExportSettings9numPulsesE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N18SBE_ExportSettings13preFirstPulseE">
+<span id="_CPPv2N18SBE_ExportSettings13preFirstPulseE"></span><span id="SBE_ExportSettings::preFirstPulse__variable"></span><span class="target" id="struct_s_b_e___export_settings_1a4adfadb60f7b9f5006b53dbfa34f4e68"></span>variable <code class="descname">preFirstPulse</code><a class="headerlink" href="#_CPPv3N18SBE_ExportSettings13preFirstPulseE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N18SBE_ExportSettings13postLastPulseE">
+<span id="_CPPv2N18SBE_ExportSettings13postLastPulseE"></span><span id="SBE_ExportSettings::postLastPulse__variable"></span><span class="target" id="struct_s_b_e___export_settings_1a6cd87f7bc1afa5f483fd2a3e9ce4605d"></span>variable <code class="descname">postLastPulse</code><a class="headerlink" href="#_CPPv3N18SBE_ExportSettings13postLastPulseE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv3N18SBE_ExportSettings3ADCE">
+<span id="_CPPv2N18SBE_ExportSettings3ADCE"></span><span id="SBE_ExportSettings::ADC__variable"></span><span class="target" id="struct_s_b_e___export_settings_1a43b24eedfe0599cdd47f4c851bee4f05"></span>variable <code class="descname">ADC</code><a class="headerlink" href="#_CPPv3N18SBE_ExportSettings3ADCE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table of Contents</a></h3>
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../developers.html">Developer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manualinstallation.html">Manual installation instructions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reportingbugs.html">Bug reporting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../releasenotes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grouplist.html">Group list</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../filelist.html">File list</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="_compilation_tester_8ipf.html">File CompilationTester.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_compilation_tester_utils_8ipf.html">File CompilationTesterUtils.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___constants_8ipf.html">File IPNWB_Constants.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___debugging_8ipf.html">File IPNWB_Debugging.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___h_d_f5_helpers_8ipf.html">File IPNWB_HDF5Helpers.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___include_8ipf.html">File IPNWB_Include.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___reader_8ipf.html">File IPNWB_Reader.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___structures_8ipf.html">File IPNWB_Structures.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___utils_8ipf.html">File IPNWB_Utils.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___writer_8ipf.html">File IPNWB_Writer.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___amplifier_interaction_8ipf.html">File MIES_AmplifierInteraction.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_browser_8ipf.html">File MIES_AnalysisBrowser.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_browser___lab_notebook_t_p_storage_browser_8ipf.html">File MIES_AnalysisBrowser_LabNotebookTPStorageBrowser.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_browser___sweep_browser_8ipf.html">File MIES_AnalysisBrowser_SweepBrowser.ipf</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">File MIES_AnalysisBrowser_SweepBrowser_Export.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_function_helpers_8ipf.html">File MIES_AnalysisFunctionHelpers.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_function_management_8ipf.html">File MIES_AnalysisFunctionManagement.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_function_prototypes_8ipf.html">File MIES_AnalysisFunctionPrototypes.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_functions_8ipf.html">File MIES_AnalysisFunctions.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_functions___dashboard_8ipf.html">File MIES_AnalysisFunctions_Dashboard.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_functions___multi_patch_seq_8ipf.html">File MIES_AnalysisFunctions_MultiPatchSeq.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_functions___patch_seq_8ipf.html">File MIES_AnalysisFunctions_PatchSeq.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_master_8ipf.html">File MIES_AnalysisMaster.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___artefact_removal_8ipf.html">File MIES_ArtefactRemoval.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___async_8ipf.html">File MIES_Async.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___asynchronous_data_8ipf.html">File MIES_AsynchronousData.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___background_watchdog_8ipf.html">File MIES_BackgroundWatchdog.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___blowout_8ipf.html">File MIES_Blowout.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___browser_settings_panel_8ipf.html">File MIES_BrowserSettingsPanel.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___cache_8ipf.html">File MIES_Cache.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___check_installation_8ipf.html">File MIES_CheckInstallation.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___constants_8ipf.html">File MIES_Constants.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___d_a_c-_hardware_8ipf.html">File MIES_DAC-Hardware.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___d_a_ephys_8ipf.html">File MIES_DAEphys.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___d_a_ephys___gui_state_8ipf.html">File MIES_DAEphys_GuiState.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___d_a_ephys___macro_8ipf.html">File MIES_DAEphys_Macro.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___data_acquisition_8ipf.html">File MIES_DataAcquisition.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___data_acquisition___multi_8ipf.html">File MIES_DataAcquisition_Multi.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___data_acquisition___single_8ipf.html">File MIES_DataAcquisition_Single.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___data_browser_8ipf.html">File MIES_DataBrowser.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___data_configurator_i_t_c_8ipf.html">File MIES_DataConfiguratorITC.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___debug_panel_8ipf.html">File MIES_DebugPanel.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___debugging_8ipf.html">File MIES_Debugging.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___downsample_8ipf.html">File MIES_Downsample.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___enhanced_w_m_routines_8ipf.html">File MIES_EnhancedWMRoutines.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___event_detection_code_8ipf.html">File MIES_EventDetectionCode.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___experiment_config_8ipf.html">File MIES_ExperimentConfig.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___experiment_documentation_8ipf.html">File MIES_ExperimentDocumentation.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___foreign_function_interface_8ipf.html">File MIES_ForeignFunctionInterface.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___global_string_and_variable_access_8ipf.html">File MIES_GlobalStringAndVariableAccess.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___gui_utilities_8ipf.html">File MIES_GuiUtilities.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___h_d_f5_ops_8ipf.html">File MIES_HDF5Ops.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___igor_hooks_8ipf.html">File MIES_IgorHooks.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___include_8ipf.html">File MIES_Include.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___indexing_8ipf.html">File MIES_Indexing.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___menu_8ipf.html">File MIES_Menu.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___mies_utilities_8ipf.html">File MIES_MiesUtilities.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___neuro_data_without_borders_8ipf.html">File MIES_NeuroDataWithoutBorders.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___optimzed_overlap_distributed_acquisition_8ipf.html">File MIES_OptimzedOverlapDistributedAcquisition.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___oscilloscope_8ipf.html">File MIES_Oscilloscope.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___overlay_sweeps_8ipf.html">File MIES_OverlaySweeps.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___pressure_control_8ipf.html">File MIES_PressureControl.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___programmatic_g_u_i_control_8ipf.html">File MIES_ProgrammaticGUIControl.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___pulse_averaging_8ipf.html">File MIES_PulseAveraging.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___repeated_acquisition_8ipf.html">File MIES_RepeatedAcquisition.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___sampling_interval_8ipf.html">File MIES_SamplingInterval.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___structures_8ipf.html">File MIES_Structures.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___sweep_saving_8ipf.html">File MIES_SweepSaving.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___tango_interact_8ipf.html">File MIES_TangoInteract.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___test_pulse_8ipf.html">File MIES_TestPulse.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___test_pulse___multi_8ipf.html">File MIES_TestPulse_Multi.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___test_pulse___single_8ipf.html">File MIES_TestPulse_Single.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___threaded_f_i_f_o_handling_8ipf.html">File MIES_ThreadedFIFOHandling.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___threadsafe_utilities_8ipf.html">File MIES_ThreadsafeUtilities.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___utilities_8ipf.html">File MIES_Utilities.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___wave_builder_8ipf.html">File MIES_WaveBuilder.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___wave_builder_panel_8ipf.html">File MIES_WaveBuilderPanel.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___wave_data_folder_getters_8ipf.html">File MIES_WaveDataFolderGetters.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_zero_m_q___interop_8ipf.html">File ZeroMQ_Interop.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interface_8h.html">File interface.h</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../structlist.html">Struct list</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../namespacelist.html">Namespace list</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CalculateTPLikePropsFromSweep.html">CalculateTPLikePropsFromSweep Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IPNWB.html">Igor Pro module for reading and writing NeurodataWithoutBorder files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TPAnalysis_algorithm.html">Testpulse Analysis Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../asyncframework.html">Async Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ZeroMQ-XOP-Readme.html">ZeroMQ XOP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../labnotebook-docs.html">Labnotebook documentation for developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mies-concepts.html">Important MIES concepts for developers</a></li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="_m_i_e_s___analysis_browser___sweep_browser_8ipf.html"
+                        title="previous chapter">File MIES_AnalysisBrowser_SweepBrowser.ipf</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="_m_i_e_s___analysis_function_helpers_8ipf.html"
+                        title="next chapter">File MIES_AnalysisFunctionHelpers.ipf</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/file/_m_i_e_s___analysis_browser___sweep_browser___export_8ipf.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="_m_i_e_s___analysis_function_helpers_8ipf.html" title="File MIES_AnalysisFunctionHelpers.ipf"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="_m_i_e_s___analysis_browser___sweep_browser_8ipf.html" title="File MIES_AnalysisBrowser_SweepBrowser.ipf"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">MIES Igor (master) latest-52-g2ffc1636 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../filelist.html" >File list</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright .
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.3.
+    </div>
+  </body>
+</html>

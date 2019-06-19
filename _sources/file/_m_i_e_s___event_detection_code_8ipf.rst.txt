@@ -1,0 +1,6 @@
+.. _File MIES_EventDetectionCode.ipf:
+
+File MIES_EventDetectionCode.ipf
+================================
+
+.. doxygenfile:: MIES_EventDetectionCode.ipf

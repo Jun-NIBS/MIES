@@ -1,0 +1,348 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>File MIES_HDF5Ops.ipf &#8212; MIES Igor (master) latest-52-g2ffc1636 documentation</title>
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" />
+    
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+    <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    
+    <script type="text/javascript" src="../_static/sidebar.js"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="File MIES_IgorHooks.ipf" href="_m_i_e_s___igor_hooks_8ipf.html" />
+    <link rel="prev" title="File MIES_GuiUtilities.ipf" href="_m_i_e_s___gui_utilities_8ipf.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="_m_i_e_s___igor_hooks_8ipf.html" title="File MIES_IgorHooks.ipf"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="_m_i_e_s___gui_utilities_8ipf.html" title="File MIES_GuiUtilities.ipf"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">MIES Igor (master) latest-52-g2ffc1636 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../filelist.html" accesskey="U">File list</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="file-mies-hdf5ops-ipf">
+<span id="id1"></span><h1>File MIES_HDF5Ops.ipf<a class="headerlink" href="#file-mies-hdf5ops-ipf" title="Permalink to this headline">¶</a></h1>
+<p><strong>HD</strong> Loading and saving into/from HDF5 files </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Stimulus type constants</p>
+<dl class="member">
+<dt id="_CPPv312TYPE_UNKNOWN">
+<span id="_CPPv212TYPE_UNKNOWN"></span><span id="TYPE_UNKNOWN__variableC"></span><span class="target" id="_m_i_e_s___h_d_f5_ops_8ipf_1a8cec93878ab287f3e9c4f2d373dc3244"></span><em class="property">const</em> variable <code class="descname">TYPE_UNKNOWN</code> = 0<a class="headerlink" href="#_CPPv312TYPE_UNKNOWN" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv39TYPE_NULL">
+<span id="_CPPv29TYPE_NULL"></span><span id="TYPE_NULL__variableC"></span><span class="target" id="_m_i_e_s___h_d_f5_ops_8ipf_1a3344d86da38d0c64160b5fb28e867ef9"></span><em class="property">const</em> variable <code class="descname">TYPE_NULL</code> = 1<a class="headerlink" href="#_CPPv39TYPE_NULL" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv39TYPE_STEP">
+<span id="_CPPv29TYPE_STEP"></span><span id="TYPE_STEP__variableC"></span><span class="target" id="_m_i_e_s___h_d_f5_ops_8ipf_1ae3a173dcc4563914081baa30f3ee3b0a"></span><em class="property">const</em> variable <code class="descname">TYPE_STEP</code> = 2<a class="headerlink" href="#_CPPv39TYPE_STEP" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv310TYPE_PULSE">
+<span id="_CPPv210TYPE_PULSE"></span><span id="TYPE_PULSE__variableC"></span><span class="target" id="_m_i_e_s___h_d_f5_ops_8ipf_1a7d687aff6d28a2441c9584cd0547de7d"></span><em class="property">const</em> variable <code class="descname">TYPE_PULSE</code> = 3<a class="headerlink" href="#_CPPv310TYPE_PULSE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv39TYPE_RAMP">
+<span id="_CPPv29TYPE_RAMP"></span><span id="TYPE_RAMP__variableC"></span><span class="target" id="_m_i_e_s___h_d_f5_ops_8ipf_1a6f6221fac7414b11f43e108915124faa"></span><em class="property">const</em> variable <code class="descname">TYPE_RAMP</code> = 4<a class="headerlink" href="#_CPPv39TYPE_RAMP" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Functions</p>
+<dl class="function">
+<dt id="_CPPv316HD_TangoHDF5Save6string">
+<span id="_CPPv216HD_TangoHDF5Save6string"></span><span id="HD_TangoHDF5Save__string"></span><span class="target" id="_m_i_e_s___h_d_f5_ops_8ipf_1ace6d2a7ff6f808d1c6ba879122669f5c"></span>variable <code class="descname">HD_TangoHDF5Save</code><span class="sig-paren">(</span>string <em>saveFilename</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv316HD_TangoHDF5Save6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Save all data as HDF5 file…must be passed a saveFilename with full path…with double 's…ie “c:\test.h5”. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv318HD_Convert_To_HDF56string">
+<span id="_CPPv218HD_Convert_To_HDF56string"></span><span id="HD_Convert_To_HDF5__string"></span><span class="target" id="_m_i_e_s___h_d_f5_ops_8ipf_1acbed136fc4ee4311d108c9d786b0c883"></span><em class="property">static</em> variable <code class="descname">HD_Convert_To_HDF5</code><span class="sig-paren">(</span>string <em>filename</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv318HD_Convert_To_HDF56string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>dump all experiment data to HDF5 file </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv317HD_HDF5_Structure8variable">
+<span id="_CPPv217HD_HDF5_Structure8variable"></span><span id="HD_HDF5_Structure__variable"></span><span class="target" id="_m_i_e_s___h_d_f5_ops_8ipf_1a24e3d36ac4206c5b92ce7a8a629de4dd"></span><em class="property">static</em> variable <code class="descname">HD_HDF5_Structure</code><span class="sig-paren">(</span>variable <em>h5_id</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv317HD_HDF5_Structure8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>creates high-level group structure of HDF5 file </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv317HD_Create_Dataset8variable6string4wave">
+<span id="_CPPv217HD_Create_Dataset8variable6string4wave"></span><span id="HD_Create_Dataset__variable.string.wave"></span><span class="target" id="_m_i_e_s___h_d_f5_ops_8ipf_1a339bd37e0844c2728a13dbe264aa3804"></span><em class="property">static</em> variable <code class="descname">HD_Create_Dataset</code><span class="sig-paren">(</span>variable <em>h5_id</em>, string <em>sweep_name</em>, wave <em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv317HD_Create_Dataset8variable6string4wave" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>creates dataset for saving the entire MIES dataspace </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv317HD_Ident_Stimulus4wave8variable4wave">
+<span id="_CPPv217HD_Ident_Stimulus4wave8variable4wave"></span><span id="HD_Ident_Stimulus__wave.variable.wave"></span><span class="target" id="_m_i_e_s___h_d_f5_ops_8ipf_1aa44a8b785dd609c5beb158e0cfed4c2f"></span><em class="property">static</em> variable <code class="descname">HD_Ident_Stimulus</code><span class="sig-paren">(</span>wave <em>current</em>, variable <em>dt</em>, wave <em>stim_characteristics</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv317HD_Ident_Stimulus4wave8variable4wave" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Categorize stimulus and extract some features. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv314HD_SaveStimSet6string">
+<span id="_CPPv214HD_SaveStimSet6string"></span><span id="HD_SaveStimSet__string"></span><span class="target" id="_m_i_e_s___h_d_f5_ops_8ipf_1aa3fb6d8264437fcf29fc5f8711ed8a14"></span>variable <code class="descname">HD_SaveStimSet</code><span class="sig-paren">(</span>string <em>cmdID</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv314HD_SaveStimSet6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Save stim sets to HDF5 file. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv321HD_LoadReplaceStimSet6string6string6string">
+<span id="_CPPv221HD_LoadReplaceStimSet6string6string6string"></span><span id="HD_LoadReplaceStimSet__string.string.string"></span><span class="target" id="_m_i_e_s___h_d_f5_ops_8ipf_1a4192ffa47e905b51bff17a4b9d6825ba"></span>variable <code class="descname">HD_LoadReplaceStimSet</code><span class="sig-paren">(</span>string <em>incomingFileName</em> = defaultValue, string <em>cmdID</em> = defaultValue, string <em>incomingFileDirectory</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv321HD_LoadReplaceStimSet6string6string6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Load stim sets from HDF5 file and replace all of the current stimulus waves. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv324HD_LoadAdditionalStimSet6string6string">
+<span id="_CPPv224HD_LoadAdditionalStimSet6string6string"></span><span id="HD_LoadAdditionalStimSet__string.string"></span><span class="target" id="_m_i_e_s___h_d_f5_ops_8ipf_1aacba9c0dc1ed250b0e1e7f4badc68832"></span>variable <code class="descname">HD_LoadAdditionalStimSet</code><span class="sig-paren">(</span>string <em>incomingFileName</em> = defaultValue, string <em>cmdID</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv324HD_LoadAdditionalStimSet6string6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Load stim sets from HDF5 file and add to the current stimulus waves. If there is a wave with a matching name already present, it will be overwritten and replaced. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv316HD_SaveSweepData6string">
+<span id="_CPPv216HD_SaveSweepData6string"></span><span id="HD_SaveSweepData__string"></span><span class="target" id="_m_i_e_s___h_d_f5_ops_8ipf_1a84d7e0efcfd710b8c67ded4f9bb4d437"></span>variable <code class="descname">HD_SaveSweepData</code><span class="sig-paren">(</span>string <em>cmdID</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv316HD_SaveSweepData6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Routine for saving the sweep data in hdf5 format. This will allow for saving data in a smaller file size. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv316HD_GetConfigList6string">
+<span id="_CPPv216HD_GetConfigList6string"></span><span id="HD_GetConfigList__string"></span><span class="target" id="_m_i_e_s___h_d_f5_ops_8ipf_1ab0376676c5f8840edadfadb4fac0f86b"></span><em class="property">static</em> string <code class="descname">HD_GetConfigList</code><span class="sig-paren">(</span>string <em>panelTitle</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv316HD_GetConfigList6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Parses list of controls from the DA_Ephys panel and removes the variables associated with Amp settings and should not be saved or loaded with other config settings. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv320HD_SaveConfiguration6string">
+<span id="_CPPv220HD_SaveConfiguration6string"></span><span id="HD_SaveConfiguration__string"></span><span class="target" id="_m_i_e_s___h_d_f5_ops_8ipf_1a3aa8b052c0e39ff2bd377ced9a6b4964"></span>variable <code class="descname">HD_SaveConfiguration</code><span class="sig-paren">(</span>string <em>cmdID</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv320HD_SaveConfiguration6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Routine for saving all gui settings/switches/check boxes. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv316HD_LoadConfigSet6string6string">
+<span id="_CPPv216HD_LoadConfigSet6string6string"></span><span id="HD_LoadConfigSet__string.string"></span><span class="target" id="_m_i_e_s___h_d_f5_ops_8ipf_1ad4fa3dcb6c478ab0d0a2edce5c7ef72e"></span>variable <code class="descname">HD_LoadConfigSet</code><span class="sig-paren">(</span>string <em>incomingFileName</em> = defaultValue, string <em>cmdID</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv316HD_LoadConfigSet6string6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Load config settings from HDF5 file. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv314HD_LoadDataSet6string6string">
+<span id="_CPPv214HD_LoadDataSet6string6string"></span><span id="HD_LoadDataSet__string.string"></span><span class="target" id="_m_i_e_s___h_d_f5_ops_8ipf_1a111a5b9a890b1e069b22be17794d5db6"></span>variable <code class="descname">HD_LoadDataSet</code><span class="sig-paren">(</span>string <em>incomingFileName</em> = defaultValue, string <em>cmdID</em> = defaultValue<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv314HD_LoadDataSet6string6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Load previous data sets from HDF5 file for viewing with the wave browser. If there is a data wave with a matching name already present, it will be overwritten and replaced. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv326HD_WriteAsyncResponseProto6string6string">
+<span id="_CPPv226HD_WriteAsyncResponseProto6string6string"></span><span id="HD_WriteAsyncResponseProto__string.string"></span><span class="target" id="_m_i_e_s___h_d_f5_ops_8ipf_1a406947d8ec11471380df2c4754e4ed72"></span>variable <code class="descname">HD_WriteAsyncResponseProto</code><span class="sig-paren">(</span>string <em>cmdID</em>, string <em>returnString</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv326HD_WriteAsyncResponseProto6string6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Prototype function to allow HDF5 function to write async responses, with return strings, to the WSE. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv328HD_WriteAsyncResponseWrapper6string6string">
+<span id="_CPPv228HD_WriteAsyncResponseWrapper6string6string"></span><span id="HD_WriteAsyncResponseWrapper__string.string"></span><span class="target" id="_m_i_e_s___h_d_f5_ops_8ipf_1ab62ad288969582a7786be72e5bdfe265"></span><em class="property">static</em> variable <code class="descname">HD_WriteAsyncResponseWrapper</code><span class="sig-paren">(</span>string <em>cmdID</em>, string <em>returnString</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv328HD_WriteAsyncResponseWrapper6string6string" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Wrapper for the optional tango related function <a class="reference internal" href="#_m_i_e_s___h_d_f5_ops_8ipf_1ab62ad288969582a7786be72e5bdfe265"><span class="std std-ref">HD_WriteAsyncResponseWrapper</span></a> The approach here using a function reference and an interpreted string like <code class="docutils literal notranslate"><span class="pre">$&quot;&quot;</span></code> allows to convert the dependency on the function TI_WriteAsyncResponse from compile time to runtime. This function will call TI_WriteAsyncResponse if it can be found, otherwise HD_WriteAsyncResponseProto is called. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv316HD_WriteAckProto6string8variable">
+<span id="_CPPv216HD_WriteAckProto6string8variable"></span><span id="HD_WriteAckProto__string.variable"></span><span class="target" id="_m_i_e_s___h_d_f5_ops_8ipf_1ae8200d4d4682c80d0ac851843b1531fa"></span>variable <code class="descname">HD_WriteAckProto</code><span class="sig-paren">(</span>string <em>cmdID</em>, variable <em>returnValue</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv316HD_WriteAckProto6string8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Prototype function to allow HDF5 functions to write ack responses to the WSE. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv318HD_WriteAckWrapper6string8variable">
+<span id="_CPPv218HD_WriteAckWrapper6string8variable"></span><span id="HD_WriteAckWrapper__string.variable"></span><span class="target" id="_m_i_e_s___h_d_f5_ops_8ipf_1a7f2d81fed4efac77ecd99c5c02502fd4"></span><em class="property">static</em> variable <code class="descname">HD_WriteAckWrapper</code><span class="sig-paren">(</span>string <em>cmdID</em>, variable <em>returnValue</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv318HD_WriteAckWrapper6string8variable" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Wrapper for the optional tango related function <a class="reference internal" href="#_m_i_e_s___h_d_f5_ops_8ipf_1a7f2d81fed4efac77ecd99c5c02502fd4"><span class="std std-ref">HD_WriteAckWrapper</span></a> The approach here using a function reference and an interpreted string like <code class="docutils literal notranslate"><span class="pre">$&quot;&quot;</span></code> allows to convert the dependency on the function TI_WriteAck from compile time to runtime. This function will call TI_WriteAck if it can be found, otherwise HD_WriteAckProto is called. </p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table of Contents</a></h3>
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../developers.html">Developer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manualinstallation.html">Manual installation instructions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reportingbugs.html">Bug reporting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../releasenotes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grouplist.html">Group list</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../filelist.html">File list</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="_compilation_tester_8ipf.html">File CompilationTester.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_compilation_tester_utils_8ipf.html">File CompilationTesterUtils.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___constants_8ipf.html">File IPNWB_Constants.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___debugging_8ipf.html">File IPNWB_Debugging.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___h_d_f5_helpers_8ipf.html">File IPNWB_HDF5Helpers.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___include_8ipf.html">File IPNWB_Include.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___reader_8ipf.html">File IPNWB_Reader.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___structures_8ipf.html">File IPNWB_Structures.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___utils_8ipf.html">File IPNWB_Utils.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_i_p_n_w_b___writer_8ipf.html">File IPNWB_Writer.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___amplifier_interaction_8ipf.html">File MIES_AmplifierInteraction.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_browser_8ipf.html">File MIES_AnalysisBrowser.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_browser___lab_notebook_t_p_storage_browser_8ipf.html">File MIES_AnalysisBrowser_LabNotebookTPStorageBrowser.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_browser___sweep_browser_8ipf.html">File MIES_AnalysisBrowser_SweepBrowser.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_browser___sweep_browser___export_8ipf.html">File MIES_AnalysisBrowser_SweepBrowser_Export.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_function_helpers_8ipf.html">File MIES_AnalysisFunctionHelpers.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_function_management_8ipf.html">File MIES_AnalysisFunctionManagement.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_function_prototypes_8ipf.html">File MIES_AnalysisFunctionPrototypes.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_functions_8ipf.html">File MIES_AnalysisFunctions.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_functions___dashboard_8ipf.html">File MIES_AnalysisFunctions_Dashboard.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_functions___multi_patch_seq_8ipf.html">File MIES_AnalysisFunctions_MultiPatchSeq.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_functions___patch_seq_8ipf.html">File MIES_AnalysisFunctions_PatchSeq.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___analysis_master_8ipf.html">File MIES_AnalysisMaster.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___artefact_removal_8ipf.html">File MIES_ArtefactRemoval.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___async_8ipf.html">File MIES_Async.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___asynchronous_data_8ipf.html">File MIES_AsynchronousData.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___background_watchdog_8ipf.html">File MIES_BackgroundWatchdog.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___blowout_8ipf.html">File MIES_Blowout.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___browser_settings_panel_8ipf.html">File MIES_BrowserSettingsPanel.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___cache_8ipf.html">File MIES_Cache.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___check_installation_8ipf.html">File MIES_CheckInstallation.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___constants_8ipf.html">File MIES_Constants.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___d_a_c-_hardware_8ipf.html">File MIES_DAC-Hardware.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___d_a_ephys_8ipf.html">File MIES_DAEphys.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___d_a_ephys___gui_state_8ipf.html">File MIES_DAEphys_GuiState.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___d_a_ephys___macro_8ipf.html">File MIES_DAEphys_Macro.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___data_acquisition_8ipf.html">File MIES_DataAcquisition.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___data_acquisition___multi_8ipf.html">File MIES_DataAcquisition_Multi.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___data_acquisition___single_8ipf.html">File MIES_DataAcquisition_Single.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___data_browser_8ipf.html">File MIES_DataBrowser.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___data_configurator_i_t_c_8ipf.html">File MIES_DataConfiguratorITC.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___debug_panel_8ipf.html">File MIES_DebugPanel.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___debugging_8ipf.html">File MIES_Debugging.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___downsample_8ipf.html">File MIES_Downsample.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___enhanced_w_m_routines_8ipf.html">File MIES_EnhancedWMRoutines.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___event_detection_code_8ipf.html">File MIES_EventDetectionCode.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___experiment_config_8ipf.html">File MIES_ExperimentConfig.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___experiment_documentation_8ipf.html">File MIES_ExperimentDocumentation.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___foreign_function_interface_8ipf.html">File MIES_ForeignFunctionInterface.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___global_string_and_variable_access_8ipf.html">File MIES_GlobalStringAndVariableAccess.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___gui_utilities_8ipf.html">File MIES_GuiUtilities.ipf</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">File MIES_HDF5Ops.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___igor_hooks_8ipf.html">File MIES_IgorHooks.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___include_8ipf.html">File MIES_Include.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___indexing_8ipf.html">File MIES_Indexing.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___menu_8ipf.html">File MIES_Menu.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___mies_utilities_8ipf.html">File MIES_MiesUtilities.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___neuro_data_without_borders_8ipf.html">File MIES_NeuroDataWithoutBorders.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___optimzed_overlap_distributed_acquisition_8ipf.html">File MIES_OptimzedOverlapDistributedAcquisition.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___oscilloscope_8ipf.html">File MIES_Oscilloscope.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___overlay_sweeps_8ipf.html">File MIES_OverlaySweeps.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___pressure_control_8ipf.html">File MIES_PressureControl.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___programmatic_g_u_i_control_8ipf.html">File MIES_ProgrammaticGUIControl.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___pulse_averaging_8ipf.html">File MIES_PulseAveraging.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___repeated_acquisition_8ipf.html">File MIES_RepeatedAcquisition.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___sampling_interval_8ipf.html">File MIES_SamplingInterval.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___structures_8ipf.html">File MIES_Structures.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___sweep_saving_8ipf.html">File MIES_SweepSaving.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___tango_interact_8ipf.html">File MIES_TangoInteract.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___test_pulse_8ipf.html">File MIES_TestPulse.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___test_pulse___multi_8ipf.html">File MIES_TestPulse_Multi.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___test_pulse___single_8ipf.html">File MIES_TestPulse_Single.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___threaded_f_i_f_o_handling_8ipf.html">File MIES_ThreadedFIFOHandling.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___threadsafe_utilities_8ipf.html">File MIES_ThreadsafeUtilities.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___utilities_8ipf.html">File MIES_Utilities.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___wave_builder_8ipf.html">File MIES_WaveBuilder.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___wave_builder_panel_8ipf.html">File MIES_WaveBuilderPanel.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_m_i_e_s___wave_data_folder_getters_8ipf.html">File MIES_WaveDataFolderGetters.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_zero_m_q___interop_8ipf.html">File ZeroMQ_Interop.ipf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interface_8h.html">File interface.h</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../structlist.html">Struct list</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../namespacelist.html">Namespace list</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CalculateTPLikePropsFromSweep.html">CalculateTPLikePropsFromSweep Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IPNWB.html">Igor Pro module for reading and writing NeurodataWithoutBorder files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TPAnalysis_algorithm.html">Testpulse Analysis Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../asyncframework.html">Async Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ZeroMQ-XOP-Readme.html">ZeroMQ XOP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../labnotebook-docs.html">Labnotebook documentation for developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mies-concepts.html">Important MIES concepts for developers</a></li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="_m_i_e_s___gui_utilities_8ipf.html"
+                        title="previous chapter">File MIES_GuiUtilities.ipf</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="_m_i_e_s___igor_hooks_8ipf.html"
+                        title="next chapter">File MIES_IgorHooks.ipf</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/file/_m_i_e_s___h_d_f5_ops_8ipf.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="_m_i_e_s___igor_hooks_8ipf.html" title="File MIES_IgorHooks.ipf"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="_m_i_e_s___gui_utilities_8ipf.html" title="File MIES_GuiUtilities.ipf"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">MIES Igor (master) latest-52-g2ffc1636 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../filelist.html" >File list</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright .
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.3.
+    </div>
+  </body>
+</html>
